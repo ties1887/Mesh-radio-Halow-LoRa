@@ -1,6 +1,9 @@
 # Mesh Radio System (HaLow + LoRa)
 
-Note: this build is still very much in beta, im a 21 year old student mechanical engeneering and work on this project in my free time.
+
+> ⚠️ This project is still in active development (beta).  
+> Built by a 21-year-old mechanical engineering student in spare time.
+
 
 ## Overview
 This project is a modular mesh communication system using:
