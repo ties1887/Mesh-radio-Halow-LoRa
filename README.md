@@ -1,4 +1,3 @@
-<img width="487" height="802" alt="WhatsApp Image 2026-05-05 at 19 32 03" src="https://github.com/user-attachments/assets/57cae914-232d-43c2-9b67-03d2814e8f05" />
 # Mesh Radio System (HaLow + LoRa)
 
 
@@ -12,6 +11,8 @@ This project is a modular mesh communication system using:
 - HaLow (802.11ah)
 - LoRa (Meshtastic)
 - GPS + optional modules
+
+<img width="487" height="802" alt="WhatsApp Image 2026-05-05 at 19 32 03" src="https://github.com/user-attachments/assets/57cae914-232d-43c2-9b67-03d2814e8f05" />
 
 ## Features
 - Long range mesh networking
