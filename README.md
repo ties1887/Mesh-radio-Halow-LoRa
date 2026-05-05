@@ -1,3 +1,4 @@
+<img width="487" height="802" alt="WhatsApp Image 2026-05-05 at 19 32 03" src="https://github.com/user-attachments/assets/57cae914-232d-43c2-9b67-03d2814e8f05" />
 # Mesh Radio System (HaLow + LoRa)
 
 
@@ -20,6 +21,9 @@ This project is a modular mesh communication system using:
 
 ## Hardware
 Full part list (coming soon)
+
+<img width="1074" height="511" alt="Schermafbeelding 2026-04-30 104158" src="https://github.com/user-attachments/assets/d2700130-6f8a-43f7-bae1-109dab3a1885" />
+
 
 ### Core components
 - Raspberry Pi 4
