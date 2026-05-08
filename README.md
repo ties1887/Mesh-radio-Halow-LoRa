@@ -21,7 +21,8 @@ This project is a modular mesh communication system using:
 - Open-source firmware + configs (from openmanet and meshtastic)
 
 ## Hardware
-Full part list (coming soon)
+Full part list:
+https://docs.google.com/spreadsheets/d/1Nt8EjYsgWTId0Qjl1BAAxPci3bh1FSZ7VQxQRFxyHnk/edit?usp=sharing
 
 <img width="1074" height="511" alt="Schermafbeelding 2026-04-30 104158" src="https://github.com/user-attachments/assets/d2700130-6f8a-43f7-bae1-109dab3a1885" />
 
