@@ -62,7 +62,7 @@ https://docs.google.com/spreadsheets/d/1Nt8EjYsgWTId0Qjl1BAAxPci3bh1FSZ7VQxQRFxy
 - Connectors, headers, mounting hardware
 
 ## Build Guide
-(coming soon)
+(Maybe coming soon)
 
 ## Files
 - CAD (STEP / SolidWorks)
