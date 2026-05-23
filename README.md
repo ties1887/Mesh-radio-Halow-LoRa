@@ -63,6 +63,7 @@ https://docs.google.com/spreadsheets/d/1Nt8EjYsgWTId0Qjl1BAAxPci3bh1FSZ7VQxQRFxy
 
 ## Build Guide
 (Maybe coming soon)
+<img width="3300" height="2048" alt="2S2P_power_overview_annotated_notes" src="https://github.com/user-attachments/assets/f7e3318a-70b6-41d3-ae70-13cefc85ae6a" />
 
 ## Files
 - CAD (STEP / SolidWorks)
