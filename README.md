@@ -13,6 +13,8 @@ This project is a modular mesh communication system using:
 - GPS + optional modules
 
 <img width="487" height="802" alt="WhatsApp Image 2026-05-05 at 19 32 03" src="https://github.com/user-attachments/assets/57cae914-232d-43c2-9b67-03d2814e8f05" />
+<img width="1200" height="1600" alt="WhatsApp Image 2026-05-23 at 16 41 409" src="https://github.com/user-attachments/assets/ddd93b63-40b8-462a-8198-9003da88fe81" />
+<img width="1200" height="1600" alt="WhatsApp Image 2026-05-23 at 16 41 46" src="https://github.com/user-attachments/assets/182d0f7b-e401-4a19-9adc-329478154c8f" />
 
 ## Features
 - Long range mesh networking
