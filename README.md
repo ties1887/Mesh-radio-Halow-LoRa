@@ -63,7 +63,7 @@ https://docs.google.com/spreadsheets/d/1Nt8EjYsgWTId0Qjl1BAAxPci3bh1FSZ7VQxQRFxy
 
 ## Build Guide
 (Maybe coming soon)
-<img width="3300" height="2048" alt="2S2P_power_overview_annotated_notes" src="https://github.com/user-attachments/assets/f7e3318a-70b6-41d3-ae70-13cefc85ae6a" />
+<img width="1166" height="1349" alt="ChatGPT Image May 23, 2026, 04_54_02 PM" src="https://github.com/user-attachments/assets/e70fefee-d2e0-40cd-ac72-c8f07b04be94" />
 
 ## Files
 - CAD (STEP / SolidWorks)
