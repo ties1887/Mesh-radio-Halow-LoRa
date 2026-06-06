@@ -17,9 +17,10 @@ This project is a modular mesh communication system using:
   <img width="45%" alt="Build photo 1" src="https://github.com/user-attachments/assets/ddd93b63-40b8-462a-8198-9003da88fe81" />
   <img width="45%" alt="Build photo 2" src="https://github.com/user-attachments/assets/182d0f7b-e401-4a19-9adc-329478154c8f" />
 </p>
+
 <p align="center">
-  <img width="3060" height="4080" alt="afbeelding" src="https://github.com/user-attachments/assets/b9ff254b-5ac9-4417-b87d-8d295e47f9b0" />
-  <img width="3060" height="4080" alt="afbeelding" src="https://github.com/user-attachments/assets/e29e00ea-0e92-4c44-b295-36916e55e126" />
+  <img width="45%" alt="Build photo 1" src="https://github.com/user-attachments/assets/b9ff254b-5ac9-4417-b87d-8d295e47f9b0" />
+  <img width="45%" alt="Build photo 2" src="https://github.com/user-attachments/assets/e29e00ea-0e92-4c44-b295-36916e55e126" />
 </p>
 
 
