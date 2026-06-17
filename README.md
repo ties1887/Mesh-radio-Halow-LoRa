@@ -1,4 +1,3 @@
-<img width="1600" height="1200" alt="WhatsApp Image 2026-06-17 at 16 02 59" src="https://github.com/user-attachments/assets/6ccab8ee-1252-4a70-9d2f-843d50154e95" />
 # Mesh Radio System (HaLow + LoRa)
 
 
