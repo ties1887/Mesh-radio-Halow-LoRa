@@ -1,3 +1,4 @@
+<img width="1600" height="1200" alt="WhatsApp Image 2026-06-17 at 16 02 59" src="https://github.com/user-attachments/assets/6ccab8ee-1252-4a70-9d2f-843d50154e95" />
 # Mesh Radio System (HaLow + LoRa)
 
 
@@ -73,6 +74,7 @@ https://docs.google.com/spreadsheets/d/1Nt8EjYsgWTId0Qjl1BAAxPci3bh1FSZ7VQxQRFxy
 
 ## Build Guide
 (Maybe coming soon)
+<img width="1600" height="1200" alt="WhatsApp Image 2026-06-17 at 16 02 59" src="https://github.com/user-attachments/assets/17428d43-cfc5-4c95-ac46-7cbe6af2e4fd" />
 <img width="1166" height="1349" alt="ChatGPT Image May 23, 2026, 04_54_02 PM" src="https://github.com/user-attachments/assets/e70fefee-d2e0-40cd-ac72-c8f07b04be94" />
 
 ## Files
