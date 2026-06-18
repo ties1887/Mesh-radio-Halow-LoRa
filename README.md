@@ -12,7 +12,9 @@ This project is a modular mesh communication system using:
 - LoRa (Meshtastic)
 - GPS + optional modules
 
-<img width="487" height="802" alt="WhatsApp Image 2026-05-05 at 19 32 03" src="https://github.com/user-attachments/assets/57cae914-232d-43c2-9b67-03d2814e8f05" />
+<img width="2810" height="2485" alt="20260618_202707" src="https://github.com/user-attachments/assets/a81b8ad5-5650-476e-a169-d7b285f59e5f" />
+<img width="2978" height="2702" alt="20260618_202909" src="https://github.com/user-attachments/assets/62be839c-37e9-4689-bd2e-d46e8f429b7d" />
+
 <p align="center">
   <img width="45%" alt="Build photo 1" src="https://github.com/user-attachments/assets/ddd93b63-40b8-462a-8198-9003da88fe81" />
   <img width="45%" alt="Build photo 2" src="https://github.com/user-attachments/assets/182d0f7b-e401-4a19-9adc-329478154c8f" />
