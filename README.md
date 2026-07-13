@@ -88,6 +88,7 @@ Supplier links, prices and availability may change. Confirm dimensions, connecto
 | **[V4](./V4_6-7-2026%20%28UNSTABLE%20-%20NOT%20TESTED%29/)** | STEP only — unstable and not tested |
 | **[BOM](https://docs.google.com/spreadsheets/d/1Nt8EjYsgWTId0Qjl1BAAxPci3bh1FSZ7VQxQRFxyHnk/edit?usp=sharing)** | Shared component list for all versions |
 | **[Images](./images/)** | Project photos and reference images |
+| **[Standalone Lunpid enclosure](PLAATS_HIER_DE_LINK)** | Compact standalone enclosure for the LongWave MM8108 module |
 
 Download the complete version folder before opening a SolidWorks assembly so referenced parts remain available.
 
