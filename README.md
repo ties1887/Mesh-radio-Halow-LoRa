@@ -85,7 +85,7 @@ Supplier links, prices and availability may change. Confirm dimensions, connecto
 | **[V1](./V1_5-5-2026/)** | 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
 | **[V2](./V2_30-5-2026/)** | 3MF, STL, STEP, SolidWorks 2023 and SolidWorks 2025 |
 | **[V3](./V3_18-6-2026/)** | 3MF, STEP, SolidWorks 2023, SolidWorks 2025 and build notes |
-| **[V4](./V4_6-7-2026%20%28UNSTABLE%20-%20NOT%20TESTED%29/)** | STEP only — unstable and not tested |
+| **[V4](./V4_6-7-2026%20%28UNSTABLE%20-%20NOT%20TESTED%29/)** | STEP and SolidWorks 2025 only — unstable and not tested |
 | **[BOM](https://docs.google.com/spreadsheets/d/1Nt8EjYsgWTId0Qjl1BAAxPci3bh1FSZ7VQxQRFxyHnk/edit?usp=sharing)** | Shared component list for all versions |
 | **[Images](./images/)** | Project photos and reference images |
 | **[Standalone Lunpid enclosure](./Standalone%20Lunpid%20enclosure/)** | 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
