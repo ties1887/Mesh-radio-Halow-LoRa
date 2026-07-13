@@ -129,9 +129,6 @@ Hardware used in the project includes:
 - **[Raspberry Pi](https://www.raspberrypi.com/)**
 - **[Seeed Studio Wio-WM6108](https://www.seeedstudio.com/Wio-WM6108-Wi-Fi-HaLow-mini-PCIe-Module-p-6394.html)**
 - **[RAKwireless WisMesh 1W Booster Starter Kit](https://store.rakwireless.com/products/meshtastic-1w-lora-booster-kit-rak3401)**
-- **[Lunpid LongWave MM8108](https://lunpid.com/products/usb-mm8108-halow)**
-
-Special thanks to **Lunpid** for providing LongWave MM8108 development hardware and 3D design data for V4.
 
 OpenMANET, Meshtastic and third-party hardware remain subject to their own licenses, documentation and support policies.
 
