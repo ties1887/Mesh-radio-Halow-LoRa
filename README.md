@@ -40,7 +40,7 @@ The current published prototypes are Raspberry Pi 4 based builds using a Seeed S
 | `C4-DualMesh` | Raspberry Pi CM4 + MM8108 HaLow + MT7916EUD | Research path for sub-1 GHz HaLow plus 2.4/5/6 GHz mesh |
 
 <details>
-<summary><strong>Build naming and release rule</strong></summary>
+<summary><strong>Build naming and release rule</strong> <em>— click to view</em></summary>
 
 <br>
 
@@ -79,7 +79,7 @@ A separate RAK WisMesh 1W Booster Starter Kit runs Meshtastic for LoRa, Bluetoot
 V2 and V3 keep the same Pi 4, Wio-WM6108 and Meshtastic architecture, but replace the integrated battery layout with a removable twist-lock battery. V3 improves the internal layout, sealing details and cooling path.
 
 <details>
-<summary><strong>Prototype component and power-flow reference</strong></summary>
+<summary><strong>Prototype component and power-flow reference</strong> <em>— click to view</em></summary>
 
 <br>
 
@@ -90,7 +90,7 @@ This is a prototype reference for component relationships and power flow. It com
 </details>
 
 <details>
-<summary><strong>Prototype wiring reference</strong></summary>
+<summary><strong>Prototype wiring reference</strong> <em>— click to view</em></summary>
 
 <br>
 
