@@ -4,7 +4,7 @@ Open-source 3D-printable radio enclosures for HaLow, MANET and LoRa experiments.
 
 > [!WARNING]
 > **Prototype CAD release, not a step-by-step build guide.**  
-> This repository contains the 3D models, printable files, CAD data, hardware references and prototype notes needed to build from. It is closer to a LEGO set without the manual than a finished product. Building it still requires experience with Li-ion power systems, soldering, RF hardware, 3D printing, tolerances, Raspberry Pi hardware and network configuration.
+> This repository contains the 3D models, printable files, CAD data, hardware references and prototype notes needed to build from.
 
 > I am a 21-year-old full-time student building this in my spare time.  
 > If this work helps you, support for parts, prototypes and testing is welcome: **https://ko-fi.com/ties1887**
