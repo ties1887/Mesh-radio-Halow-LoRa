@@ -37,7 +37,7 @@ The current published prototypes are Raspberry Pi 4 based builds using a Seeed S
 |---|---|---|
 | `P4-LongWave` | Raspberry Pi 4 + Lunpid/LongWave MM8108 USB HaLow | Planned Pi 4 USB HaLow build |
 | `C4-LongWave` | Raspberry Pi CM4 + Lunpid/LongWave MM8108 USB HaLow | Planned compact CM4 build |
-| `C5-DualMesh` | CM4/CM5 + HaLow + 2.4 GHz mesh radio | Research path for larger MANET-style builds |
+| `C4-DualMesh` | Raspberry Pi CM4 + MM8108 HaLow + MT7916EUD | Research path for sub-1 GHz HaLow plus 2.4/5/6 GHz mesh |
 
 See [Planned builds](./docs/PLANNED-BUILDS.md) for the future naming model.
 
