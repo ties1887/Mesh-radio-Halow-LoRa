@@ -1,10 +1,15 @@
-# Modular HaLow + LoRa Mesh Radio
+# Mesh Radio
 
-Open-source, 3D-printable hardware platform combining **OpenMANET Wi-Fi HaLow** and **Meshtastic LoRa** in one portable radio.
+Open-source 3D-printable radio enclosures for HaLow, MANET and LoRa experiments.
 
-> [!WARNING]
-> **Advanced beta prototype — not a plug-and-play build.**  
-> Building this project requires experience with Li-ion power systems, soldering, RF hardware, 3D printing, tolerances, Raspberry Pi hardware and network configuration.
+> [!NOTE]
+> **Prototype CAD release, not a step-by-step build guide.**  
+> This repository contains the 3D models, printable files, CAD data, hardware references and prototype notes needed to build from. It is closer to a LEGO set without the manual than a finished product. Building it still requires experience with Li-ion power systems, soldering, RF hardware, 3D printing, tolerances, Raspberry Pi hardware and network configuration.
+
+> [!TIP]
+> **Support this project**  
+> I am a **21-year-old full-time student** building this in my spare time. If this work helps you, donations help fund parts, prototypes and testing.  
+> **[Support me on Ko-fi](https://ko-fi.com/ties1887)**
 
 <p align="center">
   <img width="100%" alt="Mesh Radio V1, V2 and V3 prototypes" src="https://github.com/user-attachments/assets/62be839c-37e9-4689-bd2e-d46e8f429b7d" />
@@ -12,67 +17,92 @@ Open-source, 3D-printable hardware platform combining **OpenMANET Wi-Fi HaLow** 
 
 ## Overview
 
-This project combines two independent communication systems inside one modular enclosure:
+Mesh Radio is a mechanical design project for portable radio builds around:
 
-- **OpenMANET over Wi-Fi HaLow** for long-range IP networking.
-- **Meshtastic over LoRa** for low-bandwidth messaging and optional position sharing.
+- **Wi-Fi HaLow / MANET** for longer-range IP networking.
+- **Meshtastic LoRa** for low-bandwidth messaging and optional position sharing.
+- **Modular 3D-printed enclosures** with removable batteries, external antennas and serviceable internal layouts.
 
-The repository contains version-specific CAD files, printable files, hardware references, a shared bill of materials and prototype wiring information. It does **not** provide a finished commercial product or a complete step-by-step build guide.
+The current published prototypes are Raspberry Pi 4 based builds using a Seeed Studio Wio WM6108 HaLow module through a WM1302 Pi HAT style adapter, plus a separate RAK WisMesh / Meshtastic subsystem. Future builds will use named hardware targets instead of V-numbered prototypes.
 
-## Version overview
+## Current build
 
-| Version | Main hardware | Main change | Battery system | Status and available files |
-|---|---|---|---|---|
-| **[V1](./V1_5-5-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | First complete prototype and largest enclosure | Integrated 2S2P battery, USB-C charging module and rotary power switch. The original build has no twist-lock battery | Historical built prototype. 3MF, STEP and SolidWorks files. A later [twist-lock add-on](./V1_5-5-2026/Twist%20lock%20add%20on/) is included |
-| **[V2](./V2_30-5-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | More compact enclosure and first integrated removable twist-lock battery | First twist-lock battery version | Built prototype. 3MF, STL, STEP and SolidWorks files |
-| **[V3](./V3_18-6-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | Revised internal layout and improved cooling with a 70 × 70 × 3 mm copper heat spreader | Revised twist-lock and pogo-pin integration | Most complete Raspberry Pi 4 build. 3MF, STEP, SolidWorks and [build notes](./V3_18-6-2026/README%20BEFORE%20BUILD.md) |
-| **[V4](./V4_6-7-2026%20%28UNSTABLE%20-%20NOT%20TESTED%29/)** | Raspberry Pi Compute Module 4, Nano Base Board, LongWave MM8108 USB HaLow module and separate RAK Meshtastic system | Complete redesign around the smaller CM4 platform, USB HaLow hardware and additional module cooling | Further revised removable twist-lock battery system | **Unstable and not hardware-tested.** STEP files only |
+| Build | Hardware target | Status | Files |
+|---|---|---|---|
+| **[P4-Wio](./builds/P4-Wio/)** | Raspberry Pi 4 + WM1302 Pi HAT + Seeed Studio Wio WM6108 | First named build target; initial CAD files uploaded | 3MF, STEP, SolidWorks 2025 and images |
 
-> **Recommended starting point:** V3 is currently the most complete published build. V4 is an active development version and should not be treated as build-ready.
+## Planned builds
+
+| Build | Hardware target | Notes |
+|---|---|---|
+| `P4-LongWave` | Raspberry Pi 4 + Lunpid/LongWave MM8108 USB HaLow | Planned Pi 4 USB HaLow build |
+| `C4-LongWave` | Raspberry Pi CM4 + Lunpid/LongWave MM8108 USB HaLow | Planned compact CM4 build |
+| `C4-DualMesh` | Raspberry Pi CM4 + MM8108 HaLow + MT7916EUD | Research path for sub-1 GHz HaLow plus 2.4/5/6 GHz mesh |
+
+<details>
+<summary><strong>Build naming and release rule</strong> <em>— click to view</em></summary>
+
+<br>
+
+```text
+P4 = Raspberry Pi 4
+C4 = Raspberry Pi Compute Module 4
+Wio = Seeed Studio Wio WM6108 HaLow
+LongWave = Lunpid/LongWave MM8108 USB HaLow
+DualMesh = MM8108 HaLow plus MT7916EUD for 2.4/5/6 GHz mesh
+```
+
+A planned build should get its own folder when it has a selected hardware stack, CAD layout, printable/exported files and a short build README.
+
+</details>
+
+## Legacy prototypes
+
+| Prototype | Main hardware | Battery system | Status and files |
+|---|---|---|---|
+| **[V1](./legacy/V1_5-5-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | Integrated 2S2P battery, USB-C charging module, BMS, rotary power switch and 5 V buck converter. No original twist-lock battery; later twist-lock add-on included | First complete large prototype. 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
+| **[V2](./legacy/V2_30-5-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | First integrated removable twist-lock battery with pogo-pin connection | More compact built prototype. 3MF, STL, STEP, SolidWorks 2023 and SolidWorks 2025 |
+| **[V3](./legacy/V3_18-6-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | Revised removable twist-lock battery and pogo-pin integration | Most complete old Pi 4 prototype. 3MF, STEP, SolidWorks 2023, SolidWorks 2025 and build notes |
+
+V4 has been removed from this branch because that design is not ready to publish yet.
 
 ## System architecture
 
 ### V1 — integrated battery
 
-A Raspberry Pi 4 is the main computer and runs OpenMANET. A WM1302 Pi HAT is used as the mini-PCIe adapter for the Wio-WM6108 Wi-Fi HaLow module. Ethernet connects directly from the Raspberry Pi through the external M12-to-RJ45 connection, while the Pi provides local 2.4/5 GHz Wi-Fi.
+A Raspberry Pi 4 runs the HaLow/IP side. The WM1302 Pi HAT is used as the mini-PCIe adapter for the Wio-WM6108 Wi-Fi HaLow module. Ethernet exits through the external connector path, while the Pi can provide local 2.4/5 GHz Wi-Fi.
 
-A separate RAK WisMesh 1W Booster Starter Kit runs Meshtastic, providing LoRa, Bluetooth phone connectivity and support for the optional RAK12500 GNSS module.
+A separate RAK WisMesh 1W Booster Starter Kit runs Meshtastic for LoRa, Bluetooth phone connectivity and optional GNSS.
 
-V1 uses an integrated 2S2P battery pack with a USB-C charging module, BMS, rotary power switch and 5 V buck converter.
+### V2 and V3 — twist-lock battery
 
-### V2–V3 — twist-lock battery
-
-V2 and V3 use the same main Raspberry Pi, HaLow and Meshtastic architecture as V1. The integrated battery and charging arrangement is replaced by a removable twist-lock battery connected through pogo pins. V3 further revises the internal layout and cooling system.
-
-### V4 — Compute Module 4
-
-V4 replaces the Raspberry Pi 4, WM1302 HAT and Wio-WM6108 stack with a Compute Module 4, Nano Base Board and LongWave MM8108 USB HaLow module. The separate RAK Meshtastic subsystem and removable twist-lock battery concept are retained.
+V2 and V3 keep the same Pi 4, Wio-WM6108 and Meshtastic architecture, but replace the integrated battery layout with a removable twist-lock battery. V3 improves the internal layout, sealing details and cooling path.
 
 <details>
-<summary><strong>Prototype component and power-flow reference</strong></summary>
+<summary><strong>Prototype component and power-flow reference</strong> <em>— click to view</em></summary>
 
 <br>
 
 <img width="100%" alt="Prototype component and power-flow reference" src="https://github.com/user-attachments/assets/e70fefee-d2e0-40cd-ac72-c8f07b04be94" />
 
-This is a general prototype reference showing the intended component relationships and power flow. It combines concepts from different versions and is not a final wiring guide.
+This is a prototype reference for component relationships and power flow. It combines ideas from different versions and is not a final wiring guide.
 
 </details>
 
 <details>
-<summary><strong>Prototype wiring reference</strong></summary>
+<summary><strong>Prototype wiring reference</strong> <em>— click to view</em></summary>
 
 <br>
 
 <img width="100%" alt="Prototype wiring reference" src="https://github.com/user-attachments/assets/17428d43-cfc5-4c95-ac46-7cbe6af2e4fd" />
 
-This image documents prototype wiring and is not a universal wiring guide. Verify every connection against the selected version and exact modules being used.
+This image documents prototype wiring. Verify every connection against the exact version and modules you are building.
 
 </details>
 
 ## Bill of materials
 
-The shared BOM contains parts used across all versions. **No single version uses every listed component.** Check the V1–V4 columns before ordering.
+The shared BOM contains parts used across multiple prototypes. **No single version uses every listed component.** Check the relevant prototype/build before ordering.
 
 **[Open the complete BOM](https://docs.google.com/spreadsheets/d/1Nt8EjYsgWTId0Qjl1BAAxPci3bh1FSZ7VQxQRFxyHnk/edit?usp=sharing)**
 
@@ -80,56 +110,37 @@ Supplier links, prices and availability may change. Confirm dimensions, connecto
 
 ## Repository contents
 
-| Resource | Available files |
-|---|---|
-| **[V1](./V1_5-5-2026/)** | 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
-| **[V2](./V2_30-5-2026/)** | 3MF, STL, STEP, SolidWorks 2023 and SolidWorks 2025 |
-| **[V3](./V3_18-6-2026/)** | 3MF, STEP, SolidWorks 2023, SolidWorks 2025 and build notes |
-| **[V4](./V4_6-7-2026%20%28UNSTABLE%20-%20NOT%20TESTED%29/)** | STEP and SolidWorks 2025 only — unstable and not tested |
-| **[BOM](https://docs.google.com/spreadsheets/d/1Nt8EjYsgWTId0Qjl1BAAxPci3bh1FSZ7VQxQRFxyHnk/edit?usp=sharing)** | Shared component list for all versions |
-| **[Images](./images/)** | Project photos and reference images |
-| **[Standalone Lunpid enclosure](./Standalone%20Lunpid%20enclosure/)** | 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
+| Area | Folder / link | Contents |
+|---|---|---|
+| **Current builds** | [`builds/P4-Wio/`](./builds/P4-Wio/) | P4-Wio build README, images, 3MF, STEP and SolidWorks 2025 files |
+| **Legacy prototypes** | [`legacy/V1_5-5-2026/`](./legacy/V1_5-5-2026/) | V1 prototype files: 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
+| **Legacy prototypes** | [`legacy/V2_30-5-2026/`](./legacy/V2_30-5-2026/) | V2 prototype files: 3MF, STL, STEP, SolidWorks 2023 and SolidWorks 2025 |
+| **Legacy prototypes** | [`legacy/V3_18-6-2026/`](./legacy/V3_18-6-2026/) | V3 prototype files: 3MF, STEP, SolidWorks 2023, SolidWorks 2025 and build notes |
+| **Legacy assets** | [`legacy/Standalone-Lunpid-enclosure/`](./legacy/Standalone-Lunpid-enclosure/) | Standalone Lunpid enclosure: 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
+| **Shared images** | [`images/`](./images/) | Existing project photos and reference images used by the main README |
+| **BOM** | [Google Sheets BOM](https://docs.google.com/spreadsheets/d/1Nt8EjYsgWTId0Qjl1BAAxPci3bh1FSZ7VQxQRFxyHnk/edit?usp=sharing) | Shared prototype component list |
 
-Download the complete version folder before opening a SolidWorks assembly so referenced parts remain available.
-
-## Build status and safety
-
-This project is still experimental. Parts may require sanding, tolerance adjustment, rewiring, insulation, different screws or design changes. Compatibility between substitute components is not guaranteed.
-
-Before applying power:
-
-- verify battery chemistry, cell matching, BMS wiring, polarity and output voltage;
-- verify the buck-converter output before connecting the Raspberry Pi or RAK hardware;
-- insulate conductive shields, heat spreaders and exposed solder joints;
-- check screw lengths and internal clearances;
-- connect the correct antenna before transmitting;
-- use the correct frequency and legal transmit-power settings for your region.
-
-The enclosures should be treated as **water-resistant prototypes only**. They have no tested or certified IP rating.
-
-You build and operate this hardware at your own risk.
+Download the complete build or legacy folder before opening a SolidWorks assembly so referenced parts remain available.
 
 ## Contributing
 
-Questions, test results, issue reports, documentation corrections and design improvements are welcome.
+Questions, measurements, test results, issue reports, documentation corrections and design improvements are welcome.
 
 - **[Open an issue](https://github.com/ties1887/Mesh-radio-Halow-LoRa/issues)**
 - **[Create a pull request](https://github.com/ties1887/Mesh-radio-Halow-LoRa/pulls)**
+- **Support the project:** https://ko-fi.com/ties1887
+- **Contact:** Discord `ties1887`
 
-## Software and hardware credits
+## Supporters
 
-This repository focuses on mechanical design and hardware integration. Software installation and support are provided by the upstream projects:
+## Software
+
+Software installation and support are provided by the upstream projects:
 
 - **[OpenMANET documentation](https://openmanet.github.io/docs/)**
 - **[OpenMANET firmware](https://github.com/OpenMANET/firmware)**
 - **[Meshtastic documentation](https://meshtastic.org/docs/)**
 - **[Meshtastic firmware](https://github.com/meshtastic/firmware)**
-
-Hardware used in the project includes:
-
-- **[Raspberry Pi](https://www.raspberrypi.com/)**
-- **[Seeed Studio Wio-WM6108](https://www.seeedstudio.com/Wio-WM6108-Wi-Fi-HaLow-mini-PCIe-Module-p-6394.html)**
-- **[RAKwireless WisMesh 1W Booster Starter Kit](https://store.rakwireless.com/products/meshtastic-1w-lora-booster-kit-rak3401)**
 
 OpenMANET, Meshtastic and third-party hardware remain subject to their own licenses, documentation and support policies.
 
