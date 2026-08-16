@@ -3,8 +3,8 @@
 Open-source 3D-printable radio enclosures for HaLow, MANET and LoRa experiments.
 
 > [!NOTE]
-> **Prototype CAD release, not a step-by-step build guide.**  
-> This repository contains the 3D models, printable files, CAD data, hardware references and prototype notes needed to build from.
+> **Open-source DIY hardware/CAD release, not a step-by-step build guide.**
+> This repository contains 3D models, printable files, CAD data, hardware references and build notes. Builders should still verify fit, wiring, cooling, polarity, antenna mounting and power setup for their own hardware.
 
 > [!TIP]
 > **Support this project**  
@@ -23,13 +23,13 @@ Mesh Radio is a mechanical design project for portable radio builds around:
 - **Meshtastic LoRa** for low-bandwidth messaging and optional position sharing.
 - **Modular 3D-printed enclosures** with removable batteries, external antennas and serviceable internal layouts.
 
-The current published prototypes are Raspberry Pi 4 based builds using a Seeed Studio Wio WM6108 HaLow module through a WM1302 Pi HAT style adapter, plus a separate RAK WisMesh / Meshtastic subsystem. Future builds will use named hardware targets instead of V-numbered prototypes.
+The current complete build is **P4-Wio**, a Raspberry Pi 4 based HaLow-only radio module using a Seeed Studio Wio WM6108 through a WM1302 Pi HAT style adapter. Older V-numbered designs remain available as legacy prototype references.
 
 ## Current build
 
 | Build | Hardware target | Status | Files |
 |---|---|---|---|
-| **[P4-Wio](./builds/P4-Wio/)** | Raspberry Pi 4 + WM1302 Pi HAT + Seeed Studio Wio WM6108 | First named build target; initial CAD files uploaded | 3MF, STEP, SolidWorks 2025 and images |
+| **[P4-Wio](./builds/P4-Wio/)** | Raspberry Pi 4 + WM1302 Pi HAT + Seeed Studio Wio WM6108 | Complete working HaLow-only build | 3MF, STEP, SolidWorks 2025 and images |
 
 ## Planned builds
 
@@ -132,6 +132,8 @@ Questions, measurements, test results, issue reports, documentation corrections 
 - **Contact:** Discord `ties1887`
 
 ## Supporters
+
+Thank you to everyone who supports the project with feedback, testing, tips, donations or useful hardware/design suggestions.
 
 ## Software
 

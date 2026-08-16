@@ -1,10 +1,10 @@
 # P4-Wio
 
-Raspberry Pi 4 based HaLow-only radio enclosure using the Seeed Studio Wio WM6108 module.
+Complete working Raspberry Pi 4 based HaLow-only radio enclosure using the Seeed Studio Wio WM6108 module.
 
 ## Status
 
-First named build target. Initial 3MF, STEP and SolidWorks 2025 files are included.
+First complete named build target. The physical build has been assembled and works; 3MF, STEP, SolidWorks 2025 files and images are included.
 
 ## Images
 
@@ -77,4 +77,4 @@ This is a **HaLow-only** build. It does not include the separate LoRa/Meshtastic
 - Download the complete folder before opening the SolidWorks assembly.
 - The STEP files are provided for inspection, remixing and non-SolidWorks workflows.
 - The `STL` folder is reserved for later individual printable exports.
-- This build is still prototype hardware. Check tolerances, wiring, polarity, cooling and antenna fit before applying power.
+- This is an open-source DIY hardware build. Verify tolerances, wiring, polarity, cooling, antenna fit and power setup for your own parts before applying power.
