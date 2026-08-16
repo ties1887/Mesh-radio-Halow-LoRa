@@ -2,20 +2,14 @@
 
 Open-source 3D-printable radio enclosures for HaLow, MANET and LoRa experiments.
 
-> [!WARNING]
+> [!NOTE]
 > **Prototype CAD release, not a step-by-step build guide.**  
-> This repository contains the 3D models, printable files, CAD data, hardware references and prototype notes needed to build from.
+> This repository contains the 3D models, printable files, CAD data, hardware references and prototype notes needed to build from. It is closer to a LEGO set without the manual than a finished product. Building it still requires experience with Li-ion power systems, soldering, RF hardware, 3D printing, tolerances, Raspberry Pi hardware and network configuration.
 
-<div align="center">
-
-## Support this project
-
-I am a **21-year-old full-time student** building this in my spare time.  
-If this work helps you, donations help fund parts, prototypes and testing.
-
-### [Support me on Ko-fi](https://ko-fi.com/ties1887)
-
-</div>
+> [!TIP]
+> **Support this project**  
+> I am a **21-year-old full-time student** building this in my spare time. If this work helps you, donations help fund parts, prototypes and testing.  
+> **[Support me on Ko-fi](https://ko-fi.com/ties1887)**
 
 <p align="center">
   <img width="100%" alt="Mesh Radio V1, V2 and V3 prototypes" src="https://github.com/user-attachments/assets/62be839c-37e9-4689-bd2e-d46e8f429b7d" />
