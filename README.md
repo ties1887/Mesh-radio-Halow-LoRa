@@ -29,7 +29,7 @@ The current published prototypes are Raspberry Pi 4 based builds using a Seeed S
 
 | Build | Hardware target | Status | Files |
 |---|---|---|---|
-| **[P4-Wio](./builds/P4-Wio/)** | Raspberry Pi 4 + WM1302 Pi HAT + Seeed Studio Wio WM6108 | First named build target; CAD files to be uploaded | 3MF, STL, STEP and SolidWorks folders prepared |
+| **[P4-Wio](./builds/P4-Wio/)** | Raspberry Pi 4 + WM1302 Pi HAT + Seeed Studio Wio WM6108 | First named build target; initial CAD files uploaded | 3MF, STEP, SolidWorks 2025 and images |
 
 ## Planned builds
 
@@ -39,7 +39,22 @@ The current published prototypes are Raspberry Pi 4 based builds using a Seeed S
 | `C4-LongWave` | Raspberry Pi CM4 + Lunpid/LongWave MM8108 USB HaLow | Planned compact CM4 build |
 | `C4-DualMesh` | Raspberry Pi CM4 + MM8108 HaLow + MT7916EUD | Research path for sub-1 GHz HaLow plus 2.4/5/6 GHz mesh |
 
-See [Planned builds](./docs/PLANNED-BUILDS.md) for the future naming model.
+<details>
+<summary><strong>Build naming and release rule</strong></summary>
+
+<br>
+
+```text
+P4 = Raspberry Pi 4
+C4 = Raspberry Pi Compute Module 4
+Wio = Seeed Studio Wio WM6108 HaLow
+LongWave = Lunpid/LongWave MM8108 USB HaLow
+DualMesh = MM8108 HaLow plus MT7916EUD for 2.4/5/6 GHz mesh
+```
+
+A planned build should get its own folder when it has a selected hardware stack, CAD layout, printable/exported files and a short build README.
+
+</details>
 
 ## Legacy prototypes
 
@@ -95,27 +110,26 @@ Supplier links, prices and availability may change. Confirm dimensions, connecto
 
 ## Repository contents
 
-| Resource | Available files |
-|---|---|
-| **[P4-Wio](./builds/P4-Wio/)** | Prepared folders for 3MF, STL, STEP, SolidWorks 2025 and images |
-| **[V1](./legacy/V1_5-5-2026/)** | 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
-| **[V2](./legacy/V2_30-5-2026/)** | 3MF, STL, STEP, SolidWorks 2023 and SolidWorks 2025 |
-| **[V3](./legacy/V3_18-6-2026/)** | 3MF, STEP, SolidWorks 2023, SolidWorks 2025 and build notes |
-| **[Standalone Lunpid enclosure](./legacy/Standalone-Lunpid-enclosure/)** | 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
-| **[Images](./images/)** | Existing project photos and reference images |
-| **[BOM](https://docs.google.com/spreadsheets/d/1Nt8EjYsgWTId0Qjl1BAAxPci3bh1FSZ7VQxQRFxyHnk/edit?usp=sharing)** | Shared component list |
+| Area | Folder / link | Contents |
+|---|---|---|
+| **Current builds** | [`builds/P4-Wio/`](./builds/P4-Wio/) | P4-Wio build README, images, 3MF, STEP and SolidWorks 2025 files |
+| **Legacy prototypes** | [`legacy/V1_5-5-2026/`](./legacy/V1_5-5-2026/) | V1 prototype files: 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
+| **Legacy prototypes** | [`legacy/V2_30-5-2026/`](./legacy/V2_30-5-2026/) | V2 prototype files: 3MF, STL, STEP, SolidWorks 2023 and SolidWorks 2025 |
+| **Legacy prototypes** | [`legacy/V3_18-6-2026/`](./legacy/V3_18-6-2026/) | V3 prototype files: 3MF, STEP, SolidWorks 2023, SolidWorks 2025 and build notes |
+| **Legacy assets** | [`legacy/Standalone-Lunpid-enclosure/`](./legacy/Standalone-Lunpid-enclosure/) | Standalone Lunpid enclosure: 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
+| **Shared images** | [`images/`](./images/) | Existing project photos and reference images used by the main README |
+| **BOM** | [Google Sheets BOM](https://docs.google.com/spreadsheets/d/1Nt8EjYsgWTId0Qjl1BAAxPci3bh1FSZ7VQxQRFxyHnk/edit?usp=sharing) | Shared prototype component list |
 
-Download the complete folder before opening a SolidWorks assembly so referenced parts remain available.
+Download the complete build or legacy folder before opening a SolidWorks assembly so referenced parts remain available.
 
 ## Contributing
 
-Questions, test results, issue reports, documentation corrections and design improvements are welcome.
+Questions, measurements, test results, issue reports, documentation corrections and design improvements are welcome.
 
 - **[Open an issue](https://github.com/ties1887/Mesh-radio-Halow-LoRa/issues)**
 - **[Create a pull request](https://github.com/ties1887/Mesh-radio-Halow-LoRa/pulls)**
 - **Support the project:** https://ko-fi.com/ties1887
-
-For direct questions: Discord `ties1887`.
+- **Contact:** Discord `ties1887`
 
 ## Supporters
 
