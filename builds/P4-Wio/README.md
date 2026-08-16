@@ -6,6 +6,33 @@ Raspberry Pi 4 based HaLow-only radio enclosure using the Seeed Studio Wio WM610
 
 First named build target. Initial 3MF, STEP and SolidWorks 2025 files are included.
 
+## Images
+
+<img width="100%" alt="P4-Wio product render" src="./images/p4-wio-product-render.png">
+
+<table>
+  <tr>
+    <td width="50%">
+      <img width="100%" alt="P4-Wio exploded assembly view" src="./images/p4-wio-exploded-view.png"><br>
+      <sub>Exploded assembly view.</sub>
+    </td>
+    <td width="50%">
+      <img width="100%" alt="P4-Wio front cooling side" src="./images/p4-wio-front-cooling-view.png"><br>
+      <sub>Front cooling side.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img width="100%" alt="P4-Wio rear heatsink side" src="./images/p4-wio-rear-heatsink-view.png"><br>
+      <sub>Rear heatsink side.</sub>
+    </td>
+    <td width="50%">
+      <img width="100%" alt="P4-Wio removable battery module" src="./images/p4-wio-battery-module-view.png"><br>
+      <sub>Removable battery module view.</sub>
+    </td>
+  </tr>
+</table>
+
 ## Hardware target
 
 | Part | Role |
