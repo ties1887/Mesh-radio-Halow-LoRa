@@ -2,6 +2,16 @@
 
 First complete large prototype.
 
+## Visual Overview
+
+![](./images/v1-solidworks-screenshot-1.png)
+
+![](./images/v1-solidworks-screenshot-2.png)
+
+![](./images/v1-solidworks-screenshot-3.png)
+
+![](./images/v1-solidworks-screenshot-4.png)
+
 ## Hardware
 
 | Part | Notes |
