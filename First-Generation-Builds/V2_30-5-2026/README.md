@@ -2,11 +2,15 @@
 
 More compact Pi 4/Wio prototype with the first integrated removable twist-lock battery.
 
-## Visual overview
+## Visual Overview AI Render
 
-![V2 AI render overview](./images/v2-ai-render-overview.png)
+![](./images/v2-ai-render-overview.png)
 
-<sub>AI render visualizing the V2 design.</sub>
+![](./images/v2-solidworks-screenshot-1.png)
+
+![](./images/v2-solidworks-screenshot-2.png)
+
+![](./images/v2-solidworks-screenshot-3.png)
 
 ## Hardware
 
