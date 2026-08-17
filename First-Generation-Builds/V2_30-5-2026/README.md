@@ -10,7 +10,7 @@ More compact Pi 4/Wio prototype with the first integrated removable twist-lock b
 |---|---|
 | ![V2 front render](./images/v2-front-render.png) | ![V2 top render](./images/v2-top-render.png) |
 
-| Twist-lock battery module |
+| Twist-lock battery-side |
 |---|
 | ![V2 battery module render](./images/v2-battery-module-render.png) |
 
