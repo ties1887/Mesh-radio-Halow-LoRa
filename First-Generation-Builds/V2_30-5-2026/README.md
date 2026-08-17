@@ -1,6 +1,16 @@
-# Legacy V2
+# First Generation V2
 
 More compact Pi 4/Wio prototype with the first integrated removable twist-lock battery.
+
+## Visual Overview AI Render
+
+![](./images/v2-ai-render-overview.png)
+
+![](./images/v2-solidworks-screenshot-1.png)
+
+![](./images/v2-solidworks-screenshot-2.png)
+
+![](./images/v2-solidworks-screenshot-3.png)
 
 ## Hardware
 
@@ -10,9 +20,6 @@ More compact Pi 4/Wio prototype with the first integrated removable twist-lock b
 | WM1302 Pi HAT | Mini-PCIe adapter path |
 | Seeed Studio Wio WM6108 | Wi-Fi HaLow module |
 | RAK WisMesh 1W kit | Separate Meshtastic / LoRa subsystem |
-| 5 V buck converter | Main Pi/radio power rail |
-| Removable twist-lock battery | First integrated twist-lock version |
-| Pogo-pin connection | Battery-to-radio electrical connection |
 
 ## Battery
 

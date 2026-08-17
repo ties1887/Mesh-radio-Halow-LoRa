@@ -3,8 +3,8 @@
 Open-source 3D-printable radio enclosures for HaLow, MANET and LoRa experiments.
 
 > [!NOTE]
-> **Prototype CAD release, not a step-by-step build guide.**  
-> This repository contains the 3D models, printable files, CAD data, hardware references and prototype notes needed to build from.
+> **Open-source DIY hardware/CAD release, not a step-by-step build guide.**
+> This repository contains 3D models, printable files, CAD data, hardware references and build notes. Builders should still verify fit, wiring, cooling, polarity, antenna mounting and power setup for their own hardware.
 
 > [!TIP]
 > **Support this project**  
@@ -23,13 +23,13 @@ Mesh Radio is a mechanical design project for portable radio builds around:
 - **Meshtastic LoRa** for low-bandwidth messaging and optional position sharing.
 - **Modular 3D-printed enclosures** with removable batteries, external antennas and serviceable internal layouts.
 
-The current published prototypes are Raspberry Pi 4 based builds using a Seeed Studio Wio WM6108 HaLow module through a WM1302 Pi HAT style adapter, plus a separate RAK WisMesh / Meshtastic subsystem. Future builds will use named hardware targets instead of V-numbered prototypes.
+The current complete build is **P4-Wio**, a Raspberry Pi 4 based HaLow-only radio module using a Seeed Studio Wio WM6108 through a WM1302 Pi HAT style adapter. V1, V2 and V3 remain available as the first generation build family.
 
 ## Current build
 
 | Build | Hardware target | Status | Files |
 |---|---|---|---|
-| **[P4-Wio](./builds/P4-Wio/)** | Raspberry Pi 4 + WM1302 Pi HAT + Seeed Studio Wio WM6108 | First named build target; initial CAD files uploaded | 3MF, STEP, SolidWorks 2025 and images |
+| **[P4-Wio](./builds/P4-Wio/)** | Raspberry Pi 4 + WM1302 Pi HAT + Seeed Studio Wio WM6108 | Complete working HaLow-only build | 3MF, STEP, SolidWorks 2025 and images |
 
 ## Planned builds
 
@@ -56,13 +56,15 @@ A planned build should get its own folder when it has a selected hardware stack,
 
 </details>
 
-## Legacy prototypes
+## First Generation Builds
 
-| Prototype | Main hardware | Battery system | Status and files |
-|---|---|---|---|
-| **[V1](./legacy/V1_5-5-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | Integrated 2S2P battery, USB-C charging module, BMS, rotary power switch and 5 V buck converter. No original twist-lock battery; later twist-lock add-on included | First complete large prototype. 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
-| **[V2](./legacy/V2_30-5-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | First integrated removable twist-lock battery with pogo-pin connection | More compact built prototype. 3MF, STL, STEP, SolidWorks 2023 and SolidWorks 2025 |
-| **[V3](./legacy/V3_18-6-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | Revised removable twist-lock battery and pogo-pin integration | Most complete old Pi 4 prototype. 3MF, STEP, SolidWorks 2023, SolidWorks 2025 and build notes |
+V1, V2 and V3 are the first generation build family.
+
+| Prototype | Main hardware | Status and files |
+|---|---|---|
+| **[V1](./First-Generation-Builds/V1_5-5-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | First complete large prototype. 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
+| **[V2](./First-Generation-Builds/V2_30-5-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | More compact built prototype. 3MF, STL, STEP, SolidWorks 2023 and SolidWorks 2025 |
+| **[V3](./First-Generation-Builds/V3_18-6-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | Most complete old Pi 4 prototype. 3MF, STEP, SolidWorks 2023, SolidWorks 2025 and build notes |
 
 V4 has been removed from this branch because that design is not ready to publish yet.
 
@@ -113,14 +115,14 @@ Supplier links, prices and availability may change. Confirm dimensions, connecto
 | Area | Folder / link | Contents |
 |---|---|---|
 | **Current builds** | [`builds/P4-Wio/`](./builds/P4-Wio/) | P4-Wio build README, images, 3MF, STEP and SolidWorks 2025 files |
-| **Legacy prototypes** | [`legacy/V1_5-5-2026/`](./legacy/V1_5-5-2026/) | V1 prototype files: 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
-| **Legacy prototypes** | [`legacy/V2_30-5-2026/`](./legacy/V2_30-5-2026/) | V2 prototype files: 3MF, STL, STEP, SolidWorks 2023 and SolidWorks 2025 |
-| **Legacy prototypes** | [`legacy/V3_18-6-2026/`](./legacy/V3_18-6-2026/) | V3 prototype files: 3MF, STEP, SolidWorks 2023, SolidWorks 2025 and build notes |
-| **Legacy assets** | [`legacy/Standalone-Lunpid-enclosure/`](./legacy/Standalone-Lunpid-enclosure/) | Standalone Lunpid enclosure: 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
+| **First generation builds** | [`First-Generation-Builds/V1_5-5-2026/`](./First-Generation-Builds/V1_5-5-2026/) | V1 prototype files: 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
+| **First generation builds** | [`First-Generation-Builds/V2_30-5-2026/`](./First-Generation-Builds/V2_30-5-2026/) | V2 prototype files: 3MF, STL, STEP, SolidWorks 2023 and SolidWorks 2025 |
+| **First generation builds** | [`First-Generation-Builds/V3_18-6-2026/`](./First-Generation-Builds/V3_18-6-2026/) | V3 prototype files: 3MF, STEP, SolidWorks 2023, SolidWorks 2025 and build notes |
+| **Standalone assets** | [`First-Generation-Builds/Standalone-Lunpid-enclosure/`](./First-Generation-Builds/Standalone-Lunpid-enclosure/) | Standalone Lunpid enclosure: 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
 | **Shared images** | [`images/`](./images/) | Existing project photos and reference images used by the main README |
 | **BOM** | [Google Sheets BOM](https://docs.google.com/spreadsheets/d/1Nt8EjYsgWTId0Qjl1BAAxPci3bh1FSZ7VQxQRFxyHnk/edit?usp=sharing) | Shared prototype component list |
 
-Download the complete build or legacy folder before opening a SolidWorks assembly so referenced parts remain available.
+Download the complete build or first generation build folder before opening a SolidWorks assembly so referenced parts remain available.
 
 ## Contributing
 
@@ -132,6 +134,8 @@ Questions, measurements, test results, issue reports, documentation corrections 
 - **Contact:** Discord `ties1887`
 
 ## Supporters
+
+Thank you to everyone who supports the project with feedback, testing, tips, donations or useful hardware/design suggestions.
 
 ## Software
 
@@ -146,4 +150,8 @@ OpenMANET, Meshtastic and third-party hardware remain subject to their own licen
 
 ## License
 
-This repository is released under the **[MIT License](./LICENSE)**.
+This repository is released under the **[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](./LICENSE)** (**CC BY-NC-SA 4.0**).
+
+You may copy, build, modify and share the designs for personal, educational and non-commercial community use. You may not sell these designs, sell printed parts based on these designs, or use them commercially without written permission from the author.
+
+Private modifications are allowed and do not need to be uploaded or published. If you share modified files publicly, they must stay under the same non-commercial share-alike license.

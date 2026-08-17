@@ -1,6 +1,16 @@
-# Legacy V3
+# First Generation V3
 
 Most complete old Raspberry Pi 4 prototype.
+
+## Visual Overview AI Render
+
+![](./images/v3-assembly-overview.png)
+
+![](./images/v3-solidworks-screenshot-1.png)
+
+![](./images/v3-solidworks-screenshot-2.png)
+
+![](./images/v3-solidworks-screenshot-3.png)
 
 ## Hardware
 
@@ -10,15 +20,10 @@ Most complete old Raspberry Pi 4 prototype.
 | WM1302 Pi HAT | Mini-PCIe adapter path |
 | Seeed Studio Wio WM6108 | Wi-Fi HaLow module |
 | RAK WisMesh 1W kit | Separate Meshtastic / LoRa subsystem |
-| 5 V buck converter | Main Pi/radio power rail |
-| Removable twist-lock battery | Revised twist-lock layout |
-| Pogo-pin connection | Revised battery-to-radio connection |
-| 70 × 70 × 3 mm copper heat spreader | Intended rear cooling path |
-| Rubber cord / O-ring seal grooves | Prototype water-resistant sealing concept |
 
 ## Battery
 
-Revised removable twist-lock battery system with pogo-pin integration.
+Revised removable twist-lock battery system.
 
 ## Files
 
