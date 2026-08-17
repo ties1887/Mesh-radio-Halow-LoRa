@@ -1,4 +1,4 @@
-# Legacy V3
+# First Generation V3
 
 Most complete old Raspberry Pi 4 prototype.
 

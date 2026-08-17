@@ -1,6 +1,6 @@
-# Legacy V1
+# First Generation V2
 
-First complete large prototype.
+More compact Pi 4/Wio prototype with the first integrated removable twist-lock battery.
 
 ## Hardware
 
@@ -10,18 +10,18 @@ First complete large prototype.
 | WM1302 Pi HAT | Mini-PCIe adapter path |
 | Seeed Studio Wio WM6108 | Wi-Fi HaLow module |
 | RAK WisMesh 1W kit | Separate Meshtastic / LoRa subsystem |
-| 2S2P battery pack | Integrated battery layout |
-| USB-C charging module + BMS | Integrated charging/power protection path |
-| Rotary power switch | Main power control |
 | 5 V buck converter | Main Pi/radio power rail |
+| Removable twist-lock battery | First integrated twist-lock version |
+| Pogo-pin connection | Battery-to-radio electrical connection |
 
 ## Battery
 
-Integrated battery. The original V1 build does **not** use the twist-lock battery system. A later twist-lock add-on is included in [`Twist lock add on`](./Twist%20lock%20add%20on/).
+Removable twist-lock battery system.
 
 ## Files
 
 - `3MF/` print-ready files
+- `STL/` individual printable parts
 - `step/` STEP exports
 - `Solidworks 2023/` native files
 - `Solidworks 2025/` native files
