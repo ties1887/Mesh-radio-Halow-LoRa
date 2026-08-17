@@ -2,6 +2,18 @@
 
 Most complete old Raspberry Pi 4 prototype.
 
+## Visual overview
+
+![V3 assembly overview](./images/v3-assembly-overview.png)
+
+| Front / side render | Rear heatsink render |
+|---|---|
+| ![V3 front render](./images/v3-front-render.png) | ![V3 rear heatsink render](./images/v3-rear-heatsink-render.png) |
+
+| Twist-lock battery module |
+|---|
+| ![V3 battery module render](./images/v3-battery-module-render.png) |
+
 ## Hardware
 
 | Part | Notes |
