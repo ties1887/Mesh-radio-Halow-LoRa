@@ -10,10 +10,6 @@ First complete large prototype.
 | WM1302 Pi HAT | Mini-PCIe adapter path |
 | Seeed Studio Wio WM6108 | Wi-Fi HaLow module |
 | RAK WisMesh 1W kit | Separate Meshtastic / LoRa subsystem |
-| 2S2P battery pack | Integrated battery layout |
-| USB-C charging module + BMS | Integrated charging/power protection path |
-| Rotary power switch | Main power control |
-| 5 V buck converter | Main Pi/radio power rail |
 
 ## Battery
 

@@ -40,10 +40,6 @@ First complete named build target. The physical build has been assembled and wor
 | Raspberry Pi 4 | Main computer for HaLow/IP networking |
 | WM1302 Pi HAT style adapter | Mini-PCIe adapter path for the HaLow module |
 | Seeed Studio Wio WM6108 | Wi-Fi HaLow radio module |
-| Pololu 5 V buck regulator | Main Pi/radio power rail |
-| Removable battery system | Magnetic/twist-lock style battery interface |
-| External 70 × 70 mm heatsink | Rear heat spreader/cooling path |
-| External antenna | HaLow antenna connection |
 
 This is a **HaLow-only** build. It does not include the separate LoRa/Meshtastic subsystem from the older V1–V3 prototypes.
 

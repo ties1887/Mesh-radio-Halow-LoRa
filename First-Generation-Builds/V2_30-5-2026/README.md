@@ -4,15 +4,9 @@ More compact Pi 4/Wio prototype with the first integrated removable twist-lock b
 
 ## Visual overview
 
-![V2 assembly overview](./images/v2-assembly-overview.png)
+![V2 AI render overview](./images/v2-ai-render-overview.png)
 
-| Front render | Top render |
-|---|---|
-| ![V2 front render](./images/v2-front-render.png) | ![V2 top render](./images/v2-top-render.png) |
-
-| Twist-lock battery-side |
-|---|
-| ![V2 battery module render](./images/v2-battery-module-render.png) |
+<sub>AI render visualizing the V2 design.</sub>
 
 ## Hardware
 
@@ -22,9 +16,6 @@ More compact Pi 4/Wio prototype with the first integrated removable twist-lock b
 | WM1302 Pi HAT | Mini-PCIe adapter path |
 | Seeed Studio Wio WM6108 | Wi-Fi HaLow module |
 | RAK WisMesh 1W kit | Separate Meshtastic / LoRa subsystem |
-| 5 V buck converter | Main Pi/radio power rail |
-| Removable twist-lock battery | First integrated twist-lock version |
-| Pogo-pin connection | Battery-to-radio electrical connection |
 
 ## Battery
 

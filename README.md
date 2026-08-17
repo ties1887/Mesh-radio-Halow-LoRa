@@ -60,11 +60,11 @@ A planned build should get its own folder when it has a selected hardware stack,
 
 V1, V2 and V3 are the first generation build family.
 
-| Prototype | Main hardware | Battery system | Status and files |
-|---|---|---|---|
-| **[V1](./First-Generation-Builds/V1_5-5-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | Integrated 2S2P battery, USB-C charging module, BMS, rotary power switch and 5 V buck converter. No original twist-lock battery; later twist-lock add-on included | First complete large prototype. 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
-| **[V2](./First-Generation-Builds/V2_30-5-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | First integrated removable twist-lock battery with pogo-pin connection | More compact built prototype. 3MF, STL, STEP, SolidWorks 2023 and SolidWorks 2025 |
-| **[V3](./First-Generation-Builds/V3_18-6-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | Revised removable twist-lock battery and pogo-pin integration | Most complete old Pi 4 prototype. 3MF, STEP, SolidWorks 2023, SolidWorks 2025 and build notes |
+| Prototype | Main hardware | Status and files |
+|---|---|---|
+| **[V1](./First-Generation-Builds/V1_5-5-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | First complete large prototype. 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
+| **[V2](./First-Generation-Builds/V2_30-5-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | More compact built prototype. 3MF, STL, STEP, SolidWorks 2023 and SolidWorks 2025 |
+| **[V3](./First-Generation-Builds/V3_18-6-2026/)** | Raspberry Pi 4, WM1302 Pi HAT, Wio-WM6108 and RAK WisMesh 1W kit | Most complete old Pi 4 prototype. 3MF, STEP, SolidWorks 2023, SolidWorks 2025 and build notes |
 
 V4 has been removed from this branch because that design is not ready to publish yet.
 

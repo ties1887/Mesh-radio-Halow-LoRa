@@ -4,15 +4,17 @@ Most complete old Raspberry Pi 4 prototype.
 
 ## Visual overview
 
-![V3 assembly overview](./images/v3-assembly-overview.png)
+![V3 AI render overview](./images/v3-assembly-overview.png)
 
-| Front / side render | Rear heatsink render |
+<sub>AI render visualizing the V3 design.</sub>
+
+| SolidWorks front / side screenshot | SolidWorks rear heatsink screenshot |
 |---|---|
-| ![V3 front render](./images/v3-front-render.png) | ![V3 rear heatsink render](./images/v3-rear-heatsink-render.png) |
+| ![V3 SolidWorks front render](./images/v3-front-render.png) | ![V3 SolidWorks rear heatsink render](./images/v3-rear-heatsink-render.png) |
 
-| Twist-lock battery module |
+| SolidWorks twist-lock battery module screenshot |
 |---|
-| ![V3 battery module render](./images/v3-battery-module-render.png) |
+| ![V3 SolidWorks battery module render](./images/v3-battery-module-render.png) |
 
 ## Hardware
 
@@ -22,15 +24,10 @@ Most complete old Raspberry Pi 4 prototype.
 | WM1302 Pi HAT | Mini-PCIe adapter path |
 | Seeed Studio Wio WM6108 | Wi-Fi HaLow module |
 | RAK WisMesh 1W kit | Separate Meshtastic / LoRa subsystem |
-| 5 V buck converter | Main Pi/radio power rail |
-| Removable twist-lock battery | Revised twist-lock layout |
-| Pogo-pin connection | Revised battery-to-radio connection |
-| 70 × 70 × 3 mm copper heat spreader | Intended rear cooling path |
-| Rubber cord / O-ring seal grooves | Prototype water-resistant sealing concept |
 
 ## Battery
 
-Revised removable twist-lock battery system with pogo-pin integration.
+Revised removable twist-lock battery system.
 
 ## Files
 
