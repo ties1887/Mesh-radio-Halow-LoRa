@@ -150,4 +150,6 @@ OpenMANET, Meshtastic and third-party hardware remain subject to their own licen
 
 ## License
 
-This repository is released under the **[MIT License](./LICENSE)**.
+This repository is released under the **[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](./LICENSE)** (**CC BY-NC-SA 4.0**).
+
+You may copy, build, modify and share the designs for personal, educational and non-commercial community use. You may not sell these designs, sell printed parts based on these designs, or use them commercially without written permission from the author.
