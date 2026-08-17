@@ -2,19 +2,15 @@
 
 Most complete old Raspberry Pi 4 prototype.
 
-## Visual overview
+## Visual Overview AI Render
 
-![V3 AI render overview](./images/v3-assembly-overview.png)
+![](./images/v3-assembly-overview.png)
 
-<sub>AI render visualizing the V3 design.</sub>
+![](./images/v3-solidworks-screenshot-1.png)
 
-| SolidWorks front / side screenshot | SolidWorks rear heatsink screenshot |
-|---|---|
-| ![V3 SolidWorks front render](./images/v3-front-render.png) | ![V3 SolidWorks rear heatsink render](./images/v3-rear-heatsink-render.png) |
+![](./images/v3-solidworks-screenshot-2.png)
 
-| SolidWorks twist-lock battery module screenshot |
-|---|
-| ![V3 SolidWorks battery module render](./images/v3-battery-module-render.png) |
+![](./images/v3-solidworks-screenshot-3.png)
 
 ## Hardware
 
