@@ -36,6 +36,9 @@ This repository contains CAD files, printable files, hardware references and sho
 
 V1, V2 and V3 are still valid first generation builds. They may need more fitting or manual finishing, but they have been built, printed and used.
 
+> [!CAUTION]
+> **HaLow and LoRa together:** early tests with Wi-Fi HaLow and LoRa/Meshtastic running at the same time did not work well. The radios appeared to interfere with each other, even when using different channels. These tests were limited, so this is not a final RF conclusion, but builders should not expect HaLow and LoRa to work perfectly together without extra testing or design changes. Treat LoRa as a fallback/secondary system unless you have verified your own setup.
+
 ## Standalone battery pack
 
 The **[Twist-Lock Battery Pack](./Twist-Lock-Battery-Pack/)** is a separate design, not part of only one build.
