@@ -23,13 +23,13 @@ Mesh Radio is a mechanical design project for portable radio builds around:
 - **Meshtastic LoRa** for low-bandwidth messaging and optional position sharing.
 - **Modular 3D-printed enclosures** with removable batteries, external antennas and serviceable internal layouts.
 
-The current complete build is **P4-Wio**, a Raspberry Pi 4 based HaLow-only radio module using a Seeed Studio Wio WM6108 through a WM1302 Pi HAT style adapter. V1, V2 and V3 remain available as the first generation build family.
+The current second generation build is **P4-Wio**, a Raspberry Pi 4 based HaLow-only radio module using a Seeed Studio Wio WM6108 through a WM1302 Pi HAT style adapter. V1, V2 and V3 remain available as the first generation build family.
 
-## Current build
+## Second Generation Builds
 
 | Build | Hardware target | Status | Files |
 |---|---|---|---|
-| **[P4-Wio](./builds/P4-Wio/)** | Raspberry Pi 4 + WM1302 Pi HAT + Seeed Studio Wio WM6108 | Complete working HaLow-only build | 3MF, STEP, SolidWorks 2025 and images |
+| **[P4-Wio](./Second-Generation-Builds/P4-Wio/)** | Raspberry Pi 4 + WM1302 Pi HAT + Seeed Studio Wio WM6108 | Complete working HaLow-only build | 3MF, STEP, SolidWorks 2025 and images |
 
 ## Planned builds
 
@@ -116,7 +116,7 @@ Supplier links, prices and availability may change. Confirm dimensions, connecto
 
 | Area | Folder / link | Contents |
 |---|---|---|
-| **Current builds** | [`builds/P4-Wio/`](./builds/P4-Wio/) | P4-Wio build README, images, 3MF, STEP and SolidWorks 2025 files |
+| **Second generation builds** | [`Second-Generation-Builds/P4-Wio/`](./Second-Generation-Builds/P4-Wio/) | P4-Wio build README, images, 3MF, STEP and SolidWorks 2025 files |
 | **Twist-lock battery pack** | [`Twist-Lock-Battery-Pack/`](./Twist-Lock-Battery-Pack/) | Standalone battery pack CAD/export files compatible with generation 1 and 2 builds |
 | **First generation builds** | [`First-Generation-Builds/V1_5-5-2026/`](./First-Generation-Builds/V1_5-5-2026/) | V1 prototype files: 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
 | **First generation builds** | [`First-Generation-Builds/V2_30-5-2026/`](./First-Generation-Builds/V2_30-5-2026/) | V2 prototype files: 3MF, STL, STEP, SolidWorks 2023 and SolidWorks 2025 |
