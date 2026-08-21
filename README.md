@@ -29,7 +29,7 @@ The current second generation build is **P4-Wio**, a Raspberry Pi 4 based HaLow-
 
 | Build | Hardware target | Status | Files |
 |---|---|---|---|
-| **[P4-Wio](./Second-Generation-Builds/P4-Wio/)** | Raspberry Pi 4 + WM1302 Pi HAT + Seeed Studio Wio WM6108 | Complete working HaLow-only build | 3MF, STEP, SolidWorks 2025 and images |
+| **[P4-Wio](./Second-Generation-Builds/P4-Wio/)** | Raspberry Pi 4 + WM1302 Pi HAT + Seeed Studio Wio WM6108 | Complete working HaLow-only build | 3MF, STEP and SolidWorks 2025 |
 
 ## Planned builds
 
@@ -116,7 +116,7 @@ Supplier links, prices and availability may change. Confirm dimensions, connecto
 
 | Area | Folder / link | Contents |
 |---|---|---|
-| **Second generation builds** | [`Second-Generation-Builds/P4-Wio/`](./Second-Generation-Builds/P4-Wio/) | P4-Wio build README, images, 3MF, STEP and SolidWorks 2025 files |
+| **Second generation builds** | [`Second-Generation-Builds/P4-Wio/`](./Second-Generation-Builds/P4-Wio/) | P4-Wio build README, 3MF, STEP and SolidWorks 2025 files |
 | **Twist-lock battery pack** | [`Twist-Lock-Battery-Pack/`](./Twist-Lock-Battery-Pack/) | Standalone battery pack CAD/export files compatible with generation 1 and 2 builds |
 | **First generation builds** | [`First-Generation-Builds/V1_5-5-2026/`](./First-Generation-Builds/V1_5-5-2026/) | V1 prototype files: 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
 | **First generation builds** | [`First-Generation-Builds/V2_30-5-2026/`](./First-Generation-Builds/V2_30-5-2026/) | V2 prototype files: 3MF, STL, STEP, SolidWorks 2023 and SolidWorks 2025 |

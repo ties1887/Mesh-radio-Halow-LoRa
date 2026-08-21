@@ -4,7 +4,7 @@ Standalone twist-lock battery pack design compatible with generation 1 and gener
 
 ## Status
 
-Upload placeholder for the standalone twist-lock battery pack CAD/export files.
+Standalone battery pack CAD/export files are included.
 
 ## Files
 
@@ -12,8 +12,8 @@ Upload placeholder for the standalone twist-lock battery pack CAD/export files.
 |---|---|
 | [`3MF`](./3MF/) | Print-ready project files |
 | [`STEP`](./STEP/) | STEP exports |
+| [`STL`](./STL/) | Individual STL exports |
 | [`SolidWorks-2025`](./SolidWorks-2025/) | Native SolidWorks 2025 source files or archives |
-| [`images`](./images/) | Images or screenshots for this battery pack |
 
 ## Notes
 
