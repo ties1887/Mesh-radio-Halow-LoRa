@@ -31,7 +31,7 @@ This gives one place to maintain shared parts, while still making each build eas
 | `V2-BOM` | Filtered view/export for V2 |
 | `V3-BOM` | Filtered view/export for V3 |
 | `P4-Wio-BOM` | Filtered view/export for P4-Wio |
-| `Battery-Pack-BOM` | Separate twist-lock battery pack BOM |
+| `Battery-Pack-BOM` | Standalone twist-lock battery pack BOM, compatible with generation 1 and 2 builds |
 | `Suppliers` | Supplier links, EU links, alternatives and notes |
 | `Archive` | Deprecated/removed build references such as V4, if kept for history |
 

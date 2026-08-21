@@ -52,7 +52,6 @@ This is a **HaLow-only** build. It does not include the separate LoRa/Meshtastic
 | [`SolidWorks-2025`](./SolidWorks-2025/) | Native SolidWorks 2025 source archive |
 | [`STL`](./STL/) | Reserved for individual STL exports |
 | [`images`](./images/) | Photos, renders and diagrams for this build |
-| [`Twist-Lock-Battery-Pack`](./Twist-Lock-Battery-Pack/) | Separate twist-lock battery pack CAD/export files |
 
 ## Included CAD exports
 
@@ -72,7 +71,6 @@ This is a **HaLow-only** build. It does not include the separate LoRa/Meshtastic
 ## Notes
 
 - Upload improved P4-Wio SolidWorks, 3MF and STEP files into the matching folders above.
-- Put the separate twist-lock battery pack design files in [`Twist-Lock-Battery-Pack`](./Twist-Lock-Battery-Pack/).
 - Download the complete folder before opening the SolidWorks assembly.
 - The STEP files are provided for inspection, remixing and non-SolidWorks workflows.
 - The `STL` folder is reserved for later individual printable exports.

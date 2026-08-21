@@ -1,10 +1,10 @@
-# P4-Wio Twist-Lock Battery Pack
+# Twist-Lock Battery Pack
 
-Separate twist-lock battery pack design for the P4-Wio build.
+Standalone twist-lock battery pack design compatible with generation 1 and generation 2 builds.
 
 ## Status
 
-Upload placeholder for the improved battery pack CAD/export files.
+Upload placeholder for the standalone twist-lock battery pack CAD/export files.
 
 ## Files
 
