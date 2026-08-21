@@ -27,12 +27,12 @@ This repository contains CAD files, printable files, hardware references and sho
 
 ## Choose your build
 
-| Build | Generation | Best for | Files |
+| Build | Generation | Main hardware | Files |
 |---|---|---|---|
-| **[P4-Wio](./Second-Generation-Builds/P4-Wio/)** | Second generation | Current HaLow-only Raspberry Pi 4 build | 3MF, STEP, SolidWorks 2025 |
-| **[V3](./First-Generation-Builds/V3_18-6-2026/)** | First generation | Most complete older HaLow + Meshtastic prototype | 3MF, STEP, SolidWorks 2023/2025 |
-| **[V2](./First-Generation-Builds/V2_30-5-2026/)** | First generation | More compact older HaLow + Meshtastic prototype | 3MF, STL, STEP, SolidWorks 2023/2025 |
-| **[V1](./First-Generation-Builds/V1_5-5-2026/)** | First generation | Original large prototype | 3MF, STEP, SolidWorks 2023/2025 |
+| **[P4-Wio](./Second-Generation-Builds/P4-Wio/)** | Second generation | Raspberry Pi 4 + WM1302 Pi HAT + Wio-WM6108 | 3MF, STEP, SolidWorks 2025 |
+| **[V3](./First-Generation-Builds/V3_18-6-2026/)** | First generation | Raspberry Pi 4 + WM1302 Pi HAT + Wio-WM6108 + RAK WisMesh 1W kit | 3MF, STEP, SolidWorks 2023/2025 |
+| **[V2](./First-Generation-Builds/V2_30-5-2026/)** | First generation | Raspberry Pi 4 + WM1302 Pi HAT + Wio-WM6108 + RAK WisMesh 1W kit | 3MF, STL, STEP, SolidWorks 2023/2025 |
+| **[V1](./First-Generation-Builds/V1_5-5-2026/)** | First generation | Raspberry Pi 4 + WM1302 Pi HAT + Wio-WM6108 + RAK WisMesh 1W kit | 3MF, STEP, SolidWorks 2023/2025 |
 
 V1, V2 and V3 are still valid first generation builds. They may need more fitting or manual finishing, but they have been built, printed and used.
 
