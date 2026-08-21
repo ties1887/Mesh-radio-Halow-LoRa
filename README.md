@@ -106,7 +106,9 @@ This image documents prototype wiring. Verify every connection against the exact
 
 The shared BOM contains parts used across multiple prototypes. **No single version uses every listed component.** Check the relevant prototype/build before ordering.
 
-**[Open the complete BOM](https://docs.google.com/spreadsheets/d/1Nt8EjYsgWTId0Qjl1BAAxPci3bh1FSZ7VQxQRFxyHnk/edit?usp=sharing)**
+**[Open the current shared BOM](https://docs.google.com/spreadsheets/d/1Nt8EjYsgWTId0Qjl1BAAxPci3bh1FSZ7VQxQRFxyHnk/edit?usp=sharing)**
+
+See [`BOM-Strategy.md`](./BOM-Strategy.md) for the proposed master-parts-list plus build-specific BOM structure.
 
 Supplier links, prices and availability may change. Confirm dimensions, connector type, voltage range, frequency range and regional legality before ordering.
 
@@ -115,6 +117,7 @@ Supplier links, prices and availability may change. Confirm dimensions, connecto
 | Area | Folder / link | Contents |
 |---|---|---|
 | **Current builds** | [`builds/P4-Wio/`](./builds/P4-Wio/) | P4-Wio build README, images, 3MF, STEP and SolidWorks 2025 files |
+| **P4-Wio battery pack** | [`builds/P4-Wio/Twist-Lock-Battery-Pack/`](./builds/P4-Wio/Twist-Lock-Battery-Pack/) | Separate twist-lock battery pack CAD/export files |
 | **First generation builds** | [`First-Generation-Builds/V1_5-5-2026/`](./First-Generation-Builds/V1_5-5-2026/) | V1 prototype files: 3MF, STEP, SolidWorks 2023 and SolidWorks 2025 |
 | **First generation builds** | [`First-Generation-Builds/V2_30-5-2026/`](./First-Generation-Builds/V2_30-5-2026/) | V2 prototype files: 3MF, STL, STEP, SolidWorks 2023 and SolidWorks 2025 |
 | **First generation builds** | [`First-Generation-Builds/V3_18-6-2026/`](./First-Generation-Builds/V3_18-6-2026/) | V3 prototype files: 3MF, STEP, SolidWorks 2023, SolidWorks 2025 and build notes |
