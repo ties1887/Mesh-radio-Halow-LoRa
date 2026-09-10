@@ -1,0 +1,2060 @@
+OUTIN
+GND
+FAULT
+ILIM
+EN
+RILIM
+20 k/c87
+RFAULT
+100 k/c87
+Control  Signal
+5V USB
+Input
+USB
+Port
+USB Data
+TPS2552/53
+0.1 F/c109
+120 F/c109
+Fault Signal
+Power Pad
+USB requirement only*
+*
+facing ports are bypassed with at least
+120 F per hub
+USB requirement that downstream
+/c109
+Copyright © 2016, Texas Instruments Incorporated
+Product
+Folder
+Sample &
+Buy
+T echnical
+Documents
+Tools &
+Software
+Support &
+Community
+Reference
+Design
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications,
+intellectual property matters and other important disclaimers. PRODUCTION DATA.
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016
+TPS255xxPrecisionAdjustableCurrent-LimitedPower-DistributionSwitches
+1
+1 Features
+1• Up to 1.5-A Maximum Load Current
+• ±6% Current-Limit Accuracy at 1.7 A (Typical)
+• Meets USB Current-Limiting Requirements
+• Backwards Compatible With TPS2550 and
+TPS2551
+• Adjustable Current Limit: 75 mA to 1700 mA
+(Typical)
+• Constant-Current (TPS255x) and Latch-Off
+(TPS255x-1) Versions
+• Fast Overcurrent Response - 2 µs (Typical)
+• 85-mΩ High-Side MOSFET (DBV Package)
+• Reverse Input-Output Voltage Protection
+• Operating Range: 2.5 V to 6.5 V
+• Built-In Soft Start
+• 15-kV ESD Protection per IEC 61000-4-2 (With
+External Capacitance)
+• UL Listed – File No. E169910 and NEMKO
+IEC60950-1-am1 ed2.0
+• See the TI Switch Portfolio
+2 Applications
+• USB Ports and Hubs
+• Digital TVs
+• Set-Top Boxes
+• VOIP Phones
+3 Description
+The TPS255x and TPS255x-1 power-distribution
+switches are intended for applications where
+precision current limiting is required or heavy
+capacitive loads and short circuits are encountered
+and provide up to 1.5 A of continuous load current.
+These devices offer a programmable current-limit
+threshold between 75 mA and 1.7 A (typical) through
+an external resistor. Current-limit accuracy as tight as
+±6% can be achieved at the higher current-limit
+settings. The power-switch rise and fall times are
+controlled to minimize current surges during turnon
+and turnoff.
+TPS255x devices limit the output current to a safe
+level by using a constant-current mode when the
+output load exceeds the current-limit threshold.
+TPS255x-1 devices provide circuit breaker
+functionality by latching off the power switch during
+overcurrent or reverse-voltage situations. An internal
+reverse-voltage comparator disables the power-
+switch when the output voltage is driven higher than
+the input to protect devices on the input side of the
+switch. The FAULT output asserts low during
+overcurrent and reverse-voltage conditions.
+Device Information(1)
+PART NUMBER PACKAGE BODY SIZE (NOM)
+TPS2552
+SOT-23 (6) 2.90 mm x 1.60 mm
+WSON (6) 2.00 mm x 2.00 mm
+TPS2553
+SOT-23 (6) 2.90 mm x 1.60 mm
+WSON (6) 2.00 mm x 2.00 mm
+(1) For all available packages, see the orderable addendum at
+the end of the data sheet.
+Typical Application
+2
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016 www.ti.com
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation Feedback Copyright © 2008–2016, Texas Instruments Incorporated
+Table of Contents
+1 Features .................................................................. 1
+2 Applications ........................................................... 1
+3 Description ............................................................. 1
+4 Revision History..................................................... 2
+5 Device Comparison Table..................................... 4
+6 Pin Configuration and Functions ......................... 5
+7 Specifications......................................................... 5
+7.1 Absolute Maximum Ratings ...................................... 5
+7.2 ESD Ratings ............................................................ 6
+7.3 Recommended Operating Conditions....................... 6
+7.4 Thermal Information .................................................. 6
+7.5 Electrical Characteristics........................................... 7
+7.6 Typical Characteristics .............................................. 8
+8 Parameter Measurement Information ................ 11
+9 Detailed Description ............................................ 13
+9.1 Overview ................................................................. 13
+9.2 Functional Block Diagram ....................................... 13
+9.3 Feature Description................................................. 13
+9.4 Device Functional Modes........................................ 15
+9.5 Programming........................................................... 15
+10 Application and Implementation........................ 17
+10.1 Application Information.......................................... 17
+10.2 Typical Applications .............................................. 17
+11 Power Supply Recommendations ..................... 24
+11.1 Self-Powered and Bus-Powered Hubs ................. 24
+11.2 Low-Power Bus-Powered and High-Power Bus-
+Powered Functions .................................................. 24
+11.3 Power Dissipation and Junction Temperature ...... 24
+12 Layout................................................................... 25
+12.1 Layout Guidelines ................................................. 25
+12.2 Layout Example .................................................... 25
+13 Device and Documentation Support ................. 26
+13.1 Device Support...................................................... 26
+13.2 Related Links ........................................................ 26
+13.3 Receiving Notification of Documentation Updates 26
+13.4 Community Resources.......................................... 26
+13.5 Trademarks ........................................................... 26
+13.6 Electrostatic Discharge Caution ............................ 26
+13.7 Glossary ................................................................ 26
+14 Mechanical, Packaging, and Orderable
+Information ........................................................... 26
+4 Revision History
+NOTE: Page numbers for previous revisions may differ from page numbers in the current version.
+Changes from Revision E (February 2012) to Revision F Page
+• Added ESD Rating table, Feature Description section, Device Functional Modes, Application and Implementation
+section, Power Supply Recommendations section, Layout section, Device and Documentation Support section, and
+Mechanical, Packaging, and Orderable Information section ................................................................................................. 1
+• Changed 1300 mA to 1700 mA in the adjustable current limit bullet under the Features section ......................................... 1
+• Changed from 1.2 A to 1.5 A.................................................................................................................................................. 4
+Changes from Revision D (June 2011) to Revision E Page
+• Changed VEN to VEN in Recommended Operating Conditions ............................................................................................... 6
+• Changed VEN to VEN in Recommended Operating Conditions ............................................................................................... 6
+Changes from Revision C (September 2009) to Revision D Page
+• Changed From: Fast Overcurrent Response - 2-µS (typ) To: Fast Overcurrent Response - 2-µs (typ) in the Features ...... 1
+• Added text To Feature - UL Listed "and NEMKO IEC60950-1-am1 ed2.0"........................................................................... 1
+• Added Features Item "See the TI Switch Portfoilo"................................................................................................................ 1
+• Changed the DEVICE INFORMATION table, and Deleted Note 3 ........................................................................................ 1
+• Added ESD-system level (contact/air) to the ABS MAX table, and Added Note 3 ................................................................ 6
+• Added text to the REVERSE-VOLTAGE PROTECTION section: "A reverse.....when this occurs.".................................... 14
+3
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+www.ti.com SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation FeedbackCopyright © 2008–2016, Texas Instruments Incorporated
+Changes from Revision B (February 2009) to Revision C Page
+• Added Feature - Up to 1.5 A Maximum Load Current............................................................................................................ 1
+• Changed 1.3 A (typ) To: 1.7 A (typ) ....................................................................................................................................... 1
+• Added Text - and provide up to 1.5 A of continuous load current.......................................................................................... 1
+• Changed From: 19.1 kΩ ≤ RILIM ≤ 232 kΩ To: 15 kΩ ≤ RILIM ≤ 232 kΩ. ................................................................................. 5
+• Changed IOUT values for 1.2A and 1.5A ................................................................................................................................. 6
+• Changed TJ values for 1.2A and 1.5A .................................................................................................................................... 6
+• Added RILIM = 15 kΩ option .................................................................................................................................................... 7
+• Changed Text From: current-limit threshold between 75 mA and 1.3 A (typ) To: current-limit threshold between 75
+mA and 1.7 A (typ)................................................................................................................................................................ 13
+• Changed Text From: The recommended 1% resistor range for RILIM is 19.1 kΩ ≤ RILIM ≤ 232 kΩ to ensure stability
+To: The recommended 1% resistor range for RILIM is 15 kΩ ≤ RILIM ≤ 232 kΩ to ensure stability........................................ 15
+• Changed From: where 19.1 kΩ ≤ RILIM ≤ 232 kΩ. To: where 15 kΩ ≤ RILIM ≤ 232 kΩ. ........................................................ 15
+• Changed Figure 23 - Current-Limit Threshold vs RILIM ........................................................................................................ 16
+• Changed Table 2 - added rows for Current Limit of 1400 to 1700....................................................................................... 19
+Changes from Revision A (December 2008) to Revision B Page
+• Added To Features - UL Listed – File No. E169910 .............................................................................................................. 1
+• Changed Figure 17 Ttitle From: Current Limit Threshold Vs RILM ......................................................................................... 9
+• Changed Figure 18 Ttitle From: Current Limit Threshold Vs RILM ......................................................................................... 9
+Changes from Original (November 2008) to Revision A Page
+• Changed Title from: Adjustable Current-Limited Power-Distribution Switches to: Precision Adjustable Current-
+Limited Power-Distribution Switches ...................................................................................................................................... 1
+4
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016 www.ti.com
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation Feedback Copyright © 2008–2016, Texas Instruments Incorporated
+5 Device Comparison Table
+1
+2
+3 4
+5
+6
+OUT
+FAULT
+ILIM
+EN
+GND
+IN
+PAD
+1
+2
+3 4
+5
+6
+OUT
+FAULT
+ILIM
+EN
+GND
+IN
+5
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+www.ti.com SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation FeedbackCopyright © 2008–2016, Texas Instruments Incorporated
+6 Pin Configuration and Functions
+TPS255x DBV Package
+6-Pin SOT-23
+Top View
+EN = Active Low for the TPS2552
+EN = Active High for the TPS2553
+Add –1 to part number for latch-off version
+TPS255x DRV Package
+6-Pin WSON
+Top View
+EN = Active Low for the TPS2552
+EN = Active High for the TPS2553
+Add –1 to part number for latch-off version
+Pin Functions
+PIN
+I/O DESCRIPTION
+NAME
+TPS2552 TPS2553
+SOT-23 WSON SOT-23 WSON
+EN 3 4 — — I Enable input, logic low turns on power switch
+EN — — 3 4 I Enable input, logic high turns on power switch
+FAULT 4 3 4 3 O
+Active-low open-drain output, asserted during
+overcurrent, overtemperature, or reverse-voltage
+conditions.
+GND 2 5 2 5 — Ground connection; connect externally to PowerPAD
+ILIM 5 2 5 2 O External resistor used to set current-limit threshold;
+recommended 15 kΩ ≤ RILIM ≤ 232 kΩ.
+IN 1 6 1 6 I
+Input voltage; connect a 0.1 µF or greater ceramic
+capacitor from IN to GND as close to the IC as
+possible.
+OUT 6 1 6 1 O Power-switch output
+PowerPAD™ — PAD — PAD —
+Internally connected to GND; used to heat-sink the part
+to the circuit board traces. Connect PowerPAD to GND
+pin externally.
+Add –1 for Latch-Off version
+(1) Stresses beyond those listed under Absolute Maximum Ratings may cause permanent damage to the device. These are stress ratings
+only, which do not imply functional operation of the device at these or any other conditions beyond those indicated under Recommended
+Operating Conditions. Exposure to absolute-maximum-rated conditions for extended periods may affect device reliability.
+(2) Voltages are referenced to GND unless otherwise noted.
+7 Specifications
+7.1 Absolute Maximum Ratings
+over operating free-air temperature range (unless otherwise noted) (1) (2)
+MIN MAX UNIT
+Voltage range on IN, OUT, EN or EN, ILIM, FAULT –0.3 7 V
+Voltage range from IN to OUT –7 7 V
+IO Continuous output current Internally Limited
+Continuous total power dissipation See the Thermal Information
+Continuous FAULT sink current 0 25 mA
+ILIM source current 0 1 mA
+TJ Maximum junction temperature –40 150 °C
+Tstg Storage temperature –65 150 °C
+6
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016 www.ti.com
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation Feedback Copyright © 2008–2016, Texas Instruments Incorporated
+(1) JEDEC document JEP155 states that 500-V HBM allows safe manufacturing with a standard ESD control process.
+(2) JEDEC document JEP157 states that 250-V CDM allows safe manufacturing with a standard ESD control process.
+(3) Surges per EN61000-4-2. 1999 applied to output terminals of EVM. These are passing test levels, not failure threshold.
+7.2 ESD Ratings
+VALUE UNIT
+V(ESD) Electrostatic discharge
+Human body model (HBM), per ANSI/ESDA/JEDEC JS-001 (1) ±2000
+V
+Charged device model (CDM), per JEDEC specification JESD22-
+C101 (2) ±500
+IEC 61000-4-2 contact discharge (3) ±8000
+IEC 61000-4-2 air-gap discharge (3) ±15000
+(1) See Power Dissipation and Junction Temperature for details on how to calculate maximum junction temperature for specific applications
+and packages.
+7.3 Recommended Operating Conditions
+over operating free-air temperature range (unless otherwise noted)
+MIN NOM MAX UNIT
+VIN Input voltage, IN 2.5 6.5 V
+VEN Enable voltage TPS2552/52-1 0 6.5 V
+VEN Enable voltage TPS2553/53-1 0 6.5 V
+VIH High-level input voltage on EN or EN 1.1
+V
+VIL Low-level input voltage on EN or EN 0.66
+IOUT
+Continuous output current,
+OUT
+–40 °C ≤ TJ ≤ 125 °C 0 1.2
+A
+–40 °C ≤ TJ ≤ 105 °C 0 1.5
+RILIM Current-limit threshold resistor range (nominal 1%) from ILIM to GND 15 232 kΩ
+IO Continuous FAULT sink current 0 10 mA
+Input de-coupling capacitance, IN to GND 0.1 µF
+TJ
+Operating virtual junction
+temperature (1)
+IOUT ≤ 1.2 A –40 125
+°C
+IOUT ≤ 1.5 A –40 105
+(1) For more information about traditional and new thermal metrics, see the Semiconductor and IC Package Thermal Metrics application
+report.
+7.4 Thermal Information
+THERMAL METRIC (1)
+TPS2552 TPS2553
+UNITDBV (SOT-23) DRV (WSON) DBV (SOT-23) DRV (WSON)
+6 PINS 6 PINS 6 PINS 6 PINS
+RθJA Junction-to-ambient thermal resistance 182.6 72 182.6 72 °C/W
+RθJC(to
+p)
+Junction-to-case (top) thermal resistance 122.2 85.3 122.2 85.3 °C/W
+RθJB Junction-to-board thermal resistance 29.4 41.3 29.4 41.3 °C/W
+ψJT Junction-to-top characterization parameter 20.8 1.7 20.8 1.7 °C/W
+ψJB Junction-to-board characterization parameter 28.9 41.7 28.9 41.7 °C/W
+RθJC(b
+ot)
+Junction-to-case (bottom) thermal resistance — 11.1 — 11.1 °C/W
+7
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+www.ti.com SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation FeedbackCopyright © 2008–2016, Texas Instruments Incorporated
+(1) Pulse-testing techniques maintain junction temperature close to ambient temperature; thermal effects must be taken into account
+separately.
+7.5 Electrical Characteristics
+over recommended operating conditions, VEN = 0 V, or VEN = VIN, RFAULT = 10 kΩ (unless otherwise noted)
+PARAMETER TEST CONDITIONS (1) MIN TYP MAX UNIT
+POWER SWITCH
+rDS(on) Static drain-source on-state resistance
+DBV package, TJ = 25°C 85 95
+mΩ
+DBV package, –40°C ≤TJ ≤125°C 135
+DRV package, TJ = 25°C 100 115
+DRV package, –40°C ≤TJ ≤105°C 140
+DRV package, –40°C ≤TJ ≤125°C 150
+tr Rise time, output CL = 1 µF, RL = 100 Ω,
+(see Figure 20)
+VIN = 6.5 V 1.1 1.5
+ms
+VIN = 2.5 V 0.7 1
+tf Fall time, output CL = 1 µF, RL = 100 Ω,
+(see Figure 20)
+VIN = 6.5 V 0.2 0.5
+VIN = 2.5 V 0.2 0.5
+ENABLE INPUT EN OR EN
+Enable pin turn on/off threshold 0.66 1.1 V
+IEN Input current VEN = 0 V or 6.5 V, VEN = 0 V or 6.5 V –0.5 0.5 µA
+ton Turnon time CL = 1 µF, RL = 100 Ω, (see Figure 20) 3 ms
+toff Turnoff time CL = 1 µF, RL = 100 Ω, (see Figure 20) 3 ms
+CURRENT LIMIT
+IOS
+Current-limit threshold (Maximum DC
+output current IOUT delivered to load)
+and Short-circuit current, OUT
+connected to GND
+RILIM = 15 kΩ, –40°C ≤TJ ≤105°C 1610 1700 1800
+mA
+RILIM = 20 kΩ
+TJ = 25°C 1215 1295 1375
+–40°C ≤TJ ≤125°C 1200 1295 1375
+RILIM = 49.9 kΩ
+TJ = 25°C 490 520 550
+–40°C ≤TJ ≤125°C 475 520 565
+RILIM = 210 kΩ 110 130 150
+ILIM shorted to IN 50 75 100
+tIOS Response time to short circuit VIN = 5 V (see Figure 21) 2 µs
+REVERSE-VOLTAGE PROTECTION
+Reverse-voltage comparator trip point
+(VOUT – VIN) 95 135 190 mV
+Time from reverse-voltage condition
+to MOSFET turn off VIN = 5 V 3 5 7 ms
+SUPPLY CURRENT
+IIN_off Supply current, low-level output VIN = 6.5 V, No load on OUT, VEN = 6.5 V or VEN = 0 V 0.1 1 µA
+IIN_on Supply current, high-level output VIN = 6.5 V, No load on OUT
+RILIM = 20 kΩ 120 140 µA
+RILIM = 210 kΩ 100 120 µA
+IREV Reverse leakage current VOUT = 6.5 V, VIN = 0 V TJ = 25 °C 0.01 1 µA
+UNDERVOLTAGE LOCKOUT
+UVLO Low-level input voltage, IN VIN rising 2.35 2.45 V
+Hysteresis, IN TJ = 25 °C 25 mV
+FAULT FLAG
+VOL Output low voltage, FAULT I/FAULT = 1 mA 180 mV
+Off-state leakage V/FAULT = 6.5 V 1 µA
+FAULT deglitch
+FAULT assertion or de-assertion due to overcurrent condition 5 7.5 10 ms
+FAULT assertion or de-assertion due to reverse-voltage condition 2 4 6 ms
+THERMAL SHUTDOWN
+Thermal shutdown threshold 155 °C
+Thermal shutdown threshold in
+current-limit 135 °C
+Hysteresis 10 °C
+8
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016 www.ti.com
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation Feedback Copyright © 2008–2016, Texas Instruments Incorporated
+7.6 Typical Characteristics
+Figure 1. Turnon Delay and Rise Time
+Figure 2. Turnoff Delay and Fall Time
+Figure 3. Device Enabled into Short-Circuit Figure 4. Full-Load to Short-Circuit Transient Response
+Figure 5. Short-Circuit to Full-Load Recovery Response Figure 6. No-Load to Short-Circuit Transient Response
+2.30
+T -□Junction□Temperature□-□°CJ
+-50 0 50 100 150
+UVLO□-□Undervoltage□Lockout□-□V
+2.40
+2.31
+2.32
+2.33
+2.34
+2.35
+2.36
+2.37
+2.38
+2.39
+UVLO□Rising
+R =□20□kILIM /c87
+UVLO□Falling
+9
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+www.ti.com SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation FeedbackCopyright © 2008–2016, Texas Instruments Incorporated
+Typical Characteristics (continued)
+Figure 7. Short-Circuit to No-Load Recovery Response Figure 8. No Load to 1-Ω Transient Response
+Figure 9. 1-Ω to No Load Transient Response Figure 10. Reverse-Voltage Protection Response
+Figure 11. Reverse-Voltage Protection Recovery Figure 12. UVLO – Undervoltage Lockout – V
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+130
+140
+150
+0 100 200 300 400 500 600 700 800 900 1000
+IDS□-□Static□Drain-Source□Current□-□mA
+V -□V -□100□mV/divIN OUT
+T =□25°CA
+T =□125°CA
+V =□6.5□V,
+R =□200□k
+IN
+ILIM /c87
+T =□-40°CA
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+1000
+1100
+1200
+1300
+1400
+0 100 200 300 400 500 600 700 800 900 1000
+IDS□-□Static□Drain-Source□Current□-□mA
+V -□V -□100□mV/divIN OUT
+T =□125°CA
+T =□25°CA
+T =□-40°CA
+V =□6.5□V,
+R =□20□k
+IN
+ILIM /c87
+0
+Peak□Current□- A
+0 1.5 3 4.5 6
+Current□Limit□Response□- s
+/c109
+20
+2
+4
+6
+8
+10
+12
+14
+16
+18
+V =□5□V,
+R =□20□k ,
+T =□25°C
+IN
+ILIM
+A
+/c87
+0
+DBV□Package
+r -□Static□Drain-Source□On-State□Resistance□-□mDS(on)
+/c87
+25
+50
+75
+100
+125
+150
+DRV□Package
+T -□Junction□Temperature□-□°CJ
+-50 0 50 100 150
+0
+I -□Supply□Current,□Output□Disabled□- AIN
+/c109
+0.40
+0.04
+0.08
+0.12
+0.16
+0.20
+0.24
+0.28
+0.32
+0.36
+T -□Junction□Temperature□-□°CJ
+-50 0 50 100 150
+V =□2.5□VIN
+V =□6.5□VIN
+R =□20□kILIM /c87
+0
+I -□Supply□Current,□Output□Enabled□- AIN
+/c109
+150
+15
+30
+45
+60
+75
+90
+105
+120
+135
+T -□Junction□Temperature□-□°CJ
+-50 0 50 100 150
+R =□20□kILIM /c87 V =□6.5□VIN V =□5□VIN
+V =□3.3□VIN
+V =□2.5□VIN
+10
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016 www.ti.com
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation Feedback Copyright © 2008–2016, Texas Instruments Incorporated
+Typical Characteristics (continued)
+Figure 13. IIN – Supply Current, Output Disabled – µA Figure 14. IIN – Supply Current, Output Enabled – µA
+Figure 15. Current Limit Response – µs Figure 16. MOSFET rDS(on) Vs. Junction Temperature
+Figure 17. Switch Current Vs. Drain-Source Voltage Across
+Switch Figure 18. Switch Current Vs. Drain-Source Voltage Across
+Switch
+tIOS
+IOS
+IOUT
+R L C L
+OUT
+TEST□CIRCUIT
+10
+90%
+10
+90%VOUT
+ton toff
+10
+90%
+5050%VEN
+toff
+50% 50%
+10%
+90%
+VOLTAGE□WAVEFORMS
+tr tf
+% %
+%
+%
+VOUT
+VEN
+VOUT
+ton toff
+OUTIN
+GND
+FAULT
+ILIM
+EN
+RILIM
+Control□Signal
+VIN
+TPS2552
+10 F/c109
+150 F/c109
+Fault Signal
+Power□Pad
+VOUT
+R
+10□k
+FAULT
+/c87
+11
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+www.ti.com SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation FeedbackCopyright © 2008–2016, Texas Instruments Incorporated
+8 Parameter Measurement Information
+Figure 19. Typical Characteristics Reference Schematic
+Figure 20. Test Circuit and Voltage Waveforms
+Figure 21. Response Time to Short-Circuit Waveform
+VOUT
+IOUT
+IOS
+Decreasing
+Load□Resistance
+Decreasing
+Load□Resistance
+12
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016 www.ti.com
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation Feedback Copyright © 2008–2016, Texas Instruments Incorporated
+Parameter Measurement Information (continued)
+Figure 22. Output Voltage vs Current-Limit Threshold
+Charge
+Pump
+Driver
+UVLO
+Current
+Limit
+Thermal
+Sense
+IN
+GND
+EN
+ILIM
+OUT
+FAULT
+CS
+Reverse
+Voltage
+Comparator
+-
++
+Current
+Sense
+(Note A)
+4-ms
+Deglitch
+8-ms Deglitch
+Copyright © 2016, Texas Instruments Incorporated
+13
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+www.ti.com SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation FeedbackCopyright © 2008–2016, Texas Instruments Incorporated
+9 Detailed Description
+9.1 Overview
+The TPS255x and TPS255x-1 are current-limited, power-distribution switches using N-channel MOSFETs for
+applications where short circuits or heavy capacitive loads are encountered and provide up to 1.5 A of
+continuous load current. These devices allow the user to program the current-limit threshold between 75 mA and
+1.7 A (typical) through an external resistor. Additional device shutdown features include overtemperature
+protection and reverse-voltage protection. The device incorporates an internal charge pump and gate drive
+circuitry necessary to drive the N-channel MOSFET. The charge pump supplies power to the driver circuit and
+provides the necessary voltage to pull the gate of the MOSFET above the source. The charge pump operates
+from input voltages as low as 2.5 V and requires little supply current. The driver controls the gate voltage of the
+power switch. The driver incorporates circuitry that controls the rise and fall times of the output voltage to limit
+large current and voltage surges and provides built-in soft-start functionality. There are two device families that
+handle overcurrent situations differently. The TPS255x family enters constant-current mode while the TPS255x-1
+family latches off when the load exceeds the current-limit threshold.
+9.2 Functional Block Diagram
+A. TPS255x parts enter constant current mode during current limit condition; TPS255x-1 parts latch off
+9.3 Feature Description
+9.3.1 Overcurrent Conditions
+The TPS255x and TPS255x-1 respond to overcurrent conditions by limiting their output current to the IOS levels
+shown in Figure 23. When an overcurrent condition is detected, the device maintains a constant output current
+and reduces the output voltage accordingly. Two possible overload conditions can occur.
+The first condition is when a short circuit or partial short circuit is present when the device is powered-up or
+enabled. The output voltage is held near zero potential with respect to ground and the TPS255x ramps the
+output current to IOS. The TPS255x devices limits the current to IOS until the overload condition is removed or the
+device begins to thermal cycle. The TPS255x-1 devices will limit the current to IOS until the overload condition is
+removed or the internal deglitch time (7.5-ms typical) is reached and the device is turned off. The device remains
+off until power is cycled or the device enable is toggled.
+14
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016 www.ti.com
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation Feedback Copyright © 2008–2016, Texas Instruments Incorporated
+Feature Description (continued)
+The second condition is when a short circuit, partial short circuit, or transient overload occurs while the device is
+enabled and powered on. The device responds to the overcurrent condition within time tIOS (see Figure 21). The
+current-sense amplifier is overdriven during this time and momentarily disables the internal current-limit
+MOSFET. The current-sense amplifier recovers and limits the output current to IOS. Similar to the previous case,
+the TPS255x limits the current to IOS until the overload condition is removed or the device begins to thermal
+cycle; the TPS255x-1 limits the current to IOS until the overload condition is removed or the internal deglitch time
+is reached and the device is latched off.
+The TPS255x thermal cycles if an overload condition is present long enough to activate thermal limiting in any of
+the above cases. The device turns off when the junction temperature exceeds 135°C (typical) while in current
+limit. The device remains off until the junction temperature cools 10°C (typical) and then restarts. The TPS255x
+cycles on and off until the overload is removed (see Figure 5 and Figure 7) .
+9.3.2 Reverse-Voltage Protection
+The reverse-voltage protection feature turns off the N-channel MOSFET whenever the output voltage exceeds
+the input voltage by 135 mV (typical) for 4-ms (typical). A reverse current of (VOUT – VIN)/rDS(on)) are present when
+this occurs. This prevents damage to devices on the input side of the TPS255x and TPS2552-1/TPS2253-1 by
+preventing significant current from sinking into the input capacitance. The TPS255x devices allow the N-channel
+MOSFET to turn on once the output voltage goes below the input voltage for the same 4-ms deglitch time. The
+TPS255x-1 devices keep the device turned off even if the reverse-voltage condition is removed and do not allow
+the N-channel MOSFET to turn on until power is cycled or the device enable is toggled. The reverse-voltage
+comparator also asserts the FAULT output (active-low) after 4-ms.
+9.3.3 FAULT Response
+The FAULT open-drain output is asserted (active low) during an overcurrent, overtemperature, or reverse-voltage
+condition. The TPS255x asserts the FAULT signal until the fault condition is removed and the device resumes
+normal operation. The TPS255x-1 asserts the FAULT signal during a fault condition and remains asserted while
+the part is latched-off. The FAULT signal is de-asserted once device power is cycled or the enable is toggled and
+the device resumes normal operation. The TPS255x and TPS255x-1 are designed to eliminate false FAULT
+reporting by using an internal delay de-glitch circuit for overcurrent (7.5-ms typical) and reverse-voltage (4-ms
+typical) conditions without the need for external circuitry. This ensures that FAULT is not accidentally asserted
+due to normal operation such as starting into a heavy capacitive load. The deglitch circuitry delays entering and
+leaving fault conditions. Overtemperature conditions are not deglitched and assert the FAULT signal immediately.
+9.3.4 Undervoltage Lockout (UVLO)
+The undervoltage lockout (UVLO) circuit disables the power switch until the input voltage reaches the UVLO
+turnon threshold. Built-in hysteresis prevents unwanted on and off cycling due to input voltage drop from large
+current surges.
+9.3.5 ENABLE (EN or EN)
+The logic enable controls the power switch, bias for the charge pump, driver, and other circuits to reduce the
+supply current. The supply current is reduced to less than 1-µA when a logic low is present on EN. A logic low
+input on EN or a logic high input on EN enables the driver, control circuits, and power switch. The enable input is
+compatible with both TTL and CMOS logic levels.
+9.3.6 Thermal Sense
+The TPS255x and TPS255x-1 have self-protection features using two independent thermal-sensing circuits that
+monitor the operating temperature of the power switch and disable operation if the temperature exceeds
+recommended operating conditions. The TPS255x device operates in constant-current mode during an
+overcurrent conditions, which increases the voltage drop across power-switch. The power dissipation in the
+package is proportional to the voltage drop across the power switch, which increases the junction temperature
+during an overcurrent condition. The first thermal sensor turns off the power switch when the die temperature
+exceeds 135°C (minimum) and the part is in current limit. Hysteresis is built into the thermal sensor, and the
+switch turns on after the device has cooled approximately 10°C.
+0.94
+ILIM
+0.977
+ILIM
+1.016
+ILIM
+22980V
+OSmax R k
+23950V
+OSnom R k
+25230V
+OSmin R k
+I (mA) =
+I (mA) =
+I (mA) =
+/c87
+/c87
+/c87
+15
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+www.ti.com SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation FeedbackCopyright © 2008–2016, Texas Instruments Incorporated
+Feature Description (continued)
+The TPS255x and TPS255x-1 also have a second ambient thermal sensor. The ambient thermal sensor turns off
+the power-switch when the die temperature exceeds 155°C (minimum) regardless of whether the power switch is
+in current limit and turns on the power switch after the device has cooled approximately 10°C. The TPS255x and
+TPS255x-1 families continue to cycle off and on until the fault is removed.
+The open-drain fault reporting output FAULT is asserted (active low) immediately during an overtemperature
+shutdown condition.
+9.4 Device Functional Modes
+There are no other functional modes.
+9.5 Programming
+9.5.1 Programming the Current-Limit Threshold
+The overcurrent threshold is user programmable through an external resistor. The TPS255x and TPS255x-1 use
+an internal regulation loop to provide a regulated voltage on the ILIM pin. The current-limit threshold is
+proportional to the current sourced out of ILIM. The recommended 1% resistor range for RILIM is 15 kΩ ≤ RILIM ≤
+232 kΩ to ensure stability of the internal regulation loop. Many applications require that the minimum current limit
+is above a certain current level or that the maximum current limit is below a certain current level, so it is
+important to consider the tolerance of the overcurrent threshold when selecting a value for RILIM. The following
+equations and Figure 23 can be used to calculate the resulting overcurrent threshold for a given external resistor
+value (RILIM). Figure 23 includes current-limit tolerance due to variations caused by temperature and process.
+However, the equations do not account for tolerance due to external resistor variation, so it is important to
+account for this tolerance when selecting RILIM. The traces routing the RILIM resistor to the TPS255x and
+TPS255x-1 must be as short as possible to reduce parasitic effects on the current-limit accuracy.
+RILIM can be selected to provide a current-limit threshold that occurs 1) above a minimum load current or 2)
+below a maximum load current.
+To design above a minimum current-limit threshold, find the intersection of RILIM and the maximum desired load
+current on the IOS(min) curve and choose a value of RILIM below this value. Programming the current limit above a
+minimum threshold is important to ensure start-up into full load or heavy capacitive loads. The resulting
+maximum current-limit threshold is the intersection of the selected value of RILIM and the IOS(max) curve.
+To design below a maximum current-limit threshold, find the intersection of RILIM and the maximum desired load
+current on the IOS(max) curve and choose a value of RILIM above this value. Programming the current limit below a
+maximum threshold is important to avoid current limiting upstream power supplies, causing the input voltage bus
+to droop. The resulting minimum current-limit threshold is the intersection of the selected value of RILIM and the
+IOS(min) curve.
+Current-Limit Threshold Equations (IOS):
+where
+15 kΩ ≤ RILIM ≤ 232 kΩ. (1)
+While the maximum recommended value of RILIM is 232 kΩ, there is one additional configuration that allows for
+a lower current-limit threshold. The ILIM pin may be connected directly to IN to provide a 75 mA (typical) current-
+limit threshold. Additional low-ESR ceramic capacitance may be necessary from IN to GND in this configuration
+to prevent unwanted noise from coupling into the sensitive ILIM circuitry.
+Current□Limit□Threshold□-□mA
+R -□Current□Limit□Resistor□-□kILIM /c87
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+1000
+1100
+1200
+1300
+1400
+1500
+15 25 35 45 65 75 85 95 195 205 235165 175 185135 145 155105 115 125 215 225
+IOS(min)
+IOS(max)
+IOS(nom)
+55
+1600
+1700
+1800
+16
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016 www.ti.com
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation Feedback Copyright © 2008–2016, Texas Instruments Incorporated
+Programming (continued)
+Figure 23. Current-Limit Threshold vs RILIM
+17
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+www.ti.com SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation FeedbackCopyright © 2008–2016, Texas Instruments Incorporated
+10 Application and Implementation
+NOTE
+Information in the following applications sections is not part of the TI component
+specification, and TI does not warrant its accuracy or completeness. TI’s customers are
+responsible for determining suitability of components for their purposes. Customers should
+validate and test their design implementation to confirm system functionality.
+10.1 Application Information
+10.1.1 Constant-Current vs Latch-Off Operation and Impact on Output Voltage
+Both the constant-current devices (TPS255x) and latch-off devices (TPS255x-1) operate identically during normal
+operation, that is, the load current is less than the current-limit threshold and the devices are not limiting current.
+During normal operation the N-channel MOSFET is fully enhanced, and VOUT = VIN - (IOUT x rDS(on)). The voltage
+drop across the MOSFET is relatively small compared to VIN, and VOUT ≉ VIN.
+Both the constant-current devices (TPS255x ) and latch-off devices (TPS255x-1) operate identically during the
+initial onset of an overcurrent event. Both devices limit current to the programmed current-limit threshold set to
+RILIM by operating the N-channel MOSFET in the linear mode. During current-limit operation, the N-channel
+MOSFET is no longer fully-enhanced and the resistance of the device increases. This allows the device to
+effectively regulate the current to the current-limit threshold. The effect of increasing the resistance of the
+MOSFET is that the voltage drop across the device is no longer negligible (VIN ≠ VOUT), and VOUT decreases. The
+amount that VOUT decreases is proportional to the magnitude of the overload condition. The expected VOUT can
+be calculated by,
+IOS × RLOAD
+where
+IOS is the current-limit threshold and RLOAD is the magnitude of the overload condition. (2)
+For example, if IOS is programmed to 1 A and a 1 Ω overload condition is applied, the resulting VOUT is 1 V.
+While both the constant-current devices (TPS255x ) and latch-off devices (TPS255x-1) operate identically during
+the initial onset of an overcurrent event, they behave differently if the overcurrent event lasts longer than the
+internal delay de-glitch circuit (7.5-ms typical). The constant-current devices (TPS255x ) assert the FAULT flag
+after the deglitch period and continue to regulate the current to the current-limit threshold indefinitely. In practical
+circuits, the power dissipation in the package increases the die temperature above the overtemperature
+shutdown threshold (135°C minimum), and the device turns off until the die temperature decreases by the
+hysteresis of the thermal shutdown circuit (10°C typical). The device turns on and continues to thermal cycle until
+the overload condition is removed. The constant-current devices resume normal operation once the overload
+condition is removed. The latch-off devices (TPS255x-1) assert the FAULT flag after the deglitch period and
+immediately turn off the device. The device remains off regardless of whether the overload condition is removed
+from the output. The latch-off devices remain off and do not resume normal operation until the surrounding
+system either toggles the enable or cycles power to the device.
+10.2 Typical Applications
+10.2.1 Two-Level Current-Limit Circuit
+Some applications require different current-limit thresholds depending on external system conditions. Figure 24
+shows an implementation for an externally controlled, two-level current-limit circuit. The current-limit threshold is
+set by the total resistance from ILIM to GND (see the Programming the Current-Limit Threshold section). A logic-
+level input enables or disables MOSFET Q1 and changes the current-limit threshold by modifying the total
+resistance from ILIM to GND. Additional MOSFET and resistor combinations can be used in parallel to Q1/R2 to
+increase the number of additional current-limit levels.
+NOTE
+ILIM must never be driven directly with an external signal.
+ILIM
+OSmax 0.94
+ILIM
+OSmax 0.94
+OSmax
+R (k ) = 23.7k
+22980VI (mA) =
+R k
+22980VI (mA) =
+23.7 k
+I (mA) = 1172.4mA
+/c87 /c87
+/c87
+/c87
+1.016
+ILIM
+OSmin
+25230V
+OSmin R k
+1
+1.016
+ILIM
+OSmin
+ILIM
+I (mA) = 1000mA
+I (mA) =
+25230VR (k ) = I mA
+R (k ) = 24k
+/c87
+/c87
+/c87 /c87
+/c230 /c246 /c247/c231 /c247/c231 /c247/c231 /c247/c231
+/c232 /c248
+OUTIN
+GND
+FAULT
+ILIM
+ENControl Signal
+Input
+Fault Signal
+Power Pad
+Output
+Current Limit
+Control Signal
+0.1 F/c109
+R
+100 k
+FAULT
+/c87
+CLOAD
+RLOAD
+R1
+210 k/c87
+R2
+22.1 k/c87
+Q1
+2N7002
+Copyright © 2016, Texas Instruments Incorporated
+18
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016 www.ti.com
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation Feedback Copyright © 2008–2016, Texas Instruments Incorporated
+Typical Applications (continued)
+Figure 24. Two-Level Current-Limit Circuit
+10.2.1.1 Design Requirements
+For this example, use the parameters shown in Table 1.
+Table 1. Design Requirements
+PARAMETER VALUE
+Input voltage 5 V
+Output voltage 5 V
+Above a minimum current limit 1000 mA
+Below a maximum current limit 500 mA
+10.2.1.2 Detailed Design Procedures
+10.2.1.2.1 Designing Above a Minimum Current Limit
+Some applications require that current limiting cannot occur below a certain threshold. For this example, assume
+that 1 A must be delivered to the load so that the minimum desired current-limit threshold is 1000 mA. Use the
+IOS equations and Figure 23 to select RILIM.
+(3)
+Select the closest 1% resistor less than the calculated value: RILIM = 23.7 kΩ. This sets the minimum current-limit
+threshold at 1 A . Use the IOS equations, Figure 23, and the previously calculated value for RILIM to calculate the
+maximum resulting current-limit threshold.
+(4)
+The resulting maximum current-limit threshold is 1172.4 mA with a 23.7-kΩ resistor.
+ILIM
+OSmin 1.016
+ILIM
+OSmin 1.016
+OSmin
+R (k ) = 59k
+25230VI (mA) =
+R k
+25230VI (mA) =
+59 k
+I (mA) = 400.6mA
+/c87 /c87
+/c87
+/c87
+0.94
+ILIM
+OSmax
+22980V
+OSmax R k
+1
+0.94
+ILIM
+OSmax
+ILIM
+I (mA) = 500mA
+I (mA) =
+22980VR (k ) = I mA
+R (k ) = 58.7k
+/c87
+/c87
+/c87 /c87
+/c230 /c246 /c247/c231 /c247/c231 /c247/c231 /c247/c231
+/c232 /c248
+19
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+www.ti.com SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation FeedbackCopyright © 2008–2016, Texas Instruments Incorporated
+10.2.1.2.2 Designing Below a Maximum Current Limit
+Some applications require that current limiting must occur below a certain threshold. For this example, assume
+that the desired upper current-limit threshold must be below 500 mA to protect an up-stream power supply. Use
+the IOS equations and Figure 23 to select RILIM.
+(5)
+Select the closest 1% resistor greater than the calculated value: RILIM = 59-kΩ. This sets the maximum current-
+limit threshold at 500 mA . Use the IOS equations, Figure 23, and the previously calculated value for RILIM to
+calculate the minimum resulting current-limit threshold.
+(6)
+The resulting minimum current-limit threshold is 400.6 mA with a 59-kΩ resistor.
+10.2.1.2.3 Accounting for Resistor Tolerance
+The previous sections described the selection of RILIM given certain application requirements and the importance
+of understanding the current-limit threshold tolerance. The analysis focused only on the TPS255x and TPS255x-
+1 performance and assumed an exact resistor value. However, resistors sold in quantity are not exact and are
+bounded by an upper and lower tolerance centered around a nominal resistance. The additional RILIM resistance
+tolerance directly affects the current-limit threshold accuracy at a system level. The following table shows a
+process that accounts for worst-case resistor tolerance assuming 1% resistor values. Step one follows the
+selection process outlined in the application examples above. Step two determines the upper and lower
+resistance bounds of the selected resistor. Step three uses the upper and lower resistor bounds in the IOS
+equations to calculate the threshold limits. It is important to use tighter tolerance resistors, for example, 0.5% or
+0.1%, when precision current limiting is desired.
+20
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016 www.ti.com
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation Feedback Copyright © 2008–2016, Texas Instruments Incorporated
+Table 2. Common RILIM Resistor Selections
+DESIRED
+NOMINAL
+CURRENT
+LIMIT
+(mA)
+IDEAL
+RESISTOR
+(kΩ)
+CLOSEST
+1% RESISTOR
+(kΩ)
+RESISTOR TOLERANCE ACTUAL LIMITS
+1% LOW (kΩ) 1% HIGHT
+(kΩ) IOS MIN (mA) IOS NOM (mA) IOS MAX (mA)
+75 SHORT ILIM to IN 50.0 75.0 100.0
+120 226.1 226 223.7 228.3 101.3 120.0 142.1
+200 134.0 133 131.7 134.3 173.7 201.5 233.9
+300 88.5 88.7 87.8 89.6 262.1 299.4 342.3
+400 65.9 66.5 65.8 67.2 351.2 396.7 448.7
+500 52.5 52.3 51.8 52.8 448.3 501.6 562.4
+600 43.5 43.2 42.8 43.6 544.3 604.6 673.1
+700 37.2 37.4 37.0 37.8 630.2 696.0 770.8
+800 32.4 32.4 32.1 32.7 729.1 800.8 882.1
+900 28.7 28.7 28.4 29.0 824.7 901.5 988.7
+1000 25.8 26.1 25.8 26.4 908.3 989.1 1081.0
+1100 23.4 23.2 23.0 23.4 1023.7 1109.7 1207.5
+1200 21.4 21.5 21.3 21.7 1106.0 1195.4 1297.1
+1300 19.7 19.6 19.4 19.8 1215.1 1308.5 1414.9
+1400 18.3 18.2 18.0 18.4 1310.1 1406.7 1517.0
+1500 17.0 16.9 16.7 17.1 1412.5 1512.4 1626.4
+1600 16.0 15.8 15.6 16.0 1512.5 1615.2 1732.7
+1700 15.0 15.0 14.9 15.2 1594.5 1699.3 1819.4
+10.2.1.2.4 Input and Output Capacitance
+Input and output capacitance improves the performance of the device; the actual capacitance must be optimized
+for the particular application. For all applications, TI recommends placing a 0.1-µF or greater ceramic bypass
+capacitor between IN and GND as close to the device as possible for local noise de-coupling. This precaution
+reduces ringing on the input due to power-supply transients. Additional input capacitance may be needed on the
+input to reduce voltage overshoot from exceeding the absolute maximum voltage of the device during heavy
+transient conditions. This is especially important during bench testing when long, inductive cables are used to
+connect the evaluation board to the bench power-supply.
+TI recommends placing a high-value electrolytic capacitor on the output pin when large transient currents are
+expected on the output.
+10.2.1.3 Application Curves
+Figure 25. Turnon Delay and Rise Time
+Figure 26. Reverse-Voltage Protection Recovery
+OUTIN
+GND
+FAULT
+ILIM
+EN
+External Logic
+Signal & Driver
+Power Pad
+OutputInput 0.1 F/c109
+R
+100 k
+FAULT
+/c87
+C
+0.1 F
+RETRY
+/c109
+R
+20 k
+ILIM
+/c87
+CLOAD
+RLOAD
+TPS2553
+Copyright © 2016, Texas Instruments Incorporated
+OUTIN
+GND
+FAULT
+ILIM
+EN
+Input
+Power Pad
+Output0.1 F/c109
+R
+100 k
+FAULT
+/c87
+C
+0.1 F
+RETRY
+/c109
+R
+20 k
+ILIM
+/c87
+CLOAD
+RLOAD
+TPS2553
+Copyright © 2016, Texas Instruments Incorporated
+21
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+www.ti.com SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation FeedbackCopyright © 2008–2016, Texas Instruments Incorporated
+10.2.2 Auto-Retry Functionality
+Some applications require that an overcurrent condition disables the part momentarily during a fault condition
+and re-enables after a pre-set time. This auto-retry functionality can be implemented with an external resistor and
+capacitor. During a fault condition, FAULT pulls low disabling the part. The part is disabled when EN is pulled
+low, and FAULT goes high impedance allowing CRETRY to begin charging. The part re-enables when the voltage
+on EN reaches the turnon threshold, and the auto-retry time is determined by the resistor-capacitor time
+constant. The device continues to cycle in this manner until the fault condition is removed.
+Figure 27. Auto-Retry Functionality
+Some applications require auto-retry functionality and the ability to enable or disable with an external logic signal.
+Figure 28 shows how an external logic signal can drive EN through RFAULT and maintain auto-retry functionality.
+The resistor-capacitor time constant determines the auto-retry time-out period.
+Figure 28. Auto-Retry Functionality With External EN Signal
+10.2.2.1 Design Requirements
+For this example, use the parameters shown in Table 3.
+Table 3. Design Requirements
+PARAMETER VALUE
+Input voltage 5 V
+Output voltage 5 V
+Current 1200 mA
+OUTIN
+GND
+FAULT
+ILIM
+EN
+RILIM
+20 k/c87
+RFAULT
+100 k/c87
+Control  Signal
+5V USB
+Input
+USB
+Port
+USB Data
+TPS2552/53
+0.1 F/c109
+120 F/c109
+Fault Signal
+Power Pad
+USB requirement only*
+*
+facing ports are bypassed with at least
+120 F per hub
+USB requirement that downstream
+/c109
+Copyright © 2016, Texas Instruments Incorporated
+22
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016 www.ti.com
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation Feedback Copyright © 2008–2016, Texas Instruments Incorporated
+10.2.2.2 Detailed Design Procedure
+Refer to Programming the Current-Limit Threshold section for the current limit setting. For auto-retry functionality,
+once FAULT asserted, EN pull low, TPS2553 is disabled, FAULT des-asserted, CRETRY is slowly charged to EN
+logic high through RFAULT, then enable, after deglitch time, FAULT asserted again. In the event of an overload,
+TPS2553 cycles and has output average current. ON-time with output current is decided by FAULT deglitch time.
+OFF-time without output current is decided by RFAULT x CRETRY constant time to EN logic high and ton time.
+Therefore, set the RFAULT × CRETRY to get the desired output average current during overload.
+10.2.3 Typical Application as USB Power Switch
+Figure 29. Typical Application as USB Power Switch
+10.2.3.1 Design Requirements
+For this example, use the parameters shown in Table 4.
+Table 4. Design Requirements
+PARAMETER VALUE
+Input voltage 5 V
+Output voltage 5 V
+Current 1200 mA
+10.2.3.1.1 USB Power-Distribution Requirements
+USB can be implemented in several ways regardless of the type of USB device being developed. Several power-
+distribution features must be implemented.
+• SPHs must:
+– Current limit downstream ports
+– Report overcurrent conditions
+• BPHs must:
+– Enable or disable power to downstream ports
+– Power up at <100 mA
+– Limit inrush current (<44 Ω and 10 µF)
+• Functions must:
+– Limit inrush currents
+– Power up at <100 mA
+The feature set of the TPS255x and TPS255x-1 meets each of these requirements. The integrated current
+limiting and overcurrent reporting is required by self-powered hubs. The logic-level enable and controlled rise
+times meet the need of both input and output ports on bus-powered hubs and the input ports for bus-powered
+functions.
+23
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+www.ti.com SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation FeedbackCopyright © 2008–2016, Texas Instruments Incorporated
+10.2.3.2 Detailed Design Procedure
+10.2.3.2.1 Universal Serial Bus (USB) Power-Distribution Requirements
+One application for this device is for current limiting in universal serial bus (USB) applications. The original USB
+interface was a 12-Mbps or 1.5-Mbps, multiplexed serial bus designed for low-to-medium bandwidth PC
+peripherals (for example, keyboards, printers, scanners, and mice). As the demand for more bandwidth
+increased, the USB 2.0 standard was introduced increasing the maximum data rate to 480-Mbps. The four-wire
+USB interface is conceived for dynamic attach-detach (hot plug-unplug) of peripherals. Two lines are provided for
+differential data, and two lines are provided for 5-V power distribution.
+USB data is a 3.3-V level signal, but power is distributed at 5 V to allow for voltage drops in cases where power
+is distributed through more than one hub across long cables. Each function must provide its own regulated 3.3 V
+from the 5-V input or its own internal power supply. The USB specification classifies two different classes of
+devices depending on its maximum current draw. A device classified as low-power can draw up to 100 mA as
+defined by the standard. A device classified as high-power can draw up to 500 mA. It is important that the
+minimum current-limit threshold of the current-limiting power-switch exceed the maximum current-limit draw of
+the intended application. The latest USB standard must always be referenced when considering the current-limit
+threshold
+The USB specification defines two types of devices as hubs and functions. A USB hub is a device that contains
+multiple ports for different USB devices to connect and can be self-powered (SPH) or bus-powered (BPH). A
+function is a USB device that is able to transmit or receive data or control information over the bus. A USB
+function can be embedded in a USB hub. A USB function can be one of three types included in the list below.
+• Low-power, bus-powered function
+• High-power, bus-powered function
+• Self-powered function
+SPHs and BPHs distribute data and power to downstream functions. The TPS255x has higher current capability
+than required for a single USB port allowing it to power multiple downstream ports.
+24
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016 www.ti.com
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation Feedback Copyright © 2008–2016, Texas Instruments Incorporated
+11 Power Supply Recommendations
+11.1 Self-Powered and Bus-Powered Hubs
+A SPH has a local power supply that powers embedded functions and downstream ports. This power supply
+must provide between 4.75 V to 5.25 V to downstream facing devices under full-load and no-load conditions.
+SPHs are required to have current-limit protection and must report overcurrent conditions to the USB controller.
+Typical SPHs are desktop PCs, monitors, printers, and stand-alone hubs.
+A BPH obtains all power from an upstream port and often contains an embedded function. It must power up with
+less than 100 mA. The BPH usually has one embedded function, and power is always available to the controller
+of the hub. If the embedded function and hub require more than 100 mA on power up, keep the power to the
+embedded function off until enumeration is completed. This can be accomplished by removing power or by
+shutting off the clock to the embedded function. Power-switching the embedded function is not necessary if the
+aggregate power draw for the function and controller is less than 100 mA. The total current drawn by the bus-
+powered device is the sum of the current to the controller, the embedded function, and the downstream ports,
+and it is limited to 500 mA from an upstream port.
+11.2 Low-Power Bus-Powered and High-Power Bus-Powered Functions
+Both low-power and high-power bus-powered functions obtain all power from upstream ports. Low-power
+functions always draw less than 100 mA; high-power functions must draw less than 100 mA at power up and can
+draw up to 500 mA after enumeration. If the load of the function is more than the parallel combination of 44 Ω
+and 10 µF at power up, the device must implement inrush current limiting.
+11.3 Power Dissipation and Junction Temperature
+The low ON-resistance of the N-channel MOSFET allows small surface-mount packages to pass large currents.
+It is good design practice to estimate power dissipation and junction temperature. The below analysis gives an
+approximation for calculating junction temperature based on the power dissipation in the package. However, it is
+important to note that thermal analysis is strongly dependent on additional system level factors. Such factors
+include air flow, board layout, copper thickness and surface area, and proximity to other devices dissipating
+power. Good thermal design practice must include all system level factors in addition to individual component
+analysis.
+Begin by determining the rDS(on) of the N-channel MOSFET relative to the input voltage and operating
+temperature. As an initial estimate, use the highest operating ambient temperature of interest and read rDS(on)
+from the typical characteristics graph. Using this value, the power dissipation can be calculated using Equation 7.
+PD = rDS(on) × IOUT
+2
+where
+• PD = Total power dissipation (W)
+• rDS(on) = Power switch on-resistance (Ω)
+• IOUT = Maximum current-limit threshold (A)
+• This step calculates the total power dissipation of the N-channel MOSFET. (7)
+Finally, calculate the junction temperature:
+TJ = PD × θJA + TA
+where
+• TA = Ambient temperature (°C)
+• θJA = Thermal resistance (°C/W)
+• PD = Total power dissipation (W) (8)
+Compare the calculated junction temperature with the initial estimate. If they are not within a few degrees, repeat
+the calculation using the refined rDS(on) from the previous calculation as the new estimate. Two or three iterations
+are generally sufficient to achieve the desired result. The final junction temperature is highly dependent on
+thermal resistance θJA, and thermal resistance is highly dependent on the individual package and board layout.
+The Thermal Information table provides example thermal resistances for specific packages and board layouts.
+/FAULT
+EN 3
+6 OUT
+5 ILIM
+1IN
+2
+4
+25
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+www.ti.com SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation FeedbackCopyright © 2008–2016, Texas Instruments Incorporated
+12 Layout
+12.1 Layout Guidelines
+• TI recommends placing the 100-nF bypass capacitor near the IN and GND pins, and make the connections
+using a low-inductance trace.
+• TI recommends placing a high-value electrolytic capacitor and a 100-nF bypass capacitor on the output pin
+when large transient currents are expected on the output.
+• The traces routing the RILIM resistor to the device must be as short as possible to reduce parasitic effects on
+the current limit accuracy.
+• The PowerPAD must be directly connected to PCB ground plane using wide and short copper trace.
+12.2 Layout Example
+Figure 30. Layout Recommendation
+26
+TPS2552, TPS2553, TPS2552-1, TPS2553-1
+SLVS841F – NOVEMBER 2008 – REVISED AUGUST 2016 www.ti.com
+Product Folder Links: TPS2552 TPS2553 TPS2552-1 TPS2553-1
+Submit Documentation Feedback Copyright © 2008–2016, Texas Instruments Incorporated
+13 Device and Documentation Support
+13.1 Device Support
+For the TI Switch Portfolio, go here.
+13.2 Related Links
+The table below lists quick access links. Categories include technical documents, support and community
+resources, tools and software, and quick access to sample or buy.
+Table 5. Related Links
+PARTS PRODUCT FOLDER SAMPLE & BUY TECHNICAL
+DOCUMENTS
+TOOLS &
+SOFTWARE
+SUPPORT &
+COMMUNITY
+TPS32552 Click here Click here Click here Click here Click here
+TPS2553 Click here Click here Click here Click here Click here
+TPS2552-1 Click here Click here Click here Click here Click here
+TPS2553-1 Click here Click here Click here Click here Click here
+13.3 Receiving Notification of Documentation Updates
+To receive notification of documentation updates, navigate to the device product folder on ti.com. In the upper
+right corner, click on Alert me to register and receive a weekly digest of any product information that has
+changed. For change details, review the revision history included in any revised document.
+13.4 Community Resources
+The following links connect to TI community resources. Linked contents are provided "AS IS" by the respective
+contributors. They do not constitute TI specifications and do not necessarily reflect TI's views; see TI's Terms of
+Use.
+TI E2E™ Online Community TI's Engineer-to-Engineer (E2E) Community. Created to foster collaboration
+among engineers. At e2e.ti.com, you can ask questions, share knowledge, explore ideas and help
+solve problems with fellow engineers.
+Design Support TI's Design Support Quickly find helpful E2E forums along with design support tools and
+contact information for technical support.
+13.5 Trademarks
+PowerPAD, E2E are trademarks of Texas Instruments.
+All other trademarks are the property of their respective owners.
+13.6 Electrostatic Discharge Caution
+These devices have limited built-in ESD protection. The leads should be shorted together or the device placed in conductive foam
+during storage or handling to prevent electrostatic damage to the MOS gates.
+13.7 Glossary
+SLYZ022 — TI Glossary.
+This glossary lists and explains terms, acronyms, and definitions.
+14 Mechanical, Packaging, and Orderable Information
+The following pages include mechanical, packaging, and orderable information. This information is the most
+current data available for the designated devices. This data is subject to change without notice and revision of
+this document. For browser-based versions of this data sheet, refer to the left-hand navigation.
+PACKAGE OPTION ADDENDUM
+www.ti.com 21-Aug-2026
+PACKAGING INFORMATION
+Orderable part number Status
+(1)
+Material type
+(2)
+Package | Pins Package qty | Carrier RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C) Part marking
+(6)
+TPS2552DBVR Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 2552
+TPS2552DBVR-1 Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHX
+TPS2552DBVR-1.B Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHX
+TPS2552DBVR.B Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 2552
+TPS2552DBVR1G4 Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 2552
+TPS2552DBVR1G4.B Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 2552
+TPS2552DBVT Active Production SOT-23 (DBV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 2552
+TPS2552DBVT-1 Active Production SOT-23 (DBV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHX
+TPS2552DBVT-1.B Active Production SOT-23 (DBV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHX
+TPS2552DBVT-11G4 Active Production SOT-23 (DBV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHX
+TPS2552DBVT-11G4.B Active Production SOT-23 (DBV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHX
+TPS2552DBVT.B Active Production SOT-23 (DBV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 2552
+TPS2552DRVR Active Production WSON (DRV) | 6 3000 | LARGE T&R Yes NIPDAU | NIPDAUAG Level-1-260C-UNLIM -40 to 125 CHR
+TPS2552DRVR-1 Active Production WSON (DRV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHY
+TPS2552DRVR-1.B Active Production WSON (DRV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHY
+TPS2552DRVR.B Active Production WSON (DRV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHR
+TPS2552DRVRG4 Active Production WSON (DRV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHR
+TPS2552DRVRG4.B Active Production WSON (DRV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHR
+TPS2552DRVT Active Production WSON (DRV) | 6 250 | SMALL T&R Yes NIPDAU | NIPDAUAG Level-1-260C-UNLIM -40 to 85 CHR
+TPS2552DRVT-1 Active Production WSON (DRV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHY
+TPS2552DRVT-1.B Active Production WSON (DRV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHY
+TPS2552DRVT-1G4 Active Production WSON (DRV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHY
+TPS2552DRVT-1G4.B Active Production WSON (DRV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHY
+TPS2552DRVT.B Active Production WSON (DRV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 CHR
+TPS2553DBVR Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 2553
+TPS2553DBVR-1 Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHZ
+TPS2553DBVR-1.B Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHZ
+TPS2553DBVR-11G4 Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHZ
+TPS2553DBVR-11G4.B Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHZ
+Addendum-Page 1
+PACKAGE OPTION ADDENDUM
+www.ti.com 21-Aug-2026
+Orderable part number Status
+(1)
+Material type
+(2)
+Package | Pins Package qty | Carrier RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C) Part marking
+(6)
+TPS2553DBVR.A Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 2553
+TPS2553DBVR.B Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 2553
+TPS2553DBVRG4 Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 2553
+TPS2553DBVRG4.A Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 2553
+TPS2553DBVRG4.B Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 2553
+TPS2553DBVT Active Production SOT-23 (DBV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 2553
+TPS2553DBVT-1 Active Production SOT-23 (DBV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHZ
+TPS2553DBVT-1.B Active Production SOT-23 (DBV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHZ
+TPS2553DBVT.A Active Production SOT-23 (DBV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 2553
+TPS2553DBVT.B Active Production SOT-23 (DBV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 2553
+TPS2553DRVR Active Production WSON (DRV) | 6 3000 | LARGE T&R Yes NIPDAU | NIPDAUAG Level-1-260C-UNLIM -40 to 125 CHT
+TPS2553DRVR-1 Active Production WSON (DRV) | 6 3000 | LARGE T&R Yes NIPDAU | NIPDAUAG Level-1-260C-UNLIM -40 to 125 CJZ
+TPS2553DRVR-1.B Active Production WSON (DRV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CJZ
+TPS2553DRVR.A Active Production WSON (DRV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHT
+TPS2553DRVR.B Active Production WSON (DRV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHT
+TPS2553DRVRG4 Active Production WSON (DRV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHT
+TPS2553DRVRG4.A Active Production WSON (DRV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHT
+TPS2553DRVRG4.B Active Production WSON (DRV) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHT
+TPS2553DRVT Active Production WSON (DRV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHT
+TPS2553DRVT-1 Active Production WSON (DRV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CJZ
+TPS2553DRVT-1.B Active Production WSON (DRV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CJZ
+TPS2553DRVT-1G4 Active Production WSON (DRV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CJZ
+TPS2553DRVT-1G4.B Active Production WSON (DRV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CJZ
+TPS2553DRVT.A Active Production WSON (DRV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHT
+TPS2553DRVT.B Active Production WSON (DRV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 CHT
+ 
+(1) Status:  For more details on status, see our product life cycle.
+ 
+(2) Material type:  When designated, preproduction parts are prototypes/experimental devices, and are not yet approved or released for full production. Testing and final process, including without limitation quality assurance,
+reliability performance testing, and/or process qualification, may not yet be complete, and this item is subject to further changes or possible discontinuation. If available for ordering, purchases will be subject to an additional
+waiver at checkout, and are intended for early internal evaluation purposes only. These items are sold without warranties of any kind.
+ 
+Addendum-Page 2
+PACKAGE OPTION ADDENDUM
+www.ti.com 21-Aug-2026
+(3) RoHS values:  Yes, No, RoHS Exempt. See the TI RoHS Statement for additional information and value definition.
+ 
+(4) Lead finish/Ball material:  Parts may have multiple material finish options. Finish options are separated by a vertical ruled line. Lead finish/Ball material values may wrap to two lines if the finish value exceeds the maximum
+column width.
+ 
+(5) MSL rating/Peak reflow:  The moisture sensitivity level ratings and peak solder (reflow) temperatures. In the event that a part has multiple moisture sensitivity ratings, only the lowest level per JEDEC standards is shown.
+Refer to the shipping label for the actual reflow temperature that will be used to mount the part to the printed circuit board.
+ 
+(6) Part marking:  There may be an additional marking, which relates to the logo, the lot trace code information, or the environmental category of the part.
+ 
+Multiple part markings will be inside parentheses. Only one part marking contained in parentheses and separated by a "~" will appear on a part. If a line is indented then it is a continuation of the previous line and the two
+combined represent the entire part marking for that device.
+ 
+Important Information and Disclaimer:The information provided on this page represents TI's knowledge and belief as of the date that it is provided. TI bases its knowledge and belief on information provided by third parties, and
+makes no representation or warranty as to the accuracy of such information. Efforts are underway to better integrate information from third parties. TI has taken and continues to take reasonable steps to provide representative
+and accurate information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers
+and other limited information may not be available for release.
+ 
+In no event shall TI's liability arising out of such information exceed the total purchase price of the TI part(s) at issue in this document sold by TI to Customer on an annual basis.
+ 
+ OTHER QUALIFIED VERSIONS OF TPS2553, TPS2553-1 :
+• Automotive : TPS2553-Q1, TPS2553-Q1
+ NOTE: Qualified Version Definitions:
+• Automotive - Q100 devices qualified for high-reliability automotive applications targeting zero defects
+Addendum-Page 3
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 3-Sep-2026
+TAPE AND REEL INFORMATION
+Reel Width (W1)
+REEL DIMENSIONS
+A0B0K0WDimension designed to accommodate the component lengthDimension designed to accommodate the component thicknessOverall width of the carrier tapePitch between successive cavity centersDimension designed to accommodate the component width
+TAPE DIMENSIONSK0 P1B0WA0Cavity
+QUADRANT ASSIGNMENTS FOR PIN 1 ORIENTATION IN TAPE
+Pocket QuadrantsSprocket HolesQ1Q1Q2Q2Q3Q3Q4Q4User Direction of Feed
+P1ReelDiameter
+ 
+*All dimensions are nominal
+Device Package
+Type
+Package
+Drawing
+Pins SPQ Reel
+Diameter
+(mm)
+Reel
+Width
+W1 (mm)
+A0
+(mm)
+B0
+(mm)
+K0
+(mm)
+P1
+(mm)
+W
+(mm)
+Pin1
+Quadrant
+TPS2552DBVR SOT-23 DBV 6 3000 180.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+TPS2552DBVR SOT-23 DBV 6 3000 178.0 9.0 3.23 3.17 1.37 4.0 8.0 Q3
+TPS2552DBVR SOT-23 DBV 6 3000 179.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+TPS2552DBVR-1 SOT-23 DBV 6 3000 178.0 9.0 3.23 3.17 1.37 4.0 8.0 Q3
+TPS2552DBVR1G4 SOT-23 DBV 6 3000 180.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+TPS2552DBVT SOT-23 DBV 6 250 180.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+TPS2552DBVT-1 SOT-23 DBV 6 250 179.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+TPS2552DBVT-1 SOT-23 DBV 6 250 178.0 9.0 3.23 3.17 1.37 4.0 8.0 Q3
+TPS2552DBVT-11G4 SOT-23 DBV 6 250 178.0 9.0 3.23 3.17 1.37 4.0 8.0 Q3
+TPS2552DRVR WSON DRV 6 3000 180.0 8.4 2.3 2.3 1.15 4.0 8.0 Q2
+TPS2552DRVR WSON DRV 6 3000 180.0 8.4 2.3 2.3 1.15 4.0 8.0 Q2
+TPS2552DRVR-1 WSON DRV 6 3000 179.0 8.4 2.2 2.2 1.2 4.0 8.0 Q2
+TPS2552DRVRG4 WSON DRV 6 3000 180.0 8.4 2.3 2.3 1.15 4.0 8.0 Q2
+TPS2552DRVT WSON DRV 6 250 180.0 8.4 2.3 2.3 1.15 4.0 8.0 Q2
+TPS2552DRVT-1 WSON DRV 6 250 179.0 8.4 2.2 2.2 1.2 4.0 8.0 Q2
+TPS2552DRVT-1G4 WSON DRV 6 250 179.0 8.4 2.2 2.2 1.2 4.0 8.0 Q2
+Pack Materials-Page 1
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 3-Sep-2026
+Device Package
+Type
+Package
+Drawing
+Pins SPQ Reel
+Diameter
+(mm)
+Reel
+Width
+W1 (mm)
+A0
+(mm)
+B0
+(mm)
+K0
+(mm)
+P1
+(mm)
+W
+(mm)
+Pin1
+Quadrant
+TPS2553DBVR SOT-23 DBV 6 3000 180.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+TPS2553DBVR-1 SOT-23 DBV 6 3000 180.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+TPS2553DBVR-11G4 SOT-23 DBV 6 3000 180.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+TPS2553DBVRG4 SOT-23 DBV 6 3000 180.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+TPS2553DBVT SOT-23 DBV 6 250 179.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+TPS2553DBVT SOT-23 DBV 6 250 180.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+TPS2553DBVT-1 SOT-23 DBV 6 250 180.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+TPS2553DRVR WSON DRV 6 3000 180.0 8.4 2.3 2.3 1.15 4.0 8.0 Q2
+TPS2553DRVR-1 WSON DRV 6 3000 180.0 8.4 2.3 2.3 1.15 4.0 8.0 Q2
+TPS2553DRVR-1 WSON DRV 6 3000 180.0 8.4 2.3 2.3 1.15 4.0 8.0 Q2
+TPS2553DRVRG4 WSON DRV 6 3000 180.0 8.4 2.3 2.3 1.15 4.0 8.0 Q2
+TPS2553DRVT WSON DRV 6 250 180.0 8.4 2.3 2.3 1.15 4.0 8.0 Q2
+TPS2553DRVT-1 WSON DRV 6 250 180.0 8.4 2.3 2.3 1.15 4.0 8.0 Q2
+TPS2553DRVT-1G4 WSON DRV 6 250 180.0 8.4 2.3 2.3 1.15 4.0 8.0 Q2
+Pack Materials-Page 2
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 3-Sep-2026
+TAPE AND REEL BOX DIMENSIONS
+Width (mm)
+W LH
+ 
+*All dimensions are nominal
+Device Package Type Package Drawing Pins SPQ Length (mm) Width (mm) Height (mm)
+TPS2552DBVR SOT-23 DBV 6 3000 210.0 185.0 35.0
+TPS2552DBVR SOT-23 DBV 6 3000 180.0 180.0 18.0
+TPS2552DBVR SOT-23 DBV 6 3000 200.0 183.0 25.0
+TPS2552DBVR-1 SOT-23 DBV 6 3000 180.0 180.0 18.0
+TPS2552DBVR1G4 SOT-23 DBV 6 3000 210.0 185.0 35.0
+TPS2552DBVT SOT-23 DBV 6 250 210.0 185.0 35.0
+TPS2552DBVT-1 SOT-23 DBV 6 250 203.0 203.0 35.0
+TPS2552DBVT-1 SOT-23 DBV 6 250 180.0 180.0 18.0
+TPS2552DBVT-11G4 SOT-23 DBV 6 250 180.0 180.0 18.0
+TPS2552DRVR WSON DRV 6 3000 182.0 182.0 20.0
+TPS2552DRVR WSON DRV 6 3000 210.0 185.0 35.0
+TPS2552DRVR-1 WSON DRV 6 3000 200.0 183.0 25.0
+TPS2552DRVRG4 WSON DRV 6 3000 182.0 182.0 20.0
+TPS2552DRVT WSON DRV 6 250 182.0 182.0 20.0
+TPS2552DRVT-1 WSON DRV 6 250 200.0 183.0 25.0
+TPS2552DRVT-1G4 WSON DRV 6 250 200.0 183.0 25.0
+TPS2553DBVR SOT-23 DBV 6 3000 210.0 185.0 35.0
+TPS2553DBVR-1 SOT-23 DBV 6 3000 210.0 185.0 35.0
+Pack Materials-Page 3
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 3-Sep-2026
+Device Package Type Package Drawing Pins SPQ Length (mm) Width (mm) Height (mm)
+TPS2553DBVR-11G4 SOT-23 DBV 6 3000 210.0 185.0 35.0
+TPS2553DBVRG4 SOT-23 DBV 6 3000 210.0 185.0 35.0
+TPS2553DBVT SOT-23 DBV 6 250 200.0 183.0 25.0
+TPS2553DBVT SOT-23 DBV 6 250 210.0 185.0 35.0
+TPS2553DBVT-1 SOT-23 DBV 6 250 210.0 185.0 35.0
+TPS2553DRVR WSON DRV 6 3000 182.0 182.0 20.0
+TPS2553DRVR-1 WSON DRV 6 3000 210.0 185.0 35.0
+TPS2553DRVR-1 WSON DRV 6 3000 182.0 182.0 20.0
+TPS2553DRVRG4 WSON DRV 6 3000 182.0 182.0 20.0
+TPS2553DRVT WSON DRV 6 250 182.0 182.0 20.0
+TPS2553DRVT-1 WSON DRV 6 250 182.0 182.0 20.0
+TPS2553DRVT-1G4 WSON DRV 6 250 182.0 182.0 20.0
+Pack Materials-Page 4
+GENERIC PACKAGE VIEW
+Images above are just a representation of the package family, actual package may vary.
+Refer to the product data sheet for package details.
+DRV 6 WSON - 0.8 mm max height
+PLASTIC SMALL OUTLINE - NO LEAD
+4206925/F
+www.ti.com
+PACKAGE OUTLINE
+C
+6X 0.35
+0.25
+1.6 0.1
+6X 0.3
+0.2
+2X
+1.3
+1 0.1
+4X 0.65
+0.8
+0.7
+0.05
+0.00
+B 2.1
+1.9
+A
+2.1
+1.9
+(0.2) TYP
+WSON - 0.8 mm max heightDRV0006D
+PLASTIC SMALL OUTLINE - NO LEAD
+4225563/A   12/2019
+PIN 1 INDEX AREA
+SEATING PLANE
+0.08 C
+1
+3 4
+6
+(OPTIONAL)
+PIN 1 ID
+0.1 C A B
+0.05 C
+THERMAL PAD
+EXPOSED
+7
+NOTES:
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M. 
+2. This drawing is subject to change without notice. 
+3. The package thermal pad must be soldered to the printed circuit board for thermal and mechanical performance.
+SCALE  5.500
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.07 MIN
+ALL AROUND
+0.07 MAX
+ALL AROUND
+(1)
+4X (0.65)
+(1.95)
+6X (0.3)
+6X (0.45)
+(1.6)
+(R0.05) TYP
+( 0.2) VIA
+TYP
+(1.1)
+WSON - 0.8 mm max heightDRV0006D
+PLASTIC SMALL OUTLINE - NO LEAD
+4225563/A   12/2019
+SYMM
+1
+3 4
+6
+SYMM
+LAND PATTERN EXAMPLE
+EXPOSED METAL SHOWN
+SCALE:25X
+7
+NOTES: (continued)
+ 
+4. This package is designed to be soldered to a thermal pad on the board. For more information, see Texas Instruments literature
+    number SLUA271 (www.ti.com/lit/slua271).
+5. Vias are optional depending on application, refer to device data sheet. If some or all are implemented, recommended via locations are shown.
+ 
+ 
+SOLDER MASK
+OPENING
+SOLDER MASK
+METAL UNDER
+SOLDER MASK
+DEFINED
+EXPOSED
+METAL
+METALSOLDER MASK
+OPENING SOLDER MASK DETAILS
+NON SOLDER MASK
+DEFINED
+(PREFERRED)
+EXPOSED
+METAL
+www.ti.com
+EXAMPLE STENCIL DESIGN
+6X (0.3)
+6X (0.45)
+4X (0.65)
+(0.7)
+(1)
+(1.95)
+(R0.05) TYP
+(0.45)
+WSON - 0.8 mm max heightDRV0006D
+PLASTIC SMALL OUTLINE - NO LEAD
+4225563/A   12/2019
+NOTES: (continued)
+ 
+6. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+    design recommendations. 
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 mm THICK STENCIL
+ 
+EXPOSED PAD #7
+ 88% PRINTED SOLDER COVERAGE BY AREA UNDER PACKAGE
+SCALE:30X
+SYMM
+1
+3 4
+6
+SYMM
+METAL
+7
+www.ti.com
+PACKAGE OUTLINE
+C
+6X 0.35
+0.25
+1.6 0.1
+6X 0.3
+0.2
+2X
+1.3
+1 0.1
+4X 0.65
+0.8
+0.7
+0.05
+0.00
+B 2.1
+1.9
+A
+2.1
+1.9
+0.1 MIN
+0.08 MAX
+(0.2) TYP
+WSON - 0.8 mm max heightDRV0006A
+PLASTIC SMALL OUTLINE - NO LEAD
+4222173/C   11/2025
+PIN 1 INDEX AREA
+SEATING PLANE
+0.08 C
+1
+3 4
+6
+(OPTIONAL)
+PIN 1 ID
+0.1 C A B
+0.05 C
+THERMAL PAD
+EXPOSED
+7
+NOTES:
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M. 
+2. This drawing is subject to change without notice. 
+3. The package thermal pad must be soldered to the printed circuit board for thermal and mechanical performance.
+4.  Minimum 0.1 mm solder wetting on pin side wall. Available for wettable flank version only.
+SCALE  5.500
+OPTIONAL: SIDE WALL PIN DETAIL
+NOTE 4
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.07 MIN
+ALL AROUND
+0.07 MAX
+ALL AROUND
+(1)
+4X (0.65)
+(1.95)
+6X (0.3)
+6X (0.45)
+(1.6)
+(R0.05) TYP
+( 0.2) VIA
+TYP
+(1.1)
+WSON - 0.8 mm max heightDRV0006A
+PLASTIC SMALL OUTLINE - NO LEAD
+4222173/C   11/2025
+SYMM
+1
+3 4
+6
+SYMM
+LAND PATTERN EXAMPLE
+SCALE:25X
+7
+NOTES: (continued)
+ 
+5. This package is designed to be soldered to a thermal pad on the board. For more information, see Texas Instruments literature
+    number SLUA271 (www.ti.com/lit/slua271).
+6. Vias are optional depending on application, refer to device data sheet. If some or all are implemented, recommended via locations
+    are shown.
+ 
+ 
+SOLDER MASK
+OPENING
+SOLDER MASK
+METAL UNDER
+SOLDER MASK
+DEFINED
+METALSOLDER MASK
+OPENING SOLDER MASK DETAILS
+NON SOLDER MASK
+DEFINED
+(PREFERRED)
+www.ti.com
+EXAMPLE STENCIL DESIGN
+6X (0.3)
+6X (0.45)
+4X (0.65)
+(0.7)
+(1)
+(1.95)
+(R0.05) TYP
+(0.45)
+WSON - 0.8 mm max heightDRV0006A
+PLASTIC SMALL OUTLINE - NO LEAD
+4222173/C   11/2025
+NOTES: (continued)
+ 
+7. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+    design recommendations. 
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 mm THICK STENCIL
+ 
+EXPOSED PAD #7
+ 88% PRINTED SOLDER COVERAGE BY AREA UNDER PACKAGE
+SCALE:30X
+SYMM
+1
+3 4
+6
+SYMM
+METAL
+7
+www.ti.com
+PACKAGE OUTLINE
+C
+0.22
+0.08 TYP
+0.25
+3.0
+2.6
+2X 0.95
+1.45
+0.90
+0.15
+0.00 TYP
+6X 0.50
+0.25
+0.6
+0.3 TYP
+8
+0  TYP
+1.9
+4X 0 -15
+4X 4 -15
+A
+3.05
+2.75
+B1.75
+1.45
+(1.1)
+SOT-23 - 1.45 mm max heightDBV0006A
+SMALL OUTLINE TRANSISTOR
+4214840/G   08/2024
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M.
+2. This drawing is subject to change without notice.
+3. Body dimensions do not include mold flash or protrusion. Mold flash and protrusion shall not exceed 0.25 per side.
+4. Leads 1,2,3 may be wider than leads 4,5,6 for package orientation.
+5. Refernce JEDEC MO-178.
+0.2 C A B
+1
+3
+4
+52
+INDEX AREA
+PIN 1
+6
+GAGE PLANE
+SEATING PLANE
+0.1 C
+SCALE  4.000
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.07 MAX
+ARROUND
+0.07 MIN
+ARROUND
+6X (1.1)
+6X (0.6)
+(2.6)
+2X (0.95)
+(R0.05) TYP
+4214840/G   08/2024
+SOT-23 - 1.45 mm max heightDBV0006A
+SMALL OUTLINE TRANSISTOR
+NOTES: (continued)
+ 
+6. Publication IPC-7351 may have alternate designs. 
+7. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+ 
+SYMM
+LAND PATTERN EXAMPLE
+EXPOSED METAL SHOWN
+SCALE:15X
+PKG
+1
+3 4
+52
+6
+SOLDER MASK
+OPENING
+METAL UNDER
+SOLDER MASK
+SOLDER MASK
+DEFINED
+EXPOSED METAL
+METALSOLDER MASK
+OPENING
+NON SOLDER MASK
+DEFINED
+(PREFERRED)
+SOLDER MASK DETAILS
+EXPOSED METAL
+www.ti.com
+EXAMPLE STENCIL DESIGN
+(2.6)
+2X(0.95)
+6X (1.1)
+6X (0.6)
+(R0.05) TYP
+SOT-23 - 1.45 mm max heightDBV0006A
+SMALL OUTLINE TRANSISTOR
+4214840/G   08/2024
+NOTES: (continued)
+ 
+8. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+     design recommendations. 
+9. Board assembly site may have different recommendations for stencil design.
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 mm THICK STENCIL
+SCALE:15X
+SYMM
+PKG
+1
+3 4
+52
+6
+IMPORTANT NOTICE AND DISCLAIMER
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE 
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS” 
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY 
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD 
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate 
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable 
+standards, and any other safety, security, regulatory or other requirements.
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an 
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license 
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully 
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+TI’s products are provided subject to TI’s Terms of Sale, TI’s General Quality Guidelines, or other applicable terms available either on 
+ti.com or provided in conjunction with such TI products. TI’s provision of these resources does not expand or otherwise alter TI’s applicable 
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products 
+are standard, catalog, general purpose devices.
+TI objects to and rejects any additional or different terms you may propose.
+IMPORTANT NOTICE
+Copyright © 2026, Texas Instruments Incorporated
+Last updated 10/2025

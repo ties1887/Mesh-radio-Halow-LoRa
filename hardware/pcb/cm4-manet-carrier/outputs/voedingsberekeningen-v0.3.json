@@ -1,0 +1,23 @@
+{
+  "assumptions": {
+    "vin_max_V": 5.25,
+    "fs_nom_Hz": 550000,
+    "L_nom_uH": 2.2,
+    "L_tolerance": 0.2,
+    "Iout_design_A": 3,
+    "not_full_worst_case": "frequency tolerance, hot inductance, regulator tolerance, layout and transients not included"
+  },
+  "vout_nom_V": 3.2832000000000003,
+  "ripple_nom_A_pp": 1.016512831168831,
+  "ripple_Lminus20_A_pp": 1.2706410389610387,
+  "inductor_peak_A_at_3A": 3.635320519480519,
+  "copper_loss_W_at_3A_DCR14p5mOhm": 0.13245088878528616,
+  "connector_A_per_power_contact_at_3A": 0.75,
+  "wifi_rail_min_V": 3.135,
+  "path_R_budget_ohm_for_60mV_at_3A": 0.02,
+  "usb_limit_mA_min_nom_max_R43p2k_1pct": [
+    544.3,
+    604.6,
+    673.1
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "footprints": 112,
+  "checked_net_nodes": 662,
+  "net_errors": [],
+  "tracks_and_vias": 0,
+  "zones": 0,
+  "layers": 4,
+  "dnp": [
+    "C305",
+    "C306",
+    "R501"
+  ],
+  "note": "Preliminary placement; not routing or manufacturing approval."
+}

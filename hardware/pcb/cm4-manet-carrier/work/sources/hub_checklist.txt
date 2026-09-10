@@ -1,0 +1,1476 @@
+                                                                                                                                          USB2514B
+
+                                                                  Hardware Design Checklist
+
+
+1.0                                                                      INTRODUCTION
+
+This document provides a hardware design checklist for the Microchip USB2514B. These checklist items should be fol-
+lowed  when utilizing the  USB2514B in a new design. A  summary of these items is  provided in  Section  9.0, "Hardware
+Checklist Summary," on page         15. Detailed information on these subjects can be found in the corresponding sections:
+•                     Section 2.0, "General Considerations"
+•                     Section 3.0, "Power"
+•                     Section 4.0, "USB Signals"
+•                     Section 5.0, "USB Connectors"
+•                     Section 6.0, "Clock Circuit"
+•                     Section 7.0, "Power and Startup"
+•                     Section 8.0, "Strap Configuration Options"
+
+2.0                                                                      GENERAL CONSIDERATIONS
+
+2.1                                                                          Required References
+The USB2514B implementor should have the following documents on hand:
+•                     USB2514B Data Sheet
+•                     EVB-USB2514BC Evaluation Board User’s Guide
+•                     EVB-USB2514BC Schematics
+•                     Other references on the USB2514B product page at www.microchip.com
+•                     Universal Serial Bus Specification 2.0
+
+2.2                                                                          Pin Check
+•                     Check the pinout of the part against the data sheet. Ensure all pins match the data sheet and are configured as
+    inputs, outputs, or bidirectional for error checking.
+
+2.3                                                                          Ground
+•                     The ground pins, GND          (ePAD), should be connected to the solid ground plane on the board.
+•                     It is recommended that all ground connections be tied together to the same ground plane. Separate ground planes
+    are not recommended.
+
+2.4                                                                          USB-IF Compliant USB Connectors
+•                     USB-IF certified USB Connectors with a valid Test ID (TID) are required for all USB products to be compliant and
+    pass USB-IF product certification.
+
+3.0                                                                      POWER
+
+•                     The analog supplies (VDDA33) are located on pins 5, 10, 29, and 36. These pins all require a connection to a reg-
+    ulated 3.3V power plane. It is recommended to connect a 0.1 µF capacitor close to each VDDA33 pin, along with
+    a 1.0 µF bulk capacitance which is shared across all VDDA33 pins. The capacitor size should be SMD_0603 or
+    smaller.
+•                     The VDD33 pins (pins 15, 23) supply voltage to the digital I/O blocks. The design should include a 0.1 µF capacitor
+    to be placed close to the pin. The capacitor size should be SMD_0603 or smaller.
+
+
+
+
+ 2022 Microchip Technology Inc. and its subsidiaries                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          DS00004541A-page   1
+USB2514B
+
+
+
+The power and ground connections are shown in Figure        3-1.
+
+
+FIGURE 3-1:                                                                                                                  POWER AND GROUND CONNECTIONS
+
+
+                                                                                                                              USB25 14B
+                                                             3.3V                                                                                                                                                                                                                                                                                   5/10/29/36VDDA33
+
+
+                                                                                         1.0µF          0.1µF
+                                                                                                          (x4)
+
+
+
+                                                                                                             15/23       VDD33
+
+
+
+                                                                 0.1µF                    0.1µF
+                                                                                                                                       ePAD
+
+
+
+
+4.0                                                                     USB SIGNALS
+
+4.1                                                                          USB PHY Interface
+•                       USBDP_UP (pin 31): This pin is the positive (+) signal of the upstream USB2.0 differential pair. All necessary USB
+    terminations and resistors are included in the IC. This pin can connect directly to the D+/DP pin of a USB Connec-
+    tor.
+•                       USBDM_UP (pin 30): This pin is the negative (–) signal of the upstream USB2.0 differential pair. All necessary
+    USB terminations and resistors are included in the IC. This pin can connect directly to the D–/DM pin of a USB
+    Connector.
+•                       USBDP_DN1/USBDP_DN2/USBDP_DN3/USBDP_DN4 (pins 2/4/7/9): These pins are the positive (+) signal of the
+    downstream ports USB2.0 differential pair. All necessary USB terminations and resistors are included in the IC.
+    This pin can connect directly to the D+/DP pin of a USB Connector.
+•                       USBDM_DN1/USBDM_DN2/USBDM_DN3/USBDM_DN4 (pins 1/3/6/8): These pins are the negative (–) signal of
+    the downstream port USB2.0 differential pair. All necessary USB terminations and resistors are included in the IC.
+    This pin can connect directly to the D–/DM pin of a USB Connector.
+
+
+    Note:                                                     The polarity of any of the USB2.0 differential pairs may be inverted either intentionally due to design con-
+                      straints or to correct a design error using the Microchip PortSwap feature. This feature may be configured
+                      via SMBus/I2C configuration registers.
+
+
+For transmit and receive channel connection details, refer to Figure         4-1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DS00004541A-page   2                                                                                                                                                                                                                                                                                                                                                                                                          2022 Microchip Technology Inc. and its subsidiaries
+                                                                                                                                                                                  USB2514B
+
+
+
+
+FIGURE 4-1:                                                                                                                  USB AND DATA SIGNAL CONNECTIONS
+
+
+
+                                                                                                                                                                                    See
+                                                    See                 27                                                                                                                                                                                                                                                                                                                                                      PRT PWRx12/16/18/20Figure        5-2
+                           VBUS               Figure        5-1                 VBUS_DET                                                                                                         VBUS
+                                                                        31                                                  OC   S   _ N   x  13/17/19/21
+       USB                       D+                                              USBD P_U P                         USBDP_DNx                 2/4/7/9                                            D+
+       Upstream                   D-                                    30                                                                    1/3/6/8                                                                   USB
+       Connector                                                                 USBD M_U P                        USBDM_DNx                                                                     D-Downstream
+
+                                                                                                                                                 See Figure        5-4                           GNDConnector
+                             GN  D
+                                                See                                                                                              See Figure        5-3                           CC1/CC2
+                                                Figure        5-4                           US B2 514B                                                                                                   Type-C
+                                                                                                                                                                                                        Optional
+
+
+
+4.1.1                                                                                       DISABLE DOWNSTREAM PORTS IF UNUSED
+•                     If any downstream of the USB2514B is unused, it should be disabled. This can be achieved through hub configu-
+    ration (I2C) or through a port disable strap option.
+
+4.2                                                                          USB Protection
+•                     The use of external protection circuitry may be required to provide additional ESD protection beyond what is
+    included in the hub IC. These generally are grouped into three categories.
+     1.                                         TVS protection diodes
+           -                   ESD protection for IEC-61000-4-2 system level tests
+      2.                                 Application-targeted protection ICs or galvanic isolation devices
+           -              DC overvoltage protection for short to battery protection
+      3.                                 Common-mode chokes
+           -               For EMI reduction
+•                     The USB2514B can be used in conjunction with these types of devices, but it is important to understand the nega-
+    tive effect on USB signal integrity that these devices may have and to select components accordingly and follow
+    the implementation guidelines from the manufacturer of these devices. You may also use the following general
+    guidelines for implementing these devices:
+    -                     Select only devices that are designed specifically for high-speed applications. Based on the USB specifica-
+        tion, a total of 5 pF is budgeted for connector, PCB traces, and protection circuitry.
+    -                     These devices should be placed as close to the USB connector as possible.
+    -                     Never branch the USB signals to reach protection device. Always place the protection devices directly on top
+        of the USB differential traces.
+    -                     The effectiveness of TVS devices depends heavily on effective grounding. Always ensure a very low-imped-
+        ance path to a large ground plane.
+    -                     Place TVS diodes on the same layer as the USB signal trace. Avoid vias or place vias behind the TVS device
+        if possible.
+
+
+    Note:                                                     Microchip    PHYBoost    configuration    options    are    available    for    compensating    the    negative    effects    of    these
+                       devices. This feature may help overcome marginal failures. It is simplest to determine the appropriate set-
+                       ting using laboratory experiments, such as USB eye diagram tests, on physical hardware.
+
+
+
+
+
+
+
+
+ 2022 Microchip Technology Inc. and its subsidiaries                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          DS00004541A-page   3
+USB2514B
+
+
+ 5.0                                                                      USB CONNECTORS
+
+ 5.1                                                                          Upstream Port VBUS and VBUS_DET
+
+ The upstream port VBUS line must have no more than 10 µF of total capacitance connected.
+ The VBUS_DET pin is used by the USB2514B to detect the presence of a USB host. The USB host can also toggle the
+ state of VBUS at any time to force a soft Reset and reconnection of the USB2514B.
+ It is permissible to tie VBUS_DET directly to 3.3V. However, this is not recommended because the ability to force a Reset
+ of the hub from the USB host VBUS toggling is lost.
+ The recommended implementation is shown in Figure         5-1. Note the precise resistor values are not critical and alternate
+ values may be selected as long as:
+ •                     The impedance from the VBUS pin of the USB connector to the VBUS_DET pin is sufficiently high-impedance to
+    minimize pin leakage when VBUS is present before the Hub IC is powered on.
+ •                     A sufficient voltage level is present on the VBUS_DET for the full range of VBUS (4.5V to 5.5V).
+
+
+ FIGURE 5-1:                                                                                                                  RECOMMENDED UPSTREAM PORT VBUS AND VBUS_DET CONNECTIONS
+
+
+                                                                                                           R                                      USB2514B
+                                                                                                       100kΩ                          27
+                               VBUS                                                                                                             VBUS_DET
+                                                                                              C                 R
+                                    D+                                                     10µF             100kΩ
+               USB                                  See Figure        4-1                  MAX
+               Upstream
+               Connector            D-
+
+
+
+                                 GN  D                See Figure        5-4
+
+
+ 5.2                                                                          Downstream Port VBUS and PRTPWRx/OCS_Nx
+
+ 5.2.1                                                                                        PRTPWRX
+ •                     The PRTPWRx pin is an output pin which has the following states:
+    1.                         PORT OFF: PRTPWRx drives low. The PRTPWRx pin will only transition to the PORT ON state through a spe-
+          cific command from the USB host.
+    2.                      PORT ON: PRTPWRx drives low. The PRTPWRx pin will only transition to the PORT OFF state if:
+       -                   An overcurrent event is sensed on OCS_Nx pin.
+       -                   A command from the USB host is received which instructs the hub to disable power.
+       -                   The hub is reset or experiences a POR event.
+ •                     To ensure minimal BOM cost and simplicity, select a port power controller device with a 3.3V logic level, active-
+    high input. If a device that operates from a 5V logic level is selected, the PRTPWRx signal may need to be
+    boosted using external logic. If a port power controller with active-low input is selected, the PRTPWRx signal
+    needs to be inverted using external logic.
+
+ 5.2.2                                                                                        OCS_NX
+ •                     The OCS_Nx pin is an input buffer which monitors overcurrent events. The pin includes an internal pull-up resistor
+    to the 3.3V domain, so an external pull-up resistor is not required. The pin state is ignored when the port is in the
+    PORT OFF state. When the port is in the PORT ON state, an overcurrent event is detected if the state of the pin is
+    detected as low (below the VILI voltage). When an overcurrent event is detected, the port automatically moves to
+    the PORT OFF state until the USB host can be notified of the overcurrent event.
+
+
+
+
+DS00004541A-page   4                                                                                                                                                                                                                                                                                                                                                                                                          2022 Microchip Technology Inc. and its subsidiaries
+                                                                                                                                                                USB2514B
+
+
+
+•                     To ensure minimal BOM cost and simplicity, select a port power controller device with an active-low, open-drain
+    FAULT indicator output. If a port power controller with active-high FAULT indicator output is selected, the OCS_Nx
+    signal needs to be inverted using external logic.
+A typical VBUS port power control implementation is shown in Figure         5-2.
+
+FIGURE 5-2:                                                                                                                  DOWNSTREAM VBUS AND PORT POWER CONNECTIONS
+
+
+
+                 USB251 4B                                                            ENA BLE                        VOUT
+                             PRTPWRx            12/16/ 18/20                          FAUL T_N                                                       C
+                                                                                                                                                 150µF
+                                                13/17/19/21                               PORT POWER                                              MAX                   VBUS
+                                 OCS _N x                                                CONTROLLER
+
+
+                          USBDP_DNx              2/ 4/ 7/9                                                                                                              D+                  USB
+                                                 1/ 3/ 6/8                                                                                                                  Downstream
+                        USBDM_DNx                                                                                                                                       D-      Connector
+
+                                                                                                                                       See
+                                                                                                                                  Figure        5-4                     GND
+
+
+
+
+
+    Note:                                                     The   implementation,   as   shown   in  Figure         5-2,   assumes   that  the   port  power   controller   has   an  active-high
+                     enable input and an active-low, open-drain-style FAULT indicator. External polarity inversion through buf-
+                     fers or FETs may be required if the port power controller has different I/O characteristics.
+
+5.3                                                                          Downstream Port Type-C Support
+
+•                     The USB2514B may be used with Type-C as the downstream port. This requires a Type-C port controller or com-
+    bined port power controller and Type-C port controller. The USB2514B simply controls the Type-C port controller
+    in the same way as it would control a standard Type-A port power controller. It does not require any kind of Type-
+    C port status information from the Type-C port controller. The PRTPWRx signal should be connected to an enable
+    pin on the Type-C controller and the OCS_Nx signal should connect to the FAULT indicator output of the port
+    power controller.
+•                     If the Type-C controller and the port power controller are separate devices, the Type-C controller must control the
+    enable pin of the port power controller. The PRTPWRx should not directly control the VBUS enable signal of the
+    port power controller.
+•                     A Type-C controller may be configured to signal a 500 mA, 1.5A, or 3.0A port power capability. The selected port
+    power controller should be sized accordingly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 2022 Microchip Technology Inc. and its subsidiaries                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          DS00004541A-page   5
+USB2514B
+
+
+
+A typical implementation is shown in Figure         5-3.
+
+FIGURE 5-3:                                                                                                                  DOWNSTREAM VBUS AND PORT POWER CONNECTIONS WITH A TYPE-C
+                                       PORT
+
+
+
+                                                                                              Type-C  and P ort   Pow er
+                                                                                         controller s may be a combined
+                                                                                                           devic e
+
+                                                                                            ENABLE                       VOUT
+
+                                                                                            FAULT_N                                                    C
+                                                                                                                                                   150µF
+                                                                                                PORT POWER                                           MAX
+                                                                                               CONTROLLER
+             U S B251  4B                                                                                                                                              VBUS
+                                                                                          VBUS_ON
+                         PRTPWRx           12/16/18/20                                    ENA BLE                     CC1/CC2                                           CC1/CC2
+
+                                                                                                       TYPE-C
+                            OC   S _  N  x                 13/17/19/21                         CONTROLLER                                                                                  USB
+                                                                                                                                                                             Downstream
+                                           2/4/7/9                                                                                                                               Connector
+                     USBDP_DNx                                                                                                                                           D+
+                    USBDM_DNx              1/3/6/8                                                                                                                       D-
+
+
+                                                                                                                                            See                          GND
+                                                                                                                                      Figure         5-4
+
+
+
+
+
+
+
+   Note:                                                     The implementation, as shown in Figure         5-3, assumes that the Type-C controller has an active-high enable
+                    input, and the port  power controller has  an active-low, open-drain-style FAULT indicator. External polarity
+                    inversion through buffers or FETs may be required if the Type-C controller and/or port power controller has
+                    different I/O characteristics.
+
+5.4                                                                          GND Recommendations
+•                     The GND pins of the USB connector must be connected to the PCB with a low-impedance path directly to a large
+   GND plane.
+•                     The SHIELD pins of the USB connector may be connected in one of two ways:
+   -                     [Recommended] To GND through a resistor and capacitor in parallel. An RC filter can help to decouple and
+       minimize EMI between a PCB and a USB cable.
+   -                     Directly to the GND plane.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DS00004541A-page   6                                                                                                                                                                                                                                                                                                                                                                                                          2022 Microchip Technology Inc. and its subsidiaries
+                                                                                                                                                                                                                                                                                                               USB2514B
+
+
+
+The recommended implementation is shown in Figure         5-4.
+
+FIGURE 5-4:                                                                                                                  RECOMMENDED USB CONNECTOR GND AND EARTH CONNECTIONS
+
+
+                                                                                                                                                     VBUS                                                                 See Figure        5-1,
+                                                                                                                                                                                                                           Figure        5-2, and
+                                                                                                                                                                                                                                   Figure        5-3
+
+                                                                                                                                                                 D+
+                                                                                                             USB                                                                                              See
+                                                                                                             Connector                                                                              Figure       4-1
+
+                                                                                                                                                                   D-
+
+
+                                                                                                                                                         GN  D
+                                                                                                                                                                                                                      C                                      R
+                                                                                                                                                                                                              0.1µF                                  330Ω
+                                                                                                                                            SHI ELD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 2022 Microchip Technology Inc. and its subsidiaries                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          DS00004541A-page   7
+USB2514B
+
+
+6.0                                                                     CLOCK CIRCUIT
+
+6.1                                                                          Crystal and External Clock Connection
+A 24.000-MHz (±350 ppm) reference clock is the source for the USB interface and for all other functions of the device.
+(See Figure         6-1.) For exact specifications and tolerances, refer to the latest version of the USB2514B Data Sheet.
+•                       XTALIN/CLKIN (pin 33) connects to either one terminal of the crystal or to an external 24 MHz clock when a
+   crystal is not used.
+•                       XTALOUT (pin 32) is the other terminal of the crystal circuit with 1.2V p-p output and a weak (< 1 mA) driving
+   strength. When an external clock source is used to drive XTALIN/CLKIN, leave this pin unconnected.
+•                     The crystal loading capacitor values are system dependent, based on the total CL specification of the crystal and
+   the stray capacitance value. The PCB design, crystal, and layout all contribute to the characteristics of this circuit.
+   A commonly used formula for calculating the appropriate physical C1 and C2 capacitor values is:
+   -                     CL = ((CX1)(CX2) / (CX1 + CX2))
+   -                     Where: CL is the specification from the crystal data sheet, CX1 = Cstray + C1, CX2 = Cstray + C2.
+   -                     Note that Cstray is the stray/parasitic capacitance due to PCB layout. It can be assumed to be very small,
+       within the 1 pF to 2 pF range, and then verified by physical experiments in the laboratory if PCB simulation
+       tools are not available.
+
+FIGURE 6-1:                                                                                                                  CRYSTAL AND OSCILLATOR CONNECTIONS
+
+
+
+
+                                                                           US B2 51 4B                                                                      USB2514B
+
+
+                     C1
+                                                                  33    XTALIN                                                                     33    XTALIN/
+                                                                        /CLKIN                                24MHz Oscillat or                          CLKIN
+                                 24MHz Crystal                                                                     ±350 ppm
+                     C2             ±350 ppm
+                                                                  32    XTALOUT                                                           NC       32    XTALOUT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DS00004541A-page   8                                                                                                                                                                                                                                                                                                                                                                                                          2022 Microchip Technology Inc. and its subsidiaries
+                                                                                                                                                                      USB2514B
+
+
+7.0                                                                     POWER AND STARTUP
+
+7.1                                                                          RBIAS Resistor
+•                       RBIAS (pin 35) on the USB2514B must connect to ground through a 12 kΩ resistor with a tolerance of 1%. This is
+    used to set up critical bias currents for the internal circuitry. This should be placed as close to the IC pin as possi-
+    ble, and be given a dedicated, low-impedance path to a ground plane.
+
+7.2                                                                          Board Power Supplies
+
+7.2.1                                                                                       POWER RISE TIME
+•                     The power rail voltage and rise time should adhere to the supply rise time specifications as defined in the
+    USB2514B Data Sheet.
+•                     If a monotonic/fast power rail rise cannot be assured, then the RESET_N signal should be controlled by a Reset
+    supervisor and only released when the power rail has reached a stable level.
+
+7.2.2                                                                                       CURRENT CAPABILITY
+•                     It is important to size the 5V and 3.3V power rails appropriately. The 5V power supply must be capable of supply-
+    ing sufficient power for all exposed USB ports concurrently without drooping below the minimum voltage permissi-
+    ble in the USB specification:
+    -                     500 mA per-port for USB2 Ports
+    -                     1.5A or 3.0A per Type-C port (depending on setting of the Type-C controller)
+•                     The 3.3V power supply must be able to supply enough power to the USB hub IC. It is recommend that a 3.3V
+    power rail be sized such that is able to supply the maximum power consumption specifications as displayed in the
+    USB2514B Data Sheet.
+
+7.3                                                                          Reset Circuit
+•                       RESET_N (pin 26) is an active-low Reset input. This signal resets all logic and registers within the USB2514B. A
+    hardware Reset (RESET_N assertion) is not required following power-up. Refer to the latest copy of the
+    USB2514B Data Sheet for Reset timing requirements. Figure         7-1 shows a recommended Reset circuit for power-
+    ing up the USB2514B  when Reset is triggered by the power supply. The values for the “R” resistor and “C” capac-
+    itor are not critical and may be adjusted per individual system needs or preferences.
+
+FIGURE 7-1:                                                                                                                  RESET TRIGGERED BY POWER SUPPLY
+
+
+
+                                                                                                                                                      VDDIO
+
+
+
+
+
+                                                                                                                                                   R
+                                                                                                                                               10kΩ
+                                                                             USB2 51 4B
+
+                                                                                                                  26
+                                                                                           RESET_N
+                                                                                                                                                                    C
+                                                                                                                                                                  1µF
+
+
+
+
+
+Figure        7-2 details the recommended Reset circuit for applications where Reset is driven by an external CPU/MCU. The
+Reset out pin (RST_OUT_N) from the CPU/MCU provides the warm Reset after power-up. The values for the “R” resis-
+tor and “C” capacitor are not critical and may be adjusted per individual system needs or preferences.
+
+
+
+
+ 2022 Microchip Technology Inc. and its subsidiaries                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          DS00004541A-page   9
+USB2514B
+
+
+
+
+FIGURE 7-2:                                                                                                                  RESET CIRCUIT INTERFACE WITH CPU/MCU RESET OUTPUT
+
+
+
+                                                                                                                                                                    VDDIO
+
+
+
+
+
+                                                                                                                                                                                  R
+                                                                                                                                                                              10kΩ
+                                                                        US B2 514B                                                                                                                                                                                            Re   s et
+
+                                                                                                                       26                                                                                                                                               Sup ervi sor
+                                                                                         RESET_N                                                                                                                                                                    RST_OUT_N
+                                                                                                                                                                                     C
+                                                                                                                                                                                  1µF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DS00004541A-page   10                                                                                                                                                                                                                                                                                                                                                                                                 2022 Microchip Technology Inc. and its subsidiaries
+                                                                                                                                                                                                                                                                                      USB2514B
+
+
+8.0                                                                     STRAP CONFIGURATION OPTIONS
+
+•                     The USB2514B can be configured through CFG_SEL[1:0] (pins 25 and 24) in one of four operating modes. (See
+       Table         8-1.) When Strap Option is enabled (CFG_SEL0 = 0), NON_REM[1:0] (pins 22 and 28), configure the pres-
+       ence of permanently attached devices on the downstream ports. Similarly, BC_EN[4:1] pins enable or disable the
+       battery charging protocol on each downstream port, respectively.
+
+
+       Note:                                                     Note that CFG_SEL[1:0] and NON_REM[1:0] pins have no internal terminations and must be terminated
+                                    with the use of external resistors. Either pin can be driven low with an external 100 kΩ pull-down resistor
+                                    to ground, or a 10 kΩ pull-up resistor to VDD33.
+
+
+TABLE 8-1:                                                                   OPERATION MODE CONFIGURATION STRAPS
+         CFG_SEL1                                                                                                         CFG_SEL0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Description
+                          0                                                                                                                                                                                                                                                             0                                                                                                                                                Strap Options enabled, Self-Powered Operation enabled, Individual Power
+                                                                                                                        Switching and Individual Overcurrent Sensing
+                          0                                                                                                                                                                                                                                                             1                                                                                                                                                Strap Options disabled, all registers configured by MCU over SMBus
+                          1                                                                                                                                                                                                                                                             0                                                                                                                                                Strap Options enabled, Bus-Powered Operation enabled,
+                                                                                                                        Individual Power Switching and Individual Overcurrent Sensing
+                          1                                                                                                                                                                                                                                                             1                                                                                                                                                Strap Options Disabled, all registers configured by I2C EEPROM
+
+8.1                                                                          Non Removable Port Settings
+•                     In a typical USB2514B application, downstream ports are routed to a user-accessible USB connector, and hence
+       the downstream port should be configured as a removable port. The following guidelines can be used to deter-
+       mine which setting to use:
+       -                     If the port is routed to a user-accessible USB connector, it is removable.
+       -                     If the port is routed to a permanently attached an embedded USB device on the same PCB, or non user-
+              accessible wiring or cable harness, it is non-removable.
+•                     The removable or non-removable device settings do not impact the operation of the hub in any way. The settings
+       only modify select USB descriptors which the USB host may use to understand if a port is a user-accessible port
+       or a permanently attached device. Under standard operating conditions, the USB host may or may not modify its
+       operation based on this information. Certain USB compliance tests are impacted by this setting, so designs which
+       undergo USB compliance testing and certification must ensure that the configuration settings are correct.
+•                     Non-removable port settings can be configured via:
+       -                     EEPROM
+       -                     I2C-based SOC/MCU
+       -                     Hardware strap options
+•                     To configure this feature via hardware strap options, Strap Option mode must be enabled (CFG_SEL0           = 0). The
+       USB2514B has two configuration strap option pins, NON_REM[1:0], which can be used to set the non-removable
+       configurations for certain downstream ports, see Table        8-2.
+
+TABLE 8-2:                                                                   NON REMOVABLE PORT CONFIGURATION STRAPS (CFG_SEL0 = 0)
+          NON_REM1                                                                                                     NON_REM0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           Description
+                            0                                                                                                                                                                                                                                                                      0                                                                                                                                              All downstream ports are removable.
+                            0                                                                                                                                                                                                                                                                      1                                                                                                                                              Port 1 is non-removable.
+                            1                                                                                                                                                                                                                                                                      0                                                                                                                                              Port 1 and Port 2 are non-removable.
+                            1                                                                                                                                                                                                                                                                      1                                                                                                                                              Port 1, Port 2, and Port 3 are non-removable.
+
+
+
+
+
+
+
+
+
+
+
+ 2022 Microchip Technology Inc. and its subsidiaries                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          DS00004541A-page   11
+USB2514B
+
+
+8.2                                                                          Configuration via EEPROM (CFG_SEL1 = 1, CFG_SEL0 = 1)
+When configuring via EEPROM, the USB2514B operates as an I2C controller at a fixed 58.6 kHz speed. The EEPROM
+must    be   organized   for   256    x   8-bit   operation,   and   the   entire   register   set   from   0x00   to   0xFF   must    be   replicated   in   the
+EEPROM device. See Figure         8-1. The default values should be obtained from the USB2514B Data Sheet.
+
+FIGURE 8-1:                                                                                                                  RECOMMENDED CONNECTIONS IF CONFIGURED VIA EEPROM
+
+
+                                      USB251 4B                                          3.3V                  3.3V
+                                                                                                                                                         EEPROM
+
+
+                               SCL /SMBCLK/C FG_SEL0                   24                                                                      CLK
+                                               SDA/SMBDATA/                   22                                                               DATA
+                                                       NON_REM1
+                                          HS _IN  D/CFG_SEL1                  25
+
+
+
+
+
+
+
+
+    Note:                                                     The      EEPROM      device      must      be      programmed      on      board      or      preprogrammed      before      PCB      assembly.     The
+                     USB2514B does not have a programming/USB pass-through mechanism.
+
+8.3                                                                          Configuration via MCU/SoC Device (CFG_SEL1 = 0, CFG_SEL0 = 1)
+
+8.3.1                                                                                       MCU/SOC OPERATION SUMMARY
+•                     By default, the USB2514B executes based on internal register defaults, and an external MCU/SoC device is not
+    explicitly required. If settings which differ from the internal defaults are required by the application, an external
+    MCU/SoC may be used to modify the register settings. Only the specific settings which need to be modified from
+    the default need to be changed.
+•                     The USB2514B supports only one address option: 010_1100b.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DS00004541A-page   12                                                                                                                                                                                                                                                                                                                                                                                                 2022 Microchip Technology Inc. and its subsidiaries
+                                                                                                                                                       USB2514B
+
+
+8.3.2                                                                                       MCU/SOC CONNECTION DIAGRAMS
+The recommended schematic connections for an MCU/SOC memory device are shown in Figure         8-2.
+
+FIGURE 8-2:                                                                                                                  RECOMMENDED CONNECTIONS IF CONFIGURED VIA MCU/SOC
+
+
+                                 US B251 4B                                                           3.3V
+
+                                                                                                                                                  MCU/SoC
+
+                          SCL/SMBCLK/CFG_SEL0                       24                                                               CLK
+
+                                          SDA /SMBDATA /               22                                                            DATA
+                                                 NON_REM1
+                                     HS   _IN  D /CFG_SEL1             25
+
+
+
+
+
+
+
+
+8.4                                                                          Self-Powered/Bus-Powered Settings (Available via SMBus Configuration Only)
+
+By default,  the hub is  configured as self-powered. The  following  guidelines  can  be  used to determine which setting to
+use:
+•                     If the entire system (hub included) is powered completely from the Upstream USB connector’s VBUS pin and the
+   system is designed to operate using standard USB cabling and any standard USB host, then the hub system is
+   bus-powered.
+•                     If the entire system (hub included) is always powered by a separate power connector, then the hub system is self-
+   powered.
+•                     If the hub is part of a larger embedded system with fixed cabling and a fixed USB host, then the hub system is
+   most likely self-powered (even if all of the power is derived from the upstream USB connector’s VBUS pin).
+The   self-powered/bus-powered   device   settings   do   not   impact    the   operation   of   the   hub   in    any   way.   The   settings    only
+modify select USB descriptors which the USB host will use to budget power accordingly. Since a standard USB2.0 port
+is required to supply 500 mA to the downstream port, a self-powered hub and all of its downstream ports must continue
+to    operate    within   that   500   mA   budget. A    USB   host    will   typically   limit   the    downstream    ports    of   a    self-powered    hub    to
+100 mA. Any device which connects to a self-powered hub that declares it needs more than 100 mA will be prevented
+from operating by the USB host.
+The  USB2514B   also   supports   dynamic   self-powered   and   bus-powered  operation  via   the   LOCAL_PWR   control   input
+pin. This feature must be enabled via EEPROM or SMBus configuration (DYNAMIC bit in CFG1 register). Once enabled,
+the LOCAL_PWR pin works as:
+•                     1: Self-powered – No downstream port power restrictions will be in place.
+•                     0: Bus-powered – Downstream port power restrictions will be enforced by the USB host.
+The LOCAL_PWR cannot be changed dynamically. To change the mode of operation, the pin state must be changed,
+then the hub must be reset for the hub to communicate the new mode of operation descriptors to the USB host.
+
+8.5                                                                          Port Disable Straps
+
+This  feature  is  enabled  in  Strap Option mode  (CFG_SEL0  = 0).  In  this  mode,  the  downstream port  x  can be  disabled
+through pull-up resistors on both USBDP_DNx and USBDM_DNx pins. This connection can be made directly to the 3.3V
+power net, or through a pull-up resistor. The pins may also be shorted together as well to simplify the layout.
+   Note:                                                     Both  USB  D+  and  D–  signals  must  be  pulled  high  to  effectively  disable  the  port.  If   only  1  pin  is  pulled  to
+                   3.3V, the port will not be disabled.
+
+
+
+
+ 2022 Microchip Technology Inc. and its subsidiaries                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          DS00004541A-page   13
+USB2514B
+
+
+NOTES:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DS00004541A-page   14                                                                                                                                                                                                                                                                                                                                                                                                 2022 Microchip Technology Inc. and its subsidiaries
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              USB2514B
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 2022 Microchip Technology Inc. and its subsidiaries                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          DS00004541A-page   15
+USB2514B
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DS00004541A-page   16                                                                                                                                                                                                                                                                                                                                                                                                 2022 Microchip Technology Inc. and its subsidiaries
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    USB2514B
+
+
+APPENDIX A:                                              REVISION HISTORY
+
+
+TABLE A-1:                                                               REVISION HISTORY
+           Revision Level & Date                                                                                                     Section/Figure/Entry                                                                                                                                                                                                                                                                                                                                                                                                               Correction
+                                   DS00004541A                                                                                                         Initial release
+                                              (05-19-22)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 2022 Microchip Technology Inc. and its subsidiaries                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          DS00004541A-page   17
+USB2514B
+
+
+THE MICROCHIP WEB SITE
+
+Microchip provides online support via our WWW site at www.microchip.com. This web site is used as a means to make
+files    and    information    easily    available    to    customers.  Accessible    by    using    your    favorite    Internet    browser,    the    web    site
+contains the following information:
+•                     Product Support – Data sheets and errata, application notes and sample programs, design resources, user’s
+   guides and hardware support documents, latest software releases and archived software
+•                     General Technical Support – Frequently Asked Questions (FAQ), technical support requests, online discussion
+   groups, Microchip consultant program member listing
+•                     Business of Microchip – Product selector and ordering guides, latest Microchip press releases, listing of
+   seminars and events, listings of Microchip sales offices, distributors and factory representatives
+
+CUSTOMER CHANGE NOTIFICATION SERVICE
+
+Microchip’s customer notification service helps keep customers current on Microchip products. Subscribers will receive
+e-mail    notification    whenever    there    are    changes,   updates,    revisions    or    errata    related    to    a    specified    product    family    or
+development tool of interest.
+To register, access the Microchip web site at www.microchip.com. Under “Support”, click on “Customer Change Notifi-
+cation” and follow the registration instructions.
+
+CUSTOMER SUPPORT
+
+Users of Microchip products can receive assistance through several channels:
+•                     Distributor or Representative
+•                     Local Sales Office
+•                     Field Application Engineer (FAE)
+•                     Technical Support
+Customers  should contact their distributor, representative or  Field Application Engineer (FAE)  for  support. Local sales
+offices     are     also     available     to     help     customers.   A     listing     of     sales     offices     and     locations    is    included     in     the     back     of     this
+document.
+Technical support is available through the web site at: http://microchip.com/support
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DS00004541A-page   18                                                                                                                                                                                                                                                                                                                                                                                                 2022 Microchip Technology Inc. and its subsidiaries
+Note the following details of the code protection feature on Microchip products:
+•                                                       Microchip products meet the specifications contained in their particular Microchip Data Sheet.
+
+•                                                       Microchip believes that its family of products is secure when used in the intended manner, within operating specifications, and under
+        normal conditions.
+
+•                                                       Microchip values and aggressively protects its intellectual property rights. Attempts to breach the code protection features of Microchip
+        product is strictly prohibited and may violate the Digital Millennium Copyright Act.
+
+•                                                       Neither Microchip nor any other semiconductor manufacturer can guarantee the security of its code. Code protection does not mean that
+        we are guaranteeing the product is “unbreakable”. Code protection is constantly evolving. Microchip is committed to continuously
+        improving the code protection features of our products.
+
+This publication and the information herein may be used only with Microchip products, including to design, test, and integrate Microchip products
+with your application. Use of this information in any other manner violates these terms. Information regarding device applications is provided only
+for  your convenience  and may  be superseded by updates.  It is your responsibility  to ensure that  your  application  meets  with your specifications.
+Contact  your  local  Microchip  sales  office  for  additional  support  or,  obtain  additional  support  at  https://www.microchip.com/en-us/support/design-
+help/client-support-services.
+
+THIS  INFORMATION  IS  PROVIDED  BY  MICROCHIP  "AS  IS".  MICROCHIP  MAKES  NO  REPRESENTATIONS  OR  WAR-  RANTIES  OF ANY
+KIND WHETHER EXPRESS OR IMPLIED, WRITTEN OR ORAL, STATUTORY OR OTHERWISE, RELATED TO THE INFORMATION INCLUD-
+ING  BUT  NOT  LIMITED TO ANY  IMPLIED  WARRANTIES OF  NON- INFRINGEMENT,  MERCHANTABILITY, AND  FITNESS  FOR A  PARTICU-
+LAR PURPOSE, OR WARRANTIES RELATED TO ITS CONDITION, QUALITY, OR PERFORMANCE.
+
+IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDI- RECT, SPECIAL, PUNITIVE, INCIDENTAL, OR CONSEQUENTIAL LOSS, DAM-
+AGE,  COST,  OR  EXPENSE  OF ANY  KIND  WHATSOEVER  RELATED  TO THE  INFORMATION  OR  ITS  USE,  HOWEVER  CAUSED,  EVEN  IF
+MICROCHIP HAS BEEN ADVISED  OF THE  POSSIBILITY  OR THE DAMAGES ARE  FORESEEABLE. TO THE FULLEST EXTENT ALLOWED
+BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THE INFORMATION OR ITS USE WILL NOT EXCEED
+THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THE INFORMATION.
+
+Use of Microchip devices in life support and/or safety applications is entirely at the buyer's risk, and the buyer agrees to defend, indemnify and hold
+harmless Microchip from any and all damages, claims, suits, or expenses resulting from such use. No licenses are conveyed, implicitly or otherwise,
+under any Microchip intellectual property rights unless otherwise stated.
+
+Trademarks
+The Microchip name and logo, the Microchip logo, Adaptec, AnyRate, AVR, AVR logo, AVR Freaks, BesTime, BitCloud, CryptoMemory, CryptoRF,
+dsPIC, flexPWR, HELDO, IGLOO, JukeBlox, KeeLoq, Kleer, LANCheck, LinkMD, maXStylus, maXTouch, MediaLB, megaAVR, Microsemi,
+Microsemi logo, MOST, MOST logo, MPLAB, OptoLyzer, PIC, picoPower, PICSTART, PIC32 logo, PolarFire, Prochip Designer, QTouch, SAM-BA,
+SenGenuity, SpyNIC, SST, SST Logo, SuperFlash, Symmetricom, SyncServer, Tachyon, TimeSource, tinyAVR, UNI/O, Vectron, and XMEGA are
+registered trademarks of Microchip Technology Incorporated in the U.S.A. and other countries.
+
+AgileSwitch, APT, ClockWorks, The Embedded Control Solutions Company, EtherSynch, Flashtec, Hyper Speed Control, HyperLight Load,
+IntelliMOS, Libero, motorBench, mTouch, Powermite 3, Precision Edge, ProASIC, ProASIC Plus, ProASIC Plus logo, Quiet- Wire, SmartFusion,
+SyncWorld, Temux, TimeCesium, TimeHub, TimePictra, TimeProvider, TrueTime, WinPath, and ZL are registered trademarks of Microchip
+Technology Incorporated in the U.S.A.
+
+Adjacent Key Suppression, AKS, Analog-for-the-Digital Age, Any Capacitor, AnyIn, AnyOut, Augmented Switching, BlueSky, BodyCom,
+CodeGuard, CryptoAuthentication, CryptoAutomotive, CryptoCompanion, CryptoController, dsPICDEM, dsPICDEM.net, Dynamic Average
+Matching, DAM, ECAN, Espresso T1S, EtherGREEN, GridTime, IdealBridge, In-Circuit Serial Programming, ICSP, INICnet, Intelligent Paralleling,
+Inter-Chip Connectivity, JitterBlocker, Knob-on-Display, maxCrypto, maxView, memBrain, Mindi, MiWi, MPASM, MPF, MPLAB Certified logo,
+MPLIB, MPLINK, MultiTRAK, NetDetach, NVM Express, NVMe, Omniscient Code Generation, PICDEM, PICDEM.net, PICkit, PICtail, PowerSmart,
+PureSilicon, QMatrix, REAL ICE, Ripple Blocker, RTAX, RTG4, SAM-ICE, Serial Quad I/O, simpleMAP, SimpliPHY, SmartBuffer, SmartHLS,
+SMART-I.S., storClad, SQI, SuperSwitcher, SuperSwitcher II, Switchtec, SynchroPHY, Total Endurance, TSHARC, USBCheck, VariSense,
+VectorBlox, VeriPHY, ViewSpan, WiperLock, XpressConnect, and ZENA are trademarks of Microchip Technology Incorporated in the U.S.A. and
+other countries.
+
+SQTP is a service mark of Microchip Technology Incorporated in the U.S.A.
+
+The Adaptec logo, Frequency on Demand, Silicon Storage Technology, Symmcom, and Trusted Time are registered trademarks of Microchip
+Technology Inc. in other countries.
+
+GestIC is a registered trademark of Microchip Technology Germany II GmbH & Co. KG, a subsidiary of Microchip Technology Inc., in other
+countries.
+
+
+
+All other trademarks mentioned herein are property of their respective companies.
+
+© 2022, Microchip Technology Incorporated and its subsidiaries.
+
+All Rights Reserved.
+
+ISBN: 978-1-6683-0464-8
+
+
+
+For information regarding Microchip’s Quality Management Systems, please visit www.microchip.com/quality.
+
+ 2022 Microchip Technology Inc. and its subsidiaries                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          DS00004541A-page   19
+                                           Worldwide Sales and Service
+
+
+AMERICAS                                  ASIA/PACIFIC                               ASIA/PACIFIC                              EUROPE
+Corporate Office                          Australia - Sydney                         India - Bangalore                         Austria - Wels
+2355 West Chandler Blvd.                  Tel: 61-2-9868-6733                        Tel: 91-80-3090-4444                      Tel: 43-7242-2244-39
+Chandler, AZ 85224-6199                   China - Beijing                            India - New Delhi                         Fax: 43-7242-2244-393
+Tel: 480-792-7200                         Tel: 86-10-8569-7000                       Tel: 91-11-4160-8631                      Denmark - Copenhagen
+Fax: 480-792-7277                         China - Chengdu                            India - Pune                              Tel: 45-4485-5910
+Technical Support:                        Tel: 86-28-8665-5511                       Tel: 91-20-4121-0141                      Fax: 45-4485-2829
+http://www.microchip.com/                 China - Chongqing                          Japan - Osaka                             Finland - Espoo
+support                                   Tel: 86-23-8980-9588                       Tel: 81-6-6152-7160                       Tel: 358-9-4520-820
+Web Address:                                                                                                                   France - Paris
+www.microchip.com                         China - Dongguan                           Japan - Tokyo                             Tel: 33-1-69-53-63-20
+Atlanta                                   Tel: 86-769-8702-9880                      Tel: 81-3-6880- 3770
+Duluth, GA                                China - Guangzhou                          Korea - Daegu                             Fax: 33-1-69-30-90-79
+Tel: 678-957-9614                         Tel: 86-20-8755-8029                       Tel: 82-53-744-4301                       Germany - Garching
+Fax: 678-957-1455                         China - Hangzhou                           Korea - Seoul                             Tel: 49-8931-9700
+Austin, TX                                Tel: 86-571-8792-8115                      Tel: 82-2-554-7200                        Germany - Haan
+Tel: 512-257-3370                         China - Hong Kong SAR                      Malaysia - Kuala Lumpur                   Tel: 49-2129-3766400
+Boston                                    Tel: 852-2943-5100                         Tel: 60-3-7651-7906                       Germany - Heilbronn
+Westborough, MA                           China - Nanjing                            Malaysia - Penang                         Tel: 49-7131-72400
+Tel: 774-760-0087                         Tel: 86-25-8473-2460                       Tel: 60-4-227-8870                        Germany - Karlsruhe
+Fax: 774-760-0088                         China - Qingdao                            Philippines - Manila                      Tel: 49-721-625370
+Chicago                                   Tel: 86-532-8502-7355                      Tel: 63-2-634-9065                        Germany - Munich
+Itasca, IL                                China - Shanghai                           Singapore                                 Tel: 49-89-627-144-0
+Tel: 630-285-0071                         Tel: 86-21-3326-8000                       Tel: 65-6334-8870                         Fax: 49-89-627-144-44
+Fax: 630-285-0075                         China - Shenyang                           Taiwan - Hsin Chu                         Germany - Rosenheim
+Dallas                                    Tel: 86-24-2334-2829                       Tel: 886-3-577-8366                       Tel: 49-8031-354-560
+Addison, TX                               China - Shenzhen                           Taiwan - Kaohsiung                        Israel - Ra’anana
+Tel: 972-818-7423                         Tel: 86-755-8864-2200                      Tel: 886-7-213-7830                       Tel: 972-9-744-7705
+Fax: 972-818-2924                         China - Suzhou                             Taiwan - Taipei                           Italy - Milan
+Detroit                                   Tel: 86-186-6233-1526                      Tel: 886-2-2508-8600                      Tel: 39-0331-742611
+Novi, MI                                  China - Wuhan                              Thailand - Bangkok                        Fax: 39-0331-466781
+Tel: 248-848-4000                         Tel: 86-27-5980-5300                       Tel: 66-2-694-1351                        Italy - Padova
+Houston, TX                               China - Xian                               Vietnam - Ho Chi Minh                     Tel: 39-049-7625286
+Tel: 281-894-5983                         Tel: 86-29-8833-7252                       Tel: 84-28-5448-2100                      Netherlands - Drunen
+Indianapolis                              China - Xiamen                                                                       Tel: 31-416-690399
+Noblesville, IN                           Tel: 86-592-2388138                                                                  Fax: 31-416-690340
+Tel: 317-773-8323                                                                                                              Norway - Trondheim
+Fax: 317-773-5453                         China - Zhuhai                                                                       Tel: 47-7288-4388
+Tel: 317-536-2380                         Tel: 86-756-3210040                                                                  Poland - Warsaw
+Los Angeles                                                                                                                    Tel: 48-22-3325737
+Mission Viejo, CA                                                                                                              Romania - Bucharest
+Tel: 949-462-9523                                                                                                              Tel: 40-21-407-87-50
+Fax: 949-462-9608                                                                                                              Spain - Madrid
+Tel: 951-273-7800                                                                                                              Tel: 34-91-708-08-90
+Raleigh, NC                                                                                                                    Fax: 34-91-708-08-91
+Tel: 919-844-7510                                                                                                              Sweden - Gothenberg
+New York, NY                                                                                                                   Tel: 46-31-704-60-40
+Tel: 631-435-6000                                                                                                              Sweden - Stockholm
+San Jose, CA                                                                                                                   Tel: 46-8-5090-4654
+Tel: 408-735-9110                                                                                                              UK - Wokingham
+Tel: 408-436-4270                                                                                                              Tel: 44-118-921-5800
+Canada - Toronto                                                                                                               Fax: 44-118-921-5820
+Tel: 905-695-1980
+Fax: 905-695-2078
+
+
+
+
+DS00004541A-page   20                                                                                                                                                                                                                                                                                                                                                                                                 2022 Microchip Technology Inc. and its subsidiaries
+
+                                                                                                                                                          09/14/21

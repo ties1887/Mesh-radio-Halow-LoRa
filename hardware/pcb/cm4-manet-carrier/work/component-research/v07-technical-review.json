@@ -1,0 +1,658 @@
+{
+  "measurements": [
+    {
+      "a": "U10",
+      "pin_a": "3",
+      "b": "C10",
+      "pin_b": "1",
+      "net": "+5V_MAIN",
+      "straight_line_mm": 38.11,
+      "same_face": true
+    },
+    {
+      "a": "U10",
+      "pin_a": "3",
+      "b": "C11",
+      "pin_b": "1",
+      "net": "+5V_MAIN",
+      "straight_line_mm": 50.05,
+      "same_face": true
+    },
+    {
+      "a": "U10",
+      "pin_a": "2",
+      "b": "C12",
+      "pin_b": "2",
+      "net": "WIFI_SW",
+      "straight_line_mm": 52.82,
+      "same_face": true
+    },
+    {
+      "a": "U10",
+      "pin_a": "2",
+      "b": "L10",
+      "pin_b": "1",
+      "net": "WIFI_SW",
+      "straight_line_mm": 5.63,
+      "same_face": true
+    },
+    {
+      "a": "U10",
+      "pin_a": "4",
+      "b": "R10",
+      "pin_b": "2",
+      "net": "WIFI_FB",
+      "straight_line_mm": 50.67,
+      "same_face": true
+    },
+    {
+      "a": "U10",
+      "pin_a": "4",
+      "b": "R11",
+      "pin_b": "1",
+      "net": "WIFI_FB",
+      "straight_line_mm": 48.01,
+      "same_face": true
+    },
+    {
+      "a": "U200",
+      "pin_a": "32",
+      "b": "Y210",
+      "pin_b": "3",
+      "net": "HUB_XOUT",
+      "straight_line_mm": 23.41,
+      "same_face": false
+    },
+    {
+      "a": "U200",
+      "pin_a": "36",
+      "b": "C212",
+      "pin_b": "1",
+      "net": "+3V3_AUX",
+      "straight_line_mm": 17.48,
+      "same_face": false
+    },
+    {
+      "a": "U200",
+      "pin_a": "36",
+      "b": "C213",
+      "pin_b": "1",
+      "net": "+3V3_AUX",
+      "straight_line_mm": 15.84,
+      "same_face": false
+    },
+    {
+      "a": "U200",
+      "pin_a": "36",
+      "b": "C214",
+      "pin_b": "1",
+      "net": "+3V3_AUX",
+      "straight_line_mm": 12.56,
+      "same_face": false
+    },
+    {
+      "a": "U200",
+      "pin_a": "36",
+      "b": "C215",
+      "pin_b": "1",
+      "net": "+3V3_AUX",
+      "straight_line_mm": 7.25,
+      "same_face": false
+    },
+    {
+      "a": "U200",
+      "pin_a": "36",
+      "b": "C216",
+      "pin_b": "1",
+      "net": "+3V3_AUX",
+      "straight_line_mm": 11.59,
+      "same_face": false
+    },
+    {
+      "a": "U200",
+      "pin_a": "36",
+      "b": "C217",
+      "pin_b": "1",
+      "net": "+3V3_AUX",
+      "straight_line_mm": 15.86,
+      "same_face": false
+    },
+    {
+      "a": "U300",
+      "pin_a": "10",
+      "b": "C301",
+      "pin_b": "1",
+      "net": "+3V3_HALOW",
+      "straight_line_mm": 2.94,
+      "same_face": true
+    },
+    {
+      "a": "U300",
+      "pin_a": "25",
+      "b": "C302",
+      "pin_b": "1",
+      "net": "+3V3_HALOW",
+      "straight_line_mm": 5.14,
+      "same_face": true
+    },
+    {
+      "a": "U300",
+      "pin_a": "25",
+      "b": "C303",
+      "pin_b": "1",
+      "net": "+3V3_HALOW",
+      "straight_line_mm": 3.23,
+      "same_face": true
+    },
+    {
+      "a": "U300",
+      "pin_a": "22",
+      "b": "C304",
+      "pin_b": "1",
+      "net": "+3V3_HALOW",
+      "straight_line_mm": 3.13,
+      "same_face": true
+    },
+    {
+      "a": "U300",
+      "pin_a": "2",
+      "b": "R301",
+      "pin_b": "1",
+      "net": "HALOW_RF",
+      "straight_line_mm": 12.59,
+      "same_face": true
+    }
+  ],
+  "unchanged_design_sha256": {
+    "CM4_MANET.kicad_pcb": "0428861575a6c196cb6d5702ff7f3ac1b3e7d38b0d96c58e179cf507bba41225",
+    "01_Input.kicad_sch": "dd293acef65d644b0228119e27a059b9dbe27263405d2a919c7826da6d4d062a",
+    "02_WiFi_Power.kicad_sch": "2e3f4185309f45c82d2399c65c36cfe583c833dc1481d37bd12ba9ce8df66e79",
+    "03_Aux_Power.kicad_sch": "8c636bd233cd2856732a33ff103cb71f984205969efd80520ddcc52a27864735",
+    "04_CM4_Power_GPIO.kicad_sch": "64755c937d71ae5b4faf8066e6eec79467363ccb00f3e719c84469ad24ef003f",
+    "05_CM4_HighSpeed.kicad_sch": "3ab255faee67e008d743020d390402c967fa5ecfcf0e14885659115d528e8b3e",
+    "06_Service_Reset.kicad_sch": "68cdf1ace7074d9ebdcb2c6dc5b9178093ae11e0e3f41db069162ddd10e583b8",
+    "07_MicroSD.kicad_sch": "ecd66fbfd881fe1ece18572310373b28db3bd2e90f454e37f7e9267ef7adaf9a",
+    "08_USB_Hub.kicad_sch": "390c9f9eb5e3bfefb86d9ecc3a463714022b3ccd4c21e5ceba2a08298c4f72b5",
+    "09_USB_Clock_Decoupling.kicad_sch": "4ae9fe9fb1e51418a03deadb8ec4ce97b785bbbf7ee231e9a10cfd838d018544",
+    "10_USB_A.kicad_sch": "51a4fc051e29cab22fd4c09e13a10d309dbaad18759917510b2403929392143f",
+    "11_USB_B.kicad_sch": "a96839cda9451194630ae30bbb3e8e442d2c04d80d3bc5b840738e5871272674",
+    "12_HaLow_Power.kicad_sch": "05b1f65ca9f2ffd53b59301cd46efcd961e9cf6db6d063b4b95ab94f83819e39",
+    "13_HaLow_RF.kicad_sch": "93a84cfd48659bd54f766e288ece06f6f770d029fcc5f2d2ab54560d3076fd4e",
+    "14_WiFi_PCIe.kicad_sch": "0a59aaca80ab187e61206d513fadafe8ca6f116b59da53a0a251932b4c6aa3c4",
+    "15_Ethernet_Cable.kicad_sch": "f46ba868274a7f1c93d224d6494d3ac8beda0f722c2e999c4a784f22d6a555fd",
+    "16_Panel_Interfaces.kicad_sch": "1216b5091350026bbbd7a71a7923539ade646647a9691a63a045fd48fa60420d",
+    "CM4_MANET.kicad_sch": "2d56647eb0d7bcab12617e863c7b9e5cd454cd498f91a9733290776f716f00b1",
+    "CM4_MANET.kicad_pro": "a372797b8b520ce77f6f9e7dea1291f8e08e04c396dae38bb8520c7172899084"
+  },
+  "net_settings": {
+    "classes": [
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Default",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 2147483647,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.2,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      }
+    ],
+    "meta": {
+      "version": 5
+    },
+    "net_colors": null,
+    "netclass_assignments": null,
+    "netclass_patterns": []
+  },
+  "tracks": 0,
+  "zones": 0,
+  "J400_pads": [
+    {
+      "pin": "",
+      "net": ""
+    },
+    {
+      "pin": "",
+      "net": ""
+    },
+    {
+      "pin": "1",
+      "net": "GND"
+    },
+    {
+      "pin": "2",
+      "net": "+3V3_WIFI"
+    },
+    {
+      "pin": "3",
+      "net": "unconnected-(J400-NC_AW7916-Pad3)"
+    },
+    {
+      "pin": "4",
+      "net": "+3V3_WIFI"
+    },
+    {
+      "pin": "5",
+      "net": "unconnected-(J400-NC_AW7916-Pad5)"
+    },
+    {
+      "pin": "6",
+      "net": "unconnected-(J400-LED1_N-Pad6)"
+    },
+    {
+      "pin": "7",
+      "net": "GND"
+    },
+    {
+      "pin": "8",
+      "net": "unconnected-(J400-NC_AW7916-Pad8)"
+    },
+    {
+      "pin": "9",
+      "net": "unconnected-(J400-NC_AW7916-Pad9)"
+    },
+    {
+      "pin": "10",
+      "net": "unconnected-(J400-NC_AW7916-Pad10)"
+    },
+    {
+      "pin": "11",
+      "net": "unconnected-(J400-NC_AW7916-Pad11)"
+    },
+    {
+      "pin": "12",
+      "net": "unconnected-(J400-NC_AW7916-Pad12)"
+    },
+    {
+      "pin": "13",
+      "net": "unconnected-(J400-NC_AW7916-Pad13)"
+    },
+    {
+      "pin": "14",
+      "net": "unconnected-(J400-NC_AW7916-Pad14)"
+    },
+    {
+      "pin": "15",
+      "net": "unconnected-(J400-NC_AW7916-Pad15)"
+    },
+    {
+      "pin": "16",
+      "net": "unconnected-(J400-LED2_N-Pad16)"
+    },
+    {
+      "pin": "17",
+      "net": "unconnected-(J400-NC_AW7916-Pad17)"
+    },
+    {
+      "pin": "18",
+      "net": "GND"
+    },
+    {
+      "pin": "19",
+      "net": "unconnected-(J400-NC_AW7916-Pad19)"
+    },
+    {
+      "pin": "20",
+      "net": "unconnected-(J400-NC_AW7916-Pad20)"
+    },
+    {
+      "pin": "21",
+      "net": "unconnected-(J400-NC_AW7916-Pad21)"
+    },
+    {
+      "pin": "22",
+      "net": "unconnected-(J400-NC_AW7916-Pad22)"
+    },
+    {
+      "pin": "23",
+      "net": "unconnected-(J400-NC_AW7916-Pad23)"
+    },
+    {
+      "pin": "32",
+      "net": "unconnected-(J400-NC_AW7916-Pad32)"
+    },
+    {
+      "pin": "33",
+      "net": "GND"
+    },
+    {
+      "pin": "34",
+      "net": "unconnected-(J400-NC_AW7916-Pad34)"
+    },
+    {
+      "pin": "35",
+      "net": "PCIE_TX_P"
+    },
+    {
+      "pin": "36",
+      "net": "unconnected-(J400-NC_AW7916-Pad36)"
+    },
+    {
+      "pin": "37",
+      "net": "PCIE_TX_N"
+    },
+    {
+      "pin": "38",
+      "net": "unconnected-(J400-NC_AW7916-Pad38)"
+    },
+    {
+      "pin": "39",
+      "net": "GND"
+    },
+    {
+      "pin": "40",
+      "net": "unconnected-(J400-NC_AW7916-Pad40)"
+    },
+    {
+      "pin": "41",
+      "net": "PCIE_RX_P"
+    },
+    {
+      "pin": "42",
+      "net": "unconnected-(J400-NC_AW7916-Pad42)"
+    },
+    {
+      "pin": "43",
+      "net": "PCIE_RX_N"
+    },
+    {
+      "pin": "44",
+      "net": "unconnected-(J400-NC_AW7916-Pad44)"
+    },
+    {
+      "pin": "45",
+      "net": "GND"
+    },
+    {
+      "pin": "46",
+      "net": "unconnected-(J400-NC_AW7916-Pad46)"
+    },
+    {
+      "pin": "47",
+      "net": "PCIE_CLK_P"
+    },
+    {
+      "pin": "48",
+      "net": "unconnected-(J400-NC_AW7916-Pad48)"
+    },
+    {
+      "pin": "49",
+      "net": "PCIE_CLK_N"
+    },
+    {
+      "pin": "50",
+      "net": "unconnected-(J400-NC_AW7916-Pad50)"
+    },
+    {
+      "pin": "51",
+      "net": "GND"
+    },
+    {
+      "pin": "52",
+      "net": "WIFI_PERST_N"
+    },
+    {
+      "pin": "53",
+      "net": "PCIE_CLKREQ_N"
+    },
+    {
+      "pin": "54",
+      "net": "unconnected-(J400-NC_AW7916-Pad54)"
+    },
+    {
+      "pin": "55",
+      "net": "unconnected-(J400-PEWAKE_N-Pad55)"
+    },
+    {
+      "pin": "56",
+      "net": "WIFI_ENABLE_N"
+    },
+    {
+      "pin": "57",
+      "net": "GND"
+    },
+    {
+      "pin": "58",
+      "net": "unconnected-(J400-NC_AW7916-Pad58)"
+    },
+    {
+      "pin": "59",
+      "net": "unconnected-(J400-NC_AW7916-Pad59)"
+    },
+    {
+      "pin": "60",
+      "net": "unconnected-(J400-NC_AW7916-Pad60)"
+    },
+    {
+      "pin": "61",
+      "net": "unconnected-(J400-NC_AW7916-Pad61)"
+    },
+    {
+      "pin": "62",
+      "net": "unconnected-(J400-NC_AW7916-Pad62)"
+    },
+    {
+      "pin": "63",
+      "net": "GND"
+    },
+    {
+      "pin": "64",
+      "net": "unconnected-(J400-NC_AW7916-Pad64)"
+    },
+    {
+      "pin": "65",
+      "net": "unconnected-(J400-NC_AW7916-Pad65)"
+    },
+    {
+      "pin": "66",
+      "net": "unconnected-(J400-NC_AW7916-Pad66)"
+    },
+    {
+      "pin": "67",
+      "net": "unconnected-(J400-NC_AW7916-Pad67)"
+    },
+    {
+      "pin": "68",
+      "net": "unconnected-(J400-NC_AW7916-Pad68)"
+    },
+    {
+      "pin": "69",
+      "net": "GND"
+    },
+    {
+      "pin": "70",
+      "net": "unconnected-(J400-NC_AW7916-Pad70)"
+    },
+    {
+      "pin": "71",
+      "net": "unconnected-(J400-NC_AW7916-Pad71)"
+    },
+    {
+      "pin": "72",
+      "net": "+3V3_WIFI"
+    },
+    {
+      "pin": "73",
+      "net": "unconnected-(J400-NC_AW7916-Pad73)"
+    },
+    {
+      "pin": "74",
+      "net": "+3V3_WIFI"
+    },
+    {
+      "pin": "75",
+      "net": "GND"
+    },
+    {
+      "pin": "MP",
+      "net": ""
+    },
+    {
+      "pin": "MP",
+      "net": ""
+    }
+  ],
+  "U300_pads": [
+    {
+      "pin": "1",
+      "net": "GND"
+    },
+    {
+      "pin": "2",
+      "net": "HALOW_RF"
+    },
+    {
+      "pin": "3",
+      "net": "GND"
+    },
+    {
+      "pin": "4",
+      "net": "HALOW_RESET_N"
+    },
+    {
+      "pin": "5",
+      "net": "unconnected-(U300-WAKE-Pad5)"
+    },
+    {
+      "pin": "6",
+      "net": "unconnected-(U300-JTAG_TMS-Pad6)"
+    },
+    {
+      "pin": "7",
+      "net": "unconnected-(U300-JTAG_TCK-Pad7)"
+    },
+    {
+      "pin": "8",
+      "net": "unconnected-(U300-JTAG_TDO-Pad8)"
+    },
+    {
+      "pin": "9",
+      "net": "unconnected-(U300-JTAG_TDI-Pad9)"
+    },
+    {
+      "pin": "10",
+      "net": "+3V3_HALOW"
+    },
+    {
+      "pin": "11",
+      "net": "GND"
+    },
+    {
+      "pin": "12",
+      "net": "unconnected-(U300-SDIO_D0-Pad12)"
+    },
+    {
+      "pin": "13",
+      "net": "unconnected-(U300-SDIO_D3-Pad13)"
+    },
+    {
+      "pin": "14",
+      "net": "unconnected-(U300-SDIO_D1-Pad14)"
+    },
+    {
+      "pin": "15",
+      "net": "unconnected-(U300-SDIO_D2-Pad15)"
+    },
+    {
+      "pin": "16",
+      "net": "unconnected-(U300-SDIO_CMD-Pad16)"
+    },
+    {
+      "pin": "17",
+      "net": "unconnected-(U300-SDIO_CLK-Pad17)"
+    },
+    {
+      "pin": "18",
+      "net": "unconnected-(U300-GPIO5-Pad18)"
+    },
+    {
+      "pin": "19",
+      "net": "unconnected-(U300-GPIO4-Pad19)"
+    },
+    {
+      "pin": "20",
+      "net": "GND"
+    },
+    {
+      "pin": "21",
+      "net": "unconnected-(U300-GPIO3-Pad21)"
+    },
+    {
+      "pin": "22",
+      "net": "+3V3_HALOW"
+    },
+    {
+      "pin": "23",
+      "net": "GND"
+    },
+    {
+      "pin": "24",
+      "net": "+3V3_HALOW"
+    },
+    {
+      "pin": "25",
+      "net": "+3V3_HALOW"
+    },
+    {
+      "pin": "26",
+      "net": "GND"
+    },
+    {
+      "pin": "27",
+      "net": "HALOW_USB_N"
+    },
+    {
+      "pin": "28",
+      "net": "HALOW_USB_P"
+    },
+    {
+      "pin": "29",
+      "net": "unconnected-(U300-BUSY-Pad29)"
+    },
+    {
+      "pin": "30",
+      "net": "GND"
+    },
+    {
+      "pin": "31",
+      "net": "unconnected-(U300-GPIO1-Pad31)"
+    },
+    {
+      "pin": "32",
+      "net": "unconnected-(U300-GPIO0-Pad32)"
+    },
+    {
+      "pin": "33",
+      "net": "unconnected-(U300-GPIO6-Pad33)"
+    },
+    {
+      "pin": "34",
+      "net": "unconnected-(U300-GPIO7-Pad34)"
+    },
+    {
+      "pin": "35",
+      "net": "unconnected-(U300-GPIO8-Pad35)"
+    },
+    {
+      "pin": "36",
+      "net": "unconnected-(U300-GPIO9-Pad36)"
+    },
+    {
+      "pin": "37",
+      "net": "unconnected-(U300-GPIO10-Pad37)"
+    },
+    {
+      "pin": "38",
+      "net": "GND"
+    }
+  ]
+}

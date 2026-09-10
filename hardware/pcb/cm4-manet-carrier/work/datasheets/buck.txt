@@ -1,0 +1,1243 @@
+Output Current (A)
+Efficiency
+0.001 0.01 0.1 1 5 5
+0
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+D017
+VOUT = 1.05 V
+VOUT = 1.5 V
+VOUT = 1.8 V
+VOUT = 3.3 V
+VOUT = 5 V
+RFB1RFB2
+ TPS565201
+CIN
+CO
+LO
+VIN
+ENSW
+GND
+VIN
+1
+2
+3
+VFB
+VBST
+EN
+4
+5
+6
+VOUT
+Copyright © 2016, Texas Instruments Incorporated
+VOUT
+CBST
+Product
+Folder
+Order
+Now
+T echnical
+Documents
+Tools &
+Software
+Support &
+Community
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications,
+intellectual property matters and other important disclaimers. PRODUCTION DATA.
+TPS565201
+SLVSE71 – SEPTEMBER 2017
+TPS5652014.5-Vto17-VInput,5-ASynchronousStep-DownVoltageRegulator
+1
+1 Features
+1• 5-A Maximum Output Current
+• Integrated 31-mΩ and 16-mΩ FETs
+• D-CAP2™ Mode Control with Fast Transient
+Response
+• Input Voltage Range: 4.5 V to 17 V
+• Output Voltage Range: 0.76 V to 7 V
+• High Efficiency at Light Loads with Pulse-skipping
+Eco-mode™
+• 500-kHz Switching Frequency
+• ≤1 µA Shutdown Current
+• 1% Feedback Voltage Accuracy
+• Startup from Pre-Biased Output Voltage
+• Cycle-by-Cycle Current Limit
+• Hiccup-mode Overcurrent Protection
+• Non-Latch UVP, UVLO and TSD Protections
+2 Applications
+• Digital TV Power Supply
+• High Definition Blu-ray™ Disc Players
+• Networking Home Terminal
+• Digital Set Top Box (STB)
+• Surveillance
+3 Description
+The TPS565201 is a simple, easy-to-use, 5-A
+synchronous step-down converter.
+The device is optimized to operate with minimum
+external component counts and also optimized to
+achieve low standby current.
+This switch mode power supply (SMPS) device
+employs D-CAP2™ control, which provides fast
+transient response and requires no external
+compensation components. D-CAP2 also allows the
+use of low-equivalent series resistance (ESR)
+specialty polymer capacitors and ceramic output
+capacitors.
+The TPS565201 operates in pulse skip mode,
+maintaining high efficiency during light load operation.
+The TPS565201 device is available in a 6-pin 1.6-mm
+× 2.9-mm SOT (DDC) package, and operates over a
+–40°C to 125°C junction temperature range.
+Device Information(1)
+PART NUMBER PACKAGE BODY SIZE (NOM)
+TPS565201 DDC (6) 1.60 mm × 2.90 mm
+(1) For all available packages, see the orderable addendum at
+the end of the data sheet.
+spacer
+spacer
+Simplified Schematic
+TPS565201 Efficiency
+2
+TPS565201
+SLVSE71 – SEPTEMBER 2017 www.ti.com
+Product Folder Links: TPS565201
+Submit Documentation Feedback Copyright © 2017, Texas Instruments Incorporated
+Table of Contents
+1 Features .................................................................. 1
+2 Applications ........................................................... 1
+3 Description ............................................................. 1
+4 Revision History..................................................... 2
+5 Pin Configuration and Functions ......................... 3
+6 Specifications......................................................... 4
+6.1 Absolute Maximum Ratings ...................................... 4
+6.2 ESD Ratings.............................................................. 4
+6.3 Recommended Operating Conditions....................... 4
+6.4 Thermal Information .................................................. 4
+6.5 Electrical Characteristics........................................... 5
+6.6 Typical Characteristics .............................................. 6
+7 Detailed Description .............................................. 9
+7.1 Overview ................................................................... 9
+7.2 Functional Block Diagram ......................................... 9
+7.3 Feature Description................................................. 10
+7.4 Device Functional Modes........................................ 11
+8 Application and Implementation ........................ 12
+8.1 Application Information............................................ 12
+8.2 Typical Application ................................................. 12
+9 Power Supply Recommendations ...................... 17
+10 Layout................................................................... 18
+10.1 Layout Guidelines ................................................. 18
+10.2 Layout Example .................................................... 18
+11 Device and Documentation Support ................. 19
+11.1 Receiving Notification of Documentation Updates 19
+11.2 Community Resources.......................................... 19
+11.3 Trademarks ........................................................... 19
+11.4 Electrostatic Discharge Caution ............................ 19
+11.5 Glossary ................................................................ 19
+12 Mechanical, Packaging, and Orderable
+Information ........................................................... 19
+4 Revision History
+DATE REVISION NOTES
+September 2017 * Initial release.
+GND 1 VBST 6
+SW 2 EN 5
+VIN 3 VFB 4
+3
+TPS565201
+www.ti.com SLVSE71 – SEPTEMBER 2017
+Product Folder Links: TPS565201
+Submit Documentation FeedbackCopyright © 2017, Texas Instruments Incorporated
+5 Pin Configuration and Functions
+DDC Package
+6-Pin SOT
+Top View
+Pin Functions
+PIN
+I/O DESCRIPTION
+NAME NO.
+GND 1 — Ground pin. Source terminal of low-side power NFET as well as the ground terminal for
+controller circuit. Connect sensitive VFB to this GND at a single point.
+SW 2 O Switch node connection between high-side NFET and low-side NFET.
+VIN 3 I Input voltage supply pin. The drain terminal of high-side power NFET.
+VFB 4 I Converter feedback input. Connect to output voltage with feedback resistor divider.
+EN 5 I Enable input control. Active high and must be pulled up to enable the device.
+VBST 6 O Supply input for the high-side NFET gate drive circuit. Connect 0.1 µF capacitor between
+VBST and SW pins.
+4
+TPS565201
+SLVSE71 – SEPTEMBER 2017 www.ti.com
+Product Folder Links: TPS565201
+Submit Documentation Feedback Copyright © 2017, Texas Instruments Incorporated
+(1) Stresses beyond those listed under Absolute Maximum Ratings may cause permanent damage to the device. These are stress ratings
+only, which do not imply functional operation of the device at these or any other conditions beyond those indicated under Recommended
+Operating Conditions. Exposure to absolute-maximum-rated conditions for extended periods may affect device reliability.
+6 Specifications
+6.1 Absolute Maximum Ratings
+over operating free-air temperature range (unless otherwise noted) (1)
+MIN MAX UNIT
+Input voltage
+VIN, EN –0.3 19 V
+VBST –0.3 25 V
+VBST (10 ns transient) –0.3 27 V
+VBST (vs SW) –0.3 6.5 V
+VFB –0.3 6.5 V
+SW –2 19 V
+SW (10 ns transient) –3.5 21 V
+Operating junction temperature, TJ –40 150 °C
+Storage temperature, Tstg –55 150 °C
+(1) JEDEC document JEP155 states that 500-V HBM allows safe manufacturing with a standard ESD control process.
+(2) JEDEC document JEP157 states that 250-V CDM allows safe manufacturing with a standard ESD control process.
+6.2 ESD Ratings
+VALUE UNIT
+V(ESD) Electrostatic discharge
+Human-body model (HBM), per ANSI/ESDA/JEDEC JS-001 (1) ±4000
+VCharged-device model (CDM), per JEDEC specification JESD22-
+C101 (2) ±1500
+6.3 Recommended Operating Conditions
+over operating free-air temperature range (unless otherwise noted)
+MIN NOM MAX UNIT
+VIN Supply input voltage range 4.5 17 V
+VI Input voltage range
+VBST –0.1 23
+V
+VBST (10 ns transient) –0.1 26
+VBST (vs SW) –0.1 6.0
+EN –0.1 17
+VFB –0.1 5.5
+SW –1.8 17
+SW (10 ns transient) –3.5 20
+TJ Operating junction temperature –40 125 °C
+(1) For more information about traditional and new thermal metrics, see the Semiconductor and IC Package Thermal Metrics application
+report, SPRA953.
+6.4 Thermal Information
+THERMAL METRIC (1)
+TPS565201
+UNITDDC (SOT)
+6 PINS
+RθJA Junction-to-ambient thermal resistance 95.9 °C/W
+RθJC(top) Junction-to-case (top) thermal resistance 35.6 °C/W
+RθJB Junction-to-board thermal resistance 16.4 °C/W
+ψJT Junction-to-top characterization parameter 1.4 °C/W
+ψJB Junction-to-board characterization parameter 16.5 °C/W
+5
+TPS565201
+www.ti.com SLVSE71 – SEPTEMBER 2017
+Product Folder Links: TPS565201
+Submit Documentation FeedbackCopyright © 2017, Texas Instruments Incorporated
+(1) Not production tested.
+6.5 Electrical Characteristics
+TJ = –40°C to 125°C, VIN = 12 V (unless otherwise noted)
+PARAMETER TEST CONDITIONS MIN TYP MAX UNIT
+SUPPLY CURRENT
+IVIN
+Operating – non-switching
+supply current VIN current, EN = 5 V, VFB = 1 V 320 510 µA
+IVINSDN Shutdown supply current VIN current, EN = 0 V 0.8 5 µA
+LOGIC THRESHOLD
+VENH EN high-level input voltage 1.6 V
+VENL EN low-level input voltage 0.8 V
+REN EN pin resistance to GND VEN = 12 V 120 245 400 kΩ
+VFB VOLTAGE AND DISCHARGE RESISTANCE
+VFBTH VFB threshold voltage 753 760 767 mV
+IVFB VFB input current VFB = 0.8 V. TA = 25°C 0 ±0.1 µA
+MOSFET
+RDS(on)h High-side switch resistance TA = 25°C, VBST – VSW = 5.5 V 31 mΩ
+RDS(on)l Low-side switch resistance TA = 25°C 16 mΩ
+CURRENT LIMIT
+IOCL Current limit 5.3 6.7 8 A
+THERMAL SHUTDOWN
+TSDN
+Thermal shutdown
+threshold (1)
+Shutdown temperature 172
+°C
+Hysteresis 38
+ON-TIME TIMER CONTROL
+tOFF(MIN) Minimum off time VFB = 0.61 V 236 280 ns
+SOFT START
+tSS Soft-start time Internal soft-start time 1.0 ms
+FREQUENCY
+Fsw Switching frequency VIN = 12 V, VO = 5 V, CCM mode 500 kHz
+OUTPUT UNDERVOLTAGE AND OVERVOLTAGE PROTECTION
+VUVP Output UVP threshold Hiccup detect (H > L) 65 %
+THICCUP_WAIT Hiccup on time 1.8 ms
+THICCUP_RE Hiccup time before restart 14.9 ms
+UVLO
+UVLO UVLO threshold
+Wake up VIN voltage 4.0 4.3
+VShutdown VIN voltage 3.3 3.6
+Hysteresis VIN voltage (1) 0.4
+Junction Temperature (qC)
+High-Side Rds_on (m:)
+-50 -30 -10 10 30 50 70 90 110 130
+20
+25
+30
+35
+40
+45
+50
+55
+60
+D042
+Junction Temperature (qC)
+Low Side Rds_on (m:)
+-50 -20 10 40 70 100 130
+12
+16
+20
+24
+28
+D006
+Junction Temperature (qC)
+EN Pin UVLO - Low (V)
+-50 -20 10 40 70 100 130
+1.02
+1.05
+1.08
+1.11
+1.14
+1.17
+1.2
+1.23
+D004
+Junction Temperature (qC)
+EN Pin UVLO - High (V)
+-50 -20 10 40 70 100 130
+1.3
+1.33
+1.36
+1.39
+1.42
+1.45
+D003
+Junction Temperature (qC)
+Buck Quiescent Current ( mA)
+-50 -20 10 40 70 100 130
+0.2
+0.25
+0.3
+0.35
+0.4
+0.45
+D001
+Junction Temperature (qC)
+FB Voltage ( V)
+-50 -20 10 40 70 100 130
+0.758
+0.759
+0.76
+0.761
+0.762
+0.763
+D002
+6
+TPS565201
+SLVSE71 – SEPTEMBER 2017 www.ti.com
+Product Folder Links: TPS565201
+Submit Documentation Feedback Copyright © 2017, Texas Instruments Incorporated
+6.6 Typical Characteristics
+VIN = 12 V (unless otherwise noted)
+Figure 1. TPS565201 Supply Current vs Junction
+Temperature
+Figure 2. VFB Voltage vs Junction Temperature
+Figure 3. EN Pin UVLO Low Voltage vs Junction
+Temperature
+Figure 4. TPS565201 EN Pin UVLO High Voltage vs Junction
+Temperature
+Figure 5. TPS565201 High-Side Rds-On vs Junction
+Temperature
+Figure 6. Low-Side Rds-On vs Junction Temperature
+Output Current (A)
+Efficiency
+0.001 0.01 0.1 1 5 5
+0
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+D020
+VIN = 5 V
+VIN = 9 V
+VIN = 12 V
+VIN = 15 V
+Output Current (A)
+Efficiency
+0.001 0.01 0.1 1 5 5
+0
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+D041
+VIN = 5 V
+VIN = 9 V
+VIN = 12 V
+VIN = 15 V
+Output Current (A)
+Efficiency
+0.001 0.01 0.1 1 5 5
+0
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+D040
+VIN = 5 V
+VIN = 9 V
+VIN = 12 V
+VIN = 15 V
+Output Current (A)
+Efficiency
+0.001 0.01 0.1 1 5 5
+0
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+D019
+VIN = 5 V
+VIN = 9 V
+VIN = 12 V
+VIN = 15 V
+Input Voltage (V)
+Switching Frequency (kHz)
+4 6 8 10 12 14 16 18
+480
+500
+520
+540
+560
+580
+600
+D018
+VOUT = 1.8 V
+VOUT = 3.3 V
+VOUT = 5 V
+Output Current (A)
+Switching Frequency (KHz)
+0.001 0.01 0.1 1 5 5
+0
+100
+200
+300
+400
+500
+600
+D046
+VOUT = 1.05V
+VOUT = 3.3V
+VOUT = 5V
+7
+TPS565201
+www.ti.com SLVSE71 – SEPTEMBER 2017
+Product Folder Links: TPS565201
+Submit Documentation FeedbackCopyright © 2017, Texas Instruments Incorporated
+Typical Characteristics (continued)
+VIN = 12 V (unless otherwise noted)
+Figure 7. TPS565201 Switching Frequency
+vs Input Voltage
+Figure 8. TPS565201 Switching Frequency
+vs Output Current
+VOUT = 1.05 V L = 2.2 µH
+Figure 9. TPS565201 Efficiency vs Output Current
+VOUT = 1.5 V L = 2.2 µH
+Figure 10. TPS565201 Efficiency vs Output Current
+VOUT = 1.8 V L = 2.2 µH
+Figure 11. TPS565201 Efficiency vs Output Current
+VOUT = 3.3 V L = 2.2 µH
+Figure 12. TPS565201 Efficiency vs Output Current
+Output Current (A)
+Efficiency
+0.001 0.01 0.1 1 5 5
+0
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+D021
+VIN = 9 V
+VIN = 12 V
+VIN = 15 V
+8
+TPS565201
+SLVSE71 – SEPTEMBER 2017 www.ti.com
+Product Folder Links: TPS565201
+Submit Documentation Feedback Copyright © 2017, Texas Instruments Incorporated
+Typical Characteristics (continued)
+VIN = 12 V (unless otherwise noted)
+VOUT = 5 V L = 3.3 µH
+Figure 13. TPS565201 Efficiency vs Output Current
+2 SW
+ZC
+XCON
+PWM
+Control Logic 
++
++
++
+UVP
+OVP
+3 VIN
+ One-Shot
+6 VBST+
+4VFB
+OCL
++
+Soft Start
+5EN
+HS
+LS
+1 GND
+SS
+Voltage
+Reference
+HiccupVUVP
+VOVP
+OCL 
+threshold
+Regulator
+UVLO
+VREG5
+VREG5
+TSD
++
+Ripple Injection
+Internal Ramp
++
++
+Copyright © 2017, Texas Instruments Incorporated
+9
+TPS565201
+www.ti.com SLVSE71 – SEPTEMBER 2017
+Product Folder Links: TPS565201
+Submit Documentation FeedbackCopyright © 2017, Texas Instruments Incorporated
+7 Detailed Description
+7.1 Overview
+The TPS565201 is a 5-A synchronous step-down converter. The proprietary D-CAP2™ mode control supports
+low ESR output capacitors such as specialty polymer capacitors and multi-layer ceramic capacitors without
+complex external compensation circuits. The fast transient response of D-CAP2™ mode control can reduce the
+output capacitance required to meet a specific level of performance.
+7.2 Functional Block Diagram
+IN OUT OUT
+OUT(LL)
+SW IN
+(V V ) V1I 2 L V
+/c45 /c180/c61 /c180 /c180 /c180 /c166
+10
+TPS565201
+SLVSE71 – SEPTEMBER 2017 www.ti.com
+Product Folder Links: TPS565201
+Submit Documentation Feedback Copyright © 2017, Texas Instruments Incorporated
+7.3 Feature Description
+7.3.1 Adaptive On-Time Control and PWM Operation
+The main control loop of the TPS565201 is adaptive on-time pulse width modulation (PWM) controller that
+supports a proprietary D-CAP2™ mode control. The D-CAP2™ mode control combines adaptive on-time control
+with an internal compensation circuit for pseudo-fixed frequency and low external component count configuration
+with low-ESR ceramic output capacitors. It is stable even with virtually no ripple at the output.
+At the beginning of each cycle, the high-side MOSFET is turned on. This MOSFET is turned off after internal
+one-shot timer expires. This one shot duration is set inversely proportional to the converter input voltage, VIN,
+and proportional to the output voltage VO, to maintain a pseudo-fixed frequency over the input voltage range,
+hence it is called adaptive on-time control. The one-shot timer is reset and the high-side MOSFET is turned on
+again when the feedback voltage falls below the reference voltage. An ripple is added to reference voltage to
+simulate output ripple, eliminating the need for ESR induced output ripple from D-CAP2TM mode control.
+7.3.2 Pulse Skip Mode
+The TPS565201 is designed with Eco-mode™ to maintain high light load efficiency. As the output current
+decreases from heavy load condition, the inductor current is also reduced and eventually comes to point that its
+rippled valley touches zero level, which is the boundary between continuous conduction and discontinuous
+conduction modes. The rectifying MOSFET is turned off when the zero inductor current is detected. As the load
+current further decreases the converter runs into discontinuous conduction mode. The on-time is kept almost the
+same as it was in the continuous conduction mode so that it takes longer time to discharge the output capacitor
+with smaller load current to the level of the reference voltage. This makes the switching frequency lower,
+proportional to the load current, and keeps the light load efficiency high. The transition point to the light load
+operation IOUT(LL) current can be calculated in Equation 1.
+(1)
+7.3.3 Soft Start and Pre-Biased Soft Start
+The TPS565201 has an internal 1.0-ms soft-start. When the EN pin becomes high, the internal soft-start function
+begins ramping up the reference voltage to the PWM comparator.
+If the output capacitor is pre-biased at startup, the device initiates switching and starts ramping up only after the
+internal reference voltage becomes greater than the feedback voltage VFB. This scheme ensures that the
+converter ramps up smoothly into regulation point.
+11
+TPS565201
+www.ti.com SLVSE71 – SEPTEMBER 2017
+Product Folder Links: TPS565201
+Submit Documentation FeedbackCopyright © 2017, Texas Instruments Incorporated
+Feature Description (continued)
+7.3.4 Current Protection
+The output over-current limit (OCL) is implemented using a cycle-by-cycle valley detect control circuit. The
+inductor current is monitored during the OFF state by measuring the low-side FET drain to source voltage, which
+is proportional to the switch current. To improve accuracy, the voltage sensing is temperature compensated.
+During the on time of the high-side FET switch, the switch current increases at a linear rate determined by VIN,
+VOUT, and the output inductor value. During the on time of the low-side FET switch, this current decreases
+linearly. The average value of the switch current is the load current IOUT. If the monitored current is above the
+OCL level, the converter maintains low-side FET on and delays the creation of a new set pulse, even the voltage
+feedback loop requires one, until the current level becomes OCL level or lower. In subsequent switching cycles,
+the on-time is set to a fixed value and the current is monitored in the same manner.
+There are some important considerations for this type of over-current protection. The load current is higher than
+the over-current threshold by one half of the peak-to-peak inductor ripple current. Also, when the current is being
+limited, the output voltage tends to fall as the demanded load current may be higher than the current available
+from the converter. This may cause the output voltage to fall. When the VFB voltage falls below the UVP
+threshold voltage, the UVP comparator detects it. And then, the device shuts down after the UVP delay time
+(typically 24 µs) and re-starts after the hiccup time (typically 14.9 ms).
+When the over current condition is removed, the output voltage returns to the regulated value.
+7.3.5 Undervoltage Lockout (UVLO) Protection
+UVLO protection monitors input voltage. When the voltage is lower than UVLO threshold voltage, the device is
+shut off. This protection is non-latching.
+7.3.6 Thermal Shutdown
+The device monitors the temperature of itself. If the temperature exceeds the threshold value (typically 172°C),
+the device is shut off. This is a non-latch protection.
+7.4 Device Functional Modes
+7.4.1 Normal Operation
+When the input voltage is above the UVLO threshold and the EN voltage is above the enable threshold, the
+TPS565201 operates in the normal switching mode. Normal continuous conduction mode (CCM) occurs when
+the minimum switch current is above 0 A. In CCM, the TPS565201 operates at a quasi-fixed frequency of 500
+kHz.
+7.4.2 Eco-mode™ Operation
+When the TPS565201 is in the normal CCM operating mode and the switch current falls to 0 A, the TPS565201
+begins operating in pulse skipping eco-mode. Each switching cycle is followed by a period of energy saving sleep
+time. The sleep time ends when the VFB voltage falls below the eco-mode threshold voltage. As the output
+current decreases, the perceived time between switching pulses increases.
+7.4.3 Standby Operation
+When the TPS565201 is operating in either normal CCM or Eco-mode™, it may be placed in standby by
+asserting the EN pin low.
+1
+L1
+R2
+10 k
+R1  3.74 k
+VIN = 4.5 V to 17 V
+VOUT
+2.2 H
+C4
+R3  10 k
+C7  0.1 F
+C8
+22 F
+VOUT
+C9
+22 F
+VIN
+Not Installed
+EN
+VIN
+VBST
+SW
+GND
+EN
+VFB
+1
+2
+3 4
+5
+6
+1
+C3
+0.1 F
+C2
+10 F
+C1
+10 F
+VOUT = 1.05 V / 5 
+A
+TPS565201
+Copyright © 2016, Texas Instruments Incorporated
+12
+TPS565201
+SLVSE71 – SEPTEMBER 2017 www.ti.com
+Product Folder Links: TPS565201
+Submit Documentation Feedback Copyright © 2017, Texas Instruments Incorporated
+8 Application and Implementation
+NOTE
+Information in the following applications sections is not part of the TI component
+specification, and TI does not warrant its accuracy or completeness. TI’s customers are
+responsible for determining suitability of components for their purposes. Customers should
+validate and test their design implementation to confirm system functionality.
+8.1 Application Information
+The device is a typical step-down DC-DC converter for converting a higher dc voltage to a lower dc voltage with
+a maximum available output current of 5 A. The following design procedure can be used to select component
+values for the TPS565201. Alternately, the WEBENCH® software may be used to generate a complete design.
+The WEBENCH software uses an iterative design procedure and accesses a comprehensive database of
+components when generating a design. This section presents a simplified discussion of the design process.
+8.2 Typical Application
+The application schematic in Figure 14 shows the TPS565201 4.5-V to 17-V input, 1.05-V output converter
+design meeting the requirements for 5-A output. This circuit is available as the evaluation module (EVM). The
+sections provide the design procedure.
+Figure 14. TPS565201 1.05-V, 5-A Reference Design
+P
+OUT OUT
+1f
+2 L C
+ 
+S u 
+OUT
+R1V = 0.760 1 + R2
+/c230 /c246/c180/c231 /c247
+/c232 /c248
+13
+TPS565201
+www.ti.com SLVSE71 – SEPTEMBER 2017
+Product Folder Links: TPS565201
+Submit Documentation FeedbackCopyright © 2017, Texas Instruments Incorporated
+Typical Application (continued)
+8.2.1 Design Requirements
+Table 1 shows the design parameters for this application.
+Table 1. Design Parameters
+PARAMETER EXAMPLE VALUE
+Input voltage range 4.5 to 17 V
+Output voltage 1.05 V
+Transient response, 1-A/us slew rate ΔVout = ±5%
+Input ripple voltage 400 mV
+Output ripple voltage 20 mV
+Output current rating 5 A
+Operating frequency 550 kHz
+8.2.2 Detailed Design Procedure
+8.2.2.1 Output Voltage Resistors Selection
+The output voltage is set with a resistor divider from the output node to the VFB pin. TI recommends to use 1%
+tolerance or better divider resistors. Start by using Equation 2 to calculate VOUT.
+To improve efficiency at very light loads consider using larger value resistors. However, using too high of
+resistance causes the circuit to be more susceptible to noise; and, voltage errors from the VFB input current will
+be more noticeable.
+(2)
+8.2.2.2 Output Filter Selection
+The LC filter used as the output filter has double pole at:
+(3)
+At low frequencies, the overall loop gain is set by the output set-point resistor divider network and the internal
+gain of the device. The low frequency phase is 180°. At the output filter pole frequency, the gain rolls off at a –40
+dB per decade rate and the phase drops rapidly. D-CAP2 introduces a high frequency zero that reduces the gain
+roll off to –20 dB per decade and increases the phase to 90° one decade above the zero frequency. The inductor
+and capacitor for the output filter must be selected so that the double pole of Equation 3 is located below the
+high frequency zero but close enough that the phase boost provided be the high frequency zero provides
+adequate phase margin for a stable circuit. To meet this requirement use the values recommended in Table 2.
+Table 2. Recommended Component Values
+OUTPUT
+VOLTAGE (V) R1 (kΩ) R2 (kΩ)
+L1 (µH)
+C8 + C9 (µF)
+MIN TYP MAX
+1 3.09 10.0 1.0 2.2 4.7 20 to 68
+1.05 3.74 10.0 1.0 2.2 4.7 20 to 68
+1.2 5.76 10.0 1.0 2.2 4.7 20 to 68
+1.5 9.53 10.0 1.5 2.2 4.7 20 to 68
+1.8 13.7 10.0 1.5 2.2 4.7 20 to 68
+2.5 22.6 10.0 2.2 2.2 4.7 20 to 68
+3.3 33.2 10.0 2.2 2.2 4.7 20 to 68
+5 54.9 10.0 3.3 3.3 4.7 20 to 68
+6.5 75 10.0 3.3 3.3 4.7 20 to 68
+ OUT IN OUT
+CO(RMS)
+IN O SW
+V V VI
+12 V L f
+u   
+u u u
+2 2 
+LO(RMS) O P P
+1I I Il 12   
+P P 
+PEAK O
+III  = I 2
+
+IN(MAX) OUTOUT
+P-P
+IN(MAX) O SW
+V - VVI  =   V L f   u u
+14
+TPS565201
+SLVSE71 – SEPTEMBER 2017 www.ti.com
+Product Folder Links: TPS565201
+Submit Documentation Feedback Copyright © 2017, Texas Instruments Incorporated
+The inductor peak-to-peak ripple current, peak current and RMS current are calculated using Equation 4,
+Equation 5, and Equation 6. The inductor saturation current rating must be greater than the calculated peak
+current and the RMS or heating current rating must be greater than the calculated RMS current.
+Use 550 kHz for ƒSW. Make sure the chosen inductor is rated for the peak current of Equation 5 and the RMS
+current of Equation 7.
+(4)
+(5)
+(6)
+For this design example, the calculated peak current is 5.4 A and the calculated RMS current is 5 A. The
+inductor used is a WE 744311220 with a peak current rating of 13 A and an RMS current rating of 9 A.
+The capacitor value and ESR determines the amount of output voltage ripple. The TPS565201 is intended for
+use with ceramic or other low ESR capacitors. Recommended values range from 20 µF to 68 µF. Use Equation 7
+to determine the required RMS current rating for the output capacitor.
+(7)
+For this design two TDK C3216X5R0J226M 22-µF output capacitors are used. The typical ESR is 2 mΩ each.
+The calculated RMS current is 0.229 A.
+8.2.2.3 Input Capacitor Selection
+The TPS565201 requires an input decoupling capacitor and a bulk capacitor is needed depending on the
+application. TI recommends a ceramic capacitor over 10 µF for the decoupling capacitor. An additional 0.1-µF
+capacitor (C3) from pin 3 to ground is optional to provide additional high frequency filtering. The capacitor voltage
+rating needs to be greater than the maximum input voltage.
+8.2.2.4 Bootstrap Capacitor Selection
+A 0.1-µF ceramic capacitor must be connected between the VBST to SW pin for proper operation. TI
+recommends to use a ceramic capacitor.
+Input Voltage (V)
+Output Voltage (V)
+4 6 8 10 12 14 16 18
+1.036
+1.038
+1.04
+1.042
+1.044
+1.046
+1.048
+1.05
+D045
+Output Current (A)
+Efficiency
+0.001 0.01 0.1 1 5 5
+0
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+D040
+VIN = 5 V
+VIN = 9 V
+VIN = 12 V
+VIN = 15 V
+Output Current (A)
+Output Voltage
+0 1 2 3 4 5
+-3%
+-2%
+-1%
+0
+1%
+2%
+3%
+D050
+Output Current (A)
+Output Voltage
+0 1 2 3 4 5
+-3%
+-2%
+-1%
+0
+1%
+2%
+3%
+D051
+15
+TPS565201
+www.ti.com SLVSE71 – SEPTEMBER 2017
+Product Folder Links: TPS565201
+Submit Documentation FeedbackCopyright © 2017, Texas Instruments Incorporated
+8.2.3 Application Curves
+VIN = 5 V VOUT = 1.05 V
+Figure 15. Load Regulation, VIN = 5 V
+VIN = 12 V VOUT = 1.05 V
+Figure 16. Load Regulation, VIN = 12 V
+Figure 17. Line Regulation
+VOUT = 1.05 V
+Figure 18. Efficiency vs Output Current
+1 µs/div
+Figure 19. TPS565201 Input Voltage Ripple
+1 µs/div
+Figure 20. TPS565201 Output Voltage Ripple, No Load
+16
+TPS565201
+SLVSE71 – SEPTEMBER 2017 www.ti.com
+Product Folder Links: TPS565201
+Submit Documentation Feedback Copyright © 2017, Texas Instruments Incorporated
+1 µs/div
+Figure 21. TPS565201 Output Voltage Ripple, IOUT 2.5 A
+1 µs/div
+Figure 22. TPS565201 Output Voltage Ripple, IOUT 5 A
+100 µs/div
+Figure 23. TPS565201 Transient Response 0.1 to 2.5 A
+100 µs/div
+Figure 24. TPS565201 Transient Response, 1.25 to 3.75 A
+100 µs/div
+Figure 25. TPS565201 Transient Response, 2.5 to 5 A
+2 ms/div
+Figure 26. TPS565201 Startup Relative to VIN
+17
+TPS565201
+www.ti.com SLVSE71 – SEPTEMBER 2017
+Product Folder Links: TPS565201
+Submit Documentation FeedbackCopyright © 2017, Texas Instruments Incorporated
+400 µs/div
+Figure 27. TPS565201 Startup Relative to EN
+20 ms/div
+Figure 28. TPS565201 Shutdown Relative to VIN
+400 µs/div
+Figure 29. TPS565201 Shutdown Relative to EN
+9 Power Supply Recommendations
+The TPS565201 is designed to operate from input supply voltage in the range of 4.5 V to 17 V. Buck converters
+require the input voltage to be higher than the output voltage for proper operation. The maximum recommended
+operating duty cycle is 83%. Using that criteria, the minimum recommended input voltage is VO / 0.83.
+EN
+VFB
+VBSTGND
+SW
+FEEDBACK
+RESISTORSTO ENABLE
+CONTROL
+VIN
+GND
+BOOST
+CAPACITOR
+OUTPUT
+CAPACITOR
+VOUT
+INPUT BYPASS
+CAPACITOR
+VIN
+Additional
+Vias to the 
+GND plane
+Trace on the 
+bottom layer
+GND
+OUTPUT
+INDUCTOR
+GND trace under IC
+On top layer
+18
+TPS565201
+SLVSE71 – SEPTEMBER 2017 www.ti.com
+Product Folder Links: TPS565201
+Submit Documentation Feedback Copyright © 2017, Texas Instruments Incorporated
+10 Layout
+10.1 Layout Guidelines
+1. VIN and GND traces should be as wide as possible to reduce trace impedance. The wide areas are also of
+advantage from the view point of heat dissipation.
+2. The input capacitor and output capacitor should be placed as close to the device as possible to minimize
+trace impedance.
+3. Provide sufficient vias for the input capacitor and output capacitor.
+4. Keep the SW trace as physically short and wide as practical to minimize radiated emissions.
+5. Do not allow switching current to flow under the device.
+6. A separate VOUT path should be connected to the upper feedback resistor.
+7. Make a Kelvin connection to the GND pin for the feedback path.
+8. Voltage feedback loop should be placed away from the high-voltage switching trace, and preferably has
+ground shield.
+9. The trace of the VFB node should be as small as possible to avoid noise coupling.
+10. The GND trace between the output capacitor and the GND pin should be as wide as possible to minimize its
+trace impedance.
+10.2 Layout Example
+Figure 30. TPS565201 Layout Example
+19
+TPS565201
+www.ti.com SLVSE71 – SEPTEMBER 2017
+Product Folder Links: TPS565201
+Submit Documentation FeedbackCopyright © 2017, Texas Instruments Incorporated
+11 Device and Documentation Support
+11.1 Receiving Notification of Documentation Updates
+To receive notification of documentation updates, navigate to the device product folder on ti.com. In the upper
+right corner, click on Alert me to register and receive a weekly digest of any product information that has
+changed. For change details, review the revision history included in any revised document.
+11.2 Community Resources
+The following links connect to TI community resources. Linked contents are provided "AS IS" by the respective
+contributors. They do not constitute TI specifications and do not necessarily reflect TI's views; see TI's Terms of
+Use.
+TI E2E™ Online Community TI's Engineer-to-Engineer (E2E) Community. Created to foster collaboration
+among engineers. At e2e.ti.com, you can ask questions, share knowledge, explore ideas and help
+solve problems with fellow engineers.
+Design Support TI's Design Support Quickly find helpful E2E forums along with design support tools and
+contact information for technical support.
+11.3 Trademarks
+D-CAP2, Eco-mode, E2E are trademarks of Texas Instruments.
+WEBENCH is a registered trademark of Texas Instruments.
+Blu-ray is a trademark of Blu-ray Disc Association.
+All other trademarks are the property of their respective owners.
+11.4 Electrostatic Discharge Caution
+These devices have limited built-in ESD protection. The leads should be shorted together or the device placed in conductive foam
+during storage or handling to prevent electrostatic damage to the MOS gates.
+11.5 Glossary
+SLYZ022 — TI Glossary.
+This glossary lists and explains terms, acronyms, and definitions.
+12 Mechanical, Packaging, and Orderable Information
+The following pages include mechanical, packaging, and orderable information. This information is the most
+current data available for the designated devices. This data is subject to change without notice and revision of
+this document. For browser-based versions of this data sheet, refer to the left-hand navigation.
+PACKAGE OPTION ADDENDUM
+www.ti.com 10-Nov-2025
+PACKAGING INFORMATION
+Orderable part number Status
+(1)
+Material type
+(2)
+Package | Pins Package qty | Carrier RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C) Part marking
+(6)
+TPS565201DDCR Active Production SOT-23-
+THIN (DDC) | 6
+3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 5201
+TPS565201DDCR.A Active Production SOT-23-
+THIN (DDC) | 6
+3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 5201
+TPS565201DDCT Active Production SOT-23-
+THIN (DDC) | 6
+250 | SMALL T&R Yes SN Level-1-260C-UNLIM -40 to 125 5201
+TPS565201DDCT.A Active Production SOT-23-
+THIN (DDC) | 6
+250 | SMALL T&R Yes SN Level-1-260C-UNLIM -40 to 125 5201
+ 
+(1) Status:  For more details on status, see our product life cycle.
+ 
+(2) Material type:  When designated, preproduction parts are prototypes/experimental devices, and are not yet approved or released for full production. Testing and final process, including without limitation quality assurance,
+reliability performance testing, and/or process qualification, may not yet be complete, and this item is subject to further changes or possible discontinuation. If available for ordering, purchases will be subject to an additional
+waiver at checkout, and are intended for early internal evaluation purposes only. These items are sold without warranties of any kind.
+ 
+(3) RoHS values:  Yes, No, RoHS Exempt. See the TI RoHS Statement for additional information and value definition.
+ 
+(4) Lead finish/Ball material:  Parts may have multiple material finish options. Finish options are separated by a vertical ruled line. Lead finish/Ball material values may wrap to two lines if the finish value exceeds the maximum
+column width.
+ 
+(5) MSL rating/Peak reflow:  The moisture sensitivity level ratings and peak solder (reflow) temperatures. In the event that a part has multiple moisture sensitivity ratings, only the lowest level per JEDEC standards is shown.
+Refer to the shipping label for the actual reflow temperature that will be used to mount the part to the printed circuit board.
+ 
+(6) Part marking:  There may be an additional marking, which relates to the logo, the lot trace code information, or the environmental category of the part.
+ 
+Multiple part markings will be inside parentheses. Only one part marking contained in parentheses and separated by a "~" will appear on a part. If a line is indented then it is a continuation of the previous line and the two
+combined represent the entire part marking for that device.
+ 
+Important Information and Disclaimer:The information provided on this page represents TI's knowledge and belief as of the date that it is provided. TI bases its knowledge and belief on information provided by third parties, and
+makes no representation or warranty as to the accuracy of such information. Efforts are underway to better integrate information from third parties. TI has taken and continues to take reasonable steps to provide representative
+and accurate information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers
+and other limited information may not be available for release.
+ 
+In no event shall TI's liability arising out of such information exceed the total purchase price of the TI part(s) at issue in this document sold by TI to Customer on an annual basis.
+Addendum-Page 1
+PACKAGE OPTION ADDENDUM
+www.ti.com 10-Nov-2025
+ 
+Addendum-Page 2
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 15-Aug-2026
+TAPE AND REEL INFORMATION
+Reel Width (W1)
+REEL DIMENSIONS
+A0B0K0WDimension designed to accommodate the component lengthDimension designed to accommodate the component thicknessOverall width of the carrier tapePitch between successive cavity centersDimension designed to accommodate the component width
+TAPE DIMENSIONSK0 P1B0WA0Cavity
+QUADRANT ASSIGNMENTS FOR PIN 1 ORIENTATION IN TAPE
+Pocket QuadrantsSprocket HolesQ1Q1Q2Q2Q3Q3Q4Q4User Direction of Feed
+P1ReelDiameter
+ 
+*All dimensions are nominal
+Device Package
+Type
+Package
+Drawing
+Pins SPQ Reel
+Diameter
+(mm)
+Reel
+Width
+W1 (mm)
+A0
+(mm)
+B0
+(mm)
+K0
+(mm)
+P1
+(mm)
+W
+(mm)
+Pin1
+Quadrant
+TPS565201DDCR SOT-23-
+THIN
+DDC 6 3000 180.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+TPS565201DDCR SOT-23-
+THIN
+DDC 6 3000 180.0 9.5 3.17 3.1 1.1 4.0 8.0 Q3
+TPS565201DDCT SOT-23-
+THIN
+DDC 6 250 180.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+Pack Materials-Page 1
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 15-Aug-2026
+TAPE AND REEL BOX DIMENSIONS
+Width (mm)
+W LH
+ 
+*All dimensions are nominal
+Device Package Type Package Drawing Pins SPQ Length (mm) Width (mm) Height (mm)
+TPS565201DDCR SOT-23-THIN DDC 6 3000 210.0 185.0 35.0
+TPS565201DDCR SOT-23-THIN DDC 6 3000 184.0 184.0 19.0
+TPS565201DDCT SOT-23-THIN DDC 6 250 210.0 185.0 35.0
+Pack Materials-Page 2
+www.ti.com
+PACKAGE OUTLINE
+C
+0.20
+0.12 TYP
+0.25
+3.05
+2.55
+4X 0.95
+1.1
+0.7
+0.1
+0.0 TYP
+6X 0.5
+0.3
+0.6
+0.3 TYP
+1.9
+0 -8  TYP
+4X 0 -15
+4X 4 -15
+A
+3.05
+2.75
+B1.75
+1.45
+SOT-23 - 1.1 max heightDDC0006A
+SMALL OUTLINE TRANSISTOR
+4214841/E   08/2024
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M.
+2. This drawing is subject to change without notice.
+3. Reference JEDEC MO-193.
+3 4
+0.2 C A B
+1 6
+INDEX AREA
+PIN 1
+GAGE PLANE
+SEATING PLANE
+0.1 C
+SCALE  4.000
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.07 MAX
+ARROUND
+0.07 MIN
+ARROUND
+6X (1.1)
+6X (0.6)
+(2.7)
+4X (0.95)
+(R0.05) TYP
+4214841/E   08/2024
+SOT-23 - 1.1 max heightDDC0006A
+SMALL OUTLINE TRANSISTOR
+NOTES: (continued)
+ 
+4. Publication IPC-7351 may have alternate designs. 
+5. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+ 
+SYMM
+LAND PATTERN EXAMPLE
+EXPLOSED METAL SHOWN
+SCALE:15X
+SYMM
+1
+3 4
+6
+SOLDER MASK
+OPENING
+METAL UNDER
+SOLDER MASK
+SOLDER MASK
+DEFINED
+EXPOSED METAL
+METALSOLDER MASK
+OPENING
+NON SOLDER MASK
+DEFINED
+SOLDERMASK DETAILS
+EXPOSED METAL
+www.ti.com
+EXAMPLE STENCIL DESIGN
+(2.7)
+4X(0.95)
+6X (1.1)
+6X (0.6)
+(R0.05) TYP
+SOT-23 - 1.1 max heightDDC0006A
+SMALL OUTLINE TRANSISTOR
+4214841/E   08/2024
+NOTES: (continued)
+ 
+6. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+     design recommendations. 
+7. Board assembly site may have different recommendations for stencil design.
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 THICK STENCIL
+SCALE:15X
+SYMM
+SYMM
+1
+3 4
+6
+IMPORTANT NOTICE AND DISCLAIMER
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE 
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS” 
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY 
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD 
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate 
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable 
+standards, and any other safety, security, regulatory or other requirements.
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an 
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license 
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully 
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+TI’s products are provided subject to TI’s Terms of Sale, TI’s General Quality Guidelines, or other applicable terms available either on 
+ti.com or provided in conjunction with such TI products. TI’s provision of these resources does not expand or otherwise alter TI’s applicable 
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products 
+are standard, catalog, general purpose devices.
+TI objects to and rejects any additional or different terms you may propose.
+IMPORTANT NOTICE
+Copyright © 2026, Texas Instruments Incorporated
+Last updated 10/2025

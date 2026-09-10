@@ -1,0 +1,705 @@
+{
+  "status": "Lokale overdracht gereed; gebruikerskopie en Nextcloud-synchronisatie niet geverifieerd",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 2342,
+      "sha256": "1fb294a22bf5cc215fc3be040653c8d037411f8778fafb172ebe8d2669f1a851"
+    },
+    {
+      "path": "GESPREKSAMENVATTING.md",
+      "bytes": 4608,
+      "sha256": "009ea5c077a02fc22943d6e8b5f92abc1e1b35990eee7dcbfedd7240ed1b8932"
+    },
+    {
+      "path": "ONTWIKKELTOOLS.md",
+      "bytes": 1996,
+      "sha256": "40a6eb1321d4cc87f8a05695f576c78ab5a2ef5cfd912efd6646fea6860ddcef"
+    },
+    {
+      "path": "outputs/CM4-MANET-inventarisatie-v0.2.md",
+      "bytes": 15411,
+      "sha256": "89c75e49de96aea9528ed52f0b6710702cf4bb22e871ad462741d45ba115fa3c"
+    },
+    {
+      "path": "outputs/CM4-MANET-KiCad/connection-check.json",
+      "bytes": 775,
+      "sha256": "89a6aea16065f3834917400674697ce9e4a05ee57aa2cf6121a4f10dd84c2886"
+    },
+    {
+      "path": "outputs/CM4-MANET-KiCad/LEESMIJ.md",
+      "bytes": 4310,
+      "sha256": "8e7e2269f186e60eecd24d87e926aaa3657f1de3067197cb3df9ebd1a820dabb"
+    },
+    {
+      "path": "outputs/CM4-MANET-KiCad/Power_USB_preview.png",
+      "bytes": 53441,
+      "sha256": "6bd1ceed956ed34bab27a3f8304d1e794a65f1199938129e5152d33118a65aad"
+    },
+    {
+      "path": "outputs/CM4-MANET-KiCad/Power_USB_v0_1.kicad_sch",
+      "bytes": 22852,
+      "sha256": "d7205409fa263859d23778aa2b564bc6f9bf437106af607e9569e5b0c9987890"
+    },
+    {
+      "path": "outputs/CM4-MANET-KiCad/Power_WiFi_preview.png",
+      "bytes": 51378,
+      "sha256": "4afcec34d5aa14990d24360e0c7ad85500143b4bea8826be259d77604186e133"
+    },
+    {
+      "path": "outputs/CM4-MANET-KiCad/Power_WiFi_v0_1.kicad_sch",
+      "bytes": 16040,
+      "sha256": "8194f04468ab150428544af1b4f8adc91aeb7bad0785bccbe5f558df8b37382f"
+    },
+    {
+      "path": "outputs/CM4-MANET-KiCad/USB-connection-check.json",
+      "bytes": 1219,
+      "sha256": "3f0c3c74c3843e0323b44e825fae8c858bd413c52dfbafe9f96a6f93129e64bc"
+    },
+    {
+      "path": "outputs/CM4-MANET-ontwerpuitgangspunten.md",
+      "bytes": 5056,
+      "sha256": "8a11864e5301b020dd0b5c7c21cde9c835a7b6e4cdaa0f6c51d499e6e29ec925"
+    },
+    {
+      "path": "outputs/CM4-MANET-schemavoorbereiding-v0.3.md",
+      "bytes": 10763,
+      "sha256": "fb049a3f50f1d6071f7dcfb4e5ff052f5cead2b726d53a0ace8a00f5ea679b97"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/01_Input.kicad_sch",
+      "bytes": 20887,
+      "sha256": "d1a67e2ae7485b5aed432b32616e555e6895135c0e0c0a1f3306243d9c6c7e5c"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/02_WiFi_Power.kicad_sch",
+      "bytes": 24408,
+      "sha256": "2e3f4185309f45c82d2399c65c36cfe583c833dc1481d37bd12ba9ce8df66e79"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/03_Aux_Power.kicad_sch",
+      "bytes": 25513,
+      "sha256": "8c636bd233cd2856732a33ff103cb71f984205969efd80520ddcc52a27864735"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/04_CM4_Power_GPIO.kicad_sch",
+      "bytes": 63102,
+      "sha256": "64755c937d71ae5b4faf8066e6eec79467363ccb00f3e719c84469ad24ef003f"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/05_CM4_HighSpeed.kicad_sch",
+      "bytes": 60302,
+      "sha256": "3ab255faee67e008d743020d390402c967fa5ecfcf0e14885659115d528e8b3e"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/06_Service_Reset.kicad_sch",
+      "bytes": 25497,
+      "sha256": "68cdf1ace7074d9ebdcb2c6dc5b9178093ae11e0e3f41db069162ddd10e583b8"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/07_MicroSD.kicad_sch",
+      "bytes": 18391,
+      "sha256": "ecd66fbfd881fe1ece18572310373b28db3bd2e90f454e37f7e9267ef7adaf9a"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/08_USB_Hub.kicad_sch",
+      "bytes": 40706,
+      "sha256": "390c9f9eb5e3bfefb86d9ecc3a463714022b3ccd4c21e5ceba2a08298c4f72b5"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/09_USB_Clock_Decoupling.kicad_sch",
+      "bytes": 20498,
+      "sha256": "4ae9fe9fb1e51418a03deadb8ec4ce97b785bbbf7ee231e9a10cfd838d018544"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/10_USB_A.kicad_sch",
+      "bytes": 30844,
+      "sha256": "51a4fc051e29cab22fd4c09e13a10d309dbaad18759917510b2403929392143f"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/11_USB_B.kicad_sch",
+      "bytes": 30844,
+      "sha256": "a96839cda9451194630ae30bbb3e8e442d2c04d80d3bc5b840738e5871272674"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/12_HaLow_Power.kicad_sch",
+      "bytes": 17234,
+      "sha256": "05b1f65ca9f2ffd53b59301cd46efcd961e9cf6db6d063b4b95ab94f83819e39"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/13_HaLow_RF.kicad_sch",
+      "bytes": 37667,
+      "sha256": "071198e16e3f718924a10418c9e0d623c7d0a3ada28d422bc08d67ee54571133"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/14_WiFi_PCIe.kicad_sch",
+      "bytes": 42283,
+      "sha256": "17ef2c634d6cbea4b2f8da2eaf42ebe23677bb681036ae14c6c4b54ab3857632"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/15_Ethernet_Cable.kicad_sch",
+      "bytes": 26459,
+      "sha256": "f46ba868274a7f1c93d224d6494d3ac8beda0f722c2e999c4a784f22d6a555fd"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/16_Panel_Interfaces.kicad_sch",
+      "bytes": 21759,
+      "sha256": "1216b5091350026bbbd7a71a7923539ade646647a9691a63a045fd48fa60420d"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/BRONNEN.md",
+      "bytes": 4108,
+      "sha256": "eb659b35865f5bce01e2b3b40beee00c480587f4c3139722777ffb0e3b03a823"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/CM4_MANET-schema.pdf",
+      "bytes": 571055,
+      "sha256": "7d11971344331142ef73608f08b26824bdd66d610b9e9f365f0aef6d650545f2"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/CM4_MANET.kicad_pro",
+      "bytes": 400,
+      "sha256": "444763023c8e0bc833a7f728caba767c0477057bafc52330f6bffc1ba55ae93c"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/CM4_MANET.kicad_sch",
+      "bytes": 10694,
+      "sha256": "2d56647eb0d7bcab12617e863c7b9e5cd454cd498f91a9733290776f716f00b1"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/CM4_MANET.net.xml",
+      "bytes": 237890,
+      "sha256": "af030a16905bbccac247ce5e5b853da34d4fe3de577ed1974135bb896312ba88"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/COMPONENTEN.md",
+      "bytes": 8855,
+      "sha256": "9482046e38727e9c76119d1797f588bd4ecd348ff6d943c6bd0f9db7b7689136"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/design-data.json",
+      "bytes": 58926,
+      "sha256": "b6a385bed44ec452fa1c576fa8173ae78ac33b3793be9bf2b20b1660b6df7b34"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/ERC.json",
+      "bytes": 4176,
+      "sha256": "156897309503ac4269b269b379a95c995273997eb363def6e72f056518ad4069"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/fp-lib-table",
+      "bytes": 150,
+      "sha256": "88fb2dc92369276d1cb2e47da1e667738afde5159a8986d5da186ef136defbb2"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/KABELBOOM.md",
+      "bytes": 4344,
+      "sha256": "8f9ff1fa7e3d95dd14d116e7afc4b70bd5b27ffe0f2b5ea186fd2e396ddef63b"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/LEESMIJ.md",
+      "bytes": 4414,
+      "sha256": "3efa6562cc2cb1ed950b7715a91f7a9da1576c7452b5fd0f817ceb8aeba0ec86"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.kicad_sym",
+      "bytes": 88272,
+      "sha256": "a547d10ccd7458e58c22bc21b55ac4908c718e7f4574f7972147b5a2efb84fa2"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/Battery_Pads.kicad_mod",
+      "bytes": 429,
+      "sha256": "786a7843cffa0e12e93dde18975004351611120ffc85e7bd89023f2aa061f3bb"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/C_0402_1005Metric.kicad_mod",
+      "bytes": 2048,
+      "sha256": "3d8a1dc70b71dbc3a5786560f7f9d0cabe99f1182653b072cde5046e4e3f6fc4"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/C_0603_1608Metric.kicad_mod",
+      "bytes": 2040,
+      "sha256": "d45eebd5cb9faace255d4ec95a0f9484efde898359507b02e2ba9bbb3ef6d857"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/C_0805_2012Metric.kicad_mod",
+      "bytes": 2142,
+      "sha256": "e890bdf55fa18fc6df6878eb1b5251a991e1b93985509175eb269d3d002880b4"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/C_1206_3216Metric.kicad_mod",
+      "bytes": 2050,
+      "sha256": "420c3ac494743fbc47653b6e7d0107d51620e25c77eaf73f083e799807fd1381"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/C_1210_3225Metric.kicad_mod",
+      "bytes": 2048,
+      "sha256": "c0c3dbbbe623e957a8ee6c0a36f432e06b10ff8bd79fc785bd13dea723a1f20c"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/C_1812_4532Metric.kicad_mod",
+      "bytes": 2040,
+      "sha256": "9131ae7bf3d875cd9cadf27760dbdafb5bef422a6db91a0a320cd40d4342baaa"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/CP_Elec_6.3x5.8.kicad_mod",
+      "bytes": 5598,
+      "sha256": "4ad900c0b3650a4a1d1db6c3fdc50090c218b0b67ef248cd4ec5d9972438eb3f"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/Crystal_SMD_3225-4Pin_3.2x2.5mm.kicad_mod",
+      "bytes": 2278,
+      "sha256": "0efc1a86f641a5e4d27a4483811386c23ddfa5b416c628f65cef963ef7edbb62"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/JST_GH_SM06B-GHS-TB_1x06-1MP_P1.25mm_Horizontal.kicad_mod",
+      "bytes": 5863,
+      "sha256": "ea543743dd3480ee7743e724fe6c558d3117fb8a1ef734292b06e8b40883cfa3"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/JST_GH_SM12B-GHS-TB_1x12-1MP_P1.25mm_Horizontal.kicad_mod",
+      "bytes": 6661,
+      "sha256": "7d2b646e70aa47f741787db398fec8c9be9ce4a13a24ac72c7848f5917d217cd"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/L_Coilcraft_XAL5030-XXX.kicad_mod",
+      "bytes": 2214,
+      "sha256": "51707005c3a357a99ce4c605be1b4eb4bcd45c43bca74146a26b97ce87a8da8d"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/L_Coilcraft_XxL4020.kicad_mod",
+      "bytes": 3525,
+      "sha256": "c48f06636ae872e4f51d3c4bf68bf228a7e41fdb196232505decc71bab3d55b3"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/QFN-36-1EP_6x6mm_P0.5mm_EP4.1x4.1mm.kicad_mod",
+      "bytes": 11105,
+      "sha256": "6b62a928e0bc86a0d27dae3b3f5bacee887bdf212c176558a72b20e7219bd365"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/R_0402_1005Metric.kicad_mod",
+      "bytes": 2049,
+      "sha256": "6ed88b70926af431471c0ccaf6a55485f8cedab01cce4d1d4f3298a6cb6cef2c"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/R_0603_1608Metric.kicad_mod",
+      "bytes": 2055,
+      "sha256": "03fc7902b2661df01b4d828fdb6eab9eddf974e7130ed2b98892607387a50c4b"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/Raspberry-Pi-4-Compute-Module.kicad_mod",
+      "bytes": 31964,
+      "sha256": "6ffd8121b216859594e847692611250e2ed0441936fd9a5e81c949ffaccf412f"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/SDCARD_MOLEX_503398-1892.kicad_mod",
+      "bytes": 5359,
+      "sha256": "2839802e5b5831de74ed37a51ac771b3042f4214f33f7afe67f874fe4ef5cc09"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/Service_Pads.kicad_mod",
+      "bytes": 442,
+      "sha256": "65909f6c37df6826d992c287e834ef4d47f144ae7851dca3ccfce447b9b01b33"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/SOT-23-5.kicad_mod",
+      "bytes": 5072,
+      "sha256": "684a94089f59798a46492dac8dd0242edfa4d915e76a210abdca369e4faa4f9b"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/SOT-23-6.kicad_mod",
+      "bytes": 4568,
+      "sha256": "ea29040bed73e5dfa455e36f2c9324b0de7782c5a6cf79040b7d885ff766fdb4"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/SOT-353_SC-70-5.kicad_mod",
+      "bytes": 5222,
+      "sha256": "6466c1c6509bf1a16dff576fe03f532036734259c9cbda358ef9bde3cba6c052"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/TestPoint_Pad_D1.5mm.kicad_mod",
+      "bytes": 1854,
+      "sha256": "501dd0ac7ff91f9b1b6f7906a9ac2404c862f91dcfc9bbc9533f769f1a36b984"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/TRJG0926HENL.kicad_mod",
+      "bytes": 5713,
+      "sha256": "f16b289bd2fcf2a535bc1cf3916da97b03b41e4795b4c5c1492bd9c663a56c3b"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/U.FL_Hirose_U.FL-R-SMT-1_Vertical.kicad_mod",
+      "bytes": 7013,
+      "sha256": "c2e2cb9effdd5d4c455bcaacdb56ded7f4047218b775582bf87c2c2bc937499d"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/USON-10_2.5x1.0mm_P0.5mm.kicad_mod",
+      "bytes": 5556,
+      "sha256": "7ef309e4d003c6276054cfd0d5f0b2a2da377f8cbb9c0c2dbb2fd6db22815e21"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/VQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm.kicad_mod",
+      "bytes": 7899,
+      "sha256": "5ba888ea16e9e71dcb8f8721071d4d3e71be7682de9939899eff5567c3331caf"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/MANET.pretty/VSON-8-1EP_3x3mm_P0.65mm_EP1.65x2.4mm.kicad_mod",
+      "bytes": 5243,
+      "sha256": "6cf1f61ce9001c9b4511abdda1cff39f7e00be58a9b98ce5bbeb4a028e21a543"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/ONTWERPCONTROLE.md",
+      "bytes": 8685,
+      "sha256": "59a28a8375c3c8a251739097d9e2b20eaeafcc8933caa322d9f7bd3f01535c51"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/sym-lib-table",
+      "bytes": 131,
+      "sha256": "aaefc4799325b35c2bf0a40fac0d0156f697816cc61650c04cf7bc6e5d597fe6"
+    },
+    {
+      "path": "outputs/CM4-MANET-v0.4/VERIFICATIE.json",
+      "bytes": 17726,
+      "sha256": "7bb2119fbb0975704f0370a6dace7c2e6cc7afa25cedec0bad5186af8ed57174"
+    },
+    {
+      "path": "outputs/ruimtereservering-v0.3.png",
+      "bytes": 70136,
+      "sha256": "184a1aae8e95a16fa619884a6e6a9f309a9d145438f296b17e81f425df9b2590"
+    },
+    {
+      "path": "outputs/voedingsberekeningen-v0.3.json",
+      "bytes": 713,
+      "sha256": "7d1d9942d4b2e62466bcf3622dc5e7a3f4684f9db51212ab7936f6a1643b9d9b"
+    },
+    {
+      "path": "PROJECTSTATUS.md",
+      "bytes": 3474,
+      "sha256": "67cb057d0aed773916d6cfa1bfdaa2bf96602c1839e504e5459f1de2022c4a35"
+    },
+    {
+      "path": "referenties/very-srs-MANET-8277026.zip",
+      "bytes": 18830290,
+      "sha256": "c291569561289952844b306f419361bf352d3ba0b2defac1b5ae45f9383bd815"
+    },
+    {
+      "path": "START_HIER.md",
+      "bytes": 2981,
+      "sha256": "2480fea4fc6246d5e4457a100dcc4db1ff4e21ffd51e2a393915cbf65db985e8"
+    },
+    {
+      "path": "STARTPROMPT.md",
+      "bytes": 636,
+      "sha256": "baa3d82bbb616cd87a297b4d9cdd802a317ce3ec23aaccc544fff4ab12c469f4"
+    },
+    {
+      "path": "WERKLOG.md",
+      "bytes": 1796,
+      "sha256": "b403f8ad673055d0c3319ca2103c94d45cd638c1b81a6425f86d30684c12ea20"
+    },
+    {
+      "path": "work/audit_carrier.py",
+      "bytes": 4878,
+      "sha256": "2e24b204ddbdc4ddee6fe4afb5ef35dbabb0e9b3ad58b1365852b79448b6cfe4"
+    },
+    {
+      "path": "work/build_carrier.py",
+      "bytes": 32915,
+      "sha256": "1563f0e83d9b16b84c7fb44674bd6c3cfbed6dcd20c8357245003ead2c306fa9"
+    },
+    {
+      "path": "work/create_power_sheet.py",
+      "bytes": 6866,
+      "sha256": "a7f55eea0ce66bb0a8d36e10a8f298b9b0ee060fa0ba87432104ac6096d6097f"
+    },
+    {
+      "path": "work/create_usb_sheet.py",
+      "bytes": 2414,
+      "sha256": "4d78176a62af0586a6a4537bb71db13b68b0bc347008698ecd1947e16c55800c"
+    },
+    {
+      "path": "work/datasheets/aux-1.png",
+      "bytes": 306210,
+      "sha256": "6bbba49784b80a1cbc825a8f69de5a99cc8e385996c4ff474b0bddcd007d14d5"
+    },
+    {
+      "path": "work/datasheets/aux-16.png",
+      "bytes": 233401,
+      "sha256": "8f3145b9d35453a7419ee4d6141293712dc335417e186e4d7d163899729fc47b"
+    },
+    {
+      "path": "work/datasheets/aux.pdf",
+      "bytes": 2784747,
+      "sha256": "abc824ca04ee985ede3a513172ccdd2a42c8e1fdcfc3af5acdbe2c1af31aaa72"
+    },
+    {
+      "path": "work/datasheets/aux.txt",
+      "bytes": 76333,
+      "sha256": "e9c0384d6cba59719c5a439964a67fcc11a9d846a045335badd85f9bf61e908a"
+    },
+    {
+      "path": "work/datasheets/buck-13.png",
+      "bytes": 215143,
+      "sha256": "583c071e8a850f11ffa35979fa3953673414803c292e7e756344287da413f1ff"
+    },
+    {
+      "path": "work/datasheets/buck.pdf",
+      "bytes": 2981384,
+      "sha256": "259be7af76bcb7cb4da720f3df5a7c2e9013205d2dcadf7d5718911dbac49831"
+    },
+    {
+      "path": "work/datasheets/buck.txt",
+      "bytes": 41575,
+      "sha256": "39de3cb1a15c16528c63c0839319946a2697cc4a482c410a20f8b3a4a5250855"
+    },
+    {
+      "path": "work/datasheets/halow-12.png",
+      "bytes": 120294,
+      "sha256": "8ab0bea7f1c07d900a20ae0c0c1b5b5f467e01c20cd01a0697e66ea267bcc61e"
+    },
+    {
+      "path": "work/datasheets/halow.pdf",
+      "bytes": 1417431,
+      "sha256": "ef7196316e7bea0e219361450979d1b7790482f033eccedb7591abc31680e93b"
+    },
+    {
+      "path": "work/datasheets/halow.txt",
+      "bytes": 45123,
+      "sha256": "4cd903599f93f5819a4070e3fe5ac9c2dd90bac7d780fccff43e16e454468cf4"
+    },
+    {
+      "path": "work/datasheets/usbpower-15.png",
+      "bytes": 303527,
+      "sha256": "32e33856187de68896f0098c471cd027ab8db7fd1bc880deace18df4c188b4c5"
+    },
+    {
+      "path": "work/datasheets/usbpower-20.png",
+      "bytes": 229535,
+      "sha256": "6cd1c0e87cca668f2c19a8e273fa19a1eb25de3bc13c6d3f15d0c3ebb0225cbc"
+    },
+    {
+      "path": "work/datasheets/usbpower.pdf",
+      "bytes": 2091666,
+      "sha256": "88e453700cea2b263cdb5b44fce1e883e0f6d3b975457f879ac1423eeea42071"
+    },
+    {
+      "path": "work/datasheets/usbpower.txt",
+      "bytes": 85903,
+      "sha256": "b94b116eff87eeec5154cd5edae4c1b73326e687096f3667b2484f6b41965ae2"
+    },
+    {
+      "path": "work/fetch_design_sources.py",
+      "bytes": 1683,
+      "sha256": "7dc5fa84bd9f598eb8cb2b3a01953b790d625d94f299da2276e658325abb1b30"
+    },
+    {
+      "path": "work/fetch_more.py",
+      "bytes": 1439,
+      "sha256": "13871fa094dc38ba0888f9f61cae8a12e53098e4f45975e7a9e5e7ce91e69134"
+    },
+    {
+      "path": "work/package_carrier.py",
+      "bytes": 2262,
+      "sha256": "58ae83cff555071bf44369d5623704ee4ded1c05a2b1805350f6abc8979c05e5"
+    },
+    {
+      "path": "work/prepare_stage3.py",
+      "bytes": 3606,
+      "sha256": "e4706cb6528dd9d968f9f98e38cde5106bf5be9df3126f0adc990f8552c98633"
+    },
+    {
+      "path": "work/review_parts.py",
+      "bytes": 1327,
+      "sha256": "612f8c248763e8acb1fa4e0397975f7682e6a7f6b9c6639b5f8f999eef908c52"
+    },
+    {
+      "path": "work/review_schematic.py",
+      "bytes": 729,
+      "sha256": "f52aa8e20f77d4ef416e1164368bde33251b04de3e40a249d7da8e2cb1f60ecc"
+    },
+    {
+      "path": "work/run_kicad.py",
+      "bytes": 816,
+      "sha256": "8374f22316e62e1f8a81a161c7734fca9088f9ff5247784b384d702e338496ec"
+    },
+    {
+      "path": "work/sexpr.py",
+      "bytes": 693,
+      "sha256": "b9d09dbb72a8caa6b7996cd44e33be94f5e5f06bbf9b3ce1ebd4567274c5d9e3"
+    },
+    {
+      "path": "work/sources/aux2.compact.txt",
+      "bytes": 85662,
+      "sha256": "7b080ebc3dd554d8d0bffe2e1f3366cc402ee24f3eab92298a777c5ba76e1bd4"
+    },
+    {
+      "path": "work/sources/aux2.pdf",
+      "bytes": 2514591,
+      "sha256": "8cdefaf6b4dcbe682decd9ef965ef432d5eeaf9fa10ed6f6f077617340e1a40e"
+    },
+    {
+      "path": "work/sources/aux2.txt",
+      "bytes": 131505,
+      "sha256": "7cc945dccec116042a7e239e26225385912f3fda569304a4425fea6a5f340605"
+    },
+    {
+      "path": "work/sources/cm4.compact.txt",
+      "bytes": 64750,
+      "sha256": "99e7ed828b2abd716c1d59d4861c17b5f484957c889d0e45affa35751282cf86"
+    },
+    {
+      "path": "work/sources/cm4.pdf",
+      "bytes": 11057926,
+      "sha256": "d6946f8bb3e0276defa95b99b9d402a01a4805d3de02d53f835e93044ea7af97"
+    },
+    {
+      "path": "work/sources/cm4.txt",
+      "bytes": 90366,
+      "sha256": "c4bc6d43e5eec0a03c52f9ba8f52bd3ffd43e704dc29ecefa8376051a130a216"
+    },
+    {
+      "path": "work/sources/cm4io/CM4_GPIO.kicad_sch",
+      "bytes": 276143,
+      "sha256": "6325d1943cf992534aa1e117a05655feee1e06de09b19da6198de11b513695e7"
+    },
+    {
+      "path": "work/sources/cm4io/CM4_HighSpeed.kicad_sch",
+      "bytes": 200054,
+      "sha256": "fca60c8f294777d25c0cd664ec0bdd5f61a82e1fb0d88a9b1f7533cbcd6e56de"
+    },
+    {
+      "path": "work/sources/cm4io/CM4IO.kicad_sym",
+      "bytes": 117847,
+      "sha256": "7be55729cc3473c23bd71fcc09f23e3537b10da1146563929f0f2ecaa7f7d5ec"
+    },
+    {
+      "path": "work/sources/cm4io/CM4IO.pretty/BarrelJack_Horizontal.kicad_mod",
+      "bytes": 3037,
+      "sha256": "2308501e4340b8b9af8855fdbfcd95f1cf70fed2501c0665e9e46fc7fd845fea"
+    },
+    {
+      "path": "work/sources/cm4io/CM4IO.pretty/EDAC 690-019-298-412.kicad_mod",
+      "bytes": 5111,
+      "sha256": "9b7a1a21827411cc445381f9fa133f685528cc221db0776aed314f2152dade50"
+    },
+    {
+      "path": "work/sources/cm4io/CM4IO.pretty/Hirose_FH12-22S-0.5SH_1x22-1MP_P0.50mm_Horizontal.kicad_mod",
+      "bytes": 6241,
+      "sha256": "1d97a8fac7310874bd780c8cff0351d6808a931a5b756884960bb811f01cdd38"
+    },
+    {
+      "path": "work/sources/cm4io/CM4IO.pretty/L_Bourns_SRN6045TA.kicad_mod",
+      "bytes": 1824,
+      "sha256": "ff22c96c00a1121adf119d3de3f9d04cf78e9e5a1647ad5123afc5730859fb04"
+    },
+    {
+      "path": "work/sources/cm4io/CM4IO.pretty/MOLEX_USB_67298-4090.kicad_mod",
+      "bytes": 3701,
+      "sha256": "f977c8ee1a79287481a558e6bada2a6557718ad48caa9c20a3043e9af23bf748"
+    },
+    {
+      "path": "work/sources/cm4io/CM4IO.pretty/PCIex1-36.kicad_mod",
+      "bytes": 6138,
+      "sha256": "250ec81a246c4758126755df35351e066b75bd8244dd03fd8947d29a788708cd"
+    },
+    {
+      "path": "work/sources/cm4io/CM4IO.pretty/Raspberry-Pi-4-Compute-Module.kicad_mod",
+      "bytes": 31964,
+      "sha256": "6ffd8121b216859594e847692611250e2ed0441936fd9a5e81c949ffaccf412f"
+    },
+    {
+      "path": "work/sources/cm4io/CM4IO.pretty/SDCARD_MOLEX_503398-1892.kicad_mod",
+      "bytes": 5359,
+      "sha256": "2839802e5b5831de74ed37a51ac771b3042f4214f33f7afe67f874fe4ef5cc09"
+    },
+    {
+      "path": "work/sources/cm4io/CM4IO.pretty/SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.95x4.9mm_Mask2.71x3.4mm_ThermalVias.kicad_mod",
+      "bytes": 5294,
+      "sha256": "e06aa982ab6fa1c3ca2b802a497dd67b59d3c981ff94b9360e29b3b2a6c9389b"
+    },
+    {
+      "path": "work/sources/cm4io/CM4IO.pretty/TRJG0926HENL.kicad_mod",
+      "bytes": 5713,
+      "sha256": "f16b289bd2fcf2a535bc1cf3916da97b03b41e4795b4c5c1492bd9c663a56c3b"
+    },
+    {
+      "path": "work/sources/cm4io/CM4IO.pretty/USB_Micro-B_EDAC_UCON00686.kicad_mod",
+      "bytes": 4716,
+      "sha256": "516c87a44d87ad763257ca61d73cd16f154ad1236888633b48dd34c4da201549"
+    },
+    {
+      "path": "work/sources/cm4io/CM4IOv5.kicad_pcb",
+      "bytes": 5183652,
+      "sha256": "ccbe95fe3c0c395f8c5c06342d6724b9e49980a1d74c3f4008a6c4d81f00e0a1"
+    },
+    {
+      "path": "work/sources/cm4io/CM4IOv5.kicad_pro",
+      "bytes": 19029,
+      "sha256": "3a86a8e8e1191cc61902bd1d10b3beabe3c35bbc60847c95e6a34ca50e71f345"
+    },
+    {
+      "path": "work/sources/cm4io/CM4IOv5.kicad_sch",
+      "bytes": 74831,
+      "sha256": "9d54c31f46f1a1814c6e9dff711b01bc167563988775ba14805b4bead4753a4b"
+    },
+    {
+      "path": "work/sources/cm4io/PCIe.kicad_sch",
+      "bytes": 92223,
+      "sha256": "0b217074de82fa319ef64860e3e3fc374832dc82c066278fff30e6d0efbd652e"
+    },
+    {
+      "path": "work/sources/cm4io/PSUs.kicad_sch",
+      "bytes": 105425,
+      "sha256": "719afbf5aec8e0f8ac55c5d91346074daee196097f89f937e70dcac2fd71b084"
+    },
+    {
+      "path": "work/sources/cm4io/README.TXT",
+      "bytes": 663,
+      "sha256": "10b980d8fde9417c0d90396db33fa5bde1f69e536f6d378cdc6c5eb71fe5eddb"
+    },
+    {
+      "path": "work/sources/cm4io/RTC.kicad_sch",
+      "bytes": 66019,
+      "sha256": "3c0dae6d072d6e4f8ecd313cf227c5d758854284ba7a0088f88efacfc218fce2"
+    },
+    {
+      "path": "work/sources/cm4io/USB2-HUB.kicad_sch",
+      "bytes": 159878,
+      "sha256": "acd403dcb09586557b889f68eafd53bb85b834e20196b95b10d4dcfc37291b44"
+    },
+    {
+      "path": "work/sources/cm4io-net.xml",
+      "bytes": 411813,
+      "sha256": "502645cd8becca112ee4d693dfdc7c171f13aa67d2a449589787a2c38304c27c"
+    },
+    {
+      "path": "work/sources/hub.compact.txt",
+      "bytes": 103190,
+      "sha256": "faa1e4e2b61cdf103971420d9f419c71d0ca0b6910571d0efe893c44d0178d7b"
+    },
+    {
+      "path": "work/sources/hub.pdf",
+      "bytes": 2537833,
+      "sha256": "4ebdca503ca18f8a7a5d787148fc9f488ccd0b1a75743714aa6920c75e9a4ead"
+    },
+    {
+      "path": "work/sources/hub.txt",
+      "bytes": 614428,
+      "sha256": "31171158e4ba98116aea20cbb83afbdd23970369839db1e7db41e235a35deab5"
+    },
+    {
+      "path": "work/sources/hub_checklist.compact.txt",
+      "bytes": 41098,
+      "sha256": "e0c02c5b72a1c5241a21bc8ee498711ff3e9a0001ddd816178b222e1d378fa30"
+    },
+    {
+      "path": "work/sources/hub_checklist.pdf",
+      "bytes": 1459476,
+      "sha256": "3ebf01f77efaab11f773ca6bb5dc15d6d933af195dfd2fefbefcb32988101332"
+    },
+    {
+      "path": "work/sources/hub_checklist.txt",
+      "bytes": 84696,
+      "sha256": "8c1dec6506b6fbf6715cb3df4f8589d46dbecddc7df3b51ceffc7690cf61de1a"
+    }
+  ]
+}

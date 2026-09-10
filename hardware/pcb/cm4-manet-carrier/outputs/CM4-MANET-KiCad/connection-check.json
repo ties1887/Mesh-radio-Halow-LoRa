@@ -1,0 +1,45 @@
+{
+  "status": "PASS: generated pin/wire/label topology; NOT KiCad ERC",
+  "connections": {
+    "U1": {
+      "3": "+5V_MAIN",
+      "5": "+5V_MAIN",
+      "1": "GND",
+      "6": "WIFI_BST",
+      "2": "WIFI_SW",
+      "4": "WIFI_FB"
+    },
+    "L1": {
+      "1": "WIFI_SW",
+      "2": "+3V3_WIFI"
+    },
+    "C1": {
+      "1": "+5V_MAIN",
+      "2": "GND"
+    },
+    "C2": {
+      "1": "+5V_MAIN",
+      "2": "GND"
+    },
+    "C3": {
+      "1": "WIFI_BST",
+      "2": "WIFI_SW"
+    },
+    "C4": {
+      "1": "+3V3_WIFI",
+      "2": "GND"
+    },
+    "C5": {
+      "1": "+3V3_WIFI",
+      "2": "GND"
+    },
+    "R1": {
+      "1": "+3V3_WIFI",
+      "2": "WIFI_FB"
+    },
+    "R2": {
+      "1": "WIFI_FB",
+      "2": "GND"
+    }
+  }
+}

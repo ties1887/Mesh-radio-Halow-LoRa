@@ -1,0 +1,12 @@
+{
+  "footprints": 112,
+  "nets_and_dnp_unchanged": true,
+  "connector_rotation_deg": {
+    "J240": 180.0,
+    "J220": 180.0,
+    "J500": 180.0
+  },
+  "tracks_vias_zones": 0,
+  "width_mm": 56,
+  "height_clearance_verified": false
+}

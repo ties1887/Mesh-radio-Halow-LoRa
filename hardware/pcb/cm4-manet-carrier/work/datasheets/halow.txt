@@ -1,0 +1,3529 @@
+Copyright © Morse Micro Refer to the ofﬁcial digital version for the latest updates 
+
+Refer to the online version for up-to-date content 
+Proprietary & Conﬁdential
+T able of Contents 
+T able of Contents 2
+1 Product Overview 4
+1.1 Introduction 4 
+1.2 Features 5 
+1.3 Applications 6 
+2 Pin Descriptions 7
+3 Functional Description 10
+3.1 Block Diagram 10 
+3.2 Power Supply Requirements 11 
+3.3 USB Host Interface 11 
+3.4 USB Network Adapter Interface 12 
+3.5 SDIO Host Interface 13 
+3.6 SPI Host Interface 16 
+3.7 Boot/Reset Sequencing 19 
+3.7.1 Boot Timing 19 
+3.7.2 Reset Timing 20 
+4 Electrical Characteristics 21
+4.1 Absolute Maximum Ratings 21 
+4.2 ESD Immunity 21 
+4.3 Recommended Operating Conditions 22 
+4.4 Power Consumption 23 
+4.4.1 Active Transmit Current Consumption 23 
+4.4.2 Active Receive Current Consumption 23 
+4.4.3 Listen Receive Current Consumption 24 
+4.4.4 Low Power Current Consumption 24 
+4.4.5 Standby Current Consumption (using SDIO/SPI Host Interface) 25 
+4.5 RF Speciﬁcations 26 
+4.5.1 Frequency Range 26 
+4.5.2 Receiver 26 
+4.5.3 Transmitter 27 
+4.6 Digital IO Voltage Speciﬁcations 27 
+5 Module Dimensions 28
+6 Recommended PCB Footprint 29
+7 Certiﬁcation 30
+7.1 FCC 30 
+7.1.1 FCC Radiation Exposure Statement: 30 
+MM8108-MF15457 Data Sheet v4 morsemicro.com  |  2  
+Refer to the online version for up-to-date content 
+Proprietary & Conﬁdential
+7.1.2 Important Note T o Integrators 30 
+7.1.3 End Product User Manual Requirement 31 
+7.1.4 End Product Label Requirement 31 
+7.2. IC 32 
+7.2.1 IC Radiation Exposure Statement: 32 
+7.2.2 Important Note T o Integrators 33 
+7.2.3 End Product User Manual Requirement 33 
+7.2.4 End Product Label Requirement 33 
+8 Part Numbers and Ordering Information 34
+9 Handling and Storage 34
+10 Revision History 35
+MM8108-MF15457 Data Sheet v4 morsemicro.com  |  3  
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+1  Product  Overview  
+1.1  Introduction  
+Wi-Fi  HaLow  (pronounced  “HEY-low”)  is  the  ﬁrst  global  Wi-Fi  standard  (IEEE  802.11ah)  speciﬁcally  
+designed
+ 
+to
+ 
+meet
+ 
+the
+ 
+needs
+ 
+of
+ 
+the
+ 
+Internet
+ 
+of
+ 
+Things
+ 
+(IoT).
+ 
+It’s
+ 
+an
+ 
+open
+ 
+standard
+ 
+wireless
+ 
+network
+ 
+technology
+ 
+operating
+ 
+in
+ 
+the
+ 
+sub-1
+ 
+GHz
+ 
+license-exempt
+ 
+RF
+ 
+bands
+ 
+(850-950
+ 
+MHz
+ 
+range),
+ 
+so
+ 
+it
+ 
+doesn’t
+ 
+incur
+ 
+ongoing
+ 
+monthly
+ 
+costs
+ 
+like
+ 
+cellular/mobile
+ 
+network
+ 
+connections.
+ 
+By
+ 
+operating
+ 
+in
+ 
+the
+ 
+sub-1
+ 
+GHz
+ 
+range,
+ 
+this
+ 
+low-power
+ 
+wireless
+ 
+protocol
+ 
+can
+ 
+connect
+ 
+more
+ 
+IoT
+ 
+devices
+ 
+over
+ 
+much
+ 
+longer
+ 
+distances
+ 
+and
+ 
+with
+ 
+signiﬁcantly
+ 
+lower
+ 
+power
+ 
+than
+ 
+traditional
+ 
+Wi-Fi.
+ 
+Morse  Micro,  the  world’s  leading  Wi-Fi  HaLow  solutions  provider,  offers  several  Wi-Fi  HaLow  
+connectivity
+ 
+solutions.
+ 
+The
+ 
+MM8108-MF15457
+ 
+is
+ 
+a
+ 
+fully
+ 
+integrated
+ 
+Wi-Fi
+ 
+HaLow
+ 
+module
+ 
+with
+ 
+long
+ 
+range,
+ 
+low
+ 
+power
+ 
+consumption,
+ 
+and
+ 
+excellent
+ 
+RF
+ 
+performance,
+ 
+featuring
+ 
+our
+ 
+second-generation
+ 
+MM8108
+ 
+Wi-Fi
+ 
+HaLow
+ 
+SoC.
+ 
+It
+ 
+is
+ 
+compliant
+ 
+with
+ 
+IEEE
+ 
+802.11ah,
+ 
+supporting
+ 
+PHY
+ 
+rates
+ 
+up
+ 
+to
+ 
+43.3
+ 
+Mbps,
+ 
+and
+ 
+provides
+ 
+for
+ 
+operation
+ 
+in
+ 
+the
+ 
+sub-1
+ 
+GHz
+ 
+license-exempt
+ 
+RF
+ 
+bands.
+ 
+The
+ 
+radio
+ 
+in
+ 
+the
+ 
+MM8108
+ 
+supports
+ 
+programmable
+ 
+operation
+ 
+in
+ 
+these
+ 
+bands
+ 
+worldwide,
+ 
+spanning
+ 
+from
+ 
+850
+ 
+MHz
+ 
+to
+ 
+950
+ 
+MHz.
+ 
+The  MM8108’s  integrated  power  ampliﬁer  (PA)  offers  world-leading  transmit  performance  and  
+energy
+ 
+efﬁciency
+ 
+with
+ 
+on-chip
+ 
+ampliﬁcation
+ 
+of
+ 
+up
+ 
+to
+ 
+26
+ 
+dBm,
+ 
+which
+ 
+is
+ 
+ideal
+ 
+for
+ 
+low-cost
+ 
+devices.
+ 
+The
+ 
+ultra-high
+ 
+linearity
+ 
+integrated
+ 
+low-noise
+ 
+ampliﬁer
+ 
+(LNA)
+ 
+offers
+ 
+exceptional
+ 
+receive
+ 
+sensitivity.
+  
+These
+ 
+innovations,
+ 
+combined
+ 
+with
+ 
+digital
+ 
+transmit
+ 
+ﬁltering
+ 
+and
+ 
+pre-distortion
+ 
+circuits,
+ 
+result
+ 
+in
+ 
+an
+ 
+advanced
+ 
+transceiver
+ 
+design
+ 
+that
+ 
+ensures
+ 
+out-of-the-box
+ 
+compatibility
+ 
+with
+ 
+all
+ 
+global
+ 
+Wi-Fi
+ 
+HaLow
+ 
+regulatory
+ 
+environments.
+ 
+MM8108-MF15457  supports  a  USB  2.0  High-Speed  host  interface  and  an  SDIO/SPI  host  interface,  
+offering
+ 
+solution
+ 
+architects
+ 
+ﬂexibility
+ 
+when
+ 
+integrating
+ 
+Wi-Fi
+ 
+HaLow
+ 
+connectivity
+ 
+into
+ 
+their
+ 
+existing
+ 
+solution.
+ 
+With  a  footprint  of  only  11  mm  x  10  mm,  the  MM8108-MF15457  module  has  been  designed  to  
+showcase
+ 
+the
+ 
+cost
+ 
+and
+ 
+size
+ 
+beneﬁts
+ 
+of
+ 
+the
+ 
+higher
+ 
+level
+ 
+of
+ 
+integration
+ 
+of
+ 
+our
+ 
+second-generation
+ 
+SoC.
+ 
+ 
+MM8108-MF15457  supports  WPA3  and  all  standard  security  features  required  for  Wi-Fi  HaLow  
+product
+ 
+certiﬁcations.
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   4   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+1.2  Features  
+●  Single-stream  maximum   PHY  rate  of  43.3  Mbps  at  8  MHz  bandwidth  ●  Radio  supporting  worldwide  Sub-1  GHz  frequency  bands  ○  Frequency  range:  850-950  MHz  ○  Channel  bandwidth  options  of  1/2/4/8  MHz  ○  High  power  and  extremely  high  efﬁciency  integrated  PA  with  maximum  26  dBm  
+(400 mW)
+ 
+output
+ 
+power
+ 
+at
+ 
+45%
+ 
+PA
+ 
+efﬁciency
+ 
+and
+ 
+37%
+ 
+SoC
+ 
+efﬁciency
+ ○  Novel  PA  architecture  maintains  efﬁciency  at  power  backoff  ○  Low-power  receiver  with  integrated  LNA,  NF  <  4  dB  ●  802.11ah  OFDM  PHY  with  Wi-Fi  Alliance  Wi-Fi  HaLow  certiﬁcation  ○  BPSK  &  QPSK,  16-QAM,  64-QAM  and  256-QAM  Modulation  ○  Automatic  frequency  and  gain  control  ○  Packet  detection  and  channel  equalization  ○  Forward  Error  Correction  (FEC)  coding  and  decoding  ○  Modulation  and  Coding  Scheme  (MCS)  levels  0-10  ○  1  MHz  duplicate  mode  ○  Optional  traveling  pilots  ●  802.11ah  MAC  with  Wi-Fi  Alliance  Wi-Fi  HaLow  certiﬁcation  ○  Support  for  Station  (STA)  and  Access  Point  (AP)  roles  ○  Listen-Before-Talk  (LBT)  access  with  energy  detection  ○  802.11  power  save  ○  802.11  fragmentation  and  defragmentation  ○  Power-Saving  Target  Wake  Time  (TWT)  support  for  extended  battery  life  ○  Automatic  and  manual  MCS  rate  selection  ●  On-chip  software  stack  assisting  with  host  ofﬂoad  of  Wi-Fi  connection  management  ●  USB  2.0  High-Speed  compliant  device  interface  ○  Integrated  USB  2.0  PHY  and  device  interface  supporting  High-Speed  mode  at  
+480 Mbps
+ ●  SDIO  2.0  compliant  device  interface   ○  SDIO  2.0  High-Speed  at  50  MHz  max  for  200  Mbps   ○  Support  for  1-bit  and  4-bit  data  mode  ○  Support  for  SPI  mode  operation  at  up  to  80  MHz  for  80  Mbps  ●  Power  Management  Unit  (PMU)  supporting  various  modes  of  operation  ○  Single  supply  3.0-3.6  V  for  integrated  DC-DCs  and  LDOs  ○  Multiple  low-power  modes  (hibernate,  deep  sleep,  snooze)  support  extreme  power  
+environments
+ ●  Broad  spectrum  of  security  features  ○  Wi-Fi  layer  security,  including  Wi-Fi  Protected  Access  version  3  (WPA3),  Protected  
+Management
+ 
+Frames
+ 
+(PMF),
+ 
+and
+ 
+Opportunistic
+ 
+Wireless
+ 
+Encryption
+ 
+(OWE)
+ ○  Hardware  support  for  Advanced  Encryption  Standard  (AES)  and  Secure  Hash  
+Algorithm
+ 
+version
+ 
+2
+ 
+(SHA-2)
+ 
+functions
+ 
+(SHA-256,
+ 
+SHA-384,
+ 
+SHA-512)
+  
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   5   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+1.3  Applications  
+Ideally  suited  for  Internet  of  Things  (IoT)  and  Machine-to-Machine  (M2M)  applications  such  as:  
+●  Surveillance  cameras  and  sensors  ●  Cloud  connectivity  ●  Low-power  sensor  networks  ●  Building  automation  systems  ●  Asset  tracking  and  management  ●  Machine  performance  monitors  and  sensors  ●  Building  access  control  and  security  ●  Drone  video  and  navigation  communications  ●  Connected  toys  and  games  ●  Rural  internet  access  ●  Agricultural  networks  ●  Utility  smart  meter  and  intelligent  grid  ●  Proximity  sensors  ●  Industrial  automation  controls  
+●  Smart  home  automation  ●  EV  car  chargers  ●  Appliances  ●  Construction  site  connectivity  ●  Smart  signs  and  kiosks  ●  Retail  point-of-sale  terminals  ●  Vehicle-to-vehicle  communications  ●  IP  sensor  networks  ●  Biometric  IDs  and  keypads  ●  Warehouse  connectivity  ●  Intelligent  lighting  controls  ●  BT/ZigBee™/Z-Wave™  to  Wi-Fi  HaLow  gateways  ●  Wi-Fi  to  Wi-Fi  HaLow  bridges  ●  Wi-Fi  HaLow  client  adapters/dongles  ●  Smart  city  networks   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   6   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+2  Pin  Descriptions  
+The  MM8108-MF15457  module  features  38  pins,  which  are  described  in  this  section.  The  following  
+illustration
+ 
+shows
+ 
+the
+ 
+top
+ 
+view
+ 
+of
+ 
+the
+ 
+module
+ 
+pins.
+ 
+ 
+ 
+Figure  1:  Pin  diagram   
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   7   
+ 
+
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+Pin  Pin  Name  Type  Description  Alternative  1  GND  Ground  Ground   2  ANT  Analog  Antenna   3  GND  Ground  Ground   4  RESET_N
+ [2]
+ Digital  I/O  Asynchronous  chip  reset  (active  low)   5  WAKE
+ [2]
+ Digital  I/O  External  wake  from  Deep  Sleep  and  Snooze    6  JTAG_TMS  Digital  I/O  JTAG  Mode  Select  GPIO15
+ [3]
+ 7  JTAG_TCK
+  
+Digital  I/O  JTAG  Clock  GPIO13
+ [3]
+ 8  JTAG_TDO  Digital  I/O  JTAG  Data  Out  GPIO16
+ [3]
+ 9  JTAG_TDI  Digital  I/O  JTAG  Data  In  GPIO14
+ [3]
+ 10  VBAT  Supply  3.3  V  VBAT  Supply   11  GND  Ground  Ground   12  SDIO_D0
+ [1]
+ Digital  I/O  SDIO  Data  line  SPI_MISO  13  SDIO_D3
+ [1]
+ Digital  I/O  SDIO  Data  line  SPI_CS  14  SDIO_D1
+ [1]  
+Digital  I/O  SDIO  Data  line  SPI_INT  15  SDIO_D2
+ [1]
+ Digital  I/O  SDIO  Data  line   16  SDIO_CMD
+ [1]
+ Digital  I/O  SDIO  Command  line  SPI_MOSI  17  SDIO_CLK  Digital  I/O  SDIO  Clock  input  SPI_SCK  18  GPIO5
+ [3]  
+Digital  I/O  Programmable  digital  I/O   19  GPIO4
+ [3]
+ Digital  I/O  Programmable  digital  I/O   20  GND  Ground  Ground   21  GPIO3
+ [3]
+ Digital  I/O  Programmable  digital  I/O   22  VDDIO  Supply  Host  supply  for  digital  I/O   23  GND  Ground  Ground   24  VBAT_TX  Supply  3.3  V  VBAT-TX  Supply   25  VDD_USB  Supply  USB  Supply   26  GND  Ground  Ground   27  USB_D_N  Digital  I/O  USB  DM  line   28  USB_D_P  Digital  I/O  USB  DP  line   29  BUSY  Digital  I/O  BUSY  signal  output   30  GND  Ground  Ground   31  GPIO1
+ [3]
+ Digital  I/O  Programmable  digital  I/O   32  GPIO0
+ [3]
+ Digital  I/O  Programmable  digital  I/O   33  GPIO6
+ [3]
+ Digital  I/O  Programmable  digital  I/O   34  GPIO7
+ [3]
+ Digital  I/O  Programmable  digital  I/O   35  GPIO8
+ [3]
+ Digital  I/O  Programmable  digital  I/O   36  GPIO9
+ [3]
+ Digital  I/O  Programmable  digital  I/O   37  GPIO10
+ [3]
+ Digital  I/O  Programmable  digital  I/O   38  GND  Ground  Ground   
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   8   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+[1]   All  SDIO  bus  pins  except  SDIO_CLK  should  be  pulled  up  with  a  10  k Ω  to  100  k Ω  resistor  as  per  
+the
+ 
+SDIO
+ 
+standard.
+ 
+[2]   Supplied  from  VBAT  domain.   The  VDDIO  domain  drives  other  digital  pins.  
+[3]  GPIOs  0  to  10  may  provide  alternative  functions,  including  SPI  master,  I2C  master,  PWM,  and  
+UART.
+ 
+This
+ 
+functionality
+ 
+necessitates
+ 
+custom
+ 
+software,
+ 
+which
+ 
+Morse
+ 
+Micro
+ 
+can
+ 
+develop
+ 
+upon
+ 
+request.
+ 
+For
+ 
+further
+ 
+details,
+ 
+please
+ 
+contact
+ 
+Morse
+ 
+Micro.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   9   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+ 
+ 
+3  Functional  Description  
+The  following  sections  describe  the  functions  of  the  MM8108-MF15457  module.  
+3.1  Block  Diagram  
+ 
+Figure  2:  Functional  block  diagram   
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   10   
+ 
+
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+3.2  Power  Supply  Requirements  
+MM8108-MF15457  module  power  is  derived  from  a  3.0  to  3.6  V  supply  on  pins  VBAT  and  VBAT_TX.   
+VDDIO  sets  the  IO  voltage  of  the  MM8108-MF15457.  It  has  an  input  voltage  range  of  2.25  V  to  
+3.6 V
+ 
+and
+ 
+should
+ 
+be
+ 
+connected
+ 
+to
+ 
+the
+ 
+same
+ 
+power
+ 
+supply
+ 
+as
+ 
+the
+ 
+host
+ 
+MCU.
+ 
+There  are  no  strict  power-up  sequencing  requirements.  
+3.3  USB  Host  Interface  
+A  schematic  diagram  detailing  the  USB  host  interface  circuit  is  shown  below:  
+ 
+Figure  3:  USB  host  interface  circuit    
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   11   
+ 
+
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+3.4  USB  Network  Adapter  Interface  
+A  schematic  diagram  detailing  the  USB  network  adapter  circuit  is  shown  below:  
+ 
+Figure  4:  USB  network  adapter  circuit    
+ 
+ 
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   12   
+ 
+
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+3.5  SDIO  Host  Interface  
+When  selecting  a  host  to  interface  with  the  MM8108-MF15457  module  via  the  SDIO  interface,  
+ensure
+ 
+the
+ 
+host
+ 
+supports
+ 
+SDIO
+ 
+2.0
+ 
+with
+ 
+SDIO
+ 
+clock
+ 
+speeds
+ 
+of
+ 
+up
+ 
+to
+ 
+50
+ 
+MHz.
+ 
+Slower
+ 
+clock
+ 
+speeds
+ 
+will
+ 
+impact
+ 
+the
+ 
+maximum
+ 
+achievable
+ 
+throughput.
+ 
+The  SDIO  data  and  command  lines  should  be  pulled  up  with  10  k Ω  to  100  k Ω  resistors  per  the  SDIO  
+2.0
+ 
+speciﬁcation.
+ 
+For  proper  operation  and  to  take  advantage  of  the  module’s  power-saving  features,  connect  
+RESET_N
+ 
+and
+ 
+WAKE
+ 
+to
+ 
+standard
+ 
+digital
+ 
+outputs
+ 
+(CMOS
+ 
+logic
+ 
+levels).
+ 
+The
+ 
+BUSY
+ 
+signal
+ 
+should
+ 
+be
+ 
+connected
+ 
+to
+ 
+a
+ 
+digital
+ 
+input
+ 
+(also
+ 
+CMOS
+ 
+logic
+ 
+levels).
+ 
+Do
+ 
+not
+ 
+use
+ 
+open-collector
+ 
+or
+ 
+open-drain
+ 
+circuits,
+ 
+as
+ 
+they
+ 
+will
+ 
+cause
+ 
+incorrect
+ 
+behavior.
+ 
+In  applications  where  the  module  must  always  be  on,  and  the  power-saving  features  can  not  be  used,  
+such
+ 
+as
+ 
+access
+ 
+points,
+ 
+the
+ 
+WAKE
+ 
+pin
+ 
+can
+ 
+be
+ 
+left
+ 
+not
+ 
+connected,
+ 
+reducing
+ 
+the
+ 
+need
+ 
+for
+ 
+GPIOs
+ 
+on
+ 
+the
+ 
+host
+ 
+processor
+ 
+to
+ 
+only
+ 
+one.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   13   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+A  schematic  diagram  detailing  the  SDIO  host  interface  circuit  using  the  module’s  power-saving  
+features
+ 
+is
+ 
+shown
+ 
+below:
+ 
+ 
+Figure  5:  SDIO  host  interface  circuit  using  power-saving  features   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   14   
+ 
+
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+A  schematic  diagram  detailing  the  SDIO  host  interface  circuit  for  always-on  applications  is  shown  
+below:
+ 
+ 
+Figure  6:  SDIO  host  interface  circuit  for  always-on  applications   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   15   
+ 
+
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+3.6  SPI  Host  Interface  
+When  selecting  a  host  to  interface  with  the  MM8108-MF15457  module  via  the  SPI  interface,  
+consider
+ 
+the
+ 
+following
+ 
+recommendations
+ 
+to
+ 
+achieve
+ 
+the
+ 
+best
+ 
+throughput:
+ 
+●  The  host  must  support  level-triggered  interrupts.  ●  The  host  must  support  full-duplex  SPI  mode.  ●  The  host  must  support  DMA-backed  transactions  on  the  SPI  bus.   
+Standard  SPI  can  achieve  up  to  25  Mbps  at  50  MHz,  which  will  be  signiﬁcantly  reduced  without  DMA  
+support.
+ 
+For
+ 
+example,
+ 
+an
+ 
+SPI
+ 
+interface
+ 
+with
+ 
+an
+ 
+8-byte
+ 
+buffer
+ 
+per
+ 
+transaction
+ 
+might
+ 
+only
+ 
+achieve
+ 
+2
+ 
+Mbps
+ 
+throughput
+ 
+on
+ 
+the
+ 
+SPI
+ 
+bus.
+ 
+For  proper  operation  and  to  take  advantage  of  the  module’s  power-saving  features,  connect  RESET  
+and
+ 
+WAKE
+ 
+to
+ 
+standard
+ 
+digital
+ 
+outputs
+ 
+(CMOS
+ 
+logic
+ 
+levels).
+ 
+The
+ 
+BUSY
+ 
+signal
+ 
+should
+ 
+be
+ 
+connected
+ 
+to
+ 
+a
+ 
+digital
+ 
+input
+ 
+(also
+ 
+CMOS
+ 
+logic
+ 
+levels).
+ 
+Do
+ 
+not
+ 
+use
+ 
+open-collector
+ 
+or
+ 
+open-drain
+ 
+circuits,
+ 
+as
+ 
+they
+ 
+will
+ 
+cause
+ 
+incorrect
+ 
+behavior.
+ 
+In  applications  where  the  module  must  always  be  on,  and  the  power-saving  features  can  not  be  used,  
+such
+ 
+as
+ 
+access
+ 
+points,
+ 
+the
+ 
+WAKE
+ 
+pin
+ 
+can
+ 
+be
+ 
+left
+ 
+not
+ 
+connected,
+ 
+reducing
+ 
+the
+ 
+need
+ 
+for
+ 
+GPIOs
+ 
+on
+ 
+the
+ 
+host
+ 
+processor
+ 
+to
+ 
+only
+ 
+one.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   16   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+A  schematic  diagram  detailing  the  SPI  host  interface  circuit  using  the  module’s  power-saving  features  
+is
+ 
+shown
+ 
+below:
+ 
+ 
+Figure  7:  SPI  host  interface  circuit  using  power-saving  features   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   17   
+ 
+
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+A  schematic  diagram  detailing  the  SPI  host  interface  circuit  for  always-on  applications  is  shown  
+below:
+ 
+ 
+Figure  8:  SPI  host  interface  circuit  for  always-on  applications   
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   18   
+ 
+
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+3.7  Boot/Reset  Sequencing  
+3.7.1  Boot  Timing  
+ 
+Figure  9:  Powering  on  and  reset  timing  diagram   Parameters  Description  Min  Max  Unit  V
+IL_nRST
+ 
+Reset  threshold  450   mV  t
+0
+ 
+Time  between  VBAT  brought  up  (3.3V)  and  RESET_N  being  activated  
+50   μ s  
+t
+B
+ 
+Boot  Time   10  ms  Table  1:  Boot  timing  overview   
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   19   
+ 
+
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+3.7.2  Reset  Timing  
+ 
+Figure  10:  Powering  on  and  reset  timing  diagram   Parameters  Description  Min  Max  Unit  V
+IL_nRST
+ 
+Reset  threshold  450   mV  t
+1
+ 
+Duration  of  RESET_N  signal  level  <  VIL_nRST  to  reset  the  chip  
+1000   μ s  
+t
+B
+ 
+Boot  Time   10  ms  Table  2:  Reset  timing  overview   
+ 
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   20   
+ 
+
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+4  Electrical  Characteristics  
+4.1  Absolute  Maximum  Ratings  
+Stress  beyond  absolute  maximum  ratings  may  cause  permanent  damage  to  the  MM8108-MF15457  
+module.
+  
+Operation
+ 
+is
+ 
+only
+ 
+guaranteed
+ 
+within
+ 
+the
+ 
+recommended
+ 
+operation
+ 
+conditions.
+ 
+Operation
+ 
+of
+ 
+the
+ 
+device
+ 
+outside
+ 
+of
+ 
+the
+ 
+recommended
+ 
+conditions
+ 
+may
+ 
+result
+ 
+in
+ 
+a
+ 
+reduced
+ 
+lifetime
+ 
+and
+ 
+reliability
+ 
+problems,
+ 
+even
+ 
+if
+ 
+the
+ 
+absolute
+ 
+maximum
+ 
+ratings
+ 
+are
+ 
+not
+ 
+exceeded.
+ 
+Parameter  Min  Max  Unit  VBAT  voltage  -0.3  3.6  V  VBAT_TX  voltage  -0.3  3.6  V  RESET_N/WAKE  -0.3  3.6  V  VDDIO  -0.3  3.6  V  Analog/RF  pin  -0.3  1.0  V  Storage  temperature  -40  125  °C  RF  input  power  (CW)  -  6  dBm  Table  3:  Absolute  maximum  and  minimum  voltage  ratings  
+4.2  ESD  Immunity  
+Parameter  Min  Max  Unit  
+Electrostatic  discharge  (ESD)  performance  
+Human  body  model  (HBM),   per  ANSI  /  ESDA  /  JEDEC  JS001  
+RF  Input  -1,000  1,000  V  All  pins  except  RF  Input  
+-2000  2000  V  
+Charged  device  model  (CDM),   per  JESD22-C101  
+All  pins  -500  500  V  
+Table  4:  ESD  immunity  speciﬁcations   
+ 
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   21   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+4.3  Recommended  Operating  Conditions  
+Parameter  Min  Typ  Max  Unit  Ambient  temperature  -40   85  °C  Storage  temperature  -40   125  °C  VBAT
+ 
+3.0  3.3  3.6  V  VBAT_TX
+ 
+3.0  3.3  3.6  V  VDDIO
+  
+2.25  3.3  3.6  V  Table  5:  Recommended  operating  conditions   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   22   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+4.4  Power  Consumption  
+4.4.1  Active  Transmit  Current  Consumption  
+MCS   Index  
+Current  consumption  (mA)   per  BW  at  V
+BAT
+ 
+Current  consumption  (mA)   per  BW  at  V
+BAT_TX
+ 100%  duty  cycle,  T
+A
+=25
+ o
+C,  V
+BAT
+=V
+DDIO
+=3.3  V  1  MHz  2  MHz  4  MHz  8  MHz  1  MHz  2  MHz  4  MHz  8  MHz  10  51  N/A  N/A  N/A  281  N/A  N/A  N/A  0  52  51  50  59  279  243  160  132  1  52  51  50  59  278  243  159  131  2  51  51  50  59  277  243  158  130  3  51  51  50  59  266  242  158  130  4  49  50  50  59  221  221  152  130  5  44  47  48  58  144  174  128  125  6  42  44  46  57  118  119  109  106  7  36  39  44  54  88  96  98  95  8  34  38  43  52  69  78  83  81  9  32  N/A  40  49  54  N/A  63  58  Table  6:  Transmit  current  consumption  for  VBAT,  VBAT_TX  separated  
+4.4.2  Active  Receive  Current  Consumption  
+MCS   Index  
+V
+BAT
+ +  V
+BAT_TX
+ 
++  V
+DDIO
+ Current  consumption  (mA)  per  BW  100%  duty  cycle,  T
+A
+=25
+ o
+C,  V
+BAT
+=V
+DDIO
+=3.3  V,  Rx  signal  at  -70dBm  1  MHz  2  MHz  4  MHz  8  MHz  0  20  21  24  32  Max  20  (MCS9)  21  (MCS8)  26  (MCS9)  34  (MCS9)  Table  7:  Active  receive  current  consumption   
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   23   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+4.4.3  Listen  Receive  Current  Consumption  
+V
+BAT
+ +  V
+BAT_TX
+ 
++  V
+DDIO
+ Current  consumption  (mA)  per  BW  T
+A
+=25
+ o
+C,  V
+BAT
+=V
+DDIO
+=3.3  V,  Rx  signal  at  -70dBm  1  MHz  2  MHz  4  MHz  8  MHz  19  20  23  29  Table  8:  Listen  receive  current  consumption  
+4.4.4  Low  Power  Current  Consumption  
+Power  Mode  
+Current  Consumption  T
+A
+=25
+ o
+C,  V
+BAT
+=V
+DDIO
+=3.3  V  V
+BAT
+ +   V
+BAT_TX
+  V
+DDIO
+  Unit  Hibernate  <1  <1  μ A  Deep  Sleep  <2  <1  μ A  Snooze  <20  <1  μ A  USB  snooze  <500  <1  μ A  Table  9:  Low  power  current  consumption   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   24   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+4.4.5  Standby  Current  Consumption  (using  SDIO/SPI  Host  Interface)  
+Mode  Condition:  T
+A
+=25
+ o
+C,  V
+BAT
+=V
+DDIO
+=3.3  V  V
+BAT
+ +  V
+BAT_TX
+  V
+DDIO
+  Unit  DTIM3  2MHz  channel,  RTC=RTC_XTAL,  beacon=long  176  <1  μ A  DTIM10  2MHz  channel,  RTC=RTC_XTAL,  beacon=long  68  <1  μ A  DTIM40  2MHz  channel,  RTC=RTC_XTAL,  beacon=long  33  <1  μ A  DTIM3  2MHz  channel,  RTC=RTC_XTAL,  beacon=short  126  <1  μ A  DTIM10  2MHz  channel,  RTC=RTC_XTAL,  beacon=short  52  <1  μ A  DTIM40  2MHz  channel,  RTC=RTC_XTAL,  beacon=short  29  <1  μ A  Table  10:  Standby  current  consumption   The  DTIM  (Delivery  Trafﬁc  Indication  Message)  number  (DTIM x )  indicates  how  often  a  Wi-Fi  HaLow  
+station
+ 
+in
+ 
+power-saving
+ 
+Snooze
+ 
+mode
+ 
+should
+ 
+wake
+ 
+to
+ 
+receive
+ 
+trafﬁc
+ 
+from
+ 
+the
+ 
+access
+ 
+point.
+ 
+It
+ 
+is
+ 
+expressed
+ 
+as
+ 
+a
+ 
+multiple
+ 
+of
+ 
+beacon
+ 
+intervals
+ 
+(multiples
+ 
+of
+ 
+102.4
+ 
+ms).
+ 
+For  example,  DTIM1  indicates  that  the  station  should  wake  up  every  102.4  ms,  while  DTIM40  
+conﬁgures
+ 
+the
+ 
+station
+ 
+to
+ 
+wake
+ 
+up
+ 
+every
+ 
+4.1
+ 
+seconds.
+ 
+Conﬁguring  DTIM  is  a  complex  compromise  between  power  consumption  and  latency.  Increasing  the  
+DTIM
+ 
+will
+ 
+reduce
+ 
+the
+ 
+average
+ 
+power
+ 
+consumption,
+ 
+as
+ 
+the
+ 
+station
+ 
+spends
+ 
+a
+ 
+greater
+ 
+proportion
+ 
+of
+ 
+time
+ 
+in
+ 
+Snooze
+ 
+mode,
+ 
+which
+ 
+consumes
+ 
+signiﬁcantly
+ 
+less
+ 
+power
+ 
+than
+ 
+in
+ 
+Listen
+ 
+mode.
+ 
+However,
+ 
+since
+ 
+the
+ 
+station
+ 
+is
+ 
+unable
+ 
+to
+ 
+receive
+ 
+trafﬁc
+ 
+in
+ 
+Snooze
+ 
+mode,
+ 
+increasing
+ 
+DTIM
+ 
+also
+ 
+increases
+ 
+latency.
+ 
+ 
+DTIM  settings  should  be  optimized  appropriately  according  to  the  use  case.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   25   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+4.5  RF  Speciﬁcations  
+4.5.1  Frequency  Range  
+The  MM8108-MF15457  radio  operates  in  the  frequency  range  from  850  MHz  to  950  MHz.   
+4.5.2  Receiver  
+Sensitivities  for  10%  packet  error  rate,  256-byte  packets.  Conditions  are  VBAT=3.3  V,  VBAT_TX=3.3  
+V,
+ 
+25
+o
+C
+ 
+MCS  index  
+Modulation  scheme  
+Coding   rate  
+PHYrate  (Mbps)  per  BW  
+Minimum  receive  sensitivity  (dBm)  per  BW  1  MHz   2  MHz   4  MHz   8  MHz  1  MHz   2  MHz   4  MHz   8  MHz  10  BPSK  1/2  x  2  0.1  N/A  N/A  N/A  -107  N/A  N/A  N/A  0  BPSK  1/2  0.3  0.7  1.5  3.3  -106  -103  -102  -98  1  QPSK  1/2  0.7  1.4  3.0  6.5  -104  -101  -99  -95  2  QPSK  3/4  1.0  2.2  4.5  9.8  -102  -99  -97  -93  3  16-QAM  1/2  1.3  2.9  6.0  13  -99  -96  -94  -90  4  16-QAM  3/4  2.0  4.3  9.0  20  -96  -93  -90  -87  5  64-QAM  2/3  2.7  5.8  12  26  -92  -89  -86  -83  6  64-QAM  3/4  3.0  6.5  14  29  -90  -87  -85  -81  7  64-QAM  5/6  3.3  7.2  15  33  -89  -86  -83  -80  8  256-QAM  3/4  4.0  8.9  18  39  -85  -82  -79  -76  9  256-QAM  5/6  4.4  N/A  20  43  -83  N/A  -78  -74  Table  11:  Rate  vs  receiver  sensitivity    
+ 
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   26   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+4.5.3  Transmitter  
+Note:  The  following  transmit  power  levels  are  for  IEEE  compliance  for  802.11ah.  They  do  not  
+consider
+ 
+any
+ 
+backoffs
+ 
+needed
+ 
+for
+ 
+regional
+ 
+spectrum
+ 
+compliance
+ 
+(e.g.,
+ 
+FCC,
+ 
+IC,
+ 
+TELEC).
+ 
+TX
+ 
+power
+ 
+in
+ 
+edge
+ 
+channels
+ 
+will
+ 
+be
+ 
+limited
+ 
+by
+ 
+the
+ 
+restricted
+ 
+band
+ 
+edge
+ 
+in
+ 
+the
+ 
+regulatory
+ 
+regions.
+ 
+MCS  Index  
+Power  output  (dBm)  at  the  module  ANT  pin  per  BW   T
+A
+=25
+ o
+C,  V
+BAT
+=V
+DDIO
+=3.3  V,  IEEE-compliant  with   1.5dB  SEM  margin  1MHz  2MHz  4MHz  8MHz  10  25.5  N/A  N/A  N/A  0  25.5  25.0  22.5  22.5  1  25.5  25.0  22.5  22.0  2  25.5  25.0  22.5  22.0  3  25.0  25.0  22.5  22.0  4  24.0  24.5  22.5  22.0  5  21.5  23.0  21.5  21.5  6  22.5  21.5  20.5  20.5  7  19.0  20.0  19.5  20.0  8  17.5  18.0  19.0  19.0  9  15.5  N/A  17.0  16.0  Table  12:  Mean  TX  output  power  
+4.6  Digital  IO  Voltage  Speciﬁcations  
+Parameters  Description  VDDIO  Min  Max  Unit  V
+IL_VDDIO
+ 
+Low  input  threshold  for  all  GPIO  and  SDIO  pins   3.3  -  1.2  V  V
+IH_VDDIO
+ 
+High  input  threshold  for  all  GPIO  and  SDIO  pins   3.3  1.7  -  V  
+V
+OL_VDDIO
+ 
+Low  output  voltage  for  all  GPIO  and  SDIO  pins,  assuming  an  8mA  load  
+3.3  -  0.25  V  
+V
+OH_VDDIO
+ 
+High  output  voltage  for  all  GPIO  and  SDIO  pins,  assuming  an  8mA  load  
+3.3  2.9  -  V  
+Table  13:  Digital  IO  voltage  speciﬁcations   
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   27   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+5  Module  Dimensions  
+ 
+Figure  11:  Module  dimensions   
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   28   
+ 
+
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+6  Recommended  PCB  Footprint  
+ 
+Figure  12:  PCB  footprint   
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   29   
+ 
+
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+7  Certiﬁcation  
+7.1  FCC  
+The  MM8108-MF15457  has  been  tested  and  found  to  comply  with  the  limits  for  a  Class  B  digital  
+device,
+ 
+pursuant
+ 
+to
+ 
+Part
+ 
+15
+ 
+of
+ 
+the
+ 
+FCC
+ 
+Rules.
+ 
+These
+ 
+limits
+ 
+are
+ 
+designed
+ 
+to
+ 
+provide
+ 
+reasonable
+ 
+protection
+ 
+against
+ 
+harmful
+ 
+interference
+ 
+in
+ 
+a
+ 
+residential
+ 
+installation.
+ 
+This
+ 
+equipment
+ 
+generates,
+ 
+uses
+ 
+and
+ 
+can
+ 
+radiate
+ 
+radio
+ 
+frequency
+ 
+energy
+ 
+and,
+ 
+if
+ 
+not
+ 
+installed
+ 
+and
+ 
+used
+ 
+in
+ 
+accordance
+ 
+with
+ 
+the
+ 
+instructions,
+ 
+may
+ 
+cause
+ 
+harmful
+ 
+interference
+ 
+to
+ 
+radio
+ 
+communications.
+ 
+However,
+ 
+there
+ 
+is
+ 
+no
+ 
+guarantee
+ 
+that
+ 
+interference
+ 
+will
+ 
+not
+ 
+occur
+ 
+in
+ 
+a
+ 
+particular
+ 
+installation.
+ 
+If
+ 
+this
+ 
+equipment
+ 
+does
+ 
+cause
+ 
+harmful
+ 
+interference
+ 
+to
+ 
+radio
+ 
+or
+ 
+television
+ 
+reception,
+ 
+which
+ 
+can
+ 
+be
+ 
+determined
+ 
+by
+ 
+turning
+ 
+the
+ 
+equipment
+ 
+off
+ 
+and
+ 
+on,
+ 
+the
+ 
+user
+ 
+is
+ 
+encouraged
+ 
+to
+ 
+try
+ 
+to
+ 
+correct
+ 
+the
+ 
+interference
+ 
+by
+ 
+one
+ 
+of
+ 
+the
+ 
+following
+ 
+measures:
+ ●  Reorient  or  relocate  the  receiving  antenna  ●  Increase  the  separation  between  the  equipment  and  receiver  ●  Connect  the  equipment  into  an  outlet  on  a  circuit  different  from  that  to  which  the  receiver  is  
+connected
+ ●  Consult  the  dealer  or  an  experienced  radio/TV  technician  for  help  
+FCC  caution:  Any  changes  or  modiﬁcations  not  expressly  approved  by  the  party  responsible  for  
+compliance
+ 
+could
+ 
+void
+ 
+the
+ 
+user’s
+ 
+authority
+ 
+to
+ 
+operate
+ 
+this
+ 
+equipment.
+ 
+ 
+This  device  complies  with  Part  15  of  the  FCC  Rules.  Operation  is  subject  to  the  following  two  
+conditions:
+ 
+(1)
+ 
+this
+ 
+device
+ 
+may
+ 
+not
+ 
+cause
+ 
+harmful
+ 
+interference,
+ 
+and
+ 
+(2)
+ 
+this
+ 
+device
+ 
+must
+ 
+accept
+ 
+any
+ 
+interference
+ 
+received,
+ 
+including
+ 
+interference
+ 
+that
+ 
+may
+ 
+cause
+ 
+undesired
+ 
+operation.
+ 
+7.1.1  FCC  Radiation  Exposure  Statement:  
+This  equipment  complies  with  FCC  radiation  exposure  limits  set  forth  for  an  uncontrolled  
+environment.
+ 
+This
+ 
+equipment
+ 
+should
+ 
+be
+ 
+installed
+ 
+and
+ 
+operated
+ 
+with
+ 
+a
+ 
+minimum
+ 
+distance
+ 
+20
+ 
+cm
+ 
+between
+ 
+the
+ 
+radiator
+ 
+and
+ 
+your
+ 
+body.
+ 
+7.1.2  Important  Note  To  Integrators  
+This  module  is  intended  for  OEM  integrators.  It  is  only  FCC  authorized  for  the  speciﬁc  rule  parts  
+listed
+ 
+on
+ 
+the
+ 
+grant,
+ 
+and
+ 
+the
+ 
+host
+ 
+product
+ 
+manufacturer
+ 
+is
+ 
+responsible
+ 
+for
+ 
+compliance
+ 
+with
+ 
+any
+ 
+other
+ 
+FCC
+ 
+rules
+ 
+that
+ 
+apply
+ 
+to
+ 
+the
+ 
+host
+ 
+not
+ 
+covered
+ 
+by
+ 
+the
+ 
+modular
+ 
+transmitter
+ 
+grant
+ 
+of
+ 
+certiﬁcation.
+ 
+The
+ 
+ﬁnal
+ 
+host
+ 
+product
+ 
+still
+ 
+requires
+ 
+Part
+ 
+15
+ 
+Subpart
+ 
+B
+ 
+compliance
+ 
+testing
+ 
+with
+ 
+the
+ 
+modular
+ 
+transmitter
+ 
+installed.
+ 
+ 
+Additional  testing  and  certiﬁcation  may  be  necessary  when  multiple  modules  are  used.  
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   30   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+7.1.3  End  Product  User  Manual  Requirement  
+In  the  user  manual  of  the  end  product,  the  end  user  has  to  be  informed  to  keep  at  least  20  cm  of  
+separation
+ 
+with
+ 
+the
+ 
+antenna
+ 
+while
+ 
+this
+ 
+end
+ 
+product
+ 
+is
+ 
+installed
+ 
+and
+ 
+operated.
+ 
+The
+ 
+end
+ 
+user
+ 
+has
+ 
+to
+ 
+be
+ 
+informed
+ 
+that
+ 
+the
+ 
+FCC
+ 
+radio-frequency
+ 
+exposure
+ 
+guidelines
+ 
+for
+ 
+an
+ 
+uncontrolled
+ 
+environment
+ 
+can
+ 
+be
+ 
+satisﬁed.
+ 
+ 
+The  end  user  has  to  also  be  informed  that  any  changes  or  modiﬁcations  not  expressly  approved  by  
+the
+ 
+manufacturer
+ 
+could
+ 
+void
+ 
+the
+ 
+user’s
+ 
+authority
+ 
+to
+ 
+operate
+ 
+this
+ 
+equipment.
+ 
+ 
+This  device  complies  with  Part  15  of  FCC  rules.  Operation  is  subject  to  the  following  two  conditions:  
+(1)
+ 
+this
+ 
+device
+ 
+may
+ 
+not
+ 
+cause
+ 
+harmful
+ 
+interference
+ 
+and
+ 
+(2)
+ 
+this
+ 
+device
+ 
+must
+ 
+accept
+ 
+any
+ 
+interference
+ 
+received,
+ 
+including
+ 
+interference
+ 
+that
+ 
+may
+ 
+cause
+ 
+undesired
+ 
+operation.
+ 
+7.1.4  End  Product  Label  Requirement   
+The  end  product  must  be  labeled  in  a  visible  area  with  the  following:   
+Contains  FCC  ID:  2A74O-737B5B   
+This  device  complies  with  Part  15  of  FCC  rules.  Operation  is  subject  to  the  following  two  conditions:  (1)  this  device  may  not  cause  harmful  interference  and  (2)  this  device  must  accept  any  interference  received,  including  interference  that  may  cause  undesired  operation.  
+Figure  13:  End  product  label  requirement  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   31   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+7.2.  IC  
+This  device  contains  licence-exempt  transmitter(s)/receiver(s)  that  comply  with  Innovation,  Science  
+and
+ 
+Economic
+ 
+Development
+ 
+Canada’s
+ 
+licence-exempt
+ 
+RSS(s).
+ 
+Operation
+ 
+is
+ 
+subject
+ 
+to
+ 
+the
+ 
+following
+ 
+two
+ 
+conditions:
+ 
+(1)  This  device  may  not  cause  interference.  
+(2)  This  device  must  accept  any  interference,  including  interference  that  may  cause  undesired  
+operation
+ 
+of
+ 
+the
+ 
+device.
+ 
+Cet  appareil  contient  des  émetteurs  /  récepteurs  exempts  de  licence  qui  sont  conformes  au  (x)  
+RSS  (s)  exemptés  de  licence  d’Innovation,  Sciences  et  Développement  économique  Canada.  
+L’opération
+ 
+est
+ 
+soumise
+ 
+aux
+ 
+deux
+ 
+conditions
+ 
+suivantes:
+ 
+(1)  Cet  appareil  ne  doit  pas  provoquer  d'interférences.  
+(2)  Cet  appareil  doit  accepter  toute  interférence,  y  compris  les  interférences  susceptibles  de  
+provoquer
+ 
+un
+ 
+fonctionnement
+ 
+indésirable
+ 
+de
+ 
+l'appareil.
+ 
+This  radio  transmitter  29791-737B5B  has  been  approved  by  Innovation,  Science  and  Economic  
+Development
+ 
+Canada
+ 
+to
+ 
+operate
+ 
+with
+ 
+the
+ 
+antenna
+ 
+types
+ 
+listed
+ 
+below,
+ 
+with
+ 
+the
+ 
+maximum
+ 
+permissible
+ 
+gain
+ 
+indicated.
+ 
+Antenna
+ 
+types
+ 
+not
+ 
+included
+ 
+in
+ 
+this
+ 
+list
+ 
+that
+ 
+have
+ 
+a
+ 
+gain
+ 
+greater
+ 
+than
+ 
+the
+ 
+maximum
+ 
+gain
+ 
+indicated
+ 
+for
+ 
+any
+ 
+type
+ 
+listed
+ 
+are
+ 
+strictly
+ 
+prohibited
+ 
+for
+ 
+use
+ 
+with
+ 
+this
+ 
+device.
+ 
+Le  présent  émetteur  radio  29791-737B5B  a  été  approuvé  par  Innovation,  Sciences  et  
+Développement
+ 
+économique
+ 
+Canada
+ 
+pour
+ 
+fonctionner
+ 
+avec
+ 
+les
+ 
+types
+ 
+d'antenne
+ 
+énumérés
+ 
+ci-dessous
+ 
+et
+ 
+ayant
+ 
+un
+ 
+gain
+ 
+admissible
+ 
+maximal
+ 
+d'antenne.
+ 
+Les
+ 
+types
+ 
+d'antennes
+ 
+non
+ 
+inclus
+ 
+dans
+ 
+cette
+ 
+liste
+ 
+qui
+ 
+ont
+ 
+un
+ 
+gain
+ 
+supérieur
+ 
+au
+ 
+gain
+ 
+maximal
+ 
+indiqué
+ 
+pour
+ 
+tout
+ 
+type
+ 
+listé
+ 
+sont
+ 
+strictement
+ 
+interdits
+ 
+pour
+ 
+une
+ 
+utilisation
+ 
+avec
+ 
+cet
+ 
+appareil.
+ 
+7.2.1  IC  Radiation  Exposure  Statement:  
+This  equipment  complies  with  IC  RSS-102  radiation  exposure  limits  set  forth  for  an  uncontrolled  
+environment.
+ 
+This
+ 
+equipment
+ 
+should
+ 
+be
+ 
+installed
+ 
+and
+ 
+operated
+ 
+with
+ 
+a
+ 
+minimum
+ 
+distance
+ 
+of
+ 
+20cm
+ 
+between
+ 
+the
+ 
+radiator
+ 
+&
+ 
+your
+ 
+body.
+ 
+Cet  équipement  est  conforme  aux  limites  d'exposition  aux  rayonnements  IC  établies  pour  un  
+environnement
+ 
+non
+ 
+contrôlé.
+ 
+Cet
+ 
+équipement
+ 
+doit
+ 
+être
+ 
+installé
+ 
+et
+ 
+utilisé
+ 
+avec
+ 
+un
+ 
+minimum
+ 
+de
+ 
+20
+ 
+cm
+ 
+de
+ 
+distance
+ 
+entre
+ 
+la
+ 
+source
+ 
+de
+ 
+rayonnement
+ 
+et
+ 
+votre
+ 
+corps.
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   32   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+7.2.2  Important  Note  To  Integrators  
+This  module  is  intended  for  OEM  integrators.  The  OEM  integrator  is  responsible  for  complying  with  
+all
+ 
+the
+ 
+rules
+ 
+that
+ 
+apply
+ 
+to
+ 
+the
+ 
+product
+ 
+into
+ 
+which
+ 
+this
+ 
+certiﬁed
+ 
+RF
+ 
+module
+ 
+is
+ 
+integrated.
+ 
+Additional
+ 
+testing
+ 
+and
+ 
+certiﬁcation
+ 
+may
+ 
+be
+ 
+necessary
+ 
+when
+ 
+multiple
+ 
+modules
+ 
+are
+ 
+used.
+ 
+Any
+ 
+changes
+ 
+or
+ 
+modiﬁcations
+ 
+not
+ 
+expressly
+ 
+approved
+ 
+by
+ 
+the
+ 
+manufacturer
+ 
+could
+ 
+void
+ 
+the
+ 
+user's
+ 
+authority
+ 
+to
+ 
+operate
+ 
+this
+ 
+equipment.
+ 
+7.2.3  End  Product  User  Manual  Requirement  
+In  the  users  manual  of  the  end  product,  the  end  user  has  to  be  informed  to  keep  at  least  20  cm  
+separation
+ 
+with
+ 
+the
+ 
+antenna
+ 
+while
+ 
+this
+ 
+end
+ 
+product
+ 
+is
+ 
+installed
+ 
+and
+ 
+operated.
+ 
+The
+ 
+end
+ 
+user
+ 
+has
+ 
+to
+ 
+be
+ 
+informed
+ 
+that
+ 
+the
+ 
+IC
+ 
+radio-frequency
+ 
+exposure
+ 
+guidelines
+ 
+for
+ 
+an
+ 
+uncontrolled
+ 
+environment
+ 
+can
+ 
+be
+ 
+satisﬁed.
+ 
+The  end  user  has  to  also  be  informed  that  any  changes  or  modiﬁcations  not  expressly  approved  by  
+the
+ 
+manufacturer
+ 
+could
+ 
+void
+ 
+the
+ 
+user's
+ 
+authority
+ 
+to
+ 
+operate
+ 
+this
+ 
+equipment.
+ 
+Operation
+ 
+is
+ 
+subject
+ 
+to
+ 
+the
+ 
+following
+ 
+two
+ 
+conditions:
+ 
+(1)  this  device  may  not  cause  harmful  interference   
+(2)  this  device  must  accept  any  interference  received,  including  interference  that  may  cause  
+undesired
+ 
+operation.
+ 
+7.2.4  End  Product  Label  Requirement   
+The  end  product  must  be  labeled  in  a  visible  area  with  the  following:  
+Contains  IC:  29791-737B5B  
+Figure  14:  End  product  label  requirement  
+The  Host  Model  Number  (HMN)  must  be  indicated  at  any  location  on  the  exterior  of  the  end  product,  
+product
+ 
+packaging,
+ 
+or
+ 
+product
+ 
+literature,
+ 
+which
+ 
+shall
+ 
+be
+ 
+available
+ 
+with
+ 
+the
+ 
+end
+ 
+product
+ 
+or
+ 
+online.
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   33   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+8  Part  Numbers  and  Ordering  Information  
+Part  Number  
+Packing  Type  
+MOQ  and  Order  Multiples  
+Part  Size  (mm)  Description  
+MM8108-MF15457  Tray  100  10  x  11  x  2  
+IEEE  802.11ah  Sub-1  GHz  1/2/4/8  MHz  Wi-Fi  HaLow  Module   Table  14:  Part  number  and  ordering  information    
+9  Handling  and  Storage  
+The  MM8108-MF15457  module  is  a  moisture-sensitive  device  rated  at  Moisture  Sensitive  Level  3  
+(MSL3)
+ 
+per
+ 
+IPC/JEDEC
+ 
+J-STD-20.
+ 
+ 
+After  opening  the  moisture-sealed  storage  bag,  modules  that  will  be  subjected  to  reﬂow  solder  or  
+other
+ 
+high-temperature
+ 
+processes
+ 
+must
+ 
+be:
+ 
+ 
+1.  Mounted  to  a  circuit  board  within  168  hours  at  factory  conditions  (≤30°C  and  <60%  RH),  OR  2.  Continuously  stored  per  IPC/JEDEC  J-STD-033  
+Modules  exposed  to  moisture  and  environmental  conditions  exceeding  packaging  and  storage  
+conditions
+ 
+MUST
+ 
+be
+ 
+baked
+ 
+before
+ 
+mounting,
+ 
+according
+ 
+to
+ 
+IPC/JEDEC
+ 
+J-STD-033.
+ 
+ 
+Failure  to  meet  packaging  and  storage  conditions  will  result  in  irreparable  damage  to  modules  during  
+the
+ 
+solder
+ 
+reﬂow
+ 
+process.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   34   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+10  Revision  History 
+Release  Number  
+Release  Date  Release  Notes  
+Version  4  30  Sep  2025  
+Updated  pin  descriptions  Updated  host  interface  schematic  designs  
+Version  3  18  Sep  2025  
+Updated  formatting  Added  USB  dongle  reference  design  Updated  power  management  Updated  timing  graphs  Updated  electrical  speciﬁcations  Updated  RF  speciﬁcations  Added  digital  IO  speciﬁcations  
+DS101  28  Feb  2025  
+Added  power  on  and  reset  timing  details  Updated  standby  power  consumption  DS100  8  Jan  2025  Initial  release   
+ 
+MM8108-MF15457  Data  Sheet  v4  morsemicro.com   |   35   
+ 
+Refer  to  the  online  version  for  up-to-date  content  Proprietary  &  Conﬁdential
+ 
+Morse  Micro  provides  this  information  "as  is"  without  warranties  of  any  kind,  express  or  implied.  No  guarantee  is  made  as  to  the  accuracy,  
+completeness,
+ 
+or
+ 
+suitability
+ 
+of
+ 
+this
+ 
+information
+ 
+or
+ 
+Morse
+ 
+Micro’s
+ 
+products
+ 
+for
+ 
+any
+ 
+speciﬁc
+ 
+purpose.
+ 
+Use
+ 
+of
+ 
+this
+ 
+information
+ 
+and
+ 
+products
+ 
+is
+ 
+at
+ 
+the
+ 
+user’s
+ 
+sole
+ 
+risk.
+ 
+Morse
+ 
+Micro
+ 
+products
+ 
+are
+ 
+not
+ 
+designed
+ 
+or
+ 
+tested
+ 
+for
+ 
+use
+ 
+in
+ 
+mission-critical
+ 
+systems,
+ 
+and
+ 
+should
+ 
+not
+ 
+be
+ 
+used
+ 
+in
+ 
+such
+ 
+applications.
+ 
+Performance
+ 
+speciﬁcations
+ 
+are
+ 
+based
+ 
+on
+ 
+internal
+ 
+testing
+ 
+and
+ 
+are
+ 
+believed
+ 
+to
+ 
+be
+ 
+reliable;
+ 
+however,
+ 
+they
+ 
+are
+ 
+not
+ 
+guaranteed.
+ 
+It
+ 
+is
+ 
+the
+ 
+Buyer’s
+ 
+responsibility
+ 
+to
+ 
+test
+ 
+and
+ 
+validate
+ 
+all
+ 
+product
+ 
+performance,
+ 
+compatibility,
+ 
+and
+ 
+compliance,
+ 
+both
+ 
+in
+ 
+isolation
+ 
+and
+ 
+within
+ 
+end
+ 
+applications.
+ 
+Morse
+ 
+Micro
+ 
+assumes
+ 
+no
+ 
+liability
+ 
+for
+ 
+the
+ 
+use
+ 
+or
+ 
+application
+ 
+of
+ 
+any
+ 
+product,
+ 
+circuit,
+ 
+or
+ 
+information
+ 
+described
+ 
+herein.
+ 
+No
+ 
+license
+ 
+or
+ 
+other
+ 
+rights—express
+ 
+or
+ 
+implied—are
+ 
+granted
+ 
+under
+ 
+Morse
+ 
+Micro’s
+ 
+intellectual
+ 
+property.
+ 
+This
+ 
+document
+ 
+contains
+ 
+proprietary
+ 
+information
+ 
+of
+ 
+Morse
+ 
+Micro
+ 
+and
+ 
+is
+ 
+subject
+ 
+to
+ 
+change
+ 
+without
+ 
+notice.
+ 
+Wi-Fi®,
+ 
+Wi-Fi
+ 
+HaLow™,
+ 
+and
+ 
+the
+ 
+Wi-Fi
+ 
+logo
+ 
+are
+ 
+trademarks
+ 
+of
+ 
+Wi-Fi
+ 
+Alliance.
+ 
+ZigBee™
+ 
+and
+ 
+Z-Wave™
+ 
+are
+ 
+trademarks
+ 
+of
+ 
+their
+ 
+respective
+ 
+owners.
+ 
+All
+ 
+other
+ 
+trademarks
+ 
+are
+ 
+the
+ 
+property
+ 
+of
+ 
+their
+ 
+respective
+ 
+owners.
+ 
+ 
+ 
+Morse  Micro  Pty.  Ltd.  Corporate  Headquarters  
+Level  8,  10-14  Waterloo  Street,  Surry  Hills,  NSW  2010,  AUSTRALIA  
+Email:  sales@morsemicro.com  
+Copyright
+ 
+©
+ 
+Morse
+ 
+Micro
+ 
+Pty.
+ 
+Ltd
+.
+ 

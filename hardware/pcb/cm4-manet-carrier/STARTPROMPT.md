@@ -1,0 +1,3 @@
+# Tekst om op de andere computer te gebruiken
+
+Ga verder met mijn CM4 MANET-carrierproject in deze map. Lees eerst AGENTS.md, START_HIER.md, PROJECTSTATUS.md en GESPREKSAMENVATTING.md en daarna de actuele ontwerpcontrole in outputs/CM4-MANET-v0.4. Gebruik de bestaande KiCad-bestanden als uitgangspunt. Ik ben een amateur; leg stappen eenvoudig uit en voer de technische controles zelf uit. Werk in deze gesynchroniseerde map en houd PROJECTSTATUS.md, GESPREKSAMENVATTING.md en WERKLOG.md bij na inhoudelijke wijzigingen. Controleer eerst de feitelijke bestanden en open punten; neem niet aan dat het conceptschema productierijp is.

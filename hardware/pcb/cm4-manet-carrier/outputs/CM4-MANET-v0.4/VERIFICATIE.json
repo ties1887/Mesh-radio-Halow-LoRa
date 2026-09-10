@@ -1,0 +1,970 @@
+{
+  "kicad_version": "10.0.6",
+  "erc_violations": 0,
+  "native_pin_net_comparisons": 483,
+  "explicit_nc_pins": 211,
+  "pin_net_mismatches": [],
+  "design_assertions": [
+    {
+      "check": "CM4 USB D- to recovery isolation input",
+      "pass": true,
+      "nets": [
+        "CM4_USB_N",
+        "CM4_USB_N"
+      ]
+    },
+    {
+      "check": "CM4 USB D+ to recovery isolation input",
+      "pass": true,
+      "nets": [
+        "CM4_USB_P",
+        "CM4_USB_P"
+      ]
+    },
+    {
+      "check": "Hub input D-",
+      "pass": true,
+      "nets": [
+        "HUB_UP_N",
+        "HUB_UP_N"
+      ]
+    },
+    {
+      "check": "Hub input D+",
+      "pass": true,
+      "nets": [
+        "HUB_UP_P",
+        "HUB_UP_P"
+      ]
+    },
+    {
+      "check": "HaLow internal USB D-",
+      "pass": true,
+      "nets": [
+        "HALOW_USB_N",
+        "HALOW_USB_N"
+      ]
+    },
+    {
+      "check": "HaLow internal USB D+",
+      "pass": true,
+      "nets": [
+        "HALOW_USB_P",
+        "HALOW_USB_P"
+      ]
+    },
+    {
+      "check": "External USB A D-",
+      "pass": true,
+      "nets": [
+        "USBA_N",
+        "USBA_N",
+        "USBA_N"
+      ]
+    },
+    {
+      "check": "External USB A D+",
+      "pass": true,
+      "nets": [
+        "USBA_P",
+        "USBA_P",
+        "USBA_P"
+      ]
+    },
+    {
+      "check": "External USB B D-",
+      "pass": true,
+      "nets": [
+        "USBB_N",
+        "USBB_N",
+        "USBB_N"
+      ]
+    },
+    {
+      "check": "External USB B D+",
+      "pass": true,
+      "nets": [
+        "USBB_P",
+        "USBB_P",
+        "USBB_P"
+      ]
+    },
+    {
+      "check": "USB A enable",
+      "pass": true,
+      "nets": [
+        "USBA_EN",
+        "USBA_EN"
+      ]
+    },
+    {
+      "check": "USB B enable",
+      "pass": true,
+      "nets": [
+        "USBB_EN",
+        "USBB_EN"
+      ]
+    },
+    {
+      "check": "HaLow enable",
+      "pass": true,
+      "nets": [
+        "HALOW_EN",
+        "HALOW_EN"
+      ]
+    },
+    {
+      "check": "CM4 TX+ to AW7916 RX+",
+      "pass": true,
+      "nets": [
+        "PCIE_TX_P",
+        "PCIE_TX_P"
+      ]
+    },
+    {
+      "check": "CM4 TX- to AW7916 RX-",
+      "pass": true,
+      "nets": [
+        "PCIE_TX_N",
+        "PCIE_TX_N"
+      ]
+    },
+    {
+      "check": "AW7916 TX+ to CM4 RX+",
+      "pass": true,
+      "nets": [
+        "PCIE_RX_P",
+        "PCIE_RX_P"
+      ]
+    },
+    {
+      "check": "AW7916 TX- to CM4 RX-",
+      "pass": true,
+      "nets": [
+        "PCIE_RX_N",
+        "PCIE_RX_N"
+      ]
+    },
+    {
+      "check": "All four WiFi supply contacts",
+      "pass": true,
+      "nets": [
+        "+3V3_WIFI",
+        "+3V3_WIFI",
+        "+3V3_WIFI",
+        "+3V3_WIFI",
+        "+3V3_WIFI"
+      ]
+    },
+    {
+      "check": "CM4 GPIO reference uses CM4 own supply",
+      "pass": true,
+      "nets": [
+        "+3V3_CM4",
+        "+3V3_CM4",
+        "+3V3_CM4"
+      ]
+    },
+    {
+      "check": "HaLow four supply pins",
+      "pass": true,
+      "nets": [
+        "+3V3_HALOW",
+        "+3V3_HALOW",
+        "+3V3_HALOW",
+        "+3V3_HALOW",
+        "+3V3_HALOW"
+      ]
+    },
+    {
+      "check": "Ethernet pair 0 +",
+      "pass": true,
+      "nets": [
+        "ETH0_P",
+        "ETH0_P",
+        "ETH0_P"
+      ]
+    },
+    {
+      "check": "Ethernet pair 0 -",
+      "pass": true,
+      "nets": [
+        "ETH0_N",
+        "ETH0_N",
+        "ETH0_N"
+      ]
+    },
+    {
+      "check": "Ethernet pair 1 +",
+      "pass": true,
+      "nets": [
+        "ETH1_P",
+        "ETH1_P",
+        "ETH1_P"
+      ]
+    },
+    {
+      "check": "Ethernet pair 1 -",
+      "pass": true,
+      "nets": [
+        "ETH1_N",
+        "ETH1_N",
+        "ETH1_N"
+      ]
+    },
+    {
+      "check": "Ethernet pair 2 +",
+      "pass": true,
+      "nets": [
+        "ETH2_P",
+        "ETH2_P",
+        "ETH2_P"
+      ]
+    },
+    {
+      "check": "Ethernet pair 2 -",
+      "pass": true,
+      "nets": [
+        "ETH2_N",
+        "ETH2_N",
+        "ETH2_N"
+      ]
+    },
+    {
+      "check": "Ethernet pair 3 +",
+      "pass": true,
+      "nets": [
+        "ETH3_P",
+        "ETH3_P",
+        "ETH3_P"
+      ]
+    },
+    {
+      "check": "Ethernet pair 3 -",
+      "pass": true,
+      "nets": [
+        "ETH3_N",
+        "ETH3_N",
+        "ETH3_N"
+      ]
+    },
+    {
+      "check": "SD CM4 pin 57 -> socket pin 5",
+      "pass": true,
+      "nets": [
+        "SD_CLK",
+        "SD_CLK"
+      ]
+    },
+    {
+      "check": "SD CM4 pin 61 -> socket pin 2",
+      "pass": true,
+      "nets": [
+        "SD_DAT3",
+        "SD_DAT3"
+      ]
+    },
+    {
+      "check": "SD CM4 pin 62 -> socket pin 3",
+      "pass": true,
+      "nets": [
+        "SD_CMD",
+        "SD_CMD"
+      ]
+    },
+    {
+      "check": "SD CM4 pin 63 -> socket pin 7",
+      "pass": true,
+      "nets": [
+        "SD_DAT0",
+        "SD_DAT0"
+      ]
+    },
+    {
+      "check": "SD CM4 pin 67 -> socket pin 8",
+      "pass": true,
+      "nets": [
+        "SD_DAT1",
+        "SD_DAT1"
+      ]
+    },
+    {
+      "check": "SD CM4 pin 69 -> socket pin 1",
+      "pass": true,
+      "nets": [
+        "SD_DAT2",
+        "SD_DAT2"
+      ]
+    },
+    {
+      "check": "3.3 V rails remain distinct",
+      "pass": true
+    },
+    {
+      "check": "All 200 CM4 pins explicitly assigned or NC",
+      "pass": true
+    }
+  ],
+  "footprint_pin_checks": [
+    {
+      "ref": "J1",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C1",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C2",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R1",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "TP1",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "TP2",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "TP3",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "U10",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "L10",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C10",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C11",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C12",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C13",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C14",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R10",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R11",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "TP10",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "U20",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "L20",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C20",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C21",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C22",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C23",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "TP20",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "U100",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R110",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R111",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R112",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "TP110",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "TP111",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "TP112",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "TP113",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "J110",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "J111",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "U110",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R113",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C110",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C111",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "U120",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "J120",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R120",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C120",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C121",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "U200",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R200",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R201",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R202",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R203",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R204",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R205",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R206",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C200",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C201",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "Y210",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C210",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C211",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C212",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C213",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C214",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C215",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C216",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C217",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C218",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "U220",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "J220",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R220",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R221",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R222",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C220",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C221",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C222",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "D220",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "U240",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "J240",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R240",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R241",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R242",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C240",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C241",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C242",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "D240",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "U260",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R260",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R261",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R262",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R263",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C260",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "TP260",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R300",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C300",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C301",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C302",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C303",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C304",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R301",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C305",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C306",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "J300",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "U400",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R400",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R401",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C400",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R402",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "J500",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "D500",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "D501",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R500",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "C500",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    },
+    {
+      "ref": "R501",
+      "missing_pads": [],
+      "extra_pads": [],
+      "pass": true
+    }
+  ],
+  "unassigned_footprints": [
+    "PS1",
+    "U300",
+    "J400"
+  ],
+  "scope": "Connectivity and pad-number checks only. Not hardware, signal-integrity, thermal, RF or manufacturer numeric-pinout signoff."
+}

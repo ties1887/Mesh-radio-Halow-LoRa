@@ -1,0 +1,993 @@
+Raspberry Pi | Raspberry Pi Compute Module 4 Datasheet
+Raspberry Pi 
+Compute Module 4
+A Raspberry Pi for deeply embedded 
+applications
+Raspberry Pi Ltd
+Raspberry Pi Compute Module 4
+Colophon
+©︎ 2022-2026 Raspberry Pi Ltd
+This documentation is licensed under a Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND).
+Release 4
+Build date 30/06/2026
+Legal disclaimer notice
+TECHNICAL AND RELIABILITY DATA FOR RASPBERRY PI PRODUCTS (INCLUDING DATASHEETS) AS MODIFIED FROM TIME TO 
+TIME (“RESOURCES”) ARE PROVIDED BY RASPBERRY PI L TD (“RPL”) “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR 
+PURPOSE ARE DISCLAIMED. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW IN NO EVENT SHALL RPL BE LIABLE 
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED 
+TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) 
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THE RESOURCES, EVEN IF ADVISED OF THE POSSIBILITY 
+OF SUCH DAMAGE.
+RPL reserves the right to make any enhancements, improvements, corrections or any other modifications to the RESOURCES or 
+any products described in them at any time and without further notice.
+The RESOURCES are intended for skilled users with suitable levels of design knowledge. Users are solely responsible for their 
+selection and use of the RESOURCES and any application of the products described in them. User agrees to indemnify and hold 
+RPL harmless against all liabilities, costs, damages or other losses arising out of their use of the RESOURCES.
+RPL grants users permission to use the RESOURCES solely in conjunction with the Raspberry Pi products. All other use of the 
+RESOURCES is prohibited. No licence is granted to any other RPL or other third party intellectual property right.
+HIGH RISK ACTIVITIES. Raspberry Pi products are not designed, manufactured or intended for use in hazardous environments 
+requiring fail safe performance, such as in the operation of nuclear facilities, aircraft navigation or communication systems, air 
+traffic control, weapons systems or safety-critical applications (including life support systems and other medical devices), in which 
+the failure of the products could lead directly to death, personal injury or severe physical or environmental damage (“High Risk 
+Activities”). RPL specifically disclaims any express or implied warranty of fitness for High Risk Activities and accepts no liability 
+for use or inclusions of Raspberry Pi products in High Risk Activities.
+Raspberry Pi products are provided subject to RPL’s Standard Terms. RPL’s provision of the RESOURCES does not expand or 
+otherwise modify RPL’s Standard Terms including but not limited to the disclaimers and warranties expressed in them.
+Colophon 1
+Raspberry Pi Compute Module 4
+Table of Contents
+1. Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.1. Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.2. Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2. Interfaces . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.1. Wireless . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.1.1. WL_nDisable . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.1.2. BT_nDisable . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.2. Ethernet . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.3. PCIe (Gen2 x1) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.4. USB 2.0 (high speed) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+2.5. GPIO . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+2.5.1. Alternative function assignments . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+2.6. Dual HDMI 2.0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2.7. CSI-2 (MIPI serial camera) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2.8. DSI (MIPI serial display) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2.9. I2C (SDA0 SCL0) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2.10. I2C (ID_SD ID_SC) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2.11. SDIO/eMMC (CM4Lite only) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.12. Analog IP0/IP1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.13. Global_EN . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.14. RUN_PG . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.15. nRPI_BOOT . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+2.16. LED_nACT . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+2.17. LED_nPWR . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+2.18. EEPROM_nWP . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+3. Electrical and mechanical . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+3.1. Mechanical . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+3.2. Thermal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+3.3. Electrical specification . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+4. Pinout . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+4.1. Differential pairs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+4.1.1. 100Ω differential pair signal lengths . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+4.1.2. 90Ω differential pair signal lengths . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+5. Power . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+5.1. Power-up sequencing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+5.2. Power-down sequencing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+5.3. Power consumption . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+5.4. Regulator outputs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+6. Troubleshooting . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+6.1. Hardware checklist . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+6.2. Bootloader . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+6.3. rpi-eeprom-update . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+6.4. EEPROM write-protect . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+6.5. Firmware . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+6.6. Kernel . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+7. Availability . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+7.1. Support . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+7.2. Ordering codes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+7.3. Packaging . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+Table of Contents 2
+Raspberry Pi Compute Module 4
+1. Introduction
+1.1. Introduction
+Figure 1.
+The Raspberry Pi Compute Module 4 (CM4)
+The Raspberry Pi Compute Module 4 (CM4) is a System on Module (SoM) containing processor, memory, eMMC Flash, and 
+supporting power circuitry. These modules allow a designer to leverage the Raspberry Pi hardware and software stack in their 
+own custom systems and form factors. In addition, these modules have extra IO interfaces over and above what is available on 
+the Raspberry Pi boards, opening up more options for the designer.
+The design of the CM4 is loosely based on the Raspberry Pi 4 Model B, and for cost-sensitive applications it can be supplied 
+without the eMMC fitted; this version is called the Raspberry Pi Compute Module 4 Lite (CM4Lite).
+While previous generations of the Compute Module have all shared the same DDR2-SODIMM-mechanically-compatible form factor, 
+the new CM4 and CM4Lite are different. The electrical interface of the CM4 is via two 100-pin high density connectors, and the 
+new physical form factor has a smaller footprint overall when the connectors are taken into account.
+This change is due to the addition of new interfaces: an additional second HDMI, PCIe, and Ethernet. The addition of these new 
+interfaces, especially PCIe, would not have been possible while preserving the previous form factor.
+Note
+Unless otherwise stated, for this document CM4 also refers to CM4Lite.
+1.2. Features
+Key features of the CM4 are as follows:
+• Broadcom quad core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz
+• Small Footprint 55 mm × 40 mm × 4.7 mm module
+  4 × M2.5 mounting holes
+• H.265 (HEVC) (up to 4Kp60 decode), H.264 (up to 1080p60 decode, 1080p30 encode)
+• OpenGL ES 3.0 graphics
+Introduction 3
+Raspberry Pi Compute Module 4
+• Options for 1 GB, 2 GB, 4 GB or 8 GB LPDDR4-3200 SDRAM with ECC (see Section 7. Availability)
+• Options for 0 GB (CM4Lite), 8 GB, 16 GB, 32 GB,or 64 GB eMMC flash memory (see Section 7. Availability)
+  Peak eMMC bandwidth 100 MBps (four times faster than previous Compute Modules)
+• Option (see Section 7. Availability) for certified radio module with:
+  2.4 GHz, 5.0 GHz IEEE 802.11 b/g/n/ac wireless
+  Bluetooth 5.0, BLE
+  On board electronic switch to select between PCB trace or external antenna
+• Gigabit Ethernet PHY supporting IEEE 1588
+• 1 × PCIe 1-lane Host, Gen 2 (5Gbps)
+• 1 × USB 2.0 port (high speed)
+• 28 × GPIO supporting either 1.8 V or 3.3 V signalling and peripheral options:
+  Up to 5 × UART
+  Up to 5 × I2C
+  Up to 5 × SPI
+  1 × SDIO interface
+  1 × DPI (parallel RGB display)
+  1 × PCM
+  Up to 2× PWM channels
+  Up to 3× GPCLK outputs
+• 2 × HDMI 2.0 ports (up to 4Kp60 supported)
+• MIPI DSI:
+  1 × 2-lane MIPI DSI display port
+  1 × 4-lane MIPI DSI display port
+• MIPI CSI-2:
+  1 × 2-lane MIPI CSI camera port
+  1 × 4-lane MIPI CSI camera port
+• 1 × SDIO 2.0 (CM4Lite)
+• Single +5 V PSU input.
+Introduction 4
+Raspberry Pi Compute Module 4
+2. Interfaces
+2.1. Wireless
+The CM4 can be supplied with an on-board wireless module based on the Cypress CYW43455 supporting both:
+• 2.4 GHz, 5.0 GHz IEEE 802.11 b/g/n/ac wireless
+• Bluetooth 5.0, BLE
+These wireless interfaces can be individually enabled or disabled as required. For instance, in the case of a kiosk application, a 
+service engineer could enable wireless operation and then disable it once finished.
+The CM4 has an on-board antenna. If used it should be positioned in the product such that it is not surrounded by metal, including 
+any ground plane (see Section 3. Electrical and mechanical  for further details). Alternatively there is a standard U.FL connector 
+on the module, see Figure 1, so that an external antenna can be used.
+Raspberry Pi Ltd has an antenna kit which is certified to be used with the CM4. If a different antenna is used then separate 
+certification will be required.
+Warning
+Raspberry Pi Ltd will not be able to assist with certification for third-party antennas.
+The selection of internal or external antenna is done at boot time using the config.txt file, and can not be changed during 
+operation. The config.txt options are dtparam=ant1 to select the internal antenna, or dtparam=ant2 for the external antenna.
+2.1.1. WL_nDisable
+This pin serves a number of functions;
+1. It can be used to monitor the enable/disable state of wireless networking. A logic high means the wireless networking 
+module is powered up.
+2. When driven or tied low it prevents the wireless network module from powering up. This is useful to reduce power 
+consumption or in applications where it is required to physically ensure the wireless networking is disabled. If the interface 
+is enabled after being disabled, the wireless interface driver needs reinitialised.
+Note
+On CM4 modules without wireless, this pin is reserved.
+2.1.2. BT_nDisable
+This pin serves a number of functions;
+1. It can be used to monitor the enable/disable state of Bluetooth. A logic high means the Bluetooth module is powered up.
+2. When driven, or tied low, it prevents the Bluetooth module from powering up. This is useful to reduce power consumption, 
+or in applications where it is required to physically ensure the Bluetooth is disabled. If the interface is enabled after being 
+disabled, the Bluetooth interface driver needs reinitialised.
+Note
+On CM4 modules without wireless, this pin is reserved.
+2.2. Ethernet
+The CM4 has an on-board Gigabit Ethernet PHY — the Broadcom BCM54210PE — some of the major features of this PHY include;
+• IEEE 1588-2008 compliant
+• MDI crossover, pair skew and pair polarity correction
+Interfaces 5
+Raspberry Pi Compute Module 4
+A standard 1:1 RJ45 MagJack is all that is necessary to provide an Ethernet connection to the CM4. Typical wiring of a MagJack 
+supporting PoE, and with added ESD protection, can be seen in Figure 2.
+Figure 2.
+Ethernet schematic interface for the Raspberry Pi Compute Module 4 supporting PoE, and with added ESD protection.
+The differential Ethernet signals should be routed as 100Ω differential pairs, with suitable clearances. Length matching between 
+pairs should be better than 50mm, so in the typical case no length matching is required. However the signals within a pair need 
+to be length matched, ideally to better than 0.15mm.
+The PHY also supports up to 3 LEDs to give user status feedback, these are low active. These LEDs can have a range of functions, 
+and you should consult your OS driver to see which functions are supported by your driver.
+The PHY also provides SYNC_IN and SYNC_OUT at 3.3V signalling to support IEEE 1588-2008.
+2.3. PCIe (Gen2 x1)
+The CM4 has an internal PCIe 2.0 x1 host controller. While on the Raspberry Pi 4 Model B this has been connected to a USB 3 host 
+controller (using the Via Labs VLI805), on the CM4 the product designer is free to choose how the interface is used.
+Warning
+You should ensure that there is a suitable OS driver for any host controller that is chosen before proceeding to a prototype.
+Note
+The on-board PCIe Host controller doesn’t support 64-bit accesses from the ARM, they must be split up into two 32-bit 
+accesses.
+Connecting a PCIe device follows the standard PCIe convention. The CM4 has on-board AC coupling capacitors for CLK and 
+PCIe_TX signals. However the PCIe_RX signals need external coupling capacitors close to the driving source (the device TX), if you 
+are using an external PCIe/NVMe card these capacitors will be on-board. The PCIe convention is that if you are wiring directly to 
+an IC then the TX and RX pairs need to be swapped (i.e. TX -> RX, RX -> TX). If you are wiring to a connector then this is typically 
+labelled from the host point of view and so TX/RX swaps aren’t required. Additionally the PCIe_CLK_nREQ must be connected to 
+ensure the CM4 produces a clock signal, and the PCIe_nRST should also be connected to ensure the device is correctly reset when 
+required.
+Interfaces 6
+Raspberry Pi Compute Module 4
+The differential PCIe signals should be routed as 90 Ω differential pairs, with suitable clearances. There is no need to match the 
+lengths between pairs, only the signals within a Pair need to be length matched ideally to better than 0.1mm.
+Tip
+5.10 kernels and newer have had support for MSI-X added. There is a limit of up to 32 IRQs available. If the device has 
+problems with interrupts then adding pci=nomsi to cmdline.txt (and rebooting) often fixes the issue.
+2.4. USB 2.0 (high speed)
+The USB 2.0 interface supports up to 480Mbps signalling. The differential pair should be routed as a 90 Ω differential pair. The 
+length of the P/N signals should ideally be matched to better than 0.15mm.
+Tip
+The firmware disables the USB interface by default to save power. In recent versions of Raspberry Pi OS (Bullseye) it is 
+automatically enabled by the otg_mode=1 setting in the config.txt file. If you are using a different OS, or an older version of 
+Raspberry Pi OS, you will need to add this to config.txt to enable the USB interface.
+Note
+The port is capable of being used as a true USB On-The-Go (OTG) port. While there is no official documentation, some users 
+have had success making this work. The USB_OTG_ID pin is used to select between USB host and device that is typically wired 
+to the ID pin of a Micro USB connector. To use this functionality it must be enabled in the OS. If using either as a fixed slave 
+or fixed master; tie the USB_OTG_ID pin to ground.
+2.5. GPIO
+There are 28 pins available for general purpose I/O (GPIO), which correspond to the GPIO pins on the Raspberry Pi 4 Model B 40-
+pin header. These pins have access to internal peripherals: SMI, DPI, I2C, PWM, SPI, and UART. The BCM2711 ARM peripherals 
+book describes these features in detail, along with the multiplexing options available. The drive strength and slew rate should 
+ideally be set as low as possible to reduce any EMC issues. GPIO2 and GPIO3 have 1.8kΩ pull up resistors.
+The BCM2711 GPIO bank is powered by GPIO_VREF, this can either be connected to +1.8V for 1.8V signalling GPIO, or +3.3V for 
+3.3V signalling. You should keep the load on the 28 GPIO pins to below 50mA in total. GPIO_VREF must be powered for the CM4 to 
+start up correctly.
+2.5.1. Alternative function assignments
+Up to six alternative functions are available. The BCM2711 ARM peripherals book  describes these features in detail. The table 
+below gives a quick overview.
+Table 1.
+GPIO pins alternative function assignment
+GPIO Pull ALT0 ALT1 ALT2 ALT3 ALT4 ALT5
+GPIO0 High SDA0 SA5 PCLK SPI3_CE0_N TXD2 SDA6
+GPIO1 High SCL0 SA4 DE SPI3_MISO RXD2 SCL6
+GPIO2 High SDA1 SA3 LCD_VSYNC SPI3_MOSI CTS2 SDA3
+GPIO3 High SCL1 SA2 LCD_HSYNC SPI3_SCLK RTS2 SCL3
+GPIO4 High GPCLK0 SA1 DPI_D0 SPI4_CE0_N TXD3 SDA3
+GPIO5 High GPCLK1 SA0 DPI_D1 SPI4_MISO RXD3 SCL3
+GPIO6 High GPCLK2 SOE_N / SE DPI_D2 SPI4_MOSI CTS3 SDA4
+Interfaces 7
+Raspberry Pi Compute Module 4
+GPIO Pull ALT0 ALT1 ALT2 ALT3 ALT4 ALT5
+GPIO7 High SPI0_CE1_N SWE_N / 
+SRW_N
+DPI_D3 SPI4_SCLK RTS3 SCL4
+GPIO8 High SPI0_CE0_N SD0 DPI_D4 BSCSL / CE_N TXD4 SDA4
+GPIO9 Low SPI0_MISO SD1 DPI_D5 BSCSL / MISO RXD4 SCL4
+GPIO10 Low SPI0_MOSI SD2 DPI_D6 BSCSL SDA / 
+MOSI
+CTS4 SDA5
+GPIO11 Low SPI0_SCLK SD3 DPI_D7 BSCSL SCL / 
+SCLK
+RTS4 SCL5
+GPIO12 Low PWM0_0 SD4 DPI_D8 SPI5_CE0_N TXD5 SDA5
+GPIO13 Low PWM0_1 SD5 DPI_D9 SPI5_MISO RXD5 SCL5
+GPIO14 Low TXD0 SD6 DPI_D10 SPI5_MOSI CTS5 TXD1
+GPIO15 Low RXD0 SD7 DPI_D11 SPI5_SCLK RTS5 RXD1
+GPIO16 Low <reserved> SD8 DPI_D12 CTS0 SPI1_CE2_N CTS1
+GPIO17 Low <reserved> SD9 DPI_D13 RTS0 SPI1_CE1_N RTS1
+GPIO18 Low PCM_CLK SD10 DPI_D14 SPI6_CE0_N SPI1_CE0_N PWM0_0
+GPIO19 Low PCM_FS SD11 DPI_D15 SPI6_MISO SPI1_MISO PWM0_1
+GPIO20 Low PCM_DIN SD12 DPI_D16 SPI6_MOSI SPI1_MOSI GPCLK0
+GPIO21 Low PCM_DOUT SD13 DPI_D17 SPI6_SCLK SPI1_SCLK GPCLK1
+GPIO22 Low SD0_CLK SD14 DPI_D18 SD1_CLK ARM_TRST SDA6
+GPIO23 Low SD0_CMD SD15 DPI_D19 SD1_CMD ARM_RTCK SCL6
+GPIO24 Low SD0_DAT0 SD16 DPI_D20 SD1_DAT0 ARM_TDO SPI3_CE1_N
+GPIO25 Low SD0_DAT1 SD17 DPI_D21 SD1_DAT1 ARM_TCK SPI4_CE1_N
+GPIO26 Low SD0_DAT2 <reserved> DPI_D22 SD1_DAT2 ARM_TDI SPI5_CE1_N
+GPIO27 Low SD0_DAT3 <reserved> DPI_D23 SD1_DAT3 ARM_TMS SPI6_CE1_N
+GPIO44 - GPCLK1 SDA0 SDA1 <reserved> SPI0_CE1_N SD_CARD_VOL T
+GPIO45 - PWM0_1 SCL0 SCL1 <reserved> SPI0_CE2_N SD_CARD_PWR0
+Special function legend:
+Table 2.
+GPIO pins alternative function legend
+Name Function
+SDA0 BSC master 0 data linea
+SCL0 BSC master 0 clock line
+SDAx BSC master 1,3,4,5,6 data lineb
+SCLx BSC master 1,3,4,5,6 clock line
+GPCLKx General purpose clock 0,1,2
+SPIx_CE2_N SPI 0,3,4,5,6 chip select 2
+SPIx_CE1_N SPI 0,3,4,5,6 chip select 1
+SPIx_CE0_N SPI 0,3,4,5,6 chip select 0
+SPIx_MISO SPI 0,3,4,5,6 MISO
+SPIx_MOSI SPI 0,3,4,5,6 MOSI
+SPIx_SCLK SPI 0,3,4,5,6 serial clock
+Interfaces 8
+Raspberry Pi Compute Module 4
+Name Function
+PWMx_0 PWM 0,1 channel 0
+PWMx_1 PWM 0,1 channel 1
+TXDx UART 0,2,3,4,5 transmit data
+RXDx UART 0,2,3,4,5 receive data
+CTSx UART 0,2,3,4,5 clear to send
+RTSx UART 0,2,3,4,5 request to send
+PCM_CLK PCM clock
+“PCM_FS PCM frame sync
+“PCM_DIN PCM data in
+“PCM_DOUT PCM data out
+SAx Secondary mem address bus
+SOE_N / SE Secondary mem controls
+SWE_N / SRW_N Secondary mem controls
+SDx Secondary mem data bus
+BSCSL SDA / MOSI BSC slave data, SPI slave MOSI
+BSCSL SCL / SCLK BSC slave clock, SPI slave clock
+BSCSL - / MISO BSC <not used>, SPI MISO
+BSCSL - / CE_N BSC <not used>, SPI CSn
+SPI1_CE2_N SPI 1 chip select 2 c
+SPI1_CE1_N SPI 1 chip select 1
+SPI1_CE0_N SPI 1 chip select 0
+SPI1_MISO SPI 1 MISO
+SPI1_MOSI SPI 1 MOSI
+SPI1_SCLK SPI 1 serial clock
+TXD1 UART 1 transmit data
+RXD1 UART 1 receive data
+CTS1 UART 1 clear to send
+RTS1 UART 1 request To send
+ARM_TRST ARM JTAG reset
+ARM_RTCK ARM JTAG return clock
+ARM_TDO ARM JTAG data out
+ARM_TCK ARM JTAG clock
+ARM_TDI ARM JTAG data in
+ARM_TMS ARM JTAG mode select
+PCLK Display parallel interface
+DE Display parallel interface
+LCD_VSYNC Display parallel interface
+LCD_HSYNC Display parallel interface
+DPI_Dx Display parallel interface
+a The Broadcom serial control bus is a proprietary bus compliant with the Philips(R) I2C bus/interface.
+b BSC master 2 & 7 are not user-accessible.
+c SPI 2 is not user-accessible.
+Interfaces 9
+Raspberry Pi Compute Module 4
+2.6. Dual HDMI 2.0
+The CM4 supports two HDMI 2.0 interfaces, each one capable of driving 4K images. If both HDMI outputs are used then each can 
+be driven up to 4Kp30, however if only HDMI0 interface is being used then images up to 4Kp60 are possible.
+HDMI signals should be routed as 100 Ω differential pairs. Each signal within a pair should ideally be matched to better than 
+0.15mm. Pairs don’t typically need any extra matching, as they only have to be matched to 25mm.
+CEC is also supported; an internal 27kΩ pullup resistor is included in the CM4.
+Basic on-board ESD protection is provided for the I2C EDID signals and the CEC signals; internal pullup and pulldown resistors are 
+also provided. On the Raspberry Pi 4 Model B the HDMI signals don’t have any extra ESD protection. Depending on the application, 
+extra ESD protection may be required.
+2.7. CSI-2 (MIPI serial camera)
+The CM4 supports two camera ports: CAM0 (2 lanes) and CAM1 (4 lanes). CSI signals should be routed as 100 Ω differential pairs. 
+Each signal within a pair should ideally be matched to better than 0.15mm.
+The documentation around the CSI interface can be found on the Raspberry Pi website, while Linux kernel drivers can be found 
+on GitHub.
+Note
+The official Raspberry Pi firmware supports the OmniVision OV5647, Sony IMX219, Sony IMX296, Sony IMX477 and Sony 
+IMX708 camera sensors. No security device is required on Compute Module devices in order to use these camera sensors.
+2.8. DSI (MIPI serial display)
+The CM4 supports two display ports: DISP0 (2 lanes) and DISP1 (4 lanes). Each lane supports a maximum data rate per lane 
+of 1Gbps.
+Although Linux kernel drivers  are available, the DSI interface is not currently documented. Only DSI displays supported by the 
+official Raspberry Pi firmware are supported. DSI signals should be routed as 100 Ω differential pairs; each signal within a pair 
+should ideally be matched to better than 0.15mm.
+Note
+While only official DSI displays are supported, other displays can be added using the parallel DPI interface which is available 
+as a GPIO alternative function. The CM4 supports up to three displays of any type (HDMI, DSI, DPI) at any one time.
+2.9. I2C (SDA0 SCL0)
+This internal I2C bus is normally allocated to the CSI1 and DSI1, as these devices are controlled by the firmware. It can be used as 
+a general I2C bus if the CSI1 ad DSI1 interfaces aren’t being used, or are being controlled by the firmware. For example libcamera 
+runs on the ARM and doesn’t use the firmware, so in this case you may use CSI1 and this I2C bus. SDA0 is connected to GPIO44 
+on the BCM2711 and SCL0 is connected to GPIO45.
+2.10. I2C (ID_SD ID_SC)
+This I2C bus is normally used for identifying HATs and controlling CSI0 and DSI0 devices. If the firmware isn’t using the I2C bus 
+e.g. CSI0 and DSI0 aren’t being used then these pins may be used as GPIO 0 and GPIO 1 if required.
+Note
+If these pins are used as GPIO pins, then to prevent the firmware from checking to see if there is a HAT EEPROM available, 
+add force_eeprom_read=0 and disable_poe_fan=1 to the config.txt file.
+Interfaces 10
+Raspberry Pi Compute Module 4
+2.11. SDIO/eMMC (CM4Lite only)
+The CM4Lite does not have on-board eMMC. The eMMC signals are available on the connector so that an external eMMC or SD 
+card can be used.
+The SD_PWR_ON signal is used to enable an external power-switch to turn on power to the SD card; for eMMC it typically isn’t 
+used. If booting from SD card is required, then a pullup resistor must also be fitted to default the power-switch to be on. When 
+SD_VDD_OVERRIDE is high ( 3.3V ), this forces 1.8V signalling on the SDIO interface. Typically this is used with eMMC memory.
+Figure 3.
+CM4Lite SD card interface.
+2.12. Analog IP0/IP1
+These are the two spare inputs on the MXL7704. The MXL7704 datasheet should be consulted if these pins are to be used. On-
+board filtering is provided by a 100nF capacitor to ground for each signal. On the Raspberry Pi 4 Model B these are connected to 
+the USB C connector CC1 and CC2 pins.
+2.13. Global_EN
+Pulling this pin low puts the CM4 in the lowest possible power-down state. After software shutdown, Global_EN needs to be pulled 
+low for > 1ms to restart the power system on the CM4.
+Tip
+It is recommended to only pull this pin low once the OS has shut down.
+2.14. RUN_PG
+This pin when high signals that the CM4 has started. Driving this pin low resets the module. This should be done with caution; if 
+files on a filesystem are open they will not be closed.
+Interfaces 11
+Raspberry Pi Compute Module 4
+2.15. nRPI_BOOT
+During boot if this pin is low, booting from eMMC will be stopped and booting will be transferred to rpi boot which is via USB.
+2.16. LED_nACT
+This pin is designed to drive an LED to replicate the green LED on the Raspberry Pi 4 Model B. Under Linux this pin will flash to 
+signify eMMC access. If any error occurs during booting, then this LED will flash an error pattern which can be decoded using the 
+look up table on the Raspberry Pi website.
+2.17. LED_nPWR
+This pin needs to be buffered to drive an LED. The signal is designed to replicate the red power LED on the Raspberry Pi 4 Model B.
+2.18. EEPROM_nWP
+It is recommended that final products pull this pin low to prevent the end users changing the contents of the on-board EEPROM. See 
+the Raspberry Pi 4 Model B documentation for instructions on the software settings required to support EEPROM write protection.
+Interfaces 12
+Raspberry Pi Compute Module 4
+3. Electrical and mechanical
+3.1. Mechanical
+The CM4 is a compact 40mm × 55mm module. The Module is 4.7mm deep, but when connected the height will be 5.078mm or 
+6.578mm depending on the stacking height chosen.
+1. 4 × M2.5 mounting holes (inset 3.5mm from module edge)
+2. PCB thickness 1.2mm ± 10%
+3. BCM2711 SoC height including solder balls 2.378 ± 0.11mm
+4. Stacking height either:
+a. 1.5mm with mating connector (clearance under CM4 0mm): DF40C-100DS-0.4v
+b. 3.0mm with mating connector (clearance under CM4 1.5mm): DF40HC(3.0)-100DS-0.4v
+If the on-board wireless antenna is used (see Section 2.1. Wireless) it must be orientated towards the edge of the plastic enclosure 
+and any nearby metal must have cut-outs or the wireless performance will be degraded. It is suggested that there is at least 10mm 
+clearance around the PCB antenna, but the designer must check the performance.
+Figure 4.
+Mechanical specification of the Raspberry Pi Compute Module 4
+There must not be any metal, including ground planes, under the antenna. The ground plane cutout must be a minimum of 6.5mm 
+× 11mm, but ideally at least 8mm × 15mm. If these requirements can’t be met wireless performance may be degraded, especially 
+in the 2.4GHz spectrum. It is recommended that the external antenna is used where possible.
+Note
+The location and arrangement of components on the Compute Module may change slightly over time due to revisions for cost 
+and manufacturing considerations; however the maximum component heights and PCB thickness will be kept as specified.
+Electrical and mechanical 13
+Raspberry Pi Compute Module 4
+A step file of the CM4 is available as part of the CM4 design data package. This is for guidance only and is subject to changes 
+over time due to revisions.
+3.2. Thermal
+The CM4 dissipates less power than the Raspberry Pi 4 Model B. The CM4 also contains less metal in the PCB and fewer connectors, 
+which means that it has less passive heat sinking than the Raspberry Pi 4 Model B. Despite it consuming less power, it may run 
+warmer than the Raspberry Pi 4 Model B.
+The BCM2711 will reduce the clock rate to try and keep its internal temperature below 85°C. So in high ambient temperatures it is 
+possible that the clock will also be automatically throttled back. If the BCM2711 is unable to lower its internal clocks enough to 
+bring the temperature down, its case temperature will rise above 85°C. It is important that any thermal solution chosen keeps the 
+ambient temperature for the other silicon devices on the CM4 within the operating temperature range.
+Operating temperature range: −20°C - +85°C non-condensing. NB Optimal RF wireless performance is between −20°C and +75°C.
+3.3. Electrical specification
+Warning
+Stresses above those listed in Table 3 may cause permanent damage to the device. This is a stress rating only; functional 
+operation of the device under these or any other conditions above those listed in the operational sections of this specification 
+is not implied. Exposure to absolute maximum rating conditions for extended periods may affect device reliability.
+Table 3.
+Absolute maximum ratings
+Symbol Parameter Minimum Maximum Unit
+VIN 5V Input Voltage −0.5 6.0 V
+VGPIO_VREF GPIO Voltage −0.5 3.6 V
+Vgpio GPIO Input voltage −0.5 VGPIO_VREF + 0.5 V
+Note
+VGPIO_VREF is the GPIO bank voltage, which must be tied to either the 3.3V or the 1.8V rail of the CM4.
+Table 4.
+DC characteristics
+Symbol Parameter Conditions Minimum Typical Maximum Unit
+VIL(gpio) Input low voltage VGPIO_VREF = 3.3V 0 - 0.8 V
+VIH(gpio) Input high voltage VGPIO_VREF = 3.3V 2.0 - VGPIO_VREF V
+VIL(gpio) Input low voltage VGPIO_VREF = 1.8V 0 - 0.35 V
+VIH(gpio) Input high voltage VGPIO_VREF = 1.8V 0.65 - VGPIO_VREF V
+IIL(gpio) Input leakage current - - - 10 μA
+VOL(gpio) Output low voltage - - - 0.4 V
+VIH(gpio) Output high voltage - VGPIO_VREF - 0.4 - - V
+IO(gpio) Output current 1mA 0.87 1.3 - mA
+IO(gpio) Output current 2mA 1.75 2.6 - mA
+IO(gpio) Output current 3mA 2.63 3.9 - mA
+IO(gpio) Output current 4mA default 3.5 5.3 - mA
+IO(gpio) Output current 5mA 4.39 6.6 - mA
+Electrical and mechanical 14
+Raspberry Pi Compute Module 4
+Symbol Parameter Conditions Minimum Typical Maximum Unit
+IO(gpio) Output current 6mA 5.27 7.9 - mA
+IO(gpio) Output current 7mA 6.15 9.2 - mA
+IO(gpio) Output current 8mA 7.02 10.5 - mA
+RPU(gpio) Pullup resistor VGPIO_VREF = 3.3V 33 47 73 kΩ
+RPD(gpio) Pulldown resistor VGPIO_VREF = 3.3V 33 47 73 kΩ
+RPU(gpio) Pullup resistor VGPIO_VREF = 1.8V 18 47 73 kΩ
+RPD(gpio) Pulldown resistor VGPIO_VREF = 1.8V 18 47 73 kΩ
+Refer to interface specifications (see Section 2. Interfaces) for electrical details of other interfaces.
+Table 5.
+Power consumption
+Symbol Parameter Conditions Minimum Typical Maximum Unit
+Ishutdown Shutdown current GLOBAL_EN = 0V - 15 - μA
+Ishutdown Shutdown current GLOBAL_EN > 2V - 8 - mA
+Iidle Idle current GLOBAL_EN > 2V - 400 - mA
+Iload Operation current GLOBAL_EN > 2V - 1400 - mA
+Note
+The figures in Table 5 greatly depend on the end application.
+Electrical and mechanical 15
+Raspberry Pi Compute Module 4
+4. Pinout
+Table 6.
+Pinout for the Raspberry Pi Compute Module 4
+Pin Signal Description
+1 GND Ground (0V)
+2 GND Ground (0V)
+3 Ethernet_Pair3_P Ethernet pair 3 positive (connect to transformer or MagJack)
+4 Ethernet_Pair1_P Ethernet pair 1 positive (connect to transformer or MagJack)
+5 Ethernet_Pair3_N Ethernet pair 3 negative (connect to transformer or MagJack)
+6 Ethernet_Pair1_N Ethernet pair 1 negative (connect to transformer or MagJack)
+7 GND Ground (0V)
+8 GND Ground (0V)
+9 Ethernet_Pair2_N Ethernet pair 2 negative (connect to transformer or MagJack)
+10 Ethernet_Pair0_N Ethernet pair 0 negative (connect to transformer or MagJack)
+11 Ethernet_Pair2_P Ethernet pair 2 positive (connect to transformer or MagJack)
+12 Ethernet_Pair0_P Ethernet pair 0 positive (connect to transformer or MagJack)
+13 GND Ground (0V)
+14 GND Ground (0V)
+15 Ethernet_nLED3 Active-low Ethernet activity indicator (CM4_3.3V signal): typically a green LED is 
+connected to this pin. IOL = 8mA @ VOL< 0.4V
+16 Ethernet_SYNC_IN IEEE1588 SYNC Input pin (CM4_3.3V signal: IOL = 8mA @ VOL < 0.4V)
+17 Ethernet_nLED2 Active-low Ethernet speed indicator (CM4_3.3Vsignal): typically a yellow LED is 
+connected to this pin. A low state indicates the 1Gbit or 100Mbit link: IOL = 8mA 
+@ VOL < 0.4V
+18 Ethernet_SYNC_OUT IEEE1588 SYNC Output pin (CM4_3.3V signal: IOL = 8mA @ VOL < 0.4V)
+19 Ethernet_nLED1 Active-low Ethernet speed indicator (CM4_3.3V signal): typically a yellow LED is 
+connected to this pin. A low state indicates the 1Gbit or 10Mbit link: IOL = 8mA @ 
+VOL < 0.4V
+20 EEPROM_nWP Leave floating NB internally pulled up to CM4_3.3V via 100kΩ (V IL  < 0.8V), but 
+can be grounded to prevent writing to the on-board EEPROM which stores the 
+bootcode
+21 Pi_nLED_Activity Active-low Pi activity LED. 20mA Max, 5V tolerant (VOL < 0.4V). (this is the signal 
+that drives the green LED on the Raspberry Pi 4 Model B)
+22 GND Ground (0V)
+23 GND Ground (0V)
+24 GPIO26 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+25 GPIO21 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+26 GPIO19 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+27 GPIO20 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+Pinout 16
+Raspberry Pi Compute Module 4
+Pin Signal Description
+28 GPIO13 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+29 GPIO16 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+30 GPIO6 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+31 GPIO12 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+32 GND Ground (0V)
+33 GND Ground (0V)
+34 GPIO5 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+35 ID_SC (BCM2711 GPIO 1) GPIO: typically a 3.3V signal, but can be a 1.8V signal by 
+connecting GPIO_VREF to CM4_1.8V
+36 ID_SD (BCM2711 GPIO 0) GPIO: typically a 3.3V signal, but can be a 1.8V signal by 
+connecting GPIO_VREF to CM4_1.8V
+37 GPIO7 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+38 GPIO11 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+39 GPIO8 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+40 GPIO9 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+41 GPIO25 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+42 GND Ground (0V)
+43 GND Ground (0V)
+44 GPIO10 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+45 GPIO24 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+46 GPIO22 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+47 GPIO23 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+48 GPIO27 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+49 GPIO18 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+50 GPIO17 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+51 GPIO15 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+52 GND Ground (0V)
+53 GND Ground (0V)
+Pinout 17
+Raspberry Pi Compute Module 4
+Pin Signal Description
+54 GPIO4 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+55 GPIO14 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V
+56 GPIO3 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V. Internal 1.8kΩ pull up to GPIO_VREF
+57 SD_CLK SD card clock signal (only available on CM4Lite)
+58 GPIO2 GPIO: typically a 3.3V signal, but can be a 1.8V signal by connecting GPIO_VREF 
+to CM4_1.8V. Internal 1.8kΩ pull up to GPIO_VREF
+59 GND Ground (0V)
+60 GND Ground (0V)
+61 SD_DAT3 SD card/eMMC Data3 signal (only available on CM4Lite)
+62 SD_CMD SD card/eMMC Command signal (only available on CM4Lite)
+63 SD_DAT0 SD card/eMMC Data0 signal (only available on CM4Lite)
+64 SD_DAT5 SD card/eMMC Data5 signal (only available on CM4Lite)
+65 GND Ground (0V)
+66 GND Ground (0V)
+67 SD_DAT1 SD card/eMMC Data1 signal (only available on CM4Lite)
+68 SD_DAT4 SD card/eMMC Data4 signal (only available on CM4Lite)
+69 SD_DAT2 SD card/eMMC Data2 signal (only available on CM4Lite)
+70 SD_DAT7 SD card/eMMC Data7 signal (only available on CM4Lite)
+71 GND Ground (0V)
+72 SD_DAT6 SD card/eMMC Data6 signal (only available on CM4Lite)
+73 SD_VDD_OVERRIDE Connect to CM4_3.3V to force SD card/eMMC interface to 1.8V signalling instead 
+of 3.3V, otherwise leave unconnected. Typically only used if external eMMC 
+is connected.
+74 GND Ground (0V)
+75 SD_PWR_ON Output to power-switch for the SD card. The CM4 sets this pin high (3.3V) to 
+signal that power to the SD card should be turned on. If booting from the SD card 
+is required then a pullup should also be fitted so the power-switch defaults to on. 
+(only available on CM4Lite)
+76 Reserved Do not connect anything to this pin.
+77 +5V (Input) 4.75V-5.25V. Main power input
+78 GPIO_VREF Must be connected to CM4_3.3V (pins 84 and 86) for 3.3V GPIO or CM4_1.8V (pins 
+88 and 90) for 1.8V GPIO. This pin cannot be floating or connected to ground.
+79 +5V (Input) 4.75V-5.25V. Main power input
+80 SCL0 I2C clock pin (BCM2711 GPIO45): typically used for Camera and Display. Internal 
+1.8kΩ pull up to CM4_3.3V
+81 +5V (Input) 4.75V-5.25V. Main power input
+82 SDA0 I2C Data pin (BCM2711 GPIO44): typically used for Camera and Display. Internal 
+1.8kΩ pull up to CM4_3.3V
+83 +5V (Input) 4.75V-5.25V. Main power input
+84 CM4_3.3V (Output) 3.3V ± 2.5%. Power Output max 300mA per pin for a total of 600mA. This will be 
+powered down during power-off or GLOBAL_EN being set low
+85 +5V (Input) 4.75V-5.25V. Main power input
+Pinout 18
+Raspberry Pi Compute Module 4
+Pin Signal Description
+86 CM4_3.3V (Output) 3.3V ± 2.5%. Power Output max 300mA per pin for a total of 600mA. This will be 
+powered down during power-off or GLOBAL_EN being set low
+87 +5V (Input) 4.75V-5.25V. Main power input
+88 CM4_1.8V (Output) 1.8V ± 2.5%. Power Output max 300mA per pin for a total of 600mA. This will be 
+powered down during power-off or GLOBAL_EN being set low
+89 WL_nDisable Can be left floating; if driven low the wireless interface will be disabled. Internally 
+pulled up via 1.8kΩ to CM4_3.3V
+90 CM4_1.8V (Output) 1.8V ± 2.5%. Power Output max 300mA per pin for a total of 600mA. This will be 
+powered down during power-off or GLOBAL_EN being set low
+91 BT_nDisable Can be left floating; if driven low the Bluetooth interface will be disabled. 
+Internally pulled up via 1.8kΩ to CM4_3.3V
+92 RUN_PG Bidirectional pin. Can be driven low (via a 220Ω resistor) to reset the CM4 CPU. 
+As an output, a high signals that power is good and CPU is running. Internally 
+pulled up to +3.3V via 10kΩ
+93 nRPIBOOT A low on this pin forces booting from an RPI server (e.g. PC or a Raspberry Pi); if 
+not used leave floating. Internally pulled up via 10kΩ to +3.3V
+94 AnalogIP1 Analogue input of the MXL7704: typically connected to CC pin of Type C power 
+connector
+95 PI_LED_nPWR Active-low output to drive Power On LED. This signal needs to be buffered.
+96 AnalogIP0 Analogue input of the MXL7704: typically connected to CC pin of Type C power 
+connector
+97 Camera_GPIO Typically used to shut down the camera to reduce power. Reassigning this pin to 
+another function isn’t recommended. CM4_3.3V signalling
+98 GND Ground (0V)
+99 GLOBAL_EN Input. Drive low to power off CM4. Internally pulled up with a 100kΩ to +5V
+100 nEXTRST Output. Driven low during reset; Driven high (CM4_3.3V) once CM4 CPU has 
+started to boot
+101 USB_OTG_ID Input (3.3V signal) USB OTG Pin. Internally pulled up. When grounded the CM4 
+becomes a USB host but the correct OS driver also needs to be used
+102 PCIe_CLK_nREQ Input (3.3V signal) PCIe clock request pin (low to request PCI clock). Internally 
+pulled up
+103 USB_N USB D-
+104 Reserved Do not connect anything to this pin.
+105 USB_P USB
+106 Reserved Do not connect anything to this pin.
+107 GND Ground (0V)
+108 GND Ground (0V)
+109 PCIe_nRST Output (+3.3V signal) PCIe reset active-low
+110 PCIe_CLK_P PCIe clock Out positive (100MHz) NB AC coupling capacitor included on CM4
+111 VDAC_COMP Video DAC output (TV OUT)
+112 PCIe_CLK_N PCIe clock Out negative (100MHz) NB AC coupling capacitor included on CM4
+113 GND Ground (0V)
+114 GND Ground (0V)
+115 CAM1_D0_N Input Camera1 D0 negative
+116 PCIe_RX_P Input PCIe GEN 2 RX positive NB external AC coupling capacitor required
+Pinout 19
+Raspberry Pi Compute Module 4
+Pin Signal Description
+117 CAM1_D0_P Input Camera1 D0 positive
+118 PCIe_RX_N Input PCIe GEN 2 RX negative NB external AC coupling capacitor required
+119 GND Ground (0V)
+120 GND Ground (0V)
+121 CAM1_D1_N Input Camera1 D1 negative
+122 PCIe_TX_P Output PCIe GEN 2 TX positive NB AC coupling capacitor included on CM4
+123 CAM1_D1_P Input Camera1 D1 positive
+124 PCIe_TX_N Output PCIe GEN 2 TX positive NB AC coupling capacitor included on CM4
+125 GND Ground (0V)
+126 GND Ground (0V)
+127 CAM1_C_N Input Camera1 clock negative
+128 CAM0_D0_N Input Camera0 D0 negative
+129 CAM1_C_P Input Camera1 clock positive
+130 CAM0_D0_P Input Camera0 D0 positive
+131 GND Ground (0V)
+132 GND Ground (0V)
+133 CAM1_D2_N Input Camera1 D2 negative
+134 CAM0_D1_N Input Camera0 D1 negative
+135 CAM1_D2_P Input Camera1 D2 positive
+136 CAM0_D1_P Input Camera0 D1 positive
+137 GND Ground (0V)
+138 GND Ground (0V)
+139 CAM1_D3_N Input Camera1 D3 negative
+140 CAM0_C_N Input Camera0 clock negative
+141 CAM1_D3_P Input Camera1 D3 positive
+142 CAM0_C_P Input Camera0 clock positive
+143 HDMI1_HOTPLUG Input HDMI1 hotplug. Internally pulled down with a 100kΩ. 5V tolerant. (It can 
+be connected directly to a HDMI connector; a small amount of ESD protection is 
+provided on the CM4 by an on-board HDMI05-CL02F3)
+144 GND Ground (0V)
+145 HDMI1_SDA Bidirectional HDMI1 SDA. Internally pulled up with a 1.8kΩ. 5V tolerant. (It can 
+be connected directly to a HDMI connector; a small amount of ESD protection is 
+provided on the CM4 by an on-board HDMI05-CL02F3)
+146 HDMI1_TX2_P Output HDMI1 TX2 positive
+147 HDMI1_SCL Bidirectional HDMI1 SCL. Internally pulled up with a 1.8kΩ. 5V tolerant. (It can 
+be connected directly to a HDMI connector; a small amount of ESD protection is 
+provided on the CM4 by an on-board HDMI05-CL02F3)
+148 HDMI1_TX2_N Output HDMI1 TX2 negative
+149 HDMI1_CEC Input HDMI1 CEC. Internally pulled up with a 27kΩ. 5V tolerant. (It can be 
+connected directly to a HDMI connector; a small amount of ESD protection is 
+provided on the CM4 by an on-board HDMI05-CL02F3)
+150 GND Ground (0V)
+Pinout 20
+Raspberry Pi Compute Module 4
+Pin Signal Description
+151 HDMI0_CEC Input HDMI0 CEC. Internally pulled up with a 27kΩ. 5V tolerant (It can be 
+connected directly to a HDMI connector; a small amount of ESD protection is 
+provided on the CM4 by an on-board HDMI05-CL02F3)
+152 HDMI1_TX1_P Output HDMI1 TX1 positive
+153 HDMI0_HOTPLUG Input HDMI0 hotplug. Internally pulled down 100kΩ. 5V tolerant. (It can be 
+connected directly to a HDMI connector; a small amount of ESD protection is 
+provided on the CM4 by an on-board HDMI05-CL02F3)
+154 HDMI1_TX1_N Output HDMI1 TX1 negative
+155 GND Ground (0V)
+156 GND Ground (0V)
+157 DSI0_D0_N Output Display0 D0 negative
+158 HDMI1_TX0_P Output HDMI1 TX0 positive
+159 DSI0_D0_P Output Display0 D0 positive
+160 HDMI1_TX0_N Output HDMI1 TX0 negative
+161 GND Ground (0V)
+162 GND Ground (0V)
+163 DSI0_D1_N Output Display0 D1 negative
+164 HDMI1_CLK_P Output HDMI1 clock positive
+165 DSI0_D1_P Output Display0 D1 positive
+166 HDMI1_CLK_N Output HDMI1 clock negative
+167 GND Ground (0V)
+168 GND Ground (0V)
+169 DSI0_C_N Output Display0 clock negative
+170 HDMI0_TX2_P Output HDMI0 TX2 positive
+171 DSI0_C_P Output Display0 clock positive
+172 HDMI0_TX2_N Output HDMI0 TX2 negative
+173 GND Ground (0V)
+174 GND Ground (0V)
+175 DSI1_D0_N Output Display1 D0 negative
+176 HDMI0_TX1_P Output HDMI0 TX1 positive
+177 DSI1_D0_P Output Display1 D0 positive
+178 HDMI0_TX1_N Output HDMI0 TX1 negative
+179 GND Ground (0V)
+180 GND Ground (0V)
+181 DSI1_D1_N Output Display1 D1 negative
+182 HDMI0_TX0_P Output HDMI0 TX0 positive
+183 DSI1_D1_P Output Display1 D1 positive
+184 HDMI0_TX0_N Output HDMI0 TX0 negative
+185 GND Ground (0V)
+186 GND Ground (0V)
+187 DSI1_C_N Output Display1 clock negative
+188 HDMI0_CLK_P Output HDMI0 clock positive
+189 DSI1_C_P Output Display1 clock positive
+Pinout 21
+Raspberry Pi Compute Module 4
+Pin Signal Description
+190 HDMI0_CLK_N Output HDMI0 clock negative
+191 GND Ground (0V)
+192 GND Ground (0V)
+193 DSI1_D2_N Output Display1 D2 negative
+194 DSI1_D3_N Output Display1 D3 negative
+195 DSI1_D2_P Output Display1 D2 positive
+196 DSI1_D3_P Output Display1 D3 positive
+197 GND Ground (0V)
+198 GND Ground (0V)
+199 HDMI0_SDA Bidirectional HDMI0 SDA. Internally pulled up with a 1.8kΩ. 5V tolerant. (It can 
+be connected directly to a HDMI connector; a small amount of ESD protection is 
+provided on the CM4 by an on-board HDMI05-CL02F3)
+200 HDMI0_SCL Bidirectional HDMI0 SCL. Internally pulled up with a 1.8kΩ. 5V tolerant. (It can 
+be connected directly to a HDMI connector; a small amount of ESD protection is 
+provided on the CM4 by an on-board HDMI05-CL02F3)
+All ground pins should be connected. If none of the signals on the second connector (pins 101 to 200) are used, then you may 
+omit the connector to reduce costs, but mechanical stability needs to be considered.
+The voltage on GPIO pins 0-27 must not exceed CM4_3.3V if +3.3V signalling is used or CM4_1.8V if +1.8V signalling is used. These 
+pins are the same as on the 40-pin connector on the Raspberry Pi 4 Model B.
+If the CM4_1.8V rail is used to power other devices other than the GPIO_VREF then you should ensure that in case of surprise power 
+removal (e.g.the +5V pin goes below +4.5V) from the CM4, the load on the CM4_1.8V must go to zero.
+Similarly if the CM4_3.3V rail is used to power other devices other than the GPIO_VREF, then you should ensure that in the case of 
+surprise power removal the CM4_3.3V rail never falls below the CM4_1.8V rail. This is the typical case, but you should check this in 
+your design. In the case where it does fall below the CM4_1.8V rail, then extra circuitry is required to disconnect the CM4_3.3V load.
+No reverse voltage must be applied to any pin, or power-up may be prevented; i.e. during power-down/off no pin may have external 
+voltage applied, otherwise this may prevent a subsequent power-up.
+4.1. Differential pairs
+It is recommended that P/N signals within a pair are matched to better than 0.15mm. Often, matching between pairs is not so 
+critical: e.g. HDMI pair-to-pair matching should be better than 25mm, so on a typical board no extra matching is required.
+4.1.1. 100Ω differential pair signal lengths
+On the CM4 all differential pairs are matched to better than 0.05mm (P/N signals).
+Note
+It is recommended that pairs are also matched on the interface board.
+On the CM4, pair-to-pairs are not always matched, as many interfaces do not require very accurate matching between pairs. Table 7 
+documents the CM4 track-length difference within each group. (A non-zero value represents how much longer in mm that track 
+is, when compared to the signal with zero length difference.)
+Pinout 22
+Raspberry Pi Compute Module 4
+Table 7.
+100Ω differential pair signal lengths
+Signal Length
+CAM0_C_N 0.02
+CAM0_C_P 0.02
+CAM0_D0_N 0.06
+CAM0_D0_P 0.07
+CAM0_D1_N 0
+CAM0_D1_P 0.01
+CAM1_C_N 0.78
+CAM1_C_P 0.78
+CAM1_D0_N 0.02
+CAM1_D0_P 0.01
+CAM1_D1_N 0.4
+CAM1_D1_P 0.4
+CAM1_D2_N 0.05
+CAM1_D2_P 0.04
+CAM1_D3_N 0.01
+CAM1_D3_P 0
+DSI0_C_N 0
+DSI0_C_P 0
+DSI0_D0_N 0
+DSI0_D0_P 0
+DSI0_D1_N 0.01
+DSI0_D1_P 0.01
+DSI1_C_N 1.28
+DSI1_C_P 1.28
+DSI1_D0_N 0
+DSI1_D0_P 0.01
+DSI1_D1_N 1.06
+DSI1_D1_P 1.06
+DSI1_D2_N 0.83
+DSI1_D2_P 0.84
+DSI1_D3_N 3.78
+DSI1_D3_P 3.79
+HDMI0_CLK_N 3.25
+HDMI0_CLK_P 3.24
+HDMI0_TX0_N 1.76
+HDMI0_TX0_P 1.76
+HDMI0_TX1_N 0.62
+HDMI0_TX1_P 0.62
+Pinout 23
+Raspberry Pi Compute Module 4
+Signal Length
+HDMI0_TX2_N 0
+HDMI0_TX2_P 0
+HDMI1_CLK_N 2.47
+HDMI1_CLK_P 2.46
+HDMI1_TX0_N 1.51
+HDMI1_TX0_P 1.51
+HDMI1_TX1_N 1
+HDMI1_TX1_P 1
+HDMI1_TX2_N 0
+HDMI1_TX2_P 0.01
+Ethernet_Pair0_P 5.23
+Ethernet_Pair0_N 5.23
+Ethernet_Pair1_P 0
+Ethernet_Pair1_N 0
+Ethernet_Pair2_P 3.82
+Ethernet_Pair2_N 3.82
+Ethernet_Pair3_P 4.29
+Ethernet_Pair3_N 4.29
+4.1.2. 90Ω differential pair signal lengths
+On the CM4 all differential pairs are matched to better than 0.05mm (P/N signals).
+Note
+It is recommended that pairs are also matched on the interface board.
+Pair-to-pairs aren’t always matched as many interfaces don’t require very accurate matching between pairs. Table 8 documents the 
+CM4 track-length difference within each group. (A non-zero value represents how much longer in mm that track is, when compared 
+to the signal with zero length difference.)
+Table 8.
+90Ω differential pair signal lengths
+Signal Length
+PCIe_CLK_P 0.65
+PCIe_CLK_N 0.65
+PCIe_TX_P 0
+PCIe_TX_N 0
+PCIe_RX_P 0.23
+PCIe_RX_N 0.23
+USB2_P 0
+USB2_N 0
+Pinout 24
+Raspberry Pi Compute Module 4
+5. Power
+5.1. Power-up sequencing
+The CM4 requires a single +5V supply, and can supply up to 600mA at +3.3V and +1.8V to peripherals.
+All pins should not have any power applied to them before the +5V rail is applied.
+If the EEPROM is to be write-protected, then the EEPROM_nWP should be low before power-up.
+If the CM4 is to be booted using USB then RPI_nBOOT needs to be low within 2ms of +5V rising.
++5V should rise monotonically to 4.75V and stay above 4.75V for the entire operation of the CM4.
+The power-up sequence will start when both +5V rail is above 4.75V and GLOBAL_EN rises. GLOBAL_EN has internal RC delay so that 
+it rises after +5V has risen. The order of events is as follows
+1. +5V rises
+2. GLOBAL_EN rises
+3. +3.3V rises
+4. +1.8V rises at least 1ms after +3.3V
+5. RUN_PG rises at least 10ms after +1.8V
+6. EXT_nRESET rises at least 1s after RUN_PG
+5.2. Power-down sequencing
+The operating system should be shut down before the power is removed, to ensure that the file system remains consistent. If this 
+can’t be achieved, then a filesystem like btrfs, f2fs or overlayfs (use raspi-config to enable this) should be considered.
+Once the operating system has shut down, the +5V rail can be removed or the GLOBAL_EN pin can be taken low to put the CM4 into 
+the lowest power mode.
+During the shutdown sequence the +1.8V will be discharged before the +3.3V rail.
+5.3. Power consumption
+The exact power consumption of the CM4 will greatly depend on the tasks being run on the CM4. The lowest shutdown power 
+consumption mode is with the GLOBAL_EN driven low, typically is 15 μA. With GLOBAL_EN high but software shut down, the typical 
+consumption is 8mA. Idle power consumption is typically 400mA, but this varies considerably depending on the operating system. 
+Operating power consumption is typically around 1.4A; again, this greatly depends on the operating system and the tasks being 
+executed.
+5.4. Regulator outputs
+To make it easier to interface to the CM4 the on-board regulators (+3.3V and +1.8V) can each supply 600mA to devices connected 
+to the CM4. The loads on these outputs isn’t taken into account in the power consumption figures.
+Power 25
+Raspberry Pi Compute Module 4
+6. Troubleshooting
+The CM4 has a number of stages of power-up before the CPU starts. If there is an error at any of the stages, power-up will be halted.
+6.1. Hardware checklist
+1. Is the +5V supply good? Check this by pulling GLOBAL_EN low and apply an external 2A load to the +5V supply. Does it stay 
+> +4.75V including noise? Ideally it should remain > +4.9V including any noise.
+2. Remove external 2A load, but keep GLOBAL_EN pulled low.
+3. Check the CM4 +3.3V rail is < 200mV. If this is not the case there is an external power path back-feeding the CM4, either 
+directly or indirectly. This could also occur via the digital pins, e.g Ethernet.
+4. Still with GLOBAL_EN pulled low check the CM4 +1.8V rail is < 200mV. Again if the +1.8V rail is above 200mV then there is 
+an external path back-feeding the 1.8V rail. (If nothing is connected to these pins you can ignore this check.)
+5. Remove the pull down on GLOBAL_EN.
+6. Check GLOBAL_EN now goes high (it is internally pulled up on the CM4)
+7. Check the +3.3V supply rises to > +3.15V. If it does not, this suggests there is too much load on the +3.3V rail.
+8. Check the +1.8V rail gets to > +1.71V. If it does not, this suggests there is too much load on the +1.8V rail.
+9. Check RUN_PG goes high
+10. Check ACT_LED starts to oscillate to indicate booting; check it isn’t flashing an error code.
+6.2. Bootloader
+1. Connect a HDMI cable to see if the HDMI diagnostics screen appears.
+2. Connect a USB serial cable to GPIO pins 14 and 15.
+a. See Configuring UARTS for details.
+3. Short the nRPIBOOT pin to ground to force USB boot mode. The CM4IO board has a jumper for nRPIBOOT This can be used 
+to enable different boot modes (e.g. network) and enable UART logging.
+a. See Flashing Compute Module eMMC
+6.3. rpi-eeprom-update
+1. CM4 will not run recovery.bin from from the EMMC (or SD Card on CM4Lite). Therefore, the only way to update the 
+bootloader EEPROM is via usbboot or self-update.
+6.4. EEPROM write-protect
+The on-board EEPROM can be write-protected by shorting EEPROM_nWP to ground. The CM4IO board has a jumper for EEPROM_nWP.
+1. See Bootloader Configuration
+6.5. Firmware
+1. A 5.4 or newer kernel and the latest firmware release is required. These can be updated by using usbboot to mount the 
+EMMC as a USB MSD device.
+2. Nightly OS images are now available which contain rpi-update master firmware + kernel. Bug fixes for CM4 will normally 
+be provided via these images except where a test/patch binary is required.
+a. See Nightly builds
+Troubleshooting 26
+Raspberry Pi Compute Module 4
+6.6. Kernel
+1. The updated OS images use the new Raspberry Pi Compute Module 4 device tree file. If that is not found then the Raspberry 
+Pi 4 Model B device tree file will be used.
+a. See CM4 Device tree
+Troubleshooting 27
+Raspberry Pi Compute Module 4
+7. Availability
+7.1. Support
+For documentation, see the Compute Module Hardware documentation  section of the Raspberry Pi website. Support questions 
+can be posted to the Raspberry Pi forum.
+7.2. Ordering codes
+For ordering and pricing information, see CM4 Product Brief.
+7.3. Packaging
+Small quantities are supplied in individual cardboard boxes. These have an internal ESD coating so that a separate ESD bag isn’t 
+required. This packaging is recyclable and reduces waste.
+Availability 28
+Raspberry Pi
+Raspberry Pi is a trademark of Raspberry Pi Ltd
+Raspberry Pi Ltd

@@ -1,0 +1,116 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-10T15:22:10",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.5",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/4ad30032-f2ed-5876-bcfe-fcaf5d0bd87f",
+            "violations": []
+        },
+        {
+            "path": "/01 Input/",
+            "uuid_path": "/4ad30032-f2ed-5876-bcfe-fcaf5d0bd87f/b33c97a0-6af3-5eea-b17f-15e94f0d51b8",
+            "violations": []
+        },
+        {
+            "path": "/02 WiFi Power/",
+            "uuid_path": "/4ad30032-f2ed-5876-bcfe-fcaf5d0bd87f/23a560bb-0c66-5208-a1aa-ff740b0002db",
+            "violations": []
+        },
+        {
+            "path": "/03 Aux Power/",
+            "uuid_path": "/4ad30032-f2ed-5876-bcfe-fcaf5d0bd87f/b40ad2a5-f9b3-59e6-9c1e-a4a5c77646b6",
+            "violations": []
+        },
+        {
+            "path": "/04 CM4 Power GPIO/",
+            "uuid_path": "/4ad30032-f2ed-5876-bcfe-fcaf5d0bd87f/8eb2f884-4d07-5542-b867-299e376c12a2",
+            "violations": []
+        },
+        {
+            "path": "/05 CM4 HighSpeed/",
+            "uuid_path": "/4ad30032-f2ed-5876-bcfe-fcaf5d0bd87f/1e1e3721-bc6a-5aa9-990f-2efe39efbf91",
+            "violations": []
+        },
+        {
+            "path": "/06 Service Reset/",
+            "uuid_path": "/4ad30032-f2ed-5876-bcfe-fcaf5d0bd87f/139e88c5-7f10-554c-8d5b-62d8a83ca9d4",
+            "violations": []
+        },
+        {
+            "path": "/07 MicroSD/",
+            "uuid_path": "/4ad30032-f2ed-5876-bcfe-fcaf5d0bd87f/f70d2c61-f45b-5283-a81a-3ab09dc9500e",
+            "violations": []
+        },
+        {
+            "path": "/08 USB Hub/",
+            "uuid_path": "/4ad30032-f2ed-5876-bcfe-fcaf5d0bd87f/be85d181-cc79-5c12-8fe4-26c19966a2bb",
+            "violations": []
+        },
+        {
+            "path": "/09 USB Clock Decoupling/",
+            "uuid_path": "/4ad30032-f2ed-5876-bcfe-fcaf5d0bd87f/280cf5af-2f1f-59ca-95c6-f31936feccbe",
+            "violations": []
+        },
+        {
+            "path": "/10 USB A/",
+            "uuid_path": "/4ad30032-f2ed-5876-bcfe-fcaf5d0bd87f/49900829-bd9c-549d-be6e-28166a7e1105",
+            "violations": []
+        },
+        {
+            "path": "/11 USB B/",
+            "uuid_path": "/4ad30032-f2ed-5876-bcfe-fcaf5d0bd87f/3cbd42a6-ec84-560e-b930-142a2d771a4a",
+            "violations": []
+        },
+        {
+            "path": "/12 HaLow Power/",
+            "uuid_path": "/4ad30032-f2ed-5876-bcfe-fcaf5d0bd87f/e1084834-c171-5809-8c55-29cd19e55cdc",
+            "violations": []
+        },
+        {
+            "path": "/13 HaLow RF/",
+            "uuid_path": "/4ad30032-f2ed-5876-bcfe-fcaf5d0bd87f/b674fc21-de77-5044-84ef-50833d255648",
+            "violations": []
+        },
+        {
+            "path": "/14 WiFi PCIe/",
+            "uuid_path": "/4ad30032-f2ed-5876-bcfe-fcaf5d0bd87f/d32244fe-9ece-5ee7-8963-c6aebb3b2930",
+            "violations": []
+        },
+        {
+            "path": "/15 Ethernet Cable/",
+            "uuid_path": "/4ad30032-f2ed-5876-bcfe-fcaf5d0bd87f/90d8762a-98e2-5417-a056-db00e2ce36c8",
+            "violations": []
+        },
+        {
+            "path": "/16 Panel Interfaces/",
+            "uuid_path": "/4ad30032-f2ed-5876-bcfe-fcaf5d0bd87f/16b101a0-bbb1-5804-8b0f-10ed5edc82f3",
+            "violations": []
+        }
+    ],
+    "source": "CM4_MANET.kicad_sch"
+}

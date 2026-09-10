@@ -1,0 +1,1 @@
+(fp_lib_table (lib (name "MANET")(type "KiCad")(uri "${KIPRJMOD}/MANET.pretty")(options "")(descr "Bundled carrier footprints; not layout released")))

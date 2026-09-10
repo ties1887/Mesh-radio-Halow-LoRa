@@ -1,0 +1,69 @@
+{
+  "status": "PASS: generated pin/wire/label topology; NOT KiCad ERC",
+  "connections": {
+    "U11": {
+      "1": "+5V_MAIN",
+      "3": "USB1_EN",
+      "2": "GND",
+      "6": "USB1_VBUS",
+      "4": "USB1_FAULT_N",
+      "5": "USB1_ILIM"
+    },
+    "R11": {
+      "1": "USB1_ILIM",
+      "2": "GND"
+    },
+    "R12": {
+      "1": "+3V3_AUX",
+      "2": "USB1_FAULT_N"
+    },
+    "R13": {
+      "1": "USB1_EN",
+      "2": "GND"
+    },
+    "C11": {
+      "1": "+5V_MAIN",
+      "2": "GND"
+    },
+    "C12": {
+      "1": "USB1_VBUS",
+      "2": "GND"
+    },
+    "C13": {
+      "1": "USB1_VBUS",
+      "2": "GND"
+    },
+    "U12": {
+      "1": "+5V_MAIN",
+      "3": "USB2_EN",
+      "2": "GND",
+      "6": "USB2_VBUS",
+      "4": "USB2_FAULT_N",
+      "5": "USB2_ILIM"
+    },
+    "R21": {
+      "1": "USB2_ILIM",
+      "2": "GND"
+    },
+    "R22": {
+      "1": "+3V3_AUX",
+      "2": "USB2_FAULT_N"
+    },
+    "R23": {
+      "1": "USB2_EN",
+      "2": "GND"
+    },
+    "C21": {
+      "1": "+5V_MAIN",
+      "2": "GND"
+    },
+    "C22": {
+      "1": "USB2_VBUS",
+      "2": "GND"
+    },
+    "C23": {
+      "1": "USB2_VBUS",
+      "2": "GND"
+    }
+  }
+}

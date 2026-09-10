@@ -1,0 +1,13 @@
+**/__pycache__/
+**/*.pyc
+**/.history/
+**/*.kicad_prl
+**/~*.lck
+**/*.lck
+**/*-backups/
+**/.venv/
+**/venv/
+.env
+.env.*
+!.env.example
+work/kicad-check-config/
