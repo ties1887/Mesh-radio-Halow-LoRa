@@ -1,0 +1,1 @@
+(fp_lib_table (lib (name "MANET")(type "KiCad")(uri "${KIPRJMOD}/MANET.pretty")(options "")(descr "Bundled carrier footprints; not layout released")) (lib (name "G2401CE")(type "KiCad")(uri "${KIPRJMOD}/G2401CE.pretty")(options "")(descr "G2401CE Ethernet transformer footprint; source LCSC C2904710")))
