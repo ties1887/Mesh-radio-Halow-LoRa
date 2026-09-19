@@ -30,6 +30,7 @@ This repository contains CAD files, printable files, hardware references and sho
 | Build | Generation | Main hardware | Files |
 |---|---|---|---|
 | **[P4-Wio](./Second-Generation-Builds/P4-Wio/)** | Second generation | Raspberry Pi 4 + WM1302 Pi HAT + Wio-WM6108 | 3MF, STEP, SolidWorks 2025 |
+| **[CM4 Carrier Board](./Second-Generation-Builds/CM4-Carrier-Board/)** | Second generation, development | Raspberry Pi CM4 + M.2 E-key Wi-Fi + optional MM8108 HaLow | KiCad source, local libraries, 3D models, review report |
 | **[V3](./First-Generation-Builds/V3_18-6-2026/)** | First generation | Raspberry Pi 4 + WM1302 Pi HAT + Wio-WM6108 + RAK WisMesh 1W kit | 3MF, STEP, SolidWorks 2023/2025 |
 | **[V2](./First-Generation-Builds/V2_30-5-2026/)** | First generation | Raspberry Pi 4 + WM1302 Pi HAT + Wio-WM6108 + RAK WisMesh 1W kit | 3MF, STL, STEP, SolidWorks 2023/2025 |
 | **[V1](./First-Generation-Builds/V1_5-5-2026/)** | First generation | Raspberry Pi 4 + WM1302 Pi HAT + Wio-WM6108 + RAK WisMesh 1W kit | 3MF, STEP, SolidWorks 2023/2025 |
@@ -67,7 +68,7 @@ Download the complete build folder before opening a SolidWorks assembly so refer
 - **P4-Wio is HaLow-only.** It does not include the separate LoRa/Meshtastic subsystem from the first generation prototypes.
 - **V1** uses an integrated battery layout.
 - **V2 and V3** use a removable twist-lock battery layout.
-- **V4** is not included in this branch because that design is not ready to publish yet.
+- **CM4 Carrier Board** source files are available for review and collaboration, but the design is not yet released for fabrication. Read its production-check report before making hardware.
 
 <details>
 <summary><strong>Prototype component and power-flow reference</strong></summary>

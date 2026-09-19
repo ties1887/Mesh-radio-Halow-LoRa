@@ -1,0 +1,20 @@
+# KiCad user/session state
+*.kicad_prl
+*.lck
+~*.lck
+
+# Local history, caches and temporary validation output
+.history/
+.easyeda_cache/
+tmp/
+*-backups/
+__pycache__/
+
+# Fabrication exports must be regenerated only after production approval
+*.gbr
+*.gbrjob
+*.drl
+*.pos
+CM4_MANET.step
+CM4_MANET_BOM*.csv
+CM4_MANET_CPL*.csv

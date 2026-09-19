@@ -1,0 +1,1 @@
+(sym_lib_table (lib (name "MANET")(type "KiCad")(uri "${KIPRJMOD}/MANET.kicad_sym")(options "")(descr "Embedded project symbols")) (lib (name "G2401CE")(type "KiCad")(uri "${KIPRJMOD}/G2401CE.kicad_sym")(options "")(descr "G2401CE Ethernet transformer; source LCSC C2904710")))
